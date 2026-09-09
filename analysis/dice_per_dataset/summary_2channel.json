@@ -1,0 +1,3226 @@
+{
+    "foreground_mean": {
+        "Dice": 0.652980827384309,
+        "FN": 29024.575,
+        "FP": 11614.63,
+        "IoU": 0.5334794361044022,
+        "TN": 47447292.65,
+        "TP": 72854.065,
+        "n_pred": 84468.695,
+        "n_ref": 101878.64
+    },
+    "mean": {
+        "1": {
+            "Dice": 0.652980827384309,
+            "FN": 29024.575,
+            "FP": 11614.63,
+            "IoU": 0.5334794361044022,
+            "TN": 47447292.65,
+            "TP": 72854.065,
+            "n_pred": 84468.695,
+            "n_ref": 101878.64
+        }
+    },
+    "metric_per_case": [
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8638585300714351,
+                    "FN": 24586,
+                    "FP": 69923,
+                    "IoU": 0.7603441586598809,
+                    "TN": 28179343,
+                    "TP": 299844,
+                    "n_pred": 369767,
+                    "n_ref": 324430
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1002.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1002.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8724931354488895,
+                    "FN": 7923,
+                    "FP": 36099,
+                    "IoU": 0.7738251206091339,
+                    "TN": 20514739,
+                    "TP": 150615,
+                    "n_pred": 186714,
+                    "n_ref": 158538
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1004.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1004.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8903472393060247,
+                    "FN": 166738,
+                    "FP": 46767,
+                    "IoU": 0.8023656326049265,
+                    "TN": 17007633,
+                    "TP": 866798,
+                    "n_pred": 913565,
+                    "n_ref": 1033536
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1009.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1009.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.1938075120087968,
+                    "FN": 4318,
+                    "FP": 65333,
+                    "IoU": 0.10730169309049896,
+                    "TN": 18534201,
+                    "TP": 8372,
+                    "n_pred": 73705,
+                    "n_ref": 12690
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1012.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1012.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8198386465627056,
+                    "FN": 20269,
+                    "FP": 1370,
+                    "IoU": 0.6946835228715749,
+                    "TN": 25357094,
+                    "TP": 49235,
+                    "n_pred": 50605,
+                    "n_ref": 69504
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1016.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1016.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7892740040954259,
+                    "FN": 159128,
+                    "FP": 8612,
+                    "IoU": 0.6519014267185473,
+                    "TN": 18130349,
+                    "TP": 314135,
+                    "n_pred": 322747,
+                    "n_ref": 473263
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1022.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1022.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7887410953879419,
+                    "FN": 9719,
+                    "FP": 1224,
+                    "IoU": 0.65117465174843,
+                    "TN": 17007989,
+                    "TP": 20428,
+                    "n_pred": 21652,
+                    "n_ref": 30147
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1024.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1024.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8151568975725281,
+                    "FN": 4995,
+                    "FP": 2810,
+                    "IoU": 0.6879872076753948,
+                    "TN": 19111497,
+                    "TP": 17210,
+                    "n_pred": 20020,
+                    "n_ref": 22205
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1026.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1026.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7553496580630928,
+                    "FN": 3563,
+                    "FP": 7527,
+                    "IoU": 0.6068769939737682,
+                    "TN": 22778318,
+                    "TP": 17120,
+                    "n_pred": 24647,
+                    "n_ref": 20683
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1031.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1031.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7185025197984162,
+                    "FN": 589,
+                    "FP": 975,
+                    "IoU": 0.5606741573033708,
+                    "TN": 24900120,
+                    "TP": 1996,
+                    "n_pred": 2971,
+                    "n_ref": 2585
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1035.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1035.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8471040959259672,
+                    "FN": 300536,
+                    "FP": 62617,
+                    "IoU": 0.7347619962327239,
+                    "TN": 26155961,
+                    "TP": 1006006,
+                    "n_pred": 1068623,
+                    "n_ref": 1306542
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1041.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1041.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 5535,
+                    "FP": 1205,
+                    "IoU": 0.0,
+                    "TN": 23324076,
+                    "TP": 0,
+                    "n_pred": 1205,
+                    "n_ref": 5535
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1048.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1048.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9097090679489047,
+                    "FN": 10034,
+                    "FP": 14133,
+                    "IoU": 0.8343727726300784,
+                    "TN": 25282056,
+                    "TP": 121745,
+                    "n_pred": 135878,
+                    "n_ref": 131779
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1059.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1059.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5581158821472841,
+                    "FN": 554,
+                    "FP": 27252,
+                    "IoU": 0.3870740201913327,
+                    "TN": 25906890,
+                    "TP": 17560,
+                    "n_pred": 44812,
+                    "n_ref": 18114
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1063.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1063.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.922819147241162,
+                    "FN": 19949,
+                    "FP": 55134,
+                    "IoU": 0.8566984317235772,
+                    "TN": 19136849,
+                    "TP": 448868,
+                    "n_pred": 504002,
+                    "n_ref": 468817
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1067.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1067.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7798473984893217,
+                    "FN": 23280,
+                    "FP": 5429,
+                    "IoU": 0.6391392335055369,
+                    "TN": 48417083,
+                    "TP": 50848,
+                    "n_pred": 56277,
+                    "n_ref": 74128
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1074.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1074.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9201914093168165,
+                    "FN": 155713,
+                    "FP": 68941,
+                    "IoU": 0.852180115306011,
+                    "TN": 27053914,
+                    "TP": 1295128,
+                    "n_pred": 1364069,
+                    "n_ref": 1450841
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1075.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1075.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8412383325590235,
+                    "FN": 914,
+                    "FP": 2845,
+                    "IoU": 0.725980463624435,
+                    "TN": 20171370,
+                    "TP": 9959,
+                    "n_pred": 12804,
+                    "n_ref": 10873
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/HCC_TACE_1078.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/HCC_TACE_1078.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7173801807948149,
+                    "FN": 885,
+                    "FP": 4086,
+                    "IoU": 0.5593085106382979,
+                    "TN": 32232432,
+                    "TP": 6309,
+                    "n_pred": 10395,
+                    "n_ref": 7194
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1001.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1001.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8549592391304348,
+                    "FN": 276,
+                    "FP": 578,
+                    "IoU": 0.7466627113616138,
+                    "TN": 139981525,
+                    "TP": 2517,
+                    "n_pred": 3095,
+                    "n_ref": 2793
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1003.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1003.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7609649122807017,
+                    "FN": 193,
+                    "FP": 25,
+                    "IoU": 0.6141592920353982,
+                    "TN": 140770763,
+                    "TP": 347,
+                    "n_pred": 372,
+                    "n_ref": 540
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1005.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1005.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8508056437995478,
+                    "FN": 2694,
+                    "FP": 7732,
+                    "IoU": 0.740349653832744,
+                    "TN": 141779750,
+                    "TP": 29728,
+                    "n_pred": 37460,
+                    "n_ref": 32422
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1007.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1007.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6662029146812285,
+                    "FN": 633,
+                    "FP": 8964,
+                    "IoU": 0.4994784604151455,
+                    "TN": 221492506,
+                    "TP": 9577,
+                    "n_pred": 18541,
+                    "n_ref": 10210
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1018.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1018.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.31836551414458913,
+                    "FN": 960,
+                    "FP": 2076,
+                    "IoU": 0.18931909212283043,
+                    "TN": 150466911,
+                    "TP": 709,
+                    "n_pred": 2785,
+                    "n_ref": 1669
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1020.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1020.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8005546246379682,
+                    "FN": 64730,
+                    "FP": 9780,
+                    "IoU": 0.6674373348568164,
+                    "TN": 33592528,
+                    "TP": 149538,
+                    "n_pred": 159318,
+                    "n_ref": 214268
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1028.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1028.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 0,
+                    "FP": 46621,
+                    "IoU": 0.0,
+                    "TN": 39537123,
+                    "TP": 0,
+                    "n_pred": 46621,
+                    "n_ref": 0
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1034.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1034.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6271880819366853,
+                    "FN": 796,
+                    "FP": 205,
+                    "IoU": 0.4568638090070537,
+                    "TN": 32766157,
+                    "TP": 842,
+                    "n_pred": 1047,
+                    "n_ref": 1638
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1042.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1042.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 0,
+                    "FP": 141,
+                    "IoU": 0.0,
+                    "TN": 58982259,
+                    "TP": 0,
+                    "n_pred": 141,
+                    "n_ref": 0
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1047.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1047.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7239593840360433,
+                    "FN": 2632,
+                    "FP": 1473,
+                    "IoU": 0.5673482293423272,
+                    "TN": 66575088,
+                    "TP": 5383,
+                    "n_pred": 6856,
+                    "n_ref": 8015
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1049.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1049.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8226662983086227,
+                    "FN": 4896,
+                    "FP": 881,
+                    "IoU": 0.6987537153882255,
+                    "TN": 62108951,
+                    "TP": 13400,
+                    "n_pred": 14281,
+                    "n_ref": 18296
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1052.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1052.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8386932886247015,
+                    "FN": 3114,
+                    "FP": 61,
+                    "IoU": 0.7221979175780908,
+                    "TN": 63951707,
+                    "TP": 8254,
+                    "n_pred": 8315,
+                    "n_ref": 11368
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1060.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1060.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6957407784797228,
+                    "FN": 1489,
+                    "FP": 4,
+                    "IoU": 0.5334375,
+                    "TN": 49279872,
+                    "TP": 1707,
+                    "n_pred": 1711,
+                    "n_ref": 3196
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1062.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1062.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9024058983313931,
+                    "FN": 237,
+                    "FP": 769,
+                    "IoU": 0.8221672264451122,
+                    "TN": 69724647,
+                    "TP": 4651,
+                    "n_pred": 5420,
+                    "n_ref": 4888
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1068.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1068.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8229342327150084,
+                    "FN": 507,
+                    "FP": 438,
+                    "IoU": 0.6991404011461319,
+                    "TN": 23327675,
+                    "TP": 2196,
+                    "n_pred": 2634,
+                    "n_ref": 2703
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1075.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1075.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 98,
+                    "FP": 0,
+                    "IoU": 0.0,
+                    "TN": 228327326,
+                    "TP": 0,
+                    "n_pred": 0,
+                    "n_ref": 98
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1083.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1083.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6472697696772524,
+                    "FN": 6790,
+                    "FP": 2751,
+                    "IoU": 0.47849139109046185,
+                    "TN": 165132425,
+                    "TP": 8754,
+                    "n_pred": 11505,
+                    "n_ref": 15544
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1085.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1085.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8223016687368364,
+                    "FN": 63809,
+                    "FP": 18452,
+                    "IoU": 0.698227760800901,
+                    "TN": 212326191,
+                    "TP": 190332,
+                    "n_pred": 208784,
+                    "n_ref": 254141
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1088.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1088.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": NaN,
+                    "FN": 0,
+                    "FP": 0,
+                    "IoU": NaN,
+                    "TN": 196870144,
+                    "TP": 0,
+                    "n_pred": 0,
+                    "n_ref": 0
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1091.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1091.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7040362850120081,
+                    "FN": 12543,
+                    "FP": 29480,
+                    "IoU": 0.5432530840715178,
+                    "TN": 240294043,
+                    "TP": 49982,
+                    "n_pred": 79462,
+                    "n_ref": 62525
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1094.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1094.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5405709690390028,
+                    "FN": 2592,
+                    "FP": 3121,
+                    "IoU": 0.3703989420321799,
+                    "TN": 202103950,
+                    "TP": 3361,
+                    "n_pred": 6482,
+                    "n_ref": 5953
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1107.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1107.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7213888039968641,
+                    "FN": 18531,
+                    "FP": 23405,
+                    "IoU": 0.5641971588015837,
+                    "TN": 198084637,
+                    "TP": 54291,
+                    "n_pred": 77696,
+                    "n_ref": 72822
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1109.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1109.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.623352062324225,
+                    "FN": 33181,
+                    "FP": 28558,
+                    "IoU": 0.4528042684440033,
+                    "TN": 219039556,
+                    "TP": 51089,
+                    "n_pred": 79647,
+                    "n_ref": 84270
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1113.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1113.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 0,
+                    "FP": 5201,
+                    "IoU": 0.0,
+                    "TN": 120843183,
+                    "TP": 0,
+                    "n_pred": 5201,
+                    "n_ref": 0
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1119.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1119.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8545006165228114,
+                    "FN": 61,
+                    "FP": 175,
+                    "IoU": 0.7459634015069968,
+                    "TN": 107478111,
+                    "TP": 693,
+                    "n_pred": 868,
+                    "n_ref": 754
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1125.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1125.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7997647027720128,
+                    "FN": 24046,
+                    "FP": 127430,
+                    "IoU": 0.6663399290281795,
+                    "TN": 170988193,
+                    "TP": 302507,
+                    "n_pred": 429937,
+                    "n_ref": 326553
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/LiTS_1128.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/LiTS_1128.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8160787687601567,
+                    "FN": 261,
+                    "FP": 3587,
+                    "IoU": 0.6893015744852644,
+                    "TN": 17289119,
+                    "TP": 8537,
+                    "n_pred": 12124,
+                    "n_ref": 8798
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1002.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1002.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8111524163568773,
+                    "FN": 403,
+                    "FP": 105,
+                    "IoU": 0.6823014383989994,
+                    "TN": 12319169,
+                    "TP": 1091,
+                    "n_pred": 1196,
+                    "n_ref": 1494
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1008.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1008.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7320880779917447,
+                    "FN": 16212,
+                    "FP": 469,
+                    "IoU": 0.5773966355897852,
+                    "TN": 9397712,
+                    "TP": 22791,
+                    "n_pred": 23260,
+                    "n_ref": 39003
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1016.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1016.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6902346081447133,
+                    "FN": 6664,
+                    "FP": 83,
+                    "IoU": 0.5269910263600673,
+                    "TN": 11782216,
+                    "TP": 7517,
+                    "n_pred": 7600,
+                    "n_ref": 14181
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1019.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1019.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.875749375354232,
+                    "FN": 12496,
+                    "FP": 18634,
+                    "IoU": 0.778962765202079,
+                    "TN": 10344924,
+                    "TP": 109706,
+                    "n_pred": 128340,
+                    "n_ref": 122202
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1028.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1028.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1732,
+                    "FP": 9,
+                    "IoU": 0.0,
+                    "TN": 10746163,
+                    "TP": 0,
+                    "n_pred": 9,
+                    "n_ref": 1732
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1044.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1044.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.757698959313086,
+                    "FN": 14810,
+                    "FP": 1162,
+                    "IoU": 0.6099157406276713,
+                    "TN": 6774799,
+                    "TP": 24973,
+                    "n_pred": 26135,
+                    "n_ref": 39783
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1049.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1049.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.2217063261752757,
+                    "FN": 1730,
+                    "FP": 952,
+                    "IoU": 0.12467362924281984,
+                    "TN": 11006984,
+                    "TP": 382,
+                    "n_pred": 1334,
+                    "n_ref": 2112
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1053.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1053.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9115574992344802,
+                    "FN": 71042,
+                    "FP": 7809,
+                    "IoU": 0.837487968903609,
+                    "TN": 12359855,
+                    "TP": 406350,
+                    "n_pred": 414159,
+                    "n_ref": 477392
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1070.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1070.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9266828290608016,
+                    "FN": 6372,
+                    "FP": 2005,
+                    "IoU": 0.8633820963191284,
+                    "TN": 9638011,
+                    "TP": 52940,
+                    "n_pred": 54945,
+                    "n_ref": 59312
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1071.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1071.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6776435545258978,
+                    "FN": 3467,
+                    "FP": 429,
+                    "IoU": 0.5124515079464398,
+                    "TN": 11526345,
+                    "TP": 4095,
+                    "n_pred": 4524,
+                    "n_ref": 7562
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1072.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1072.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.844034109605784,
+                    "FN": 528,
+                    "FP": 16061,
+                    "IoU": 0.7301548571800377,
+                    "TN": 10162140,
+                    "TP": 44887,
+                    "n_pred": 60948,
+                    "n_ref": 45415
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1087.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1087.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8999110436443208,
+                    "FN": 55310,
+                    "FP": 2185,
+                    "IoU": 0.8180347947728719,
+                    "TN": 12004801,
+                    "TP": 258472,
+                    "n_pred": 260657,
+                    "n_ref": 313782
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1089.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1089.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7657161845029179,
+                    "FN": 82872,
+                    "FP": 7376,
+                    "IoU": 0.6203728631040517,
+                    "TN": 10510176,
+                    "TP": 147480,
+                    "n_pred": 154856,
+                    "n_ref": 230352
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1094.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1094.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6268656716417911,
+                    "FN": 453,
+                    "FP": 47,
+                    "IoU": 0.45652173913043476,
+                    "TN": 11009128,
+                    "TP": 420,
+                    "n_pred": 467,
+                    "n_ref": 873
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1108.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1108.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.413478012564249,
+                    "FN": 735,
+                    "FP": 292,
+                    "IoU": 0.2606191504679626,
+                    "TN": 8387219,
+                    "TP": 362,
+                    "n_pred": 654,
+                    "n_ref": 1097
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1111.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1111.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9479450171033709,
+                    "FN": 5607,
+                    "FP": 12563,
+                    "IoU": 0.9010413262749711,
+                    "TN": 11350724,
+                    "TP": 165442,
+                    "n_pred": 178005,
+                    "n_ref": 171049
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1112.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1112.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6969220382673806,
+                    "FN": 76481,
+                    "FP": 2529,
+                    "IoU": 0.5348275841767196,
+                    "TN": 13723781,
+                    "TP": 90841,
+                    "n_pred": 93370,
+                    "n_ref": 167322
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1117.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1117.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7384448910187046,
+                    "FN": 3099,
+                    "FP": 285,
+                    "IoU": 0.5853449332189683,
+                    "TN": 12574751,
+                    "TP": 4777,
+                    "n_pred": 5062,
+                    "n_ref": 7876
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1128.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1128.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.886144578313253,
+                    "FN": 326,
+                    "FP": 430,
+                    "IoU": 0.7955651703623581,
+                    "TN": 13103502,
+                    "TP": 2942,
+                    "n_pred": 3372,
+                    "n_ref": 3268
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1139.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1139.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8322313817066652,
+                    "FN": 567,
+                    "FP": 5396,
+                    "IoU": 0.7126680479930613,
+                    "TN": 12037871,
+                    "TP": 14790,
+                    "n_pred": 20186,
+                    "n_ref": 15357
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1140.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1140.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.1712432037282405,
+                    "FN": 17328,
+                    "FP": 811,
+                    "IoU": 0.09363913456253435,
+                    "TN": 9417171,
+                    "TP": 1874,
+                    "n_pred": 2685,
+                    "n_ref": 19202
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1161.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1161.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5699067909454061,
+                    "FN": 8946,
+                    "FP": 421,
+                    "IoU": 0.3985102420856611,
+                    "TN": 15975211,
+                    "TP": 6206,
+                    "n_pred": 6627,
+                    "n_ref": 15152
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1165.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1165.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7710147237552549,
+                    "FN": 10610,
+                    "FP": 883,
+                    "IoU": 0.6273587964464042,
+                    "TN": 14124934,
+                    "TP": 19349,
+                    "n_pred": 20232,
+                    "n_ref": 29959
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1167.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1167.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8937467157120337,
+                    "FN": 5196,
+                    "FP": 870,
+                    "IoU": 0.8079042371271138,
+                    "TN": 12027046,
+                    "TP": 25512,
+                    "n_pred": 26382,
+                    "n_ref": 30708
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1185.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1185.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8863077831321993,
+                    "FN": 629,
+                    "FP": 7652,
+                    "IoU": 0.7958282995142878,
+                    "TN": 15688081,
+                    "TP": 32278,
+                    "n_pred": 39930,
+                    "n_ref": 32907
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1197.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1197.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8759442472787834,
+                    "FN": 5500,
+                    "FP": 757,
+                    "IoU": 0.7792711750802555,
+                    "TN": 7835973,
+                    "TP": 22090,
+                    "n_pred": 22847,
+                    "n_ref": 27590
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1198.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1198.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7833218771480347,
+                    "FN": 24699,
+                    "FP": 3041,
+                    "IoU": 0.6438201381577258,
+                    "TN": 42913734,
+                    "TP": 50142,
+                    "n_pred": 53183,
+                    "n_ref": 74841
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1210.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1210.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.862784303924019,
+                    "FN": 132,
+                    "FP": 417,
+                    "IoU": 0.7586813186813187,
+                    "TN": 13629213,
+                    "TP": 1726,
+                    "n_pred": 2143,
+                    "n_ref": 1858
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1215.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1215.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8945216215191314,
+                    "FN": 9756,
+                    "FP": 23622,
+                    "IoU": 0.809171521516657,
+                    "TN": 12670145,
+                    "TP": 141533,
+                    "n_pred": 165155,
+                    "n_ref": 151289
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1222.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1222.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8283136357859957,
+                    "FN": 757,
+                    "FP": 1945,
+                    "IoU": 0.706941431670282,
+                    "TN": 13360124,
+                    "TP": 6518,
+                    "n_pred": 8463,
+                    "n_ref": 7275
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1233.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1233.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8755045501247615,
+                    "FN": 6140,
+                    "FP": 21002,
+                    "IoU": 0.7785754493020828,
+                    "TN": 27140397,
+                    "TP": 95437,
+                    "n_pred": 116439,
+                    "n_ref": 101577
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1238.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1238.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7011788826242953,
+                    "FN": 11,
+                    "FP": 1155,
+                    "IoU": 0.5398579321231255,
+                    "TN": 42202650,
+                    "TP": 1368,
+                    "n_pred": 2523,
+                    "n_ref": 1379
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1263.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1263.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.12403100775193798,
+                    "FN": 441,
+                    "FP": 11,
+                    "IoU": 0.06611570247933884,
+                    "TN": 10747420,
+                    "TP": 32,
+                    "n_pred": 43,
+                    "n_ref": 473
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1266.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1266.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 112,
+                    "FP": 0,
+                    "IoU": 0.0,
+                    "TN": 13369232,
+                    "TP": 0,
+                    "n_pred": 0,
+                    "n_ref": 112
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1269.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1269.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 486,
+                    "FP": 8539,
+                    "IoU": 0.0,
+                    "TN": 12311743,
+                    "TP": 0,
+                    "n_pred": 8539,
+                    "n_ref": 486
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1272.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1272.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6342088404868674,
+                    "FN": 843,
+                    "FP": 299,
+                    "IoU": 0.4643527204502814,
+                    "TN": 42989484,
+                    "TP": 990,
+                    "n_pred": 1289,
+                    "n_ref": 1833
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1287.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1287.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6225352112676056,
+                    "FN": 530,
+                    "FP": 6,
+                    "IoU": 0.45194274028629855,
+                    "TN": 6814766,
+                    "TP": 442,
+                    "n_pred": 448,
+                    "n_ref": 972
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1289.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1289.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.2954369682907966,
+                    "FN": 884,
+                    "FP": 27,
+                    "IoU": 0.1733212341197822,
+                    "TN": 11795378,
+                    "TP": 191,
+                    "n_pred": 218,
+                    "n_ref": 1075
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1290.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1290.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.866702106452256,
+                    "FN": 1460,
+                    "FP": 2552,
+                    "IoU": 0.7647610671357373,
+                    "TN": 11517281,
+                    "TP": 13043,
+                    "n_pred": 15595,
+                    "n_ref": 14503
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1293.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1293.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6432090077410274,
+                    "FN": 179,
+                    "FP": 835,
+                    "IoU": 0.47406639004149376,
+                    "TN": 10745976,
+                    "TP": 914,
+                    "n_pred": 1749,
+                    "n_ref": 1093
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1296.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1296.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8903642231443061,
+                    "FN": 8686,
+                    "FP": 6771,
+                    "IoU": 0.8023932192122321,
+                    "TN": 31641203,
+                    "TP": 62764,
+                    "n_pred": 69535,
+                    "n_ref": 71450
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1305.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1305.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6121897219738579,
+                    "FN": 7794,
+                    "FP": 65074,
+                    "IoU": 0.4411191728919636,
+                    "TN": 42074802,
+                    "TP": 57514,
+                    "n_pred": 122588,
+                    "n_ref": 65308
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1323.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1323.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8187816479975449,
+                    "FN": 232,
+                    "FP": 949,
+                    "IoU": 0.69316705637828,
+                    "TN": 31453431,
+                    "TP": 2668,
+                    "n_pred": 3617,
+                    "n_ref": 2900
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1324.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1324.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.4972457065425516,
+                    "FN": 16171,
+                    "FP": 896,
+                    "IoU": 0.33088955972870193,
+                    "TN": 40344669,
+                    "TP": 8440,
+                    "n_pred": 9336,
+                    "n_ref": 24611
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1332.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1332.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7413935333293092,
+                    "FN": 11539,
+                    "FP": 1314,
+                    "IoU": 0.5890590529782268,
+                    "TN": 36931027,
+                    "TP": 18424,
+                    "n_pred": 19738,
+                    "n_ref": 29963
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1340.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1340.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6902228684406903,
+                    "FN": 771,
+                    "FP": 39496,
+                    "IoU": 0.5269773397394482,
+                    "TN": 23245689,
+                    "TP": 44860,
+                    "n_pred": 84356,
+                    "n_ref": 45631
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1368.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1368.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6865791052736849,
+                    "FN": 926,
+                    "FP": 3775,
+                    "IoU": 0.522741116751269,
+                    "TN": 11262342,
+                    "TP": 5149,
+                    "n_pred": 8924,
+                    "n_ref": 6075
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1371.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1371.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9043490552702257,
+                    "FN": 1226,
+                    "FP": 2834,
+                    "IoU": 0.8253988732636649,
+                    "TN": 20948267,
+                    "TP": 19193,
+                    "n_pred": 22027,
+                    "n_ref": 20419
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1373.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1373.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.877833040018364,
+                    "FN": 2136,
+                    "FP": 5847,
+                    "IoU": 0.7822659829805804,
+                    "TN": 47411400,
+                    "TP": 28681,
+                    "n_pred": 34528,
+                    "n_ref": 30817
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1383.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1383.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8355279979544873,
+                    "FN": 3885,
+                    "FP": 1261,
+                    "IoU": 0.7175166053686117,
+                    "TN": 34322647,
+                    "TP": 13071,
+                    "n_pred": 14332,
+                    "n_ref": 16956
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1400.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1400.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8190824897695456,
+                    "FN": 201,
+                    "FP": 3159,
+                    "IoU": 0.6935983950392121,
+                    "TN": 7066922,
+                    "TP": 7606,
+                    "n_pred": 10765,
+                    "n_ref": 7807
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1423.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1423.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.4692387904066736,
+                    "FN": 495,
+                    "FP": 14,
+                    "IoU": 0.3065395095367847,
+                    "TN": 8912162,
+                    "TP": 225,
+                    "n_pred": 239,
+                    "n_ref": 720
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1425.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1425.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.49567099567099565,
+                    "FN": 377,
+                    "FP": 555,
+                    "IoU": 0.3294964028776978,
+                    "TN": 38795922,
+                    "TP": 458,
+                    "n_pred": 1013,
+                    "n_ref": 835
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1432.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1432.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7734206471494607,
+                    "FN": 5660,
+                    "FP": 222,
+                    "IoU": 0.6305508447961812,
+                    "TN": 8896975,
+                    "TP": 10039,
+                    "n_pred": 10261,
+                    "n_ref": 15699
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1433.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1433.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 361,
+                    "FP": 0,
+                    "IoU": 0.0,
+                    "TN": 14417559,
+                    "TP": 0,
+                    "n_pred": 0,
+                    "n_ref": 361
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1434.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1434.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8821356576049593,
+                    "FN": 3141,
+                    "FP": 6974,
+                    "IoU": 0.7891258573602685,
+                    "TN": 33506465,
+                    "TP": 37852,
+                    "n_pred": 44826,
+                    "n_ref": 40993
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1443.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1443.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.3827072997873848,
+                    "FN": 857,
+                    "FP": 14,
+                    "IoU": 0.2366345311130587,
+                    "TN": 13106059,
+                    "TP": 270,
+                    "n_pred": 284,
+                    "n_ref": 1127
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1447.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1447.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7738672578633782,
+                    "FN": 257,
+                    "FP": 3007,
+                    "IoU": 0.6311447621200136,
+                    "TN": 8117615,
+                    "TP": 5585,
+                    "n_pred": 8592,
+                    "n_ref": 5842
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1454.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1454.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7104587155963302,
+                    "FN": 488,
+                    "FP": 301,
+                    "IoU": 0.5509391007398976,
+                    "TN": 12319011,
+                    "TP": 968,
+                    "n_pred": 1269,
+                    "n_ref": 1456
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1455.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1455.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7615578593443542,
+                    "FN": 2443,
+                    "FP": 110,
+                    "IoU": 0.6149321266968326,
+                    "TN": 44295706,
+                    "TP": 4077,
+                    "n_pred": 4187,
+                    "n_ref": 6520
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/MSD08_1458.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/MSD08_1458.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.732568402471315,
+                    "FN": 450,
+                    "FP": 762,
+                    "IoU": 0.5779944289693594,
+                    "TN": 30667976,
+                    "TP": 1660,
+                    "n_pred": 2422,
+                    "n_ref": 2110
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1017.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1017.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5819640810087887,
+                    "FN": 229,
+                    "FP": 1959,
+                    "IoU": 0.4104015090272164,
+                    "TN": 38007169,
+                    "TP": 1523,
+                    "n_pred": 3482,
+                    "n_ref": 1752
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1019.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1019.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7599124300656774,
+                    "FN": 375,
+                    "FP": 612,
+                    "IoU": 0.6127893291486858,
+                    "TN": 7075339,
+                    "TP": 1562,
+                    "n_pred": 2174,
+                    "n_ref": 1937
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1020.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1020.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8850205377745995,
+                    "FN": 44894,
+                    "FP": 16045,
+                    "IoU": 0.7937550132162765,
+                    "TN": 47676883,
+                    "TP": 234530,
+                    "n_pred": 250575,
+                    "n_ref": 279424
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1026.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1026.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8600891317784067,
+                    "FN": 1283,
+                    "FP": 3018,
+                    "IoU": 0.754523143656184,
+                    "TN": 11516815,
+                    "TP": 13220,
+                    "n_pred": 16238,
+                    "n_ref": 14503
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1031.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1031.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9084863938687027,
+                    "FN": 111730,
+                    "FP": 14744,
+                    "IoU": 0.8323179745680803,
+                    "TN": 43285943,
+                    "TP": 627775,
+                    "n_pred": 642519,
+                    "n_ref": 739505
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1032.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1032.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8970364481602182,
+                    "FN": 47801,
+                    "FP": 10870,
+                    "IoU": 0.8132965469837421,
+                    "TN": 13841529,
+                    "TP": 255576,
+                    "n_pred": 266446,
+                    "n_ref": 303377
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1033.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1033.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.4298590247284493,
+                    "FN": 1378,
+                    "FP": 1089,
+                    "IoU": 0.2737709743891669,
+                    "TN": 10744507,
+                    "TP": 930,
+                    "n_pred": 2019,
+                    "n_ref": 2308
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1034.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1034.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8508987456355878,
+                    "FN": 97,
+                    "FP": 1056,
+                    "IoU": 0.7404906594643259,
+                    "TN": 9170597,
+                    "TP": 3290,
+                    "n_pred": 4346,
+                    "n_ref": 3387
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1041.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1041.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8544976951404806,
+                    "FN": 2360,
+                    "FP": 8940,
+                    "IoU": 0.7459589487646411,
+                    "TN": 36393535,
+                    "TP": 33181,
+                    "n_pred": 42121,
+                    "n_ref": 35541
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1050.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1050.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.35711081202332884,
+                    "FN": 1265,
+                    "FP": 168,
+                    "IoU": 0.21736755871108684,
+                    "TN": 29096153,
+                    "TP": 398,
+                    "n_pred": 566,
+                    "n_ref": 1663
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1069.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1069.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9332291055957267,
+                    "FN": 380,
+                    "FP": 645,
+                    "IoU": 0.8748168050806058,
+                    "TN": 11001860,
+                    "TP": 7163,
+                    "n_pred": 7808,
+                    "n_ref": 7543
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1076.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1076.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.38135734533933635,
+                    "FN": 2878,
+                    "FP": 4542,
+                    "IoU": 0.23560317296796127,
+                    "TN": 44816917,
+                    "TP": 2287,
+                    "n_pred": 6829,
+                    "n_ref": 5165
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1081.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1081.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.717338003502627,
+                    "FN": 9517,
+                    "FP": 4202,
+                    "IoU": 0.5592572364827962,
+                    "TN": 25921129,
+                    "TP": 17408,
+                    "n_pred": 21610,
+                    "n_ref": 26925
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1082.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1082.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7742382271468145,
+                    "FN": 1286,
+                    "FP": 18,
+                    "IoU": 0.631638418079096,
+                    "TN": 5501484,
+                    "TP": 2236,
+                    "n_pred": 2254,
+                    "n_ref": 3522
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1085.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1085.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.37032418952618457,
+                    "FN": 757,
+                    "FP": 253,
+                    "IoU": 0.2272379495026779,
+                    "TN": 39320293,
+                    "TP": 297,
+                    "n_pred": 550,
+                    "n_ref": 1054
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1093.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1093.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8368976333048189,
+                    "FN": 1552,
+                    "FP": 736,
+                    "IoU": 0.7195391027212552,
+                    "TN": 36954146,
+                    "TP": 5870,
+                    "n_pred": 6606,
+                    "n_ref": 7422
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1096.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1096.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8484629908564397,
+                    "FN": 1011,
+                    "FP": 6132,
+                    "IoU": 0.7368091378039794,
+                    "TN": 29857276,
+                    "TP": 19997,
+                    "n_pred": 26129,
+                    "n_ref": 21008
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1100.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1100.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6869282094788252,
+                    "FN": 851,
+                    "FP": 26457,
+                    "IoU": 0.5231459653901898,
+                    "TN": 34545741,
+                    "TP": 29959,
+                    "n_pred": 56416,
+                    "n_ref": 30810
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1103.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1103.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8187487427077047,
+                    "FN": 385,
+                    "FP": 1417,
+                    "IoU": 0.6931198910081744,
+                    "TN": 39577872,
+                    "TP": 4070,
+                    "n_pred": 5487,
+                    "n_ref": 4455
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1107.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1107.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6442066646285539,
+                    "FN": 807,
+                    "FP": 5012,
+                    "IoU": 0.4751510778389104,
+                    "TN": 11261105,
+                    "TP": 5268,
+                    "n_pred": 10280,
+                    "n_ref": 6075
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1109.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1109.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8985420869246287,
+                    "FN": 820,
+                    "FP": 3606,
+                    "IoU": 0.8157752341311134,
+                    "TN": 20947495,
+                    "TP": 19599,
+                    "n_pred": 23205,
+                    "n_ref": 20419
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1111.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1111.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8594470046082949,
+                    "FN": 171,
+                    "FP": 73,
+                    "IoU": 0.7535353535353535,
+                    "TN": 9436194,
+                    "TP": 746,
+                    "n_pred": 819,
+                    "n_ref": 917
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1119.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1119.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6173739422558869,
+                    "FN": 4618,
+                    "FP": 7455,
+                    "IoU": 0.44652271581167197,
+                    "TN": 13085387,
+                    "TP": 9740,
+                    "n_pred": 17195,
+                    "n_ref": 14358
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1120.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1120.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 15030,
+                    "FP": 0,
+                    "IoU": 0.0,
+                    "TN": 10995018,
+                    "TP": 0,
+                    "n_pred": 0,
+                    "n_ref": 15030
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1124.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1124.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7958163098545514,
+                    "FN": 2576,
+                    "FP": 3671,
+                    "IoU": 0.6608761739319255,
+                    "TN": 42186763,
+                    "TP": 12174,
+                    "n_pred": 15845,
+                    "n_ref": 14750
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1125.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1125.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7981955738965085,
+                    "FN": 8634,
+                    "FP": 1342,
+                    "IoU": 0.6641642821073893,
+                    "TN": 46631927,
+                    "TP": 19729,
+                    "n_pred": 21071,
+                    "n_ref": 28363
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1128.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1128.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5589479306511916,
+                    "FN": 832,
+                    "FP": 29721,
+                    "IoU": 0.3878749023300543,
+                    "TN": 13843719,
+                    "TP": 19360,
+                    "n_pred": 49081,
+                    "n_ref": 20192
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1134.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1134.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7539486898566603,
+                    "FN": 358,
+                    "FP": 5032,
+                    "IoU": 0.6050703399765534,
+                    "TN": 38783664,
+                    "TP": 8258,
+                    "n_pred": 13290,
+                    "n_ref": 8616
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1142.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1142.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5910844406343764,
+                    "FN": 1300,
+                    "FP": 608,
+                    "IoU": 0.4195314876787344,
+                    "TN": 8647465,
+                    "TP": 1379,
+                    "n_pred": 1987,
+                    "n_ref": 2679
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1144.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1144.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8416745357255272,
+                    "FN": 494,
+                    "FP": 512,
+                    "IoU": 0.7266304347826087,
+                    "TN": 35123616,
+                    "TP": 2674,
+                    "n_pred": 3186,
+                    "n_ref": 3168
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1149.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1149.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9081436727170323,
+                    "FN": 2438,
+                    "FP": 11914,
+                    "IoU": 0.8317428310159676,
+                    "TN": 13021902,
+                    "TP": 70946,
+                    "n_pred": 82860,
+                    "n_ref": 73384
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/TCIA_CRLM_1155.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/TCIA_CRLM_1155.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7854697161457591,
+                    "FN": 139147,
+                    "FP": 56463,
+                    "IoU": 0.6467271558294263,
+                    "TN": 85953812,
+                    "TP": 358098,
+                    "n_pred": 414561,
+                    "n_ref": 497245
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1020.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1020.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 17137,
+                    "FP": 81,
+                    "IoU": 0.0,
+                    "TN": 37731518,
+                    "TP": 0,
+                    "n_pred": 81,
+                    "n_ref": 17137
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1025.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1025.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.33291203235591504,
+                    "FN": 0,
+                    "FP": 10556,
+                    "IoU": 0.19969673995451098,
+                    "TN": 58969210,
+                    "TP": 2634,
+                    "n_pred": 13190,
+                    "n_ref": 2634
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1037.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1037.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.968433710044227,
+                    "FN": 7766,
+                    "FP": 17593,
+                    "IoU": 0.9387992991567679,
+                    "TN": 40480106,
+                    "TP": 388999,
+                    "n_pred": 406592,
+                    "n_ref": 396765
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1050.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1050.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6590249868949851,
+                    "FN": 4114,
+                    "FP": 15400,
+                    "IoU": 0.4914521004899406,
+                    "TN": 50817564,
+                    "TP": 18858,
+                    "n_pred": 34258,
+                    "n_ref": 22972
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1080.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1080.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.2845590944197902,
+                    "FN": 763410,
+                    "FP": 1724,
+                    "IoU": 0.1658810242277302,
+                    "TN": 61210832,
+                    "TP": 152162,
+                    "n_pred": 153886,
+                    "n_ref": 915572
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1083.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1083.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7836099993438751,
+                    "FN": 21780,
+                    "FP": 11200,
+                    "IoU": 0.6442095042882572,
+                    "TN": 91919849,
+                    "TP": 59715,
+                    "n_pred": 70915,
+                    "n_ref": 81495
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1085.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1085.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6833228183353919,
+                    "FN": 916126,
+                    "FP": 46103,
+                    "IoU": 0.5189752111231255,
+                    "TN": 137460235,
+                    "TP": 1038144,
+                    "n_pred": 1084247,
+                    "n_ref": 1954270
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1086.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1086.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9328249371826185,
+                    "FN": 2964,
+                    "FP": 4682,
+                    "IoU": 0.8741067606283136,
+                    "TN": 39785154,
+                    "TP": 53088,
+                    "n_pred": 57770,
+                    "n_ref": 56052
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1090.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1090.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.846473425337854,
+                    "FN": 947,
+                    "FP": 2268,
+                    "IoU": 0.7338135452889551,
+                    "TN": 51892434,
+                    "TP": 8863,
+                    "n_pred": 11131,
+                    "n_ref": 9810
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1093.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1093.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.55318007849638,
+                    "FN": 39483,
+                    "FP": 15504,
+                    "IoU": 0.38234203875315925,
+                    "TN": 86680639,
+                    "TP": 34038,
+                    "n_pred": 49542,
+                    "n_ref": 73521
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1094.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1094.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.89413289781716,
+                    "FN": 14236,
+                    "FP": 10591,
+                    "IoU": 0.8085355790512767,
+                    "TN": 53609851,
+                    "TP": 104842,
+                    "n_pred": 115433,
+                    "n_ref": 119078
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1096.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1096.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6215027408061865,
+                    "FN": 25673,
+                    "FP": 14168,
+                    "IoU": 0.45085526043748536,
+                    "TN": 53404825,
+                    "TP": 32710,
+                    "n_pred": 46878,
+                    "n_ref": 58383
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1104.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1104.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5749704840613932,
+                    "FN": 1,
+                    "FP": 2159,
+                    "IoU": 0.40347970173985087,
+                    "TN": 53473755,
+                    "TP": 1461,
+                    "n_pred": 3620,
+                    "n_ref": 1462
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1112.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1112.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8777808294424608,
+                    "FN": 1662,
+                    "FP": 14803,
+                    "IoU": 0.7821830641213902,
+                    "TN": 153278649,
+                    "TP": 59126,
+                    "n_pred": 73929,
+                    "n_ref": 60788
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1118.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1118.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6458023474599051,
+                    "FN": 1178,
+                    "FP": 38354,
+                    "IoU": 0.47688928292599014,
+                    "TN": 22993101,
+                    "TP": 36039,
+                    "n_pred": 74393,
+                    "n_ref": 37217
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1134.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1134.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8868252987752894,
+                    "FN": 8015,
+                    "FP": 14154,
+                    "IoU": 0.7966631812595161,
+                    "TN": 55465502,
+                    "TP": 86857,
+                    "n_pred": 101011,
+                    "n_ref": 94872
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1144.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1144.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.696444353796995,
+                    "FN": 0,
+                    "FP": 4465,
+                    "IoU": 0.5342651507249401,
+                    "TN": 47962765,
+                    "TP": 5122,
+                    "n_pred": 9587,
+                    "n_ref": 5122
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1146.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1146.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7778578702273481,
+                    "FN": 12,
+                    "FP": 19403,
+                    "IoU": 0.6364708746044526,
+                    "TN": 66006881,
+                    "TP": 33992,
+                    "n_pred": 53395,
+                    "n_ref": 34004
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1188.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1188.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5464848346997102,
+                    "FN": 17,
+                    "FP": 45842,
+                    "IoU": 0.3759746356597586,
+                    "TN": 31121647,
+                    "TP": 27630,
+                    "n_pred": 73472,
+                    "n_ref": 27647
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1193.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1193.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.2527415912269081,
+                    "FN": 9242,
+                    "FP": 911,
+                    "IoU": 0.1446503791069924,
+                    "TN": 51630498,
+                    "TP": 1717,
+                    "n_pred": 2628,
+                    "n_ref": 10959
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1303.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1303.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6453003184363676,
+                    "FN": 7652,
+                    "FP": 18190,
+                    "IoU": 0.4763419724817119,
+                    "TN": 52117307,
+                    "TP": 23507,
+                    "n_pred": 41697,
+                    "n_ref": 31159
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1315.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1315.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6842377383329367,
+                    "FN": 720712,
+                    "FP": 26205,
+                    "IoU": 0.5200314359723399,
+                    "TN": 45629741,
+                    "TP": 809262,
+                    "n_pred": 835467,
+                    "n_ref": 1529974
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1318.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1318.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8092532537231408,
+                    "FN": 25268,
+                    "FP": 41373,
+                    "IoU": 0.679618278406769,
+                    "TN": 47764347,
+                    "TP": 141364,
+                    "n_pred": 182737,
+                    "n_ref": 166632
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1324.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1324.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8852320820286963,
+                    "FN": 44895,
+                    "FP": 8473,
+                    "IoU": 0.7940954056514962,
+                    "TN": 148900748,
+                    "TP": 205820,
+                    "n_pred": 214293,
+                    "n_ref": 250715
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1325.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1325.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7653626748411457,
+                    "FN": 315,
+                    "FP": 22801,
+                    "IoU": 0.6199089070490159,
+                    "TN": 30610031,
+                    "TP": 37701,
+                    "n_pred": 60502,
+                    "n_ref": 38016
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1327.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1327.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.2626803459932055,
+                    "FN": 28340,
+                    "FP": 58691,
+                    "IoU": 0.1511986267969649,
+                    "TN": 127561594,
+                    "TP": 15503,
+                    "n_pred": 74194,
+                    "n_ref": 43843
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1328.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1328.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9284997191644812,
+                    "FN": 4709,
+                    "FP": 11458,
+                    "IoU": 0.8665417413054425,
+                    "TN": 23733965,
+                    "TP": 104972,
+                    "n_pred": 116430,
+                    "n_ref": 109681
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1342.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1342.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6715268973012135,
+                    "FN": 10278,
+                    "FP": 4230,
+                    "IoU": 0.5054877633103825,
+                    "TN": 20417894,
+                    "TP": 14830,
+                    "n_pred": 19060,
+                    "n_ref": 25108
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1344.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1344.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.06244869238888237,
+                    "FN": 1080,
+                    "FP": 62876,
+                    "IoU": 0.03223072965529764,
+                    "TN": 26934746,
+                    "TP": 2130,
+                    "n_pred": 65006,
+                    "n_ref": 3210
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1358.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1358.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.721821410733115,
+                    "FN": 1591,
+                    "FP": 18459,
+                    "IoU": 0.5647265701322103,
+                    "TN": 74140689,
+                    "TP": 26013,
+                    "n_pred": 44472,
+                    "n_ref": 27604
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1363.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1363.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.08817495914606585,
+                    "FN": 75313,
+                    "FP": 3362,
+                    "IoU": 0.046120830756919945,
+                    "TN": 45792721,
+                    "TP": 3804,
+                    "n_pred": 7166,
+                    "n_ref": 79117
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1374.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1374.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.008540624339370024,
+                    "FN": 16286,
+                    "FP": 54063,
+                    "IoU": 0.004288625941233086,
+                    "TN": 75426820,
+                    "TP": 303,
+                    "n_pred": 54366,
+                    "n_ref": 16589
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1375.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1375.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.915725314589732,
+                    "FN": 30291,
+                    "FP": 12129,
+                    "IoU": 0.8445510412734941,
+                    "TN": 58709513,
+                    "TP": 230467,
+                    "n_pred": 242596,
+                    "n_ref": 260758
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1388.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1388.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7831306596006374,
+                    "FN": 212107,
+                    "FP": 57490,
+                    "IoU": 0.643561830018351,
+                    "TN": 68973940,
+                    "TP": 486767,
+                    "n_pred": 544257,
+                    "n_ref": 698874
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1446.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1446.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 322740,
+                    "FP": 0,
+                    "IoU": 0.0,
+                    "TN": 77271884,
+                    "TP": 0,
+                    "n_pred": 0,
+                    "n_ref": 322740
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1458.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1458.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.33679722888355984,
+                    "FN": 899,
+                    "FP": 11546,
+                    "IoU": 0.2024991989746876,
+                    "TN": 28558091,
+                    "TP": 3160,
+                    "n_pred": 14706,
+                    "n_ref": 4059
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1463.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1463.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.41079060817436674,
+                    "FN": 13092,
+                    "FP": 18753,
+                    "IoU": 0.2584874027848927,
+                    "TN": 52647998,
+                    "TP": 11101,
+                    "n_pred": 29854,
+                    "n_ref": 24193
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1490.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1490.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3995,
+                    "FP": 1753,
+                    "IoU": 0.0,
+                    "TN": 49801612,
+                    "TP": 0,
+                    "n_pred": 1753,
+                    "n_ref": 3995
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1492.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1492.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5922272928014132,
+                    "FN": 435,
+                    "FP": 77125,
+                    "IoU": 0.4206838858098923,
+                    "TN": 105772294,
+                    "TP": 56322,
+                    "n_pred": 133447,
+                    "n_ref": 56757
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1493.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1493.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8195280101232933,
+                    "FN": 99487,
+                    "FP": 87772,
+                    "IoU": 0.6942375737427604,
+                    "TN": 51554223,
+                    "TP": 425174,
+                    "n_pred": 512946,
+                    "n_ref": 524661
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1515.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1515.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6713357712953475,
+                    "FN": 19648,
+                    "FP": 50274,
+                    "IoU": 0.5052712015509361,
+                    "TN": 65918954,
+                    "TP": 71412,
+                    "n_pred": 121686,
+                    "n_ref": 91060
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1517.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1517.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.00012789849975059793,
+                    "FN": 73079,
+                    "FP": 5098,
+                    "IoU": 6.395333964339617e-05,
+                    "TN": 106352282,
+                    "TP": 5,
+                    "n_pred": 5103,
+                    "n_ref": 73084
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1518.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1518.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8465541490857946,
+                    "FN": 2015,
+                    "FP": 11077,
+                    "IoU": 0.7339348859895135,
+                    "TN": 100614090,
+                    "TP": 36114,
+                    "n_pred": 47191,
+                    "n_ref": 38129
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1524.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1524.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6311732465781529,
+                    "FN": 7706,
+                    "FP": 17462,
+                    "IoU": 0.4611052823159112,
+                    "TN": 63130001,
+                    "TP": 21535,
+                    "n_pred": 38997,
+                    "n_ref": 29241
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1531.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1531.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.4389216177324079,
+                    "FN": 67545,
+                    "FP": 3028,
+                    "IoU": 0.281165649795777,
+                    "TN": 91914367,
+                    "TP": 27604,
+                    "n_pred": 30632,
+                    "n_ref": 95149
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WAW_TACE_1540.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WAW_TACE_1540.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5415637860082304,
+                    "FN": 557,
+                    "FP": 0,
+                    "IoU": 0.37133182844243795,
+                    "TN": 24902794,
+                    "TP": 329,
+                    "n_pred": 329,
+                    "n_ref": 886
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WORC_CRLM_1006.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WORC_CRLM_1006.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5674461256304447,
+                    "FN": 9434,
+                    "FP": 0,
+                    "IoU": 0.39610805274612726,
+                    "TN": 65520378,
+                    "TP": 6188,
+                    "n_pred": 6188,
+                    "n_ref": 15622
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WORC_CRLM_1012.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WORC_CRLM_1012.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.06856569485478567,
+                    "FN": 481,
+                    "FP": 16228,
+                    "IoU": 0.035499884553220964,
+                    "TN": 25148500,
+                    "TP": 615,
+                    "n_pred": 16843,
+                    "n_ref": 1096
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WORC_CRLM_1013.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WORC_CRLM_1013.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8619150890581092,
+                    "FN": 24456,
+                    "FP": 949,
+                    "IoU": 0.7573381219374743,
+                    "TN": 22177547,
+                    "TP": 79288,
+                    "n_pred": 80237,
+                    "n_ref": 103744
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WORC_CRLM_1015.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WORC_CRLM_1015.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7676889640183531,
+                    "FN": 1924,
+                    "FP": 0,
+                    "IoU": 0.6229668822261415,
+                    "TN": 26995729,
+                    "TP": 3179,
+                    "n_pred": 3179,
+                    "n_ref": 5103
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WORC_CRLM_1029.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WORC_CRLM_1029.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8569194683346364,
+                    "FN": 6464,
+                    "FP": 307,
+                    "IoU": 0.7496580027359782,
+                    "TN": 42178137,
+                    "TP": 20276,
+                    "n_pred": 20583,
+                    "n_ref": 26740
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WORC_CRLM_1035.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WORC_CRLM_1035.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7120075855529696,
+                    "FN": 3115,
+                    "FP": 226,
+                    "IoU": 0.5528041761477713,
+                    "TN": 82830033,
+                    "TP": 4130,
+                    "n_pred": 4356,
+                    "n_ref": 7245
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WORC_CRLM_1038.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WORC_CRLM_1038.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7461433135554542,
+                    "FN": 5431,
+                    "FP": 131,
+                    "IoU": 0.5950786255096098,
+                    "TN": 31705688,
+                    "TP": 8174,
+                    "n_pred": 8305,
+                    "n_ref": 13605
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WORC_CRLM_1039.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WORC_CRLM_1039.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7368165720661718,
+                    "FN": 15755,
+                    "FP": 520,
+                    "IoU": 0.5833013288270988,
+                    "TN": 143877999,
+                    "TP": 22782,
+                    "n_pred": 23302,
+                    "n_ref": 38537
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WORC_CRLM_1053.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WORC_CRLM_1053.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.592367127136502,
+                    "FN": 1666,
+                    "FP": 75,
+                    "IoU": 0.4208250166333999,
+                    "TN": 19657794,
+                    "TP": 1265,
+                    "n_pred": 1340,
+                    "n_ref": 2931
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WORC_CRLM_1057.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WORC_CRLM_1057.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7190816547541694,
+                    "FN": 2376,
+                    "FP": 218,
+                    "IoU": 0.5613797768008116,
+                    "TN": 30927078,
+                    "TP": 3320,
+                    "n_pred": 3538,
+                    "n_ref": 5696
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WORC_CRLM_1058.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WORC_CRLM_1058.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5199456588860072,
+                    "FN": 3801,
+                    "FP": 86,
+                    "IoU": 0.35130173564753003,
+                    "TN": 61859992,
+                    "TP": 2105,
+                    "n_pred": 2191,
+                    "n_ref": 5906
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WORC_CRLM_1062.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WORC_CRLM_1062.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.46185269734470746,
+                    "FN": 3926,
+                    "FP": 553,
+                    "IoU": 0.3002655835025777,
+                    "TN": 83093247,
+                    "TP": 1922,
+                    "n_pred": 2475,
+                    "n_ref": 5848
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WORC_CRLM_1063.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WORC_CRLM_1063.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8414852988542769,
+                    "FN": 3421,
+                    "FP": 24,
+                    "IoU": 0.7263483993962984,
+                    "TN": 42716883,
+                    "TP": 9144,
+                    "n_pred": 9168,
+                    "n_ref": 12565
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WORC_CRLM_1071.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WORC_CRLM_1071.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8094747682801235,
+                    "FN": 3252,
+                    "FP": 448,
+                    "IoU": 0.6799307958477508,
+                    "TN": 35115736,
+                    "TP": 7860,
+                    "n_pred": 8308,
+                    "n_ref": 11112
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WORC_CRLM_1072.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WORC_CRLM_1072.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.4065934065934066,
+                    "FN": 423,
+                    "FP": 9,
+                    "IoU": 0.25517241379310346,
+                    "TN": 60292540,
+                    "TP": 148,
+                    "n_pred": 157,
+                    "n_ref": 571
+                }
+            },
+            "prediction_file": "/projects/prjs2180/predictions/constrained_5mm/starting_2channel_liver_constrained_5mm/WORC_CRLM_1075.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset001_Unified/labelsTs/WORC_CRLM_1075.nii.gz"
+        }
+    ]
+}

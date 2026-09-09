@@ -1,0 +1,53 @@
+datasets:
+
+  MSD:
+    domain: source
+    image_dir: /projects/prjs2180/dataset_characterisation/MSD/CT
+    mask_dir: /projects/prjs2180/dataset_characterisation/MSD/SEG
+    phase_mapping:
+      PV: "_0001"
+
+  Liver_Lesions:
+    domain: source
+    image_dir: /projects/prjs2180/dataset_characterisation/Liver_Lesions/CT
+    mask_dir: /projects/prjs2180/dataset_characterisation/Liver_Lesions/SEG
+    phase_mapping:
+      ART: "_0000"
+      PV: "_0001"
+
+  WAW_TACE:
+    domain: source
+    image_dir: /projects/prjs2180/dataset_characterisation/WAW_TACE/CT
+    mask_dir: /projects/prjs2180/dataset_characterisation/WAW_TACE/SEG
+    phase_mapping:
+      ART: "_0000"
+      PV: "_0001"
+
+  HCC_TACE:
+    domain: target
+    image_dir: /projects/prjs2180/dataset_characterisation/HCC_TACE/CT
+    mask_dir: /projects/prjs2180/dataset_characterisation/HCC_TACE/SEG
+    phase_mapping:
+      ART: "_0000"
+      PV: "_0001"
+
+  TCIA_CRLM:
+    domain: target
+    image_dir: /projects/prjs2180/dataset_characterisation/TCIA_CRLM/CT
+    mask_dir: /projects/prjs2180/dataset_characterisation/TCIA_CRLM/SEG
+    phase_mapping:
+      PV: "_0001"
+
+  WORC_CRLM:
+    domain: target
+    image_dir: /projects/prjs2180/dataset_characterisation/WORC_CRLM/CT
+    mask_dir: /projects/prjs2180/dataset_characterisation/WORC_CRLM/SEG
+    phase_mapping:
+      PV: "_0001"
+
+  LiTS:
+    domain: target
+    image_dir: /projects/prjs2180/dataset_characterisation/LiTS/CT
+    mask_dir: /projects/prjs2180/dataset_characterisation/LiTS/SEG
+    phase_mapping:
+      PV: "_0001"
