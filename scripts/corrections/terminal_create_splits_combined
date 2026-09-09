@@ -1,0 +1,79 @@
+cd /projects/prjs2180/code/hcc-dualphase-segmentation
+source setup_env.sh
+
+
+#### INTERNAL
+python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/create_splits_combined.py \
+    --ct_1_dir $nnUNet_raw/WAW_TACE/CT1 \
+    --ct_2_dir $nnUNet_raw/WAW_TACE/CT \
+    --seg_dir $nnUNet_raw/WAW_TACE/SEG \
+    --output_1_dir $nnUNet_raw/Dataset101_WAW_TACE \
+    --output_2_dir $nnUNet_raw/Dataset201_WAW_TACE \
+    --train_ratio 0.8 \
+    --seed 42
+
+
+python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/create_splits_combined.py \
+    --ct_1_dir $nnUNet_raw/MSD/CT1 \
+    --ct_2_dir $nnUNet_raw/MSD/CT \
+    --seg_dir $nnUNet_raw/MSD/SEG \
+    --output_1_dir $nnUNet_raw/Dataset102_MSD \
+    --output_2_dir $nnUNet_raw/Dataset202_MSD \
+    --train_ratio 0.8 \
+    --seed 42
+
+
+python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/create_splits_combined.py \
+    --ct_1_dir $nnUNet_raw/MCT_LTDiag/CT1 \
+    --ct_2_dir $nnUNet_raw/MCT_LTDiag/CT \
+    --seg_dir $nnUNet_raw/MCT_LTDiag/SEG \
+    --output_1_dir $nnUNet_raw/Dataset103_MCT_LTDiag \
+    --output_2_dir $nnUNet_raw/Dataset203_MCT_LTDiag \
+    --train_ratio 0.8 \
+    --seed 42
+
+
+104 for Liver lesions ~(single)
+204 for liver lesions ~(dual)
+
+
+
+#### EXTERNAL
+python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/create_splits_combined.py \
+    --ct_1_dir $nnUNet_raw/LiTS/CT1 \
+    --ct_2_dir $nnUNet_raw/LiTS/CT \
+    --seg_dir $nnUNet_raw/LiTS/SEG \
+    --output_1_dir $nnUNet_raw/Dataset105_LiTS \
+    --output_2_dir $nnUNet_raw/Dataset205_LiTS \
+    --train_ratio 0.8 \
+    --seed 42
+
+
+python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/create_splits_combined.py \
+    --ct_1_dir $nnUNet_raw/TCIA_CRLM/CT1 \
+    --ct_2_dir $nnUNet_raw/TCIA_CRLM/CT \
+    --seg_dir $nnUNet_raw/TCIA_CRLM/SEG \
+    --output_1_dir $nnUNet_raw/Dataset106_TCIA_CRLM \
+    --output_2_dir $nnUNet_raw/Dataset206_TCIA_CRLM \
+    --train_ratio 0.8 \
+    --seed 42
+
+
+python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/create_splits_combined.py \
+    --ct_1_dir $nnUNet_raw/WORC_CRLM/CT1 \
+    --ct_2_dir $nnUNet_raw/WORC_CRLM/CT \
+    --seg_dir $nnUNet_raw/WORC_CRLM/SEG \
+    --output_1_dir $nnUNet_raw/Dataset107_WORC_CRLM \
+    --output_2_dir $nnUNet_raw/Dataset207_WORC_CRLM \
+    --train_ratio 0.8 \
+    --seed 42
+
+
+python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/create_splits_combined.py \
+    --ct_1_dir $nnUNet_raw/HCC_TACE/CT1 \
+    --ct_2_dir $nnUNet_raw/HCC_TACE/CT \
+    --seg_dir $nnUNet_raw/HCC_TACE/SEG \
+    --output_1_dir $nnUNet_raw/Dataset108_HCC_TACE \
+    --output_2_dir $nnUNet_raw/Dataset208_HCC_TACE \
+    --train_ratio 0.8 \
+    --seed 42
