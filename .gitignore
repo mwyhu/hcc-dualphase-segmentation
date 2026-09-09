@@ -1,0 +1,50 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+env/
+.conda/
+
+# IDE
+.idea/
+.vscode/
+
+# Medical images and data
+data/
+datasets/
+nnUNet_raw/
+nnUNet_preprocessed/
+*.nii
+*.nii.gz
+*.dcm
+
+# Model outputs
+checkpoints/
+predictions/
+logs/
+wandb/
+mlruns/
+nnUNet_results/
+
+# Model weights
+*.pth
+*.pt
+*.ckpt
+
+# Generated results
+results/*
+!results/README.md
+
+# Cluster output
+slurm-*.out
+*.err
+*.log
