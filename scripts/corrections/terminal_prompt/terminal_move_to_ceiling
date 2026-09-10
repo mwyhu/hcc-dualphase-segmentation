@@ -1,0 +1,32 @@
+cd /projects/prjs2180/code/hcc-dualphase-segmentation
+source setup_env.sh
+
+for folder in imagesTr imagesTs labelsTr labelsTs; do
+    destination="$nnUNet_raw/Dataset003_ceiling/$folder"
+    mkdir -p "$destination"
+
+    cp -vn \
+        "$nnUNet_raw/Dataset201_WAW_TACE/$folder/"* \
+        "$nnUNet_raw/Dataset202_MSD/$folder/"* \
+        "$nnUNet_raw/Dataset203_MCT_LTDiag/$folder/"* \
+        "$nnUNet_raw/Dataset205_LiTS/$folder/"* \
+        "$nnUNet_raw/Dataset206_TCIA_CRLM/$folder/"* \
+        "$nnUNet_raw/Dataset207_WORC_CRLM/$folder/"* \
+        "$nnUNet_raw/Dataset208_HCC_TACE/$folder/"* \
+        "$destination/"
+done
+
+
+for folder in imagesTr labelsTr; do
+    destination="$nnUNet_raw/Dataset003_ceiling/$folder"
+    mkdir -p "$destination"
+
+    cp -vn \
+        "$nnUNet_raw/Dataset204_Liver_Lesions/$folder/"* \
+        "$destination/"
+done
+
+
+for folder in imagesTr imagesTs labelsTr labelsTs; do
+    echo "$folder: $(find "$nnUNet_raw/Dataset003_ceiling/$folder" -maxdepth 1 -type f | wc -l) files"
+done

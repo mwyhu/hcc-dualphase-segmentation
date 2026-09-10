@@ -1,0 +1,19 @@
+shopt -s nullglob
+files=(*_0000.nii.gz *_0001.nii.gz)
+mapfile -t files < <(printf '%s\n' "${files[@]}" | sort -V)
+
+counter=1000
+previous_base=""
+
+for file in "${files[@]}"; do
+    base="${file%_000[01].nii.gz}"
+    suffix="${file##*_}"
+    suffix="_${suffix}"
+
+    if [[ "$base" != "$previous_base" ]]; then
+        [[ -n "$previous_base" ]] && ((counter++))
+        previous_base="$base"
+    fi
+
+    mv -v -- "$file" "MCT_LTDiag_${counter}${suffix}"
+done
