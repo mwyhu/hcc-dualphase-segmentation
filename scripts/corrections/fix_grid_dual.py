@@ -11,8 +11,10 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description="Fix dual-phase CT and segmentation grids according to phase_selection.json.")
     parser.add_argument("--image_dir", type=Path, required=True, help="Folder containing _0000 and _0001 CT images.")
     parser.add_argument("--seg_dir", type=Path, required=True, help="Folder containing the segmentations.")
-    parser.add_argument("--ct1_dir", type=Path, required=True, help="Folder containing external CT1 reference images.")
-    parser.add_argument("--phase_json", type=Path, required=True, help="Path to phase_selection.json.")
+    parser.add_argument("--ct1_dir", type=Path, default=None,
+                        help="Folder containing external CT1 reference images. Required only when label_phase is 0 or 3.")
+    parser.add_argument("--phase_json", type=Path, default=None,
+                        help="Optional path to phase_selection.json. If omitted, _0001 is used as reference.")
     parser.add_argument("--output_dir", type=Path, required=True, help="New output directory.")
     return parser.parse_args()
 
@@ -222,11 +224,14 @@ def resample_if_needed(moving_path, reference_path, interpolator, default_value,
 def main():
     args = parse_arguments()
 
-    for directory in (args.image_dir, args.seg_dir, args.ct1_dir):
+    for directory in (args.image_dir, args.seg_dir):
         if not directory.is_dir():
             raise FileNotFoundError(f"Directory not found: {directory}")
 
-    if not args.phase_json.is_file():
+    if args.ct1_dir is not None and not args.ct1_dir.is_dir():
+        raise FileNotFoundError(f"CT1 directory not found: {args.ct1_dir}")
+
+    if args.phase_json is not None and not args.phase_json.is_file():
         raise FileNotFoundError(f"JSON file not found: {args.phase_json}")
 
 
@@ -247,8 +252,14 @@ def main():
     print(f"Reusing shared segmentations from: {output_seg_dir}")
     print("Shared segmentations are only overwritten if their grid does not match.")
 
+    if args.phase_json is not None:
+        phase_lookup = build_phase_lookup(args.phase_json)
+        print(f"Using phase selection file: {args.phase_json}")
+    else:
+        phase_lookup = None
+        print("No phase_selection.json supplied.")
+        print("Using _0001 as the reference for every patient.")
 
-    phase_lookup = build_phase_lookup(args.phase_json)
     channel_zero_files = collect_channel_zero_files(output_image_dir)
 
     if not channel_zero_files:
@@ -267,63 +278,16 @@ def main():
         try:
             channel_one_path = find_channel_file(output_image_dir, case_id, 1)
             json_patient_id = get_json_patient_id(case_id)
-            json_key = str(json_patient_id)
-
-            if json_key not in phase_lookup:
-                raise KeyError(
-                    f"Patient {json_patient_id} was not found in phase_selection.json"
-                )
-
-            label_phase = phase_lookup[json_key]
             segmentation_path = find_segmentation(output_seg_dir, case_id, json_patient_id)
 
-            print(f"  JSON patient ID: {json_patient_id}")
-            print(f"  label_phase:     {label_phase}")
-
-            if label_phase in (0, 3):
-                final_reference = find_ct1_reference(args.ct1_dir, case_id, json_patient_id)
-
-                print(f"  Final reference: external CT1 ({final_reference.name})")
-
-                fixed_ct_images += int(
-                    resample_if_needed(
-                        channel_zero_path,
-                        final_reference,
-                        sitk.sitkLinear,
-                        -1024.0,
-                        "CT _0000",
-                    )
-                )
-
-                fixed_ct_images += int(
-                    resample_if_needed(
-                        channel_one_path,
-                        final_reference,
-                        sitk.sitkLinear,
-                        -1024.0,
-                        "CT _0001",
-                    )
-                )
-
-            elif label_phase == 1:
-                final_reference = channel_zero_path
-
-                print(f"  Final reference: {final_reference.name}")
-
-                fixed_ct_images += int(
-                    resample_if_needed(
-                        channel_one_path,
-                        final_reference,
-                        sitk.sitkLinear,
-                        -1024.0,
-                        "CT _0001",
-                    )
-                )
-
-            elif label_phase == 2:
+            if phase_lookup is None:
+                # No JSON: always use _0001 as the reference.
                 final_reference = channel_one_path
 
+                print(f"  JSON patient ID: {json_patient_id}")
+                print("  label_phase:     not available")
                 print(f"  Final reference: {final_reference.name}")
+                print("  Rule: no JSON, therefore _0001 is used as reference")
 
                 fixed_ct_images += int(
                     resample_if_needed(
@@ -336,10 +300,90 @@ def main():
                 )
 
             else:
-                raise ValueError(
-                    f"Unsupported label_phase {label_phase} for {case_id}"
-                )
+                json_key = str(json_patient_id)
 
+                if json_key not in phase_lookup:
+                    raise KeyError(
+                        f"Patient {json_patient_id} was not found in phase_selection.json"
+                    )
+
+                label_phase = phase_lookup[json_key]
+
+                print(f"  JSON patient ID: {json_patient_id}")
+                print(f"  label_phase:     {label_phase}")
+
+                if label_phase in (0, 3):
+                    if args.ct1_dir is None:
+                        raise ValueError(
+                            f"{case_id} has label_phase {label_phase}, "
+                            "but --ct1_dir was not supplied"
+                        )
+
+                    final_reference = find_ct1_reference(
+                        args.ct1_dir,
+                        case_id,
+                        json_patient_id,
+                    )
+
+                    print(f"  Final reference: external CT1 ({final_reference.name})")
+
+                    fixed_ct_images += int(
+                        resample_if_needed(
+                            channel_zero_path,
+                            final_reference,
+                            sitk.sitkLinear,
+                            -1024.0,
+                            "CT _0000",
+                        )
+                    )
+
+                    fixed_ct_images += int(
+                        resample_if_needed(
+                            channel_one_path,
+                            final_reference,
+                            sitk.sitkLinear,
+                            -1024.0,
+                            "CT _0001",
+                        )
+                    )
+
+                elif label_phase == 1:
+                    final_reference = channel_zero_path
+
+                    print(f"  Final reference: {final_reference.name}")
+
+                    fixed_ct_images += int(
+                        resample_if_needed(
+                            channel_one_path,
+                            final_reference,
+                            sitk.sitkLinear,
+                            -1024.0,
+                            "CT _0001",
+                        )
+                    )
+
+                elif label_phase == 2:
+                    final_reference = channel_one_path
+
+                    print(f"  Final reference: {final_reference.name}")
+
+                    fixed_ct_images += int(
+                        resample_if_needed(
+                            channel_zero_path,
+                            final_reference,
+                            sitk.sitkLinear,
+                            -1024.0,
+                            "CT _0000",
+                        )
+                    )
+
+                else:
+                    raise ValueError(
+                        f"Unsupported label_phase {label_phase} for {case_id}"
+                    )
+
+            # Check the segmentation against the chosen reference
+            # Only resampled and overwritten when grid does not match
             fixed_segmentations += int(
                 resample_if_needed(
                     segmentation_path,

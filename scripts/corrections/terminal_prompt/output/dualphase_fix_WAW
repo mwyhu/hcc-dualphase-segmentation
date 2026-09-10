@@ -1,0 +1,1466 @@
+Case: WAW_TACE_1002
+  JSON patient ID: 2
+  label_phase:     1
+  Final reference: WAW_TACE_1002_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1002_0001.nii.gz
+  [OK] SEG: WAW_TACE_1002.nii.gz
+
+Case: WAW_TACE_1003
+  JSON patient ID: 3
+  label_phase:     2
+  Final reference: WAW_TACE_1003_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1003_0000.nii.gz
+  [OK] SEG: WAW_TACE_1003.nii.gz
+
+Case: WAW_TACE_1005
+  JSON patient ID: 5
+  label_phase:     2
+  Final reference: WAW_TACE_1005_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1005_0000.nii.gz
+  [OK] SEG: WAW_TACE_1005.nii.gz
+
+Case: WAW_TACE_1007
+  JSON patient ID: 7
+  label_phase:     1
+  Final reference: WAW_TACE_1007_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1007_0001.nii.gz
+  [OK] SEG: WAW_TACE_1007.nii.gz
+
+Case: WAW_TACE_1010
+  JSON patient ID: 10
+  label_phase:     2
+  Final reference: WAW_TACE_1010_0001.nii.gz
+  [RESAMPLE] CT _0000: WAW_TACE_1010_0000.nii.gz
+      Reference:  WAW_TACE_1010_0001.nii.gz
+      Mismatches: shape, spacing, origin
+      Old size:   (512, 512, 163)
+      New size:   (512, 512, 172)
+      Old spacing:(0.703125, 0.703125, 1.25)
+      New spacing:(0.703125, 0.703125, 2.5)
+      Old origin: (-180.0, 179.296875, -175.25)
+      New origin: (-180.0, 179.296875, -400.25)
+      Saved: /projects/prjs2180/data/nnUNet_raw/WAW_TACE_grid_fixed/CT/WAW_TACE_1010_0000.nii.gz
+  [OK] SEG: WAW_TACE_1010.nii.gz
+
+Case: WAW_TACE_1013
+  JSON patient ID: 13
+  label_phase:     0
+  Final reference: external CT1 (WAW_TACE_1013_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1013_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1013_0001.nii.gz
+  [OK] SEG: WAW_TACE_1013.nii.gz
+
+Case: WAW_TACE_1014
+  JSON patient ID: 14
+  label_phase:     1
+  Final reference: WAW_TACE_1014_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1014_0001.nii.gz
+  [OK] SEG: WAW_TACE_1014.nii.gz
+
+Case: WAW_TACE_1015
+  JSON patient ID: 15
+  label_phase:     2
+  Final reference: WAW_TACE_1015_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1015_0000.nii.gz
+  [OK] SEG: WAW_TACE_1015.nii.gz
+
+Case: WAW_TACE_1016
+  JSON patient ID: 16
+  label_phase:     1
+  Final reference: WAW_TACE_1016_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1016_0001.nii.gz
+  [OK] SEG: WAW_TACE_1016.nii.gz
+
+Case: WAW_TACE_1018
+  JSON patient ID: 18
+  label_phase:     2
+  Final reference: WAW_TACE_1018_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1018_0000.nii.gz
+  [OK] SEG: WAW_TACE_1018.nii.gz
+
+Case: WAW_TACE_1019
+  JSON patient ID: 19
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1019_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1019_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1019_0001.nii.gz
+  [OK] SEG: WAW_TACE_1019.nii.gz
+
+Case: WAW_TACE_1020
+  JSON patient ID: 20
+  label_phase:     1
+  Final reference: WAW_TACE_1020_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1020_0001.nii.gz
+  [OK] SEG: WAW_TACE_1020.nii.gz
+
+Case: WAW_TACE_1023
+  JSON patient ID: 23
+  label_phase:     2
+  Final reference: WAW_TACE_1023_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1023_0000.nii.gz
+  [OK] SEG: WAW_TACE_1023.nii.gz
+
+Case: WAW_TACE_1024
+  JSON patient ID: 24
+  label_phase:     2
+  Final reference: WAW_TACE_1024_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1024_0000.nii.gz
+  [OK] SEG: WAW_TACE_1024.nii.gz
+
+Case: WAW_TACE_1026
+  JSON patient ID: 26
+  label_phase:     1
+  Final reference: WAW_TACE_1026_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1026_0001.nii.gz
+  [OK] SEG: WAW_TACE_1026.nii.gz
+
+Case: WAW_TACE_1028
+  JSON patient ID: 28
+  label_phase:     2
+  Final reference: WAW_TACE_1028_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1028_0000.nii.gz
+  [OK] SEG: WAW_TACE_1028.nii.gz
+
+Case: WAW_TACE_1029
+  JSON patient ID: 29
+  label_phase:     1
+  Final reference: WAW_TACE_1029_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1029_0001.nii.gz
+  [OK] SEG: WAW_TACE_1029.nii.gz
+
+Case: WAW_TACE_1031
+  JSON patient ID: 31
+  label_phase:     2
+  Final reference: WAW_TACE_1031_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1031_0000.nii.gz
+  [OK] SEG: WAW_TACE_1031.nii.gz
+
+Case: WAW_TACE_1034
+  JSON patient ID: 34
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1034_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1034_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1034_0001.nii.gz
+  [OK] SEG: WAW_TACE_1034.nii.gz
+
+Case: WAW_TACE_1035
+  JSON patient ID: 35
+  label_phase:     1
+  Final reference: WAW_TACE_1035_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1035_0001.nii.gz
+  [OK] SEG: WAW_TACE_1035.nii.gz
+
+Case: WAW_TACE_1037
+  JSON patient ID: 37
+  label_phase:     1
+  Final reference: WAW_TACE_1037_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1037_0001.nii.gz
+  [OK] SEG: WAW_TACE_1037.nii.gz
+
+Case: WAW_TACE_1038
+  JSON patient ID: 38
+  label_phase:     1
+  Final reference: WAW_TACE_1038_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1038_0001.nii.gz
+  [OK] SEG: WAW_TACE_1038.nii.gz
+
+Case: WAW_TACE_1039
+  JSON patient ID: 39
+  label_phase:     1
+  Final reference: WAW_TACE_1039_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1039_0001.nii.gz
+  [OK] SEG: WAW_TACE_1039.nii.gz
+
+Case: WAW_TACE_1041
+  JSON patient ID: 41
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1041_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1041_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1041_0001.nii.gz
+  [OK] SEG: WAW_TACE_1041.nii.gz
+
+Case: WAW_TACE_1042
+  JSON patient ID: 42
+  label_phase:     2
+  Final reference: WAW_TACE_1042_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1042_0000.nii.gz
+  [OK] SEG: WAW_TACE_1042.nii.gz
+
+Case: WAW_TACE_1043
+  JSON patient ID: 43
+  label_phase:     2
+  Final reference: WAW_TACE_1043_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1043_0000.nii.gz
+  [OK] SEG: WAW_TACE_1043.nii.gz
+
+Case: WAW_TACE_1045
+  JSON patient ID: 45
+  label_phase:     1
+  Final reference: WAW_TACE_1045_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1045_0001.nii.gz
+  [OK] SEG: WAW_TACE_1045.nii.gz
+
+Case: WAW_TACE_1046
+  JSON patient ID: 46
+  label_phase:     2
+  Final reference: WAW_TACE_1046_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1046_0000.nii.gz
+  [OK] SEG: WAW_TACE_1046.nii.gz
+
+Case: WAW_TACE_1047
+  JSON patient ID: 47
+  label_phase:     2
+  Final reference: WAW_TACE_1047_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1047_0000.nii.gz
+  [OK] SEG: WAW_TACE_1047.nii.gz
+
+Case: WAW_TACE_1048
+  JSON patient ID: 48
+  label_phase:     2
+  Final reference: WAW_TACE_1048_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1048_0000.nii.gz
+  [OK] SEG: WAW_TACE_1048.nii.gz
+
+Case: WAW_TACE_1050
+  JSON patient ID: 50
+  label_phase:     2
+  Final reference: WAW_TACE_1050_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1050_0000.nii.gz
+  [OK] SEG: WAW_TACE_1050.nii.gz
+
+Case: WAW_TACE_1054
+  JSON patient ID: 54
+  label_phase:     2
+  Final reference: WAW_TACE_1054_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1054_0000.nii.gz
+  [OK] SEG: WAW_TACE_1054.nii.gz
+
+Case: WAW_TACE_1056
+  JSON patient ID: 56
+  label_phase:     2
+  Final reference: WAW_TACE_1056_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1056_0000.nii.gz
+  [OK] SEG: WAW_TACE_1056.nii.gz
+
+Case: WAW_TACE_1057
+  JSON patient ID: 57
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1057_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1057_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1057_0001.nii.gz
+  [OK] SEG: WAW_TACE_1057.nii.gz
+
+Case: WAW_TACE_1058
+  JSON patient ID: 58
+  label_phase:     2
+  Final reference: WAW_TACE_1058_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1058_0000.nii.gz
+  [OK] SEG: WAW_TACE_1058.nii.gz
+
+Case: WAW_TACE_1059
+  JSON patient ID: 59
+  label_phase:     2
+  Final reference: WAW_TACE_1059_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1059_0000.nii.gz
+  [OK] SEG: WAW_TACE_1059.nii.gz
+
+Case: WAW_TACE_1060
+  JSON patient ID: 60
+  label_phase:     2
+  Final reference: WAW_TACE_1060_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1060_0000.nii.gz
+  [OK] SEG: WAW_TACE_1060.nii.gz
+
+Case: WAW_TACE_1061
+  JSON patient ID: 61
+  label_phase:     1
+  Final reference: WAW_TACE_1061_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1061_0001.nii.gz
+  [OK] SEG: WAW_TACE_1061.nii.gz
+
+Case: WAW_TACE_1062
+  JSON patient ID: 62
+  label_phase:     1
+  Final reference: WAW_TACE_1062_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1062_0001.nii.gz
+  [OK] SEG: WAW_TACE_1062.nii.gz
+
+Case: WAW_TACE_1063
+  JSON patient ID: 63
+  label_phase:     1
+  Final reference: WAW_TACE_1063_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1063_0001.nii.gz
+  [OK] SEG: WAW_TACE_1063.nii.gz
+
+Case: WAW_TACE_1069
+  JSON patient ID: 69
+  label_phase:     1
+  Final reference: WAW_TACE_1069_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1069_0001.nii.gz
+  [OK] SEG: WAW_TACE_1069.nii.gz
+
+Case: WAW_TACE_1073
+  JSON patient ID: 73
+  label_phase:     1
+  Final reference: WAW_TACE_1073_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1073_0001.nii.gz
+  [OK] SEG: WAW_TACE_1073.nii.gz
+
+Case: WAW_TACE_1074
+  JSON patient ID: 74
+  label_phase:     1
+  Final reference: WAW_TACE_1074_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1074_0001.nii.gz
+  [OK] SEG: WAW_TACE_1074.nii.gz
+
+Case: WAW_TACE_1077
+  JSON patient ID: 77
+  label_phase:     1
+  Final reference: WAW_TACE_1077_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1077_0001.nii.gz
+  [OK] SEG: WAW_TACE_1077.nii.gz
+
+Case: WAW_TACE_1079
+  JSON patient ID: 79
+  label_phase:     1
+  Final reference: WAW_TACE_1079_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1079_0001.nii.gz
+  [OK] SEG: WAW_TACE_1079.nii.gz
+
+Case: WAW_TACE_1080
+  JSON patient ID: 80
+  label_phase:     2
+  Final reference: WAW_TACE_1080_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1080_0000.nii.gz
+  [OK] SEG: WAW_TACE_1080.nii.gz
+
+Case: WAW_TACE_1081
+  JSON patient ID: 81
+  label_phase:     1
+  Final reference: WAW_TACE_1081_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1081_0001.nii.gz
+  [OK] SEG: WAW_TACE_1081.nii.gz
+
+Case: WAW_TACE_1084
+  JSON patient ID: 84
+  label_phase:     1
+  Final reference: WAW_TACE_1084_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1084_0001.nii.gz
+  [OK] SEG: WAW_TACE_1084.nii.gz
+
+Case: WAW_TACE_1085
+  JSON patient ID: 85
+  label_phase:     1
+  Final reference: WAW_TACE_1085_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1085_0001.nii.gz
+  [OK] SEG: WAW_TACE_1085.nii.gz
+
+Case: WAW_TACE_1087
+  JSON patient ID: 87
+  label_phase:     2
+  Final reference: WAW_TACE_1087_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1087_0000.nii.gz
+  [OK] SEG: WAW_TACE_1087.nii.gz
+
+Case: WAW_TACE_1090
+  JSON patient ID: 90
+  label_phase:     2
+  Final reference: WAW_TACE_1090_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1090_0000.nii.gz
+  [OK] SEG: WAW_TACE_1090.nii.gz
+
+Case: WAW_TACE_1091
+  JSON patient ID: 91
+  label_phase:     1
+  Final reference: WAW_TACE_1091_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1091_0001.nii.gz
+  [OK] SEG: WAW_TACE_1091.nii.gz
+
+Case: WAW_TACE_1092
+  JSON patient ID: 92
+  label_phase:     1
+  Final reference: WAW_TACE_1092_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1092_0001.nii.gz
+  [OK] SEG: WAW_TACE_1092.nii.gz
+
+Case: WAW_TACE_1093
+  JSON patient ID: 93
+  label_phase:     2
+  Final reference: WAW_TACE_1093_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1093_0000.nii.gz
+  [OK] SEG: WAW_TACE_1093.nii.gz
+
+Case: WAW_TACE_1094
+  JSON patient ID: 94
+  label_phase:     1
+  Final reference: WAW_TACE_1094_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1094_0001.nii.gz
+  [OK] SEG: WAW_TACE_1094.nii.gz
+
+Case: WAW_TACE_1095
+  JSON patient ID: 95
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1095_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1095_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1095_0001.nii.gz
+  [OK] SEG: WAW_TACE_1095.nii.gz
+
+Case: WAW_TACE_1096
+  JSON patient ID: 96
+  label_phase:     1
+  Final reference: WAW_TACE_1096_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1096_0001.nii.gz
+  [OK] SEG: WAW_TACE_1096.nii.gz
+
+Case: WAW_TACE_1098
+  JSON patient ID: 98
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1098_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1098_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1098_0001.nii.gz
+  [OK] SEG: WAW_TACE_1098.nii.gz
+
+Case: WAW_TACE_1099
+  JSON patient ID: 99
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1099_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1099_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1099_0001.nii.gz
+  [OK] SEG: WAW_TACE_1099.nii.gz
+
+Case: WAW_TACE_1101
+  JSON patient ID: 101
+  label_phase:     1
+  Final reference: WAW_TACE_1101_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1101_0001.nii.gz
+  [OK] SEG: WAW_TACE_1101.nii.gz
+
+Case: WAW_TACE_1102
+  JSON patient ID: 102
+  label_phase:     1
+  Final reference: WAW_TACE_1102_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1102_0001.nii.gz
+  [OK] SEG: WAW_TACE_1102.nii.gz
+
+Case: WAW_TACE_1103
+  JSON patient ID: 103
+  label_phase:     1
+  Final reference: WAW_TACE_1103_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1103_0001.nii.gz
+  [OK] SEG: WAW_TACE_1103.nii.gz
+
+Case: WAW_TACE_1104
+  JSON patient ID: 104
+  label_phase:     1
+  Final reference: WAW_TACE_1104_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1104_0001.nii.gz
+  [OK] SEG: WAW_TACE_1104.nii.gz
+
+Case: WAW_TACE_1108
+  JSON patient ID: 108
+  label_phase:     2
+  Final reference: WAW_TACE_1108_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1108_0000.nii.gz
+  [OK] SEG: WAW_TACE_1108.nii.gz
+
+Case: WAW_TACE_1111
+  JSON patient ID: 111
+  label_phase:     1
+  Final reference: WAW_TACE_1111_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1111_0001.nii.gz
+  [OK] SEG: WAW_TACE_1111.nii.gz
+
+Case: WAW_TACE_1112
+  JSON patient ID: 112
+  label_phase:     2
+  Final reference: WAW_TACE_1112_0001.nii.gz
+  [RESAMPLE] CT _0000: WAW_TACE_1112_0000.nii.gz
+      Reference:  WAW_TACE_1112_0001.nii.gz
+      Mismatches: shape, spacing, origin
+      Old size:   (512, 512, 296)
+      New size:   (512, 512, 204)
+      Old spacing:(0.748046875, 0.748046875, 1.0)
+      New spacing:(0.732421875, 0.732421875, 2.0)
+      Old origin: (-187.1259765625, 41.1259765625, -1013.5)
+      New origin: (-189.1337890625, 37.1337890625, -1124.5)
+      Saved: /projects/prjs2180/data/nnUNet_raw/WAW_TACE_grid_fixed/CT/WAW_TACE_1112_0000.nii.gz
+  [OK] SEG: WAW_TACE_1112.nii.gz
+
+Case: WAW_TACE_1114
+  JSON patient ID: 114
+  label_phase:     2
+  Final reference: WAW_TACE_1114_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1114_0000.nii.gz
+  [OK] SEG: WAW_TACE_1114.nii.gz
+
+Case: WAW_TACE_1115
+  JSON patient ID: 115
+  label_phase:     2
+  Final reference: WAW_TACE_1115_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1115_0000.nii.gz
+  [OK] SEG: WAW_TACE_1115.nii.gz
+
+Case: WAW_TACE_1116
+  JSON patient ID: 116
+  label_phase:     1
+  Final reference: WAW_TACE_1116_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1116_0001.nii.gz
+  [OK] SEG: WAW_TACE_1116.nii.gz
+
+Case: WAW_TACE_1118
+  JSON patient ID: 118
+  label_phase:     1
+  Final reference: WAW_TACE_1118_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1118_0001.nii.gz
+  [OK] SEG: WAW_TACE_1118.nii.gz
+
+Case: WAW_TACE_1119
+  JSON patient ID: 119
+  label_phase:     1
+  Final reference: WAW_TACE_1119_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1119_0001.nii.gz
+  [OK] SEG: WAW_TACE_1119.nii.gz
+
+Case: WAW_TACE_1121
+  JSON patient ID: 121
+  label_phase:     1
+  Final reference: WAW_TACE_1121_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1121_0001.nii.gz
+  [OK] SEG: WAW_TACE_1121.nii.gz
+
+Case: WAW_TACE_1125
+  JSON patient ID: 125
+  label_phase:     1
+  Final reference: WAW_TACE_1125_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1125_0001.nii.gz
+  [OK] SEG: WAW_TACE_1125.nii.gz
+
+Case: WAW_TACE_1126
+  JSON patient ID: 126
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1126_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1126_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1126_0001.nii.gz
+  [OK] SEG: WAW_TACE_1126.nii.gz
+
+Case: WAW_TACE_1127
+  JSON patient ID: 127
+  label_phase:     1
+  Final reference: WAW_TACE_1127_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1127_0001.nii.gz
+  [OK] SEG: WAW_TACE_1127.nii.gz
+
+Case: WAW_TACE_1134
+  JSON patient ID: 134
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1134_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1134_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1134_0001.nii.gz
+  [OK] SEG: WAW_TACE_1134.nii.gz
+
+Case: WAW_TACE_1135
+  JSON patient ID: 135
+  label_phase:     1
+  Final reference: WAW_TACE_1135_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1135_0001.nii.gz
+  [OK] SEG: WAW_TACE_1135.nii.gz
+
+Case: WAW_TACE_1142
+  JSON patient ID: 142
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1142_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1142_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1142_0001.nii.gz
+  [OK] SEG: WAW_TACE_1142.nii.gz
+
+Case: WAW_TACE_1144
+  JSON patient ID: 144
+  label_phase:     1
+  Final reference: WAW_TACE_1144_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1144_0001.nii.gz
+  [OK] SEG: WAW_TACE_1144.nii.gz
+
+Case: WAW_TACE_1146
+  JSON patient ID: 146
+  label_phase:     2
+  Final reference: WAW_TACE_1146_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1146_0000.nii.gz
+  [OK] SEG: WAW_TACE_1146.nii.gz
+
+Case: WAW_TACE_1149
+  JSON patient ID: 149
+  label_phase:     1
+  Final reference: WAW_TACE_1149_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1149_0001.nii.gz
+  [OK] SEG: WAW_TACE_1149.nii.gz
+
+Case: WAW_TACE_1150
+  JSON patient ID: 150
+  label_phase:     2
+  Final reference: WAW_TACE_1150_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1150_0000.nii.gz
+  [OK] SEG: WAW_TACE_1150.nii.gz
+
+Case: WAW_TACE_1167
+  JSON patient ID: 167
+  label_phase:     1
+  Final reference: WAW_TACE_1167_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1167_0001.nii.gz
+  [OK] SEG: WAW_TACE_1167.nii.gz
+
+Case: WAW_TACE_1168
+  JSON patient ID: 168
+  label_phase:     2
+  Final reference: WAW_TACE_1168_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1168_0000.nii.gz
+  [OK] SEG: WAW_TACE_1168.nii.gz
+
+Case: WAW_TACE_1169
+  JSON patient ID: 169
+  label_phase:     2
+  Final reference: WAW_TACE_1169_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1169_0000.nii.gz
+  [OK] SEG: WAW_TACE_1169.nii.gz
+
+Case: WAW_TACE_1171
+  JSON patient ID: 171
+  label_phase:     2
+  Final reference: WAW_TACE_1171_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1171_0000.nii.gz
+  [OK] SEG: WAW_TACE_1171.nii.gz
+
+Case: WAW_TACE_1179
+  JSON patient ID: 179
+  label_phase:     1
+  Final reference: WAW_TACE_1179_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1179_0001.nii.gz
+  [OK] SEG: WAW_TACE_1179.nii.gz
+
+Case: WAW_TACE_1184
+  JSON patient ID: 184
+  label_phase:     2
+  Final reference: WAW_TACE_1184_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1184_0000.nii.gz
+  [OK] SEG: WAW_TACE_1184.nii.gz
+
+Case: WAW_TACE_1188
+  JSON patient ID: 188
+  label_phase:     2
+  Final reference: WAW_TACE_1188_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1188_0000.nii.gz
+  [OK] SEG: WAW_TACE_1188.nii.gz
+
+Case: WAW_TACE_1190
+  JSON patient ID: 190
+  label_phase:     1
+  Final reference: WAW_TACE_1190_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1190_0001.nii.gz
+  [OK] SEG: WAW_TACE_1190.nii.gz
+
+Case: WAW_TACE_1193
+  JSON patient ID: 193
+  label_phase:     1
+  Final reference: WAW_TACE_1193_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1193_0001.nii.gz
+  [OK] SEG: WAW_TACE_1193.nii.gz
+
+Case: WAW_TACE_1197
+  JSON patient ID: 197
+  label_phase:     2
+  Final reference: WAW_TACE_1197_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1197_0000.nii.gz
+  [OK] SEG: WAW_TACE_1197.nii.gz
+
+Case: WAW_TACE_1198
+  JSON patient ID: 198
+  label_phase:     1
+  Final reference: WAW_TACE_1198_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1198_0001.nii.gz
+  [OK] SEG: WAW_TACE_1198.nii.gz
+
+Case: WAW_TACE_1303
+  JSON patient ID: 303
+  label_phase:     1
+  Final reference: WAW_TACE_1303_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1303_0001.nii.gz
+  [OK] SEG: WAW_TACE_1303.nii.gz
+
+Case: WAW_TACE_1304
+  JSON patient ID: 304
+  label_phase:     1
+  Final reference: WAW_TACE_1304_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1304_0001.nii.gz
+  [OK] SEG: WAW_TACE_1304.nii.gz
+
+Case: WAW_TACE_1310
+  JSON patient ID: 310
+  label_phase:     1
+  Final reference: WAW_TACE_1310_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1310_0001.nii.gz
+  [OK] SEG: WAW_TACE_1310.nii.gz
+
+Case: WAW_TACE_1315
+  JSON patient ID: 315
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1315_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1315_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1315_0001.nii.gz
+  [OK] SEG: WAW_TACE_1315.nii.gz
+
+Case: WAW_TACE_1318
+  JSON patient ID: 318
+  label_phase:     2
+  Final reference: WAW_TACE_1318_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1318_0000.nii.gz
+  [OK] SEG: WAW_TACE_1318.nii.gz
+
+Case: WAW_TACE_1319
+  JSON patient ID: 319
+  label_phase:     1
+  Final reference: WAW_TACE_1319_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1319_0001.nii.gz
+  [OK] SEG: WAW_TACE_1319.nii.gz
+
+Case: WAW_TACE_1324
+  JSON patient ID: 324
+  label_phase:     1
+  Final reference: WAW_TACE_1324_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1324_0001.nii.gz
+  [OK] SEG: WAW_TACE_1324.nii.gz
+
+Case: WAW_TACE_1325
+  JSON patient ID: 325
+  label_phase:     2
+  Final reference: WAW_TACE_1325_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1325_0000.nii.gz
+  [OK] SEG: WAW_TACE_1325.nii.gz
+
+Case: WAW_TACE_1326
+  JSON patient ID: 326
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1326_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1326_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1326_0001.nii.gz
+  [OK] SEG: WAW_TACE_1326.nii.gz
+
+Case: WAW_TACE_1327
+  JSON patient ID: 327
+  label_phase:     2
+  Final reference: WAW_TACE_1327_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1327_0000.nii.gz
+  [OK] SEG: WAW_TACE_1327.nii.gz
+
+Case: WAW_TACE_1328
+  JSON patient ID: 328
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1328_0000.nii.gz)
+  [RESAMPLE] CT _0000: WAW_TACE_1328_0000.nii.gz
+      Reference:  WAW_TACE_1328_0000.nii.gz
+      Mismatches: shape
+      Old size:   (512, 512, 492)
+      New size:   (512, 512, 487)
+      Old spacing:(0.83203125, 0.83203125, 1.0)
+      New spacing:(0.83203125, 0.83203125, 1.0)
+      Old origin: (-214.583984375, 45.583984375, -1204.5)
+      New origin: (-214.583984375, 45.583984375, -1204.5)
+      Saved: /projects/prjs2180/data/nnUNet_raw/WAW_TACE_grid_fixed/CT/WAW_TACE_1328_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1328_0001.nii.gz
+  [OK] SEG: WAW_TACE_1328.nii.gz
+
+Case: WAW_TACE_1330
+  JSON patient ID: 330
+  label_phase:     2
+  Final reference: WAW_TACE_1330_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1330_0000.nii.gz
+  [OK] SEG: WAW_TACE_1330.nii.gz
+
+Case: WAW_TACE_1332
+  JSON patient ID: 332
+  label_phase:     2
+  Final reference: WAW_TACE_1332_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1332_0000.nii.gz
+  [OK] SEG: WAW_TACE_1332.nii.gz
+
+Case: WAW_TACE_1333
+  JSON patient ID: 333
+  label_phase:     1
+  Final reference: WAW_TACE_1333_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1333_0001.nii.gz
+  [OK] SEG: WAW_TACE_1333.nii.gz
+
+Case: WAW_TACE_1334
+  JSON patient ID: 334
+  label_phase:     1
+  Final reference: WAW_TACE_1334_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1334_0001.nii.gz
+  [OK] SEG: WAW_TACE_1334.nii.gz
+
+Case: WAW_TACE_1335
+  JSON patient ID: 335
+  label_phase:     1
+  Final reference: WAW_TACE_1335_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1335_0001.nii.gz
+  [OK] SEG: WAW_TACE_1335.nii.gz
+
+Case: WAW_TACE_1337
+  JSON patient ID: 337
+  label_phase:     2
+  Final reference: WAW_TACE_1337_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1337_0000.nii.gz
+  [OK] SEG: WAW_TACE_1337.nii.gz
+
+Case: WAW_TACE_1339
+  JSON patient ID: 339
+  label_phase:     2
+  Final reference: WAW_TACE_1339_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1339_0000.nii.gz
+  [OK] SEG: WAW_TACE_1339.nii.gz
+
+Case: WAW_TACE_1342
+  JSON patient ID: 342
+  label_phase:     2
+  Final reference: WAW_TACE_1342_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1342_0000.nii.gz
+  [OK] SEG: WAW_TACE_1342.nii.gz
+
+Case: WAW_TACE_1343
+  JSON patient ID: 343
+  label_phase:     1
+  Final reference: WAW_TACE_1343_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1343_0001.nii.gz
+  [OK] SEG: WAW_TACE_1343.nii.gz
+
+Case: WAW_TACE_1345
+  JSON patient ID: 345
+  label_phase:     1
+  Final reference: WAW_TACE_1345_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1345_0001.nii.gz
+  [OK] SEG: WAW_TACE_1345.nii.gz
+
+Case: WAW_TACE_1347
+  JSON patient ID: 347
+  label_phase:     1
+  Final reference: WAW_TACE_1347_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1347_0001.nii.gz
+  [OK] SEG: WAW_TACE_1347.nii.gz
+
+Case: WAW_TACE_1350
+  JSON patient ID: 350
+  label_phase:     1
+  Final reference: WAW_TACE_1350_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1350_0001.nii.gz
+  [OK] SEG: WAW_TACE_1350.nii.gz
+
+Case: WAW_TACE_1353
+  JSON patient ID: 353
+  label_phase:     1
+  Final reference: WAW_TACE_1353_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1353_0001.nii.gz
+  [OK] SEG: WAW_TACE_1353.nii.gz
+
+Case: WAW_TACE_1354
+  JSON patient ID: 354
+  label_phase:     1
+  Final reference: WAW_TACE_1354_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1354_0001.nii.gz
+  [OK] SEG: WAW_TACE_1354.nii.gz
+
+Case: WAW_TACE_1356
+  JSON patient ID: 356
+  label_phase:     2
+  Final reference: WAW_TACE_1356_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1356_0000.nii.gz
+  [OK] SEG: WAW_TACE_1356.nii.gz
+
+Case: WAW_TACE_1358
+  JSON patient ID: 358
+  label_phase:     1
+  Final reference: WAW_TACE_1358_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1358_0001.nii.gz
+  [OK] SEG: WAW_TACE_1358.nii.gz
+
+Case: WAW_TACE_1360
+  JSON patient ID: 360
+  label_phase:     1
+  Final reference: WAW_TACE_1360_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1360_0001.nii.gz
+  [OK] SEG: WAW_TACE_1360.nii.gz
+
+Case: WAW_TACE_1363
+  JSON patient ID: 363
+  label_phase:     2
+  Final reference: WAW_TACE_1363_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1363_0000.nii.gz
+  [OK] SEG: WAW_TACE_1363.nii.gz
+
+Case: WAW_TACE_1366
+  JSON patient ID: 366
+  label_phase:     2
+  Final reference: WAW_TACE_1366_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1366_0000.nii.gz
+  [OK] SEG: WAW_TACE_1366.nii.gz
+
+Case: WAW_TACE_1367
+  JSON patient ID: 367
+  label_phase:     1
+  Final reference: WAW_TACE_1367_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1367_0001.nii.gz
+  [OK] SEG: WAW_TACE_1367.nii.gz
+
+Case: WAW_TACE_1368
+  JSON patient ID: 368
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1368_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1368_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1368_0001.nii.gz
+  [OK] SEG: WAW_TACE_1368.nii.gz
+
+Case: WAW_TACE_1369
+  JSON patient ID: 369
+  label_phase:     1
+  Final reference: WAW_TACE_1369_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1369_0001.nii.gz
+  [OK] SEG: WAW_TACE_1369.nii.gz
+
+Case: WAW_TACE_1371
+  JSON patient ID: 371
+  label_phase:     1
+  Final reference: WAW_TACE_1371_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1371_0001.nii.gz
+  [OK] SEG: WAW_TACE_1371.nii.gz
+
+Case: WAW_TACE_1373
+  JSON patient ID: 373
+  label_phase:     1
+  Final reference: WAW_TACE_1373_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1373_0001.nii.gz
+  [OK] SEG: WAW_TACE_1373.nii.gz
+
+Case: WAW_TACE_1374
+  JSON patient ID: 374
+  label_phase:     1
+  Final reference: WAW_TACE_1374_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1374_0001.nii.gz
+  [OK] SEG: WAW_TACE_1374.nii.gz
+
+Case: WAW_TACE_1378
+  JSON patient ID: 378
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1378_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1378_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1378_0001.nii.gz
+  [OK] SEG: WAW_TACE_1378.nii.gz
+
+Case: WAW_TACE_1379
+  JSON patient ID: 379
+  label_phase:     2
+  Final reference: WAW_TACE_1379_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1379_0000.nii.gz
+  [OK] SEG: WAW_TACE_1379.nii.gz
+
+Case: WAW_TACE_1380
+  JSON patient ID: 380
+  label_phase:     1
+  Final reference: WAW_TACE_1380_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1380_0001.nii.gz
+  [OK] SEG: WAW_TACE_1380.nii.gz
+
+Case: WAW_TACE_1381
+  JSON patient ID: 381
+  label_phase:     1
+  Final reference: WAW_TACE_1381_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1381_0001.nii.gz
+  [OK] SEG: WAW_TACE_1381.nii.gz
+
+Case: WAW_TACE_1382
+  JSON patient ID: 382
+  label_phase:     1
+  Final reference: WAW_TACE_1382_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1382_0001.nii.gz
+  [OK] SEG: WAW_TACE_1382.nii.gz
+
+Case: WAW_TACE_1383
+  JSON patient ID: 383
+  label_phase:     2
+  Final reference: WAW_TACE_1383_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1383_0000.nii.gz
+  [OK] SEG: WAW_TACE_1383.nii.gz
+
+Case: WAW_TACE_1385
+  JSON patient ID: 385
+  label_phase:     2
+  Final reference: WAW_TACE_1385_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1385_0000.nii.gz
+  [OK] SEG: WAW_TACE_1385.nii.gz
+
+Case: WAW_TACE_1388
+  JSON patient ID: 388
+  label_phase:     1
+  Final reference: WAW_TACE_1388_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1388_0001.nii.gz
+  [OK] SEG: WAW_TACE_1388.nii.gz
+
+Case: WAW_TACE_1390
+  JSON patient ID: 390
+  label_phase:     1
+  Final reference: WAW_TACE_1390_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1390_0001.nii.gz
+  [OK] SEG: WAW_TACE_1390.nii.gz
+
+Case: WAW_TACE_1394
+  JSON patient ID: 394
+  label_phase:     2
+  Final reference: WAW_TACE_1394_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1394_0000.nii.gz
+  [OK] SEG: WAW_TACE_1394.nii.gz
+
+Case: WAW_TACE_1396
+  JSON patient ID: 396
+  label_phase:     1
+  Final reference: WAW_TACE_1396_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1396_0001.nii.gz
+  [OK] SEG: WAW_TACE_1396.nii.gz
+
+Case: WAW_TACE_1399
+  JSON patient ID: 399
+  label_phase:     1
+  Final reference: WAW_TACE_1399_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1399_0001.nii.gz
+  [OK] SEG: WAW_TACE_1399.nii.gz
+
+Case: WAW_TACE_1404
+  JSON patient ID: 404
+  label_phase:     1
+  Final reference: WAW_TACE_1404_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1404_0001.nii.gz
+  [OK] SEG: WAW_TACE_1404.nii.gz
+
+Case: WAW_TACE_1405
+  JSON patient ID: 405
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1405_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1405_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1405_0001.nii.gz
+  [OK] SEG: WAW_TACE_1405.nii.gz
+
+Case: WAW_TACE_1434
+  JSON patient ID: 434
+  label_phase:     2
+  Final reference: WAW_TACE_1434_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1434_0000.nii.gz
+  [OK] SEG: WAW_TACE_1434.nii.gz
+
+Case: WAW_TACE_1436
+  JSON patient ID: 436
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1436_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1436_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1436_0001.nii.gz
+  [OK] SEG: WAW_TACE_1436.nii.gz
+
+Case: WAW_TACE_1437
+  JSON patient ID: 437
+  label_phase:     1
+  Final reference: WAW_TACE_1437_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1437_0001.nii.gz
+  [OK] SEG: WAW_TACE_1437.nii.gz
+
+Case: WAW_TACE_1438
+  JSON patient ID: 438
+  label_phase:     1
+  Final reference: WAW_TACE_1438_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1438_0001.nii.gz
+  [OK] SEG: WAW_TACE_1438.nii.gz
+
+Case: WAW_TACE_1440
+  JSON patient ID: 440
+  label_phase:     1
+  Final reference: WAW_TACE_1440_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1440_0001.nii.gz
+  [OK] SEG: WAW_TACE_1440.nii.gz
+
+Case: WAW_TACE_1442
+  JSON patient ID: 442
+  label_phase:     1
+  Final reference: WAW_TACE_1442_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1442_0001.nii.gz
+  [OK] SEG: WAW_TACE_1442.nii.gz
+
+Case: WAW_TACE_1443
+  JSON patient ID: 443
+  label_phase:     2
+  Final reference: WAW_TACE_1443_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1443_0000.nii.gz
+  [OK] SEG: WAW_TACE_1443.nii.gz
+
+Case: WAW_TACE_1447
+  JSON patient ID: 447
+  label_phase:     1
+  Final reference: WAW_TACE_1447_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1447_0001.nii.gz
+  [OK] SEG: WAW_TACE_1447.nii.gz
+
+Case: WAW_TACE_1450
+  JSON patient ID: 450
+  label_phase:     2
+  Final reference: WAW_TACE_1450_0001.nii.gz
+  [RESAMPLE] CT _0000: WAW_TACE_1450_0000.nii.gz
+      Reference:  WAW_TACE_1450_0001.nii.gz
+      Mismatches: shape, spacing
+      Old size:   (512, 512, 393)
+      New size:   (512, 512, 197)
+      Old spacing:(0.8847659826278687, 0.8847659826278687, 1.25)
+      New spacing:(0.8847659826278687, 0.8847659826278687, 2.5)
+      Old origin: (-244.10000610351562, 225.6154327392578, -463.0)
+      New origin: (-244.10000610351562, 225.6154327392578, -463.0)
+      Saved: /projects/prjs2180/data/nnUNet_raw/WAW_TACE_grid_fixed/CT/WAW_TACE_1450_0000.nii.gz
+  [OK] SEG: WAW_TACE_1450.nii.gz
+
+Case: WAW_TACE_1451
+  JSON patient ID: 451
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1451_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1451_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1451_0001.nii.gz
+  [OK] SEG: WAW_TACE_1451.nii.gz
+
+Case: WAW_TACE_1452
+  JSON patient ID: 452
+  label_phase:     1
+  Final reference: WAW_TACE_1452_0000.nii.gz
+  [RESAMPLE] CT _0001: WAW_TACE_1452_0001.nii.gz
+      Reference:  WAW_TACE_1452_0000.nii.gz
+      Mismatches: shape, spacing, origin
+      Old size:   (512, 512, 568)
+      New size:   (512, 512, 346)
+      Old spacing:(0.8769999742507935, 0.8769999742507935, 0.800048828125)
+      New spacing:(0.8619999885559082, 0.8619999885559082, 0.800000011920929)
+      Old origin: (-229.05349731445312, 223.97637939453125, 1420.872314453125)
+      New origin: (-223.2017059326172, 220.2100067138672, 1598.5)
+      Saved: /projects/prjs2180/data/nnUNet_raw/WAW_TACE_grid_fixed/CT/WAW_TACE_1452_0001.nii.gz
+  [OK] SEG: WAW_TACE_1452.nii.gz
+
+Case: WAW_TACE_1453
+  JSON patient ID: 453
+  label_phase:     2
+  Final reference: WAW_TACE_1453_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1453_0000.nii.gz
+  [OK] SEG: WAW_TACE_1453.nii.gz
+
+Case: WAW_TACE_1455
+  JSON patient ID: 455
+  label_phase:     1
+  Final reference: WAW_TACE_1455_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1455_0001.nii.gz
+  [OK] SEG: WAW_TACE_1455.nii.gz
+
+Case: WAW_TACE_1457
+  JSON patient ID: 457
+  label_phase:     1
+  Final reference: WAW_TACE_1457_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1457_0001.nii.gz
+  [OK] SEG: WAW_TACE_1457.nii.gz
+
+Case: WAW_TACE_1458
+  JSON patient ID: 458
+  label_phase:     0
+  Final reference: external CT1 (WAW_TACE_1458_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1458_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1458_0001.nii.gz
+  [OK] SEG: WAW_TACE_1458.nii.gz
+
+Case: WAW_TACE_1460
+  JSON patient ID: 460
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1460_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1460_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1460_0001.nii.gz
+  [OK] SEG: WAW_TACE_1460.nii.gz
+
+Case: WAW_TACE_1462
+  JSON patient ID: 462
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1462_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1462_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1462_0001.nii.gz
+  [OK] SEG: WAW_TACE_1462.nii.gz
+
+Case: WAW_TACE_1463
+  JSON patient ID: 463
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1463_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1463_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1463_0001.nii.gz
+  [OK] SEG: WAW_TACE_1463.nii.gz
+
+Case: WAW_TACE_1465
+  JSON patient ID: 465
+  label_phase:     2
+  Final reference: WAW_TACE_1465_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1465_0000.nii.gz
+  [OK] SEG: WAW_TACE_1465.nii.gz
+
+Case: WAW_TACE_1466
+  JSON patient ID: 466
+  label_phase:     1
+  Final reference: WAW_TACE_1466_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1466_0001.nii.gz
+  [OK] SEG: WAW_TACE_1466.nii.gz
+
+Case: WAW_TACE_1474
+  JSON patient ID: 474
+  label_phase:     1
+  Final reference: WAW_TACE_1474_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1474_0001.nii.gz
+  [OK] SEG: WAW_TACE_1474.nii.gz
+
+Case: WAW_TACE_1477
+  JSON patient ID: 477
+  label_phase:     1
+  Final reference: WAW_TACE_1477_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1477_0001.nii.gz
+  [OK] SEG: WAW_TACE_1477.nii.gz
+
+Case: WAW_TACE_1483
+  JSON patient ID: 483
+  label_phase:     1
+  Final reference: WAW_TACE_1483_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1483_0001.nii.gz
+  [OK] SEG: WAW_TACE_1483.nii.gz
+
+Case: WAW_TACE_1484
+  JSON patient ID: 484
+  label_phase:     1
+  Final reference: WAW_TACE_1484_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1484_0001.nii.gz
+  [OK] SEG: WAW_TACE_1484.nii.gz
+
+Case: WAW_TACE_1485
+  JSON patient ID: 485
+  label_phase:     1
+  Final reference: WAW_TACE_1485_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1485_0001.nii.gz
+  [OK] SEG: WAW_TACE_1485.nii.gz
+
+Case: WAW_TACE_1486
+  JSON patient ID: 486
+  label_phase:     1
+  Final reference: WAW_TACE_1486_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1486_0001.nii.gz
+  [OK] SEG: WAW_TACE_1486.nii.gz
+
+Case: WAW_TACE_1487
+  JSON patient ID: 487
+  label_phase:     2
+  Final reference: WAW_TACE_1487_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1487_0000.nii.gz
+  [OK] SEG: WAW_TACE_1487.nii.gz
+
+Case: WAW_TACE_1491
+  JSON patient ID: 491
+  label_phase:     2
+  Final reference: WAW_TACE_1491_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1491_0000.nii.gz
+  [OK] SEG: WAW_TACE_1491.nii.gz
+
+Case: WAW_TACE_1492
+  JSON patient ID: 492
+  label_phase:     1
+  Final reference: WAW_TACE_1492_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1492_0001.nii.gz
+  [OK] SEG: WAW_TACE_1492.nii.gz
+
+Case: WAW_TACE_1493
+  JSON patient ID: 493
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1493_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1493_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1493_0001.nii.gz
+  [OK] SEG: WAW_TACE_1493.nii.gz
+
+Case: WAW_TACE_1494
+  JSON patient ID: 494
+  label_phase:     2
+  Final reference: WAW_TACE_1494_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1494_0000.nii.gz
+  [OK] SEG: WAW_TACE_1494.nii.gz
+
+Case: WAW_TACE_1496
+  JSON patient ID: 496
+  label_phase:     1
+  Final reference: WAW_TACE_1496_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1496_0001.nii.gz
+  [OK] SEG: WAW_TACE_1496.nii.gz
+
+Case: WAW_TACE_1498
+  JSON patient ID: 498
+  label_phase:     2
+  Final reference: WAW_TACE_1498_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1498_0000.nii.gz
+  [OK] SEG: WAW_TACE_1498.nii.gz
+
+Case: WAW_TACE_1500
+  JSON patient ID: 500
+  label_phase:     1
+  Final reference: WAW_TACE_1500_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1500_0001.nii.gz
+  [OK] SEG: WAW_TACE_1500.nii.gz
+
+Case: WAW_TACE_1501
+  JSON patient ID: 501
+  label_phase:     0
+  Final reference: external CT1 (WAW_TACE_1501_0000.nii.gz)
+  [RESAMPLE] CT _0000: WAW_TACE_1501_0000.nii.gz
+      Reference:  WAW_TACE_1501_0000.nii.gz
+      Mismatches: shape, spacing, origin
+      Old size:   (768, 768, 748)
+      New size:   (512, 512, 714)
+      Old spacing:(0.6510419845581055, 0.6510419845581055, 1.0)
+      New spacing:(0.9765629768371582, 0.9765629768371582, 1.0)
+      Old origin: (-250.732421875, 96.74920654296875, -1819.22998046875)
+      New origin: (-250.732421875, 96.32368469238281, -1785.22998046875)
+      Saved: /projects/prjs2180/data/nnUNet_raw/WAW_TACE_grid_fixed/CT/WAW_TACE_1501_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1501_0001.nii.gz
+  [OK] SEG: WAW_TACE_1501.nii.gz
+
+Case: WAW_TACE_1503
+  JSON patient ID: 503
+  label_phase:     1
+  Final reference: WAW_TACE_1503_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1503_0001.nii.gz
+  [OK] SEG: WAW_TACE_1503.nii.gz
+
+Case: WAW_TACE_1510
+  JSON patient ID: 510
+  label_phase:     1
+  Final reference: WAW_TACE_1510_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1510_0001.nii.gz
+  [OK] SEG: WAW_TACE_1510.nii.gz
+
+Case: WAW_TACE_1512
+  JSON patient ID: 512
+  label_phase:     1
+  Final reference: WAW_TACE_1512_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1512_0001.nii.gz
+  [OK] SEG: WAW_TACE_1512.nii.gz
+
+Case: WAW_TACE_1514
+  JSON patient ID: 514
+  label_phase:     2
+  Final reference: WAW_TACE_1514_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1514_0000.nii.gz
+  [OK] SEG: WAW_TACE_1514.nii.gz
+
+Case: WAW_TACE_1515
+  JSON patient ID: 515
+  label_phase:     1
+  Final reference: WAW_TACE_1515_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1515_0001.nii.gz
+  [OK] SEG: WAW_TACE_1515.nii.gz
+
+Case: WAW_TACE_1517
+  JSON patient ID: 517
+  label_phase:     1
+  Final reference: WAW_TACE_1517_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1517_0001.nii.gz
+  [OK] SEG: WAW_TACE_1517.nii.gz
+
+Case: WAW_TACE_1518
+  JSON patient ID: 518
+  label_phase:     1
+  Final reference: WAW_TACE_1518_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1518_0001.nii.gz
+  [OK] SEG: WAW_TACE_1518.nii.gz
+
+Case: WAW_TACE_1519
+  JSON patient ID: 519
+  label_phase:     1
+  Final reference: WAW_TACE_1519_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1519_0001.nii.gz
+  [OK] SEG: WAW_TACE_1519.nii.gz
+
+Case: WAW_TACE_1521
+  JSON patient ID: 521
+  label_phase:     2
+  Final reference: WAW_TACE_1521_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1521_0000.nii.gz
+  [OK] SEG: WAW_TACE_1521.nii.gz
+
+Case: WAW_TACE_1522
+  JSON patient ID: 522
+  label_phase:     1
+  Final reference: WAW_TACE_1522_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1522_0001.nii.gz
+  [OK] SEG: WAW_TACE_1522.nii.gz
+
+Case: WAW_TACE_1524
+  JSON patient ID: 524
+  label_phase:     1
+  Final reference: WAW_TACE_1524_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1524_0001.nii.gz
+  [OK] SEG: WAW_TACE_1524.nii.gz
+
+Case: WAW_TACE_1525
+  JSON patient ID: 525
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1525_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1525_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1525_0001.nii.gz
+  [OK] SEG: WAW_TACE_1525.nii.gz
+
+Case: WAW_TACE_1527
+  JSON patient ID: 527
+  label_phase:     1
+  Final reference: WAW_TACE_1527_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1527_0001.nii.gz
+  [OK] SEG: WAW_TACE_1527.nii.gz
+
+Case: WAW_TACE_1531
+  JSON patient ID: 531
+  label_phase:     1
+  Final reference: WAW_TACE_1531_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1531_0001.nii.gz
+  [OK] SEG: WAW_TACE_1531.nii.gz
+
+Case: WAW_TACE_1533
+  JSON patient ID: 533
+  label_phase:     1
+  Final reference: WAW_TACE_1533_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1533_0001.nii.gz
+  [OK] SEG: WAW_TACE_1533.nii.gz
+
+Case: WAW_TACE_1537
+  JSON patient ID: 537
+  label_phase:     3
+  Final reference: external CT1 (WAW_TACE_1537_0000.nii.gz)
+  [OK] CT _0000: WAW_TACE_1537_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1537_0001.nii.gz
+  [OK] SEG: WAW_TACE_1537.nii.gz
+
+Case: WAW_TACE_1539
+  JSON patient ID: 539
+  label_phase:     1
+  Final reference: WAW_TACE_1539_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1539_0001.nii.gz
+  [OK] SEG: WAW_TACE_1539.nii.gz
+
+Case: WAW_TACE_1540
+  JSON patient ID: 540
+  label_phase:     2
+  Final reference: WAW_TACE_1540_0001.nii.gz
+  [OK] CT _0000: WAW_TACE_1540_0000.nii.gz
+  [OK] SEG: WAW_TACE_1540.nii.gz
+
+Case: WAW_TACE_1543
+  JSON patient ID: 543
+  label_phase:     1
+  Final reference: WAW_TACE_1543_0000.nii.gz
+  [OK] CT _0001: WAW_TACE_1543_0001.nii.gz
+  [OK] SEG: WAW_TACE_1543.nii.gz
+
+Summary
+Cases found:                  197
+Cases processed successfully: 197
+CT images resampled:          6
+Segmentations resampled:      0
+Failed cases:                 0

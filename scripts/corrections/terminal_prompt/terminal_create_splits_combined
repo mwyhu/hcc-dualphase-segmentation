@@ -12,6 +12,16 @@ python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/cr
     --train_ratio 0.8 \
     --seed 42
 
+python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/create_splits_combined.py \
+    --ct_1_dir $nnUNet_raw/WAW_TACE_grid_fixed/CT1 \
+    --ct_2_dir $nnUNet_raw/WAW_TACE_grid_fixed/CT \
+    --seg_dir $nnUNet_raw/WAW_TACE_grid_fixed/SEG \
+    --output_1_dir $nnUNet_raw/Dataset101_WAW_TACE \
+    --output_2_dir $nnUNet_raw/Dataset201_WAW_TACE \
+    --train_ratio 0.8 \
+    --seed 42
+
+    
 
 python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/create_splits_combined.py \
     --ct_1_dir $nnUNet_raw/MSD/CT1 \
