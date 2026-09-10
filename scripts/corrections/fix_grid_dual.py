@@ -202,6 +202,11 @@ def resample_if_needed(moving_path, reference_path, interpolator, default_value,
         moving.GetPixelID(),
     )
 
+    if image_type == "SEG":
+        print("      [WARNING] Overwriting shared segmentation")
+        print(f"      Segmentation: {moving_path}")
+        print(f"      Reference:    {reference_path}")
+
     sitk.WriteImage(resampled, str(moving_path))
 
     written = sitk.ReadImage(str(moving_path))
@@ -224,21 +229,24 @@ def main():
     if not args.phase_json.is_file():
         raise FileNotFoundError(f"JSON file not found: {args.phase_json}")
 
-    if args.output_dir.exists():
-        raise FileExistsError(
-            f"Output directory already exists: {args.output_dir}\n"
-            "Use a new output directory so existing data is not overwritten."
-        )
+
+    args.output_dir.mkdir(parents=True, exist_ok=True)
 
     output_image_dir = args.output_dir / "CT"
-    output_seg_dir = args.output_dir / "SEG"
+    output_seg_dir = args.seg_dir
 
-    args.output_dir.mkdir(parents=True)
+    if output_image_dir.exists():
+        raise FileExistsError(
+            f"Output CT directory already exists: {output_image_dir}\n"
+            "Move it, rename it, or choose another output directory."
+        )
+
     shutil.copytree(args.image_dir, output_image_dir)
-    shutil.copytree(args.seg_dir, output_seg_dir)
 
     print(f"Copied dual-phase images to: {output_image_dir}")
-    print(f"Copied segmentations to:     {output_seg_dir}")
+    print(f"Reusing shared segmentations from: {output_seg_dir}")
+    print("Shared segmentations are only overwritten if their grid does not match.")
+
 
     phase_lookup = build_phase_lookup(args.phase_json)
     channel_zero_files = collect_channel_zero_files(output_image_dir)
