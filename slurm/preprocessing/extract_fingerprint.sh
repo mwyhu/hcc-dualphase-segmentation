@@ -2,8 +2,8 @@
 #SBATCH --partition=genoa
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=128G
-#SBATCH --time=04:00:00
-#SBATCH --job-name="extract_fingerprint"
+#SBATCH --time=02:00:00
+#SBATCH --job-name="extract_fingerprint2"
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
 
