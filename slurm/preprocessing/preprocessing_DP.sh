@@ -25,7 +25,7 @@ nnUNetv2_preprocess \
     -d 002 \
     -plans_name TSLL_DP_plans \
     -c 3d_fullres \
-    -np 16
+    -np 8
 
 
 echo "Job finished"
