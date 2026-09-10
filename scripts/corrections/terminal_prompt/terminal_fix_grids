@@ -25,5 +25,118 @@ python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/fi
     --image_dir /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag/CT \
     --seg_dir /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/SEG \
     --ct1_dir /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag/CT1 \
-    --phase_json /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag/phase_selection.json \
     --output_dir /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed
+
+
+#### Fix failed cases manually for MCT
+python - <<'PY'
+from pathlib import Path
+import numpy as np
+import SimpleITK as sitk
+
+image_dir = Path("/projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT")
+seg_dir = Path("/projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/SEG")
+
+cases = [
+    "MCT_LTDiag_1041",
+    "MCT_LTDiag_1042",
+    "MCT_LTDiag_1279",
+    "MCT_LTDiag_1335",
+    "MCT_LTDiag_1338",
+    "MCT_LTDiag_1342",
+    "MCT_LTDiag_1344",
+    "MCT_LTDiag_1347",
+    "MCT_LTDiag_1349",
+    "MCT_LTDiag_1351",
+    "MCT_LTDiag_1390",
+    "MCT_LTDiag_1438",
+]
+
+
+def find_existing(paths):
+    for path in paths:
+        if path.is_file():
+            return path
+    return None
+
+
+passed = 0
+failed = 0
+
+for case_id in cases:
+    numeric_id = case_id.split("_")[-1]
+
+    reference_path = find_existing([
+        image_dir / f"{case_id}_0001.nii.gz",
+        image_dir / f"{case_id}_0001.nii",
+    ])
+
+    segmentation_path = find_existing([
+        seg_dir / f"{case_id}.nii.gz",
+        seg_dir / f"{case_id}.nii",
+        seg_dir / f"{case_id}_0000.nii.gz",
+        seg_dir / f"{case_id}_0000.nii",
+        seg_dir / f"{numeric_id}.nii.gz",
+        seg_dir / f"{numeric_id}.nii",
+    ])
+
+    print(f"\n{case_id}")
+
+    if reference_path is None:
+        print("  MISSING: reference _0001")
+        failed += 1
+        continue
+
+    if segmentation_path is None:
+        print("  MISSING: segmentation")
+        failed += 1
+        continue
+
+    reference = sitk.ReadImage(str(reference_path))
+    segmentation = sitk.ReadImage(str(segmentation_path))
+
+    checks = {
+        "shape": reference.GetSize() == segmentation.GetSize(),
+        "spacing": np.allclose(
+            reference.GetSpacing(),
+            segmentation.GetSpacing(),
+        ),
+        "origin": np.allclose(
+            reference.GetOrigin(),
+            segmentation.GetOrigin(),
+        ),
+        "direction": np.allclose(
+            reference.GetDirection(),
+            segmentation.GetDirection(),
+            rtol=1e-5,
+            atol=1e-6,
+        ),
+    }
+
+    seg_array = sitk.GetArrayViewFromImage(segmentation)
+    labels = np.unique(seg_array)
+    foreground = int(np.count_nonzero(seg_array))
+
+    print(f"  SEG:        {segmentation_path.name}")
+    print(f"  shape:      {checks['shape']}")
+    print(f"  spacing:    {checks['spacing']}")
+    print(f"  origin:     {checks['origin']}")
+    print(f"  direction:  {checks['direction']}")
+    print(f"  labels:     {labels.tolist()}")
+    print(f"  foreground: {foreground}")
+
+    if all(checks.values()):
+        print("  RESULT: PASS")
+        passed += 1
+    else:
+        mismatches = [
+            name for name, matches in checks.items()
+            if not matches
+        ]
+        print(f"  RESULT: MISMATCH ({', '.join(mismatches)})")
+        failed += 1
+
+print("\nSUMMARY")
+print(f"Passed:     {passed}")
+print(f"Mismatched: {failed}")
+PY

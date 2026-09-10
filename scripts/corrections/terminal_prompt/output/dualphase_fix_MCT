@@ -1,0 +1,4322 @@
+Copied dual-phase images to: /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT
+Reusing shared segmentations from: /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/SEG
+Shared segmentations are only overwritten if their grid does not match.
+No phase_selection.json supplied.
+Using _0001 as the reference for every patient.
+
+Case: MCT_LTDiag_1000
+  JSON patient ID: 0
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1000_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1000_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1000.nii.gz
+
+Case: MCT_LTDiag_1001
+  JSON patient ID: 1
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1001_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1001_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1001.nii.gz
+
+Case: MCT_LTDiag_1002
+  JSON patient ID: 2
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1002_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1002_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1002.nii.gz
+
+Case: MCT_LTDiag_1003
+  JSON patient ID: 3
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1003_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1003_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1003.nii.gz
+
+Case: MCT_LTDiag_1004
+  JSON patient ID: 4
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1004_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1004_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1004.nii.gz
+
+Case: MCT_LTDiag_1005
+  JSON patient ID: 5
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1005_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1005_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1005.nii.gz
+
+Case: MCT_LTDiag_1006
+  JSON patient ID: 6
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1006_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1006_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1006.nii.gz
+
+Case: MCT_LTDiag_1007
+  JSON patient ID: 7
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1007_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1007_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1007.nii.gz
+
+Case: MCT_LTDiag_1008
+  JSON patient ID: 8
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1008_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1008_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1008.nii.gz
+
+Case: MCT_LTDiag_1009
+  JSON patient ID: 9
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1009_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1009_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1009.nii.gz
+
+Case: MCT_LTDiag_1010
+  JSON patient ID: 10
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1010_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1010_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1010.nii.gz
+
+Case: MCT_LTDiag_1011
+  JSON patient ID: 11
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1011_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1011_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1011.nii.gz
+
+Case: MCT_LTDiag_1012
+  JSON patient ID: 12
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1012_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1012_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1012.nii.gz
+
+Case: MCT_LTDiag_1013
+  JSON patient ID: 13
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1013_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1013_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1013.nii.gz
+
+Case: MCT_LTDiag_1014
+  JSON patient ID: 14
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1014_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1014_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1014.nii.gz
+
+Case: MCT_LTDiag_1015
+  JSON patient ID: 15
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1015_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1015_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1015.nii.gz
+
+Case: MCT_LTDiag_1016
+  JSON patient ID: 16
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1016_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1016_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1016.nii.gz
+
+Case: MCT_LTDiag_1017
+  JSON patient ID: 17
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1017_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1017_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1017.nii.gz
+
+Case: MCT_LTDiag_1018
+  JSON patient ID: 18
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1018_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1018_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1018.nii.gz
+
+Case: MCT_LTDiag_1019
+  JSON patient ID: 19
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1019_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1019_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1019.nii.gz
+
+Case: MCT_LTDiag_1020
+  JSON patient ID: 20
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1020_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1020_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1020.nii.gz
+
+Case: MCT_LTDiag_1021
+  JSON patient ID: 21
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1021_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1021_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1021.nii.gz
+
+Case: MCT_LTDiag_1022
+  JSON patient ID: 22
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1022_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1022_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1022.nii.gz
+
+Case: MCT_LTDiag_1023
+  JSON patient ID: 23
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1023_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1023_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1023.nii.gz
+
+Case: MCT_LTDiag_1024
+  JSON patient ID: 24
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1024_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1024_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1024.nii.gz
+
+Case: MCT_LTDiag_1025
+  JSON patient ID: 25
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1025_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1025_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1025.nii.gz
+
+Case: MCT_LTDiag_1026
+  JSON patient ID: 26
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1026_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1026_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1026.nii.gz
+
+Case: MCT_LTDiag_1027
+  JSON patient ID: 27
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1027_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1027_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1027.nii.gz
+
+Case: MCT_LTDiag_1028
+  JSON patient ID: 28
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1028_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1028_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1028.nii.gz
+
+Case: MCT_LTDiag_1029
+  JSON patient ID: 29
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1029_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1029_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1029.nii.gz
+
+Case: MCT_LTDiag_1030
+  JSON patient ID: 30
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1030_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1030_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1030.nii.gz
+
+Case: MCT_LTDiag_1031
+  JSON patient ID: 31
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1031_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1031_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1031.nii.gz
+
+Case: MCT_LTDiag_1032
+  JSON patient ID: 32
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1032_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1032_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1032.nii.gz
+
+Case: MCT_LTDiag_1033
+  JSON patient ID: 33
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1033_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1033_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1033.nii.gz
+
+Case: MCT_LTDiag_1034
+  JSON patient ID: 34
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1034_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1034_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1034.nii.gz
+
+Case: MCT_LTDiag_1035
+  JSON patient ID: 35
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1035_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1035_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1035.nii.gz
+
+Case: MCT_LTDiag_1036
+  JSON patient ID: 36
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1036_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1036_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1036.nii.gz
+
+Case: MCT_LTDiag_1037
+  JSON patient ID: 37
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1037_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1037_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1037.nii.gz
+
+Case: MCT_LTDiag_1038
+  JSON patient ID: 38
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1038_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1038_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1038.nii.gz
+
+Case: MCT_LTDiag_1039
+  JSON patient ID: 39
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1039_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1039_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1039.nii.gz
+
+Case: MCT_LTDiag_1040
+  JSON patient ID: 40
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1040_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1040_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1040.nii.gz
+
+Case: MCT_LTDiag_1041
+  JSON patient ID: 41
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1041_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1041_0000.nii.gz
+      Reference:  MCT_LTDiag_1041_0001.nii.gz
+      Mismatches: direction
+      Old size:   (512, 512, 54)
+      New size:   (512, 512, 54)
+      Old spacing:(0.666015625, 0.6660150289535522, 5.0)
+      New spacing:(0.666015625, 0.6660150289535522, 5.0)
+      Old origin: (-170.5, -170.5, -1012.0999755859375)
+      New origin: (-170.5, -170.5, -1012.0999755859375)
+  [FAILED] Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1041_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+
+Case: MCT_LTDiag_1042
+  JSON patient ID: 42
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1042_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1042_0000.nii.gz
+      Reference:  MCT_LTDiag_1042_0001.nii.gz
+      Mismatches: direction
+      Old size:   (512, 512, 60)
+      New size:   (512, 512, 60)
+      Old spacing:(0.5859375, 0.5859370231628418, 5.0)
+      New spacing:(0.5859375, 0.5859370231628418, 5.0)
+      Old origin: (-141.0, -150.0, -1084.0)
+      New origin: (-141.0, -150.0, -1084.0)
+  [FAILED] Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1042_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+
+Case: MCT_LTDiag_1043
+  JSON patient ID: 43
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1043_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1043_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1043.nii.gz
+
+Case: MCT_LTDiag_1044
+  JSON patient ID: 44
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1044_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1044_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1044.nii.gz
+
+Case: MCT_LTDiag_1045
+  JSON patient ID: 45
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1045_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1045_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1045.nii.gz
+
+Case: MCT_LTDiag_1046
+  JSON patient ID: 46
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1046_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1046_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1046.nii.gz
+
+Case: MCT_LTDiag_1047
+  JSON patient ID: 47
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1047_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1047_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1047.nii.gz
+
+Case: MCT_LTDiag_1048
+  JSON patient ID: 48
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1048_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1048_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1048.nii.gz
+
+Case: MCT_LTDiag_1049
+  JSON patient ID: 49
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1049_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1049_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1049.nii.gz
+
+Case: MCT_LTDiag_1050
+  JSON patient ID: 50
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1050_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1050_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1050.nii.gz
+
+Case: MCT_LTDiag_1051
+  JSON patient ID: 51
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1051_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1051_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1051.nii.gz
+
+Case: MCT_LTDiag_1052
+  JSON patient ID: 52
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1052_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1052_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1052.nii.gz
+
+Case: MCT_LTDiag_1053
+  JSON patient ID: 53
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1053_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1053_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1053.nii.gz
+
+Case: MCT_LTDiag_1054
+  JSON patient ID: 54
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1054_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1054_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1054.nii.gz
+
+Case: MCT_LTDiag_1055
+  JSON patient ID: 55
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1055_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1055_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1055.nii.gz
+
+Case: MCT_LTDiag_1056
+  JSON patient ID: 56
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1056_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1056_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1056.nii.gz
+
+Case: MCT_LTDiag_1057
+  JSON patient ID: 57
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1057_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1057_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1057.nii.gz
+
+Case: MCT_LTDiag_1058
+  JSON patient ID: 58
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1058_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1058_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1058.nii.gz
+
+Case: MCT_LTDiag_1059
+  JSON patient ID: 59
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1059_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1059_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1059.nii.gz
+
+Case: MCT_LTDiag_1060
+  JSON patient ID: 60
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1060_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1060_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1060.nii.gz
+
+Case: MCT_LTDiag_1061
+  JSON patient ID: 61
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1061_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1061_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1061.nii.gz
+
+Case: MCT_LTDiag_1062
+  JSON patient ID: 62
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1062_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1062_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1062.nii.gz
+
+Case: MCT_LTDiag_1063
+  JSON patient ID: 63
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1063_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1063_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1063.nii.gz
+
+Case: MCT_LTDiag_1064
+  JSON patient ID: 64
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1064_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1064_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1064.nii.gz
+
+Case: MCT_LTDiag_1065
+  JSON patient ID: 65
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1065_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1065_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1065.nii.gz
+
+Case: MCT_LTDiag_1066
+  JSON patient ID: 66
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1066_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1066_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1066.nii.gz
+
+Case: MCT_LTDiag_1067
+  JSON patient ID: 67
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1067_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1067_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1067.nii.gz
+
+Case: MCT_LTDiag_1068
+  JSON patient ID: 68
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1068_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1068_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1068.nii.gz
+
+Case: MCT_LTDiag_1069
+  JSON patient ID: 69
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1069_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1069_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1069.nii.gz
+
+Case: MCT_LTDiag_1070
+  JSON patient ID: 70
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1070_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1070_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1070.nii.gz
+
+Case: MCT_LTDiag_1071
+  JSON patient ID: 71
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1071_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1071_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1071.nii.gz
+
+Case: MCT_LTDiag_1072
+  JSON patient ID: 72
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1072_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1072_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1072.nii.gz
+
+Case: MCT_LTDiag_1073
+  JSON patient ID: 73
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1073_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1073_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1073.nii.gz
+
+Case: MCT_LTDiag_1074
+  JSON patient ID: 74
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1074_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1074_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1074.nii.gz
+
+Case: MCT_LTDiag_1075
+  JSON patient ID: 75
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1075_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1075_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1075.nii.gz
+
+Case: MCT_LTDiag_1076
+  JSON patient ID: 76
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1076_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1076_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1076.nii.gz
+
+Case: MCT_LTDiag_1077
+  JSON patient ID: 77
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1077_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1077_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1077.nii.gz
+
+Case: MCT_LTDiag_1078
+  JSON patient ID: 78
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1078_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1078_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1078.nii.gz
+
+Case: MCT_LTDiag_1079
+  JSON patient ID: 79
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1079_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1079_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1079.nii.gz
+
+Case: MCT_LTDiag_1080
+  JSON patient ID: 80
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1080_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1080_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1080.nii.gz
+
+Case: MCT_LTDiag_1081
+  JSON patient ID: 81
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1081_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1081_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1081.nii.gz
+
+Case: MCT_LTDiag_1082
+  JSON patient ID: 82
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1082_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1082_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1082.nii.gz
+
+Case: MCT_LTDiag_1083
+  JSON patient ID: 83
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1083_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1083_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1083.nii.gz
+
+Case: MCT_LTDiag_1084
+  JSON patient ID: 84
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1084_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1084_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1084.nii.gz
+
+Case: MCT_LTDiag_1085
+  JSON patient ID: 85
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1085_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1085_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1085.nii.gz
+
+Case: MCT_LTDiag_1086
+  JSON patient ID: 86
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1086_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1086_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1086.nii.gz
+
+Case: MCT_LTDiag_1087
+  JSON patient ID: 87
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1087_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1087_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1087.nii.gz
+
+Case: MCT_LTDiag_1088
+  JSON patient ID: 88
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1088_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1088_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1088.nii.gz
+
+Case: MCT_LTDiag_1089
+  JSON patient ID: 89
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1089_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1089_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1089.nii.gz
+
+Case: MCT_LTDiag_1090
+  JSON patient ID: 90
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1090_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1090_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1090.nii.gz
+
+Case: MCT_LTDiag_1091
+  JSON patient ID: 91
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1091_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1091_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1091.nii.gz
+
+Case: MCT_LTDiag_1092
+  JSON patient ID: 92
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1092_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1092_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1092.nii.gz
+
+Case: MCT_LTDiag_1093
+  JSON patient ID: 93
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1093_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1093_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1093.nii.gz
+
+Case: MCT_LTDiag_1094
+  JSON patient ID: 94
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1094_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1094_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1094.nii.gz
+
+Case: MCT_LTDiag_1095
+  JSON patient ID: 95
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1095_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1095_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1095.nii.gz
+
+Case: MCT_LTDiag_1096
+  JSON patient ID: 96
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1096_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1096_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1096.nii.gz
+
+Case: MCT_LTDiag_1097
+  JSON patient ID: 97
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1097_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1097_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1097.nii.gz
+
+Case: MCT_LTDiag_1098
+  JSON patient ID: 98
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1098_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1098_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1098.nii.gz
+
+Case: MCT_LTDiag_1099
+  JSON patient ID: 99
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1099_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1099_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1099.nii.gz
+
+Case: MCT_LTDiag_1100
+  JSON patient ID: 100
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1100_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1100_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1100.nii.gz
+
+Case: MCT_LTDiag_1101
+  JSON patient ID: 101
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1101_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1101_0000.nii.gz
+      Reference:  MCT_LTDiag_1101_0001.nii.gz
+      Mismatches: spacing, origin
+      Old size:   (512, 512, 51)
+      New size:   (512, 512, 51)
+      Old spacing:(0.66015625, 0.66015625, 5.0)
+      New spacing:(0.662109375, 0.662109375, 5.0)
+      Old origin: (-178.669921875, -293.669921875, -262.79998779296875)
+      New origin: (-179.1689453125, -294.1689453125, -264.0)
+      Saved: /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1101_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1101.nii.gz
+
+Case: MCT_LTDiag_1102
+  JSON patient ID: 102
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1102_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1102_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1102.nii.gz
+
+Case: MCT_LTDiag_1103
+  JSON patient ID: 103
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1103_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1103_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1103.nii.gz
+
+Case: MCT_LTDiag_1104
+  JSON patient ID: 104
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1104_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1104_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1104.nii.gz
+
+Case: MCT_LTDiag_1105
+  JSON patient ID: 105
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1105_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1105_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1105.nii.gz
+
+Case: MCT_LTDiag_1106
+  JSON patient ID: 106
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1106_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1106_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1106.nii.gz
+
+Case: MCT_LTDiag_1107
+  JSON patient ID: 107
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1107_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1107_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1107.nii.gz
+
+Case: MCT_LTDiag_1108
+  JSON patient ID: 108
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1108_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1108_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1108.nii.gz
+
+Case: MCT_LTDiag_1109
+  JSON patient ID: 109
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1109_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1109_0000.nii.gz
+      Reference:  MCT_LTDiag_1109_0001.nii.gz
+      Mismatches: origin
+      Old size:   (512, 512, 57)
+      New size:   (512, 512, 57)
+      Old spacing:(0.65625, 0.65625, 5.0)
+      New spacing:(0.65625, 0.65625, 5.0)
+      Old origin: (-155.671875, -291.671875, -1095.5)
+      New origin: (-155.671875, -291.671875, -1099.699951171875)
+      Saved: /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1109_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1109.nii.gz
+
+Case: MCT_LTDiag_1110
+  JSON patient ID: 110
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1110_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1110_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1110.nii.gz
+
+Case: MCT_LTDiag_1111
+  JSON patient ID: 111
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1111_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1111_0000.nii.gz
+      Reference:  MCT_LTDiag_1111_0001.nii.gz
+      Mismatches: origin
+      Old size:   (512, 512, 43)
+      New size:   (512, 512, 43)
+      Old spacing:(0.55859375, 0.55859375, 5.0)
+      New spacing:(0.55859375, 0.55859375, 5.0)
+      Old origin: (-143.720703125, -272.720703125, -476.5)
+      New origin: (-143.720703125, -272.720703125, -480.3999938964844)
+      Saved: /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1111_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1111.nii.gz
+
+Case: MCT_LTDiag_1112
+  JSON patient ID: 112
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1112_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1112_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1112.nii.gz
+
+Case: MCT_LTDiag_1113
+  JSON patient ID: 113
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1113_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1113_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1113.nii.gz
+
+Case: MCT_LTDiag_1114
+  JSON patient ID: 114
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1114_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1114_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1114.nii.gz
+
+Case: MCT_LTDiag_1115
+  JSON patient ID: 115
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1115_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1115_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1115.nii.gz
+
+Case: MCT_LTDiag_1116
+  JSON patient ID: 116
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1116_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1116_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1116.nii.gz
+
+Case: MCT_LTDiag_1117
+  JSON patient ID: 117
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1117_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1117_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1117.nii.gz
+
+Case: MCT_LTDiag_1118
+  JSON patient ID: 118
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1118_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1118_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1118.nii.gz
+
+Case: MCT_LTDiag_1119
+  JSON patient ID: 119
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1119_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1119_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1119.nii.gz
+
+Case: MCT_LTDiag_1120
+  JSON patient ID: 120
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1120_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1120_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1120.nii.gz
+
+Case: MCT_LTDiag_1121
+  JSON patient ID: 121
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1121_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1121_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1121.nii.gz
+
+Case: MCT_LTDiag_1122
+  JSON patient ID: 122
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1122_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1122_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1122.nii.gz
+
+Case: MCT_LTDiag_1123
+  JSON patient ID: 123
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1123_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1123_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1123.nii.gz
+
+Case: MCT_LTDiag_1124
+  JSON patient ID: 124
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1124_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1124_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1124.nii.gz
+
+Case: MCT_LTDiag_1125
+  JSON patient ID: 125
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1125_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1125_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1125.nii.gz
+
+Case: MCT_LTDiag_1126
+  JSON patient ID: 126
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1126_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1126_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1126.nii.gz
+
+Case: MCT_LTDiag_1127
+  JSON patient ID: 127
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1127_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1127_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1127.nii.gz
+
+Case: MCT_LTDiag_1128
+  JSON patient ID: 128
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1128_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1128_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1128.nii.gz
+
+Case: MCT_LTDiag_1129
+  JSON patient ID: 129
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1129_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1129_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1129.nii.gz
+
+Case: MCT_LTDiag_1130
+  JSON patient ID: 130
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1130_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1130_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1130.nii.gz
+
+Case: MCT_LTDiag_1131
+  JSON patient ID: 131
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1131_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1131_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1131.nii.gz
+
+Case: MCT_LTDiag_1132
+  JSON patient ID: 132
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1132_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1132_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1132.nii.gz
+
+Case: MCT_LTDiag_1133
+  JSON patient ID: 133
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1133_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1133_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1133.nii.gz
+
+Case: MCT_LTDiag_1134
+  JSON patient ID: 134
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1134_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1134_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1134.nii.gz
+
+Case: MCT_LTDiag_1135
+  JSON patient ID: 135
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1135_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1135_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1135.nii.gz
+
+Case: MCT_LTDiag_1136
+  JSON patient ID: 136
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1136_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1136_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1136.nii.gz
+
+Case: MCT_LTDiag_1137
+  JSON patient ID: 137
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1137_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1137_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1137.nii.gz
+
+Case: MCT_LTDiag_1138
+  JSON patient ID: 138
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1138_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1138_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1138.nii.gz
+
+Case: MCT_LTDiag_1139
+  JSON patient ID: 139
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1139_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1139_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1139.nii.gz
+
+Case: MCT_LTDiag_1140
+  JSON patient ID: 140
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1140_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1140_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1140.nii.gz
+
+Case: MCT_LTDiag_1141
+  JSON patient ID: 141
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1141_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1141_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1141.nii.gz
+
+Case: MCT_LTDiag_1142
+  JSON patient ID: 142
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1142_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1142_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1142.nii.gz
+
+Case: MCT_LTDiag_1143
+  JSON patient ID: 143
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1143_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1143_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1143.nii.gz
+
+Case: MCT_LTDiag_1144
+  JSON patient ID: 144
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1144_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1144_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1144.nii.gz
+
+Case: MCT_LTDiag_1145
+  JSON patient ID: 145
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1145_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1145_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1145.nii.gz
+
+Case: MCT_LTDiag_1146
+  JSON patient ID: 146
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1146_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1146_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1146.nii.gz
+
+Case: MCT_LTDiag_1147
+  JSON patient ID: 147
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1147_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1147_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1147.nii.gz
+
+Case: MCT_LTDiag_1148
+  JSON patient ID: 148
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1148_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1148_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1148.nii.gz
+
+Case: MCT_LTDiag_1149
+  JSON patient ID: 149
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1149_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1149_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1149.nii.gz
+
+Case: MCT_LTDiag_1150
+  JSON patient ID: 150
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1150_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1150_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1150.nii.gz
+
+Case: MCT_LTDiag_1151
+  JSON patient ID: 151
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1151_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1151_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1151.nii.gz
+
+Case: MCT_LTDiag_1152
+  JSON patient ID: 152
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1152_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1152_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1152.nii.gz
+
+Case: MCT_LTDiag_1153
+  JSON patient ID: 153
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1153_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1153_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1153.nii.gz
+
+Case: MCT_LTDiag_1154
+  JSON patient ID: 154
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1154_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1154_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1154.nii.gz
+
+Case: MCT_LTDiag_1155
+  JSON patient ID: 155
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1155_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1155_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1155.nii.gz
+
+Case: MCT_LTDiag_1156
+  JSON patient ID: 156
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1156_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1156_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1156.nii.gz
+
+Case: MCT_LTDiag_1157
+  JSON patient ID: 157
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1157_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1157_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1157.nii.gz
+
+Case: MCT_LTDiag_1158
+  JSON patient ID: 158
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1158_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1158_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1158.nii.gz
+
+Case: MCT_LTDiag_1159
+  JSON patient ID: 159
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1159_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1159_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1159.nii.gz
+
+Case: MCT_LTDiag_1160
+  JSON patient ID: 160
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1160_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1160_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1160.nii.gz
+
+Case: MCT_LTDiag_1161
+  JSON patient ID: 161
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1161_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1161_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1161.nii.gz
+
+Case: MCT_LTDiag_1162
+  JSON patient ID: 162
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1162_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1162_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1162.nii.gz
+
+Case: MCT_LTDiag_1163
+  JSON patient ID: 163
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1163_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1163_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1163.nii.gz
+
+Case: MCT_LTDiag_1164
+  JSON patient ID: 164
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1164_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1164_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1164.nii.gz
+
+Case: MCT_LTDiag_1165
+  JSON patient ID: 165
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1165_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1165_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1165.nii.gz
+
+Case: MCT_LTDiag_1166
+  JSON patient ID: 166
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1166_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1166_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1166.nii.gz
+
+Case: MCT_LTDiag_1167
+  JSON patient ID: 167
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1167_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1167_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1167.nii.gz
+
+Case: MCT_LTDiag_1168
+  JSON patient ID: 168
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1168_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1168_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1168.nii.gz
+
+Case: MCT_LTDiag_1169
+  JSON patient ID: 169
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1169_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1169_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1169.nii.gz
+
+Case: MCT_LTDiag_1170
+  JSON patient ID: 170
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1170_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1170_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1170.nii.gz
+
+Case: MCT_LTDiag_1171
+  JSON patient ID: 171
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1171_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1171_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1171.nii.gz
+
+Case: MCT_LTDiag_1172
+  JSON patient ID: 172
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1172_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1172_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1172.nii.gz
+
+Case: MCT_LTDiag_1173
+  JSON patient ID: 173
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1173_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1173_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1173.nii.gz
+
+Case: MCT_LTDiag_1174
+  JSON patient ID: 174
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1174_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1174_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1174.nii.gz
+
+Case: MCT_LTDiag_1175
+  JSON patient ID: 175
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1175_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1175_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1175.nii.gz
+
+Case: MCT_LTDiag_1176
+  JSON patient ID: 176
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1176_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1176_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1176.nii.gz
+
+Case: MCT_LTDiag_1177
+  JSON patient ID: 177
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1177_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1177_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1177.nii.gz
+
+Case: MCT_LTDiag_1178
+  JSON patient ID: 178
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1178_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1178_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1178.nii.gz
+
+Case: MCT_LTDiag_1179
+  JSON patient ID: 179
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1179_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1179_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1179.nii.gz
+
+Case: MCT_LTDiag_1180
+  JSON patient ID: 180
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1180_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1180_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1180.nii.gz
+
+Case: MCT_LTDiag_1181
+  JSON patient ID: 181
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1181_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1181_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1181.nii.gz
+
+Case: MCT_LTDiag_1182
+  JSON patient ID: 182
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1182_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1182_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1182.nii.gz
+
+Case: MCT_LTDiag_1183
+  JSON patient ID: 183
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1183_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1183_0000.nii.gz
+      Reference:  MCT_LTDiag_1183_0001.nii.gz
+      Mismatches: origin
+      Old size:   (512, 512, 61)
+      New size:   (512, 512, 61)
+      Old spacing:(0.705078125, 0.705078125, 5.0)
+      New spacing:(0.705078125, 0.705078125, 5.0)
+      Old origin: (-192.1474609375, -352.1474609375, -403.0)
+      New origin: (-192.1474609375, -352.1474609375, -406.79998779296875)
+      Saved: /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1183_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1183.nii.gz
+
+Case: MCT_LTDiag_1184
+  JSON patient ID: 184
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1184_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1184_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1184.nii.gz
+
+Case: MCT_LTDiag_1185
+  JSON patient ID: 185
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1185_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1185_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1185.nii.gz
+
+Case: MCT_LTDiag_1186
+  JSON patient ID: 186
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1186_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1186_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1186.nii.gz
+
+Case: MCT_LTDiag_1187
+  JSON patient ID: 187
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1187_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1187_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1187.nii.gz
+
+Case: MCT_LTDiag_1188
+  JSON patient ID: 188
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1188_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1188_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1188.nii.gz
+
+Case: MCT_LTDiag_1189
+  JSON patient ID: 189
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1189_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1189_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1189.nii.gz
+
+Case: MCT_LTDiag_1190
+  JSON patient ID: 190
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1190_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1190_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1190.nii.gz
+
+Case: MCT_LTDiag_1191
+  JSON patient ID: 191
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1191_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1191_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1191.nii.gz
+
+Case: MCT_LTDiag_1192
+  JSON patient ID: 192
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1192_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1192_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1192.nii.gz
+
+Case: MCT_LTDiag_1193
+  JSON patient ID: 193
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1193_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1193_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1193.nii.gz
+
+Case: MCT_LTDiag_1194
+  JSON patient ID: 194
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1194_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1194_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1194.nii.gz
+
+Case: MCT_LTDiag_1195
+  JSON patient ID: 195
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1195_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1195_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1195.nii.gz
+
+Case: MCT_LTDiag_1196
+  JSON patient ID: 196
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1196_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1196_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1196.nii.gz
+
+Case: MCT_LTDiag_1197
+  JSON patient ID: 197
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1197_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1197_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1197.nii.gz
+
+Case: MCT_LTDiag_1198
+  JSON patient ID: 198
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1198_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1198_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1198.nii.gz
+
+Case: MCT_LTDiag_1199
+  JSON patient ID: 199
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1199_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1199_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1199.nii.gz
+
+Case: MCT_LTDiag_1200
+  JSON patient ID: 200
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1200_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1200_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1200.nii.gz
+
+Case: MCT_LTDiag_1201
+  JSON patient ID: 201
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1201_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1201_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1201.nii.gz
+
+Case: MCT_LTDiag_1202
+  JSON patient ID: 202
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1202_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1202_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1202.nii.gz
+
+Case: MCT_LTDiag_1203
+  JSON patient ID: 203
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1203_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1203_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1203.nii.gz
+
+Case: MCT_LTDiag_1204
+  JSON patient ID: 204
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1204_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1204_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1204.nii.gz
+
+Case: MCT_LTDiag_1205
+  JSON patient ID: 205
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1205_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1205_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1205.nii.gz
+
+Case: MCT_LTDiag_1206
+  JSON patient ID: 206
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1206_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1206_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1206.nii.gz
+
+Case: MCT_LTDiag_1207
+  JSON patient ID: 207
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1207_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1207_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1207.nii.gz
+
+Case: MCT_LTDiag_1208
+  JSON patient ID: 208
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1208_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1208_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1208.nii.gz
+
+Case: MCT_LTDiag_1209
+  JSON patient ID: 209
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1209_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1209_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1209.nii.gz
+
+Case: MCT_LTDiag_1210
+  JSON patient ID: 210
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1210_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1210_0000.nii.gz
+      Reference:  MCT_LTDiag_1210_0001.nii.gz
+      Mismatches: origin
+      Old size:   (512, 512, 61)
+      New size:   (512, 512, 61)
+      Old spacing:(0.765625, 0.765625, 5.0)
+      New spacing:(0.765625, 0.765625, 5.0)
+      Old origin: (-182.6171875, -326.6171875, -489.5)
+      New origin: (-182.6171875, -326.6171875, -488.20001220703125)
+      Saved: /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1210_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1210.nii.gz
+
+Case: MCT_LTDiag_1211
+  JSON patient ID: 211
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1211_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1211_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1211.nii.gz
+
+Case: MCT_LTDiag_1212
+  JSON patient ID: 212
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1212_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1212_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1212.nii.gz
+
+Case: MCT_LTDiag_1213
+  JSON patient ID: 213
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1213_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1213_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1213.nii.gz
+
+Case: MCT_LTDiag_1214
+  JSON patient ID: 214
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1214_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1214_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1214.nii.gz
+
+Case: MCT_LTDiag_1215
+  JSON patient ID: 215
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1215_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1215_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1215.nii.gz
+
+Case: MCT_LTDiag_1216
+  JSON patient ID: 216
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1216_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1216_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1216.nii.gz
+
+Case: MCT_LTDiag_1217
+  JSON patient ID: 217
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1217_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1217_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1217.nii.gz
+
+Case: MCT_LTDiag_1218
+  JSON patient ID: 218
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1218_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1218_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1218.nii.gz
+
+Case: MCT_LTDiag_1219
+  JSON patient ID: 219
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1219_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1219_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1219.nii.gz
+
+Case: MCT_LTDiag_1220
+  JSON patient ID: 220
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1220_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1220_0000.nii.gz
+      Reference:  MCT_LTDiag_1220_0001.nii.gz
+      Mismatches: spacing, origin
+      Old size:   (512, 512, 48)
+      New size:   (512, 512, 48)
+      Old spacing:(0.71875, 0.71875, 5.0)
+      New spacing:(0.724609375, 0.724609375, 5.0)
+      Old origin: (-175.640625, -323.640625, -225.5)
+      New origin: (-178.1376953125, -325.1376953125, -222.89999389648438)
+      Saved: /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1220_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1220.nii.gz
+
+Case: MCT_LTDiag_1221
+  JSON patient ID: 221
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1221_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1221_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1221.nii.gz
+
+Case: MCT_LTDiag_1222
+  JSON patient ID: 222
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1222_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1222_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1222.nii.gz
+
+Case: MCT_LTDiag_1223
+  JSON patient ID: 223
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1223_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1223_0000.nii.gz
+      Reference:  MCT_LTDiag_1223_0001.nii.gz
+      Mismatches: spacing, origin
+      Old size:   (512, 512, 53)
+      New size:   (512, 512, 53)
+      Old spacing:(0.70703125, 0.70703125, 5.0)
+      New spacing:(0.705078125, 0.705078125, 5.0)
+      Old origin: (-177.646484375, -324.646484375, -296.0)
+      New origin: (-176.1474609375, -324.1474609375, -296.0)
+      Saved: /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1223_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1223.nii.gz
+
+Case: MCT_LTDiag_1224
+  JSON patient ID: 224
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1224_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1224_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1224.nii.gz
+
+Case: MCT_LTDiag_1225
+  JSON patient ID: 225
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1225_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1225_0000.nii.gz
+      Reference:  MCT_LTDiag_1225_0001.nii.gz
+      Mismatches: origin
+      Old size:   (512, 512, 57)
+      New size:   (512, 512, 57)
+      Old spacing:(0.68359375, 0.68359375, 4.999821662902832)
+      New spacing:(0.68359375, 0.68359375, 4.999821662902832)
+      Old origin: (-173.9499969482422, -61.599998474121094, -2.0799999237060547)
+      New origin: (-173.9499969482422, -58.79999923706055, -2.0799999237060547)
+      Saved: /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1225_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1225.nii.gz
+
+Case: MCT_LTDiag_1226
+  JSON patient ID: 226
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1226_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1226_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1226.nii.gz
+
+Case: MCT_LTDiag_1227
+  JSON patient ID: 227
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1227_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1227_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1227.nii.gz
+
+Case: MCT_LTDiag_1228
+  JSON patient ID: 228
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1228_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1228_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1228.nii.gz
+
+Case: MCT_LTDiag_1229
+  JSON patient ID: 229
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1229_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1229_0000.nii.gz
+      Reference:  MCT_LTDiag_1229_0001.nii.gz
+      Mismatches: spacing, origin
+      Old size:   (512, 512, 56)
+      New size:   (512, 512, 56)
+      Old spacing:(0.65625, 0.65625, 5.0)
+      New spacing:(0.654296875, 0.654296875, 5.0)
+      Old origin: (-175.671875, -267.671875, -316.0)
+      New origin: (-175.1728515625, -267.1728515625, -316.0)
+      Saved: /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1229_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1229.nii.gz
+
+Case: MCT_LTDiag_1230
+  JSON patient ID: 230
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1230_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1230_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1230.nii.gz
+
+Case: MCT_LTDiag_1231
+  JSON patient ID: 231
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1231_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1231_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1231.nii.gz
+
+Case: MCT_LTDiag_1232
+  JSON patient ID: 232
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1232_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1232_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1232.nii.gz
+
+Case: MCT_LTDiag_1233
+  JSON patient ID: 233
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1233_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1233_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1233.nii.gz
+
+Case: MCT_LTDiag_1234
+  JSON patient ID: 234
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1234_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1234_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1234.nii.gz
+
+Case: MCT_LTDiag_1235
+  JSON patient ID: 235
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1235_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1235_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1235.nii.gz
+
+Case: MCT_LTDiag_1236
+  JSON patient ID: 236
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1236_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1236_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1236.nii.gz
+
+Case: MCT_LTDiag_1237
+  JSON patient ID: 237
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1237_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1237_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1237.nii.gz
+
+Case: MCT_LTDiag_1238
+  JSON patient ID: 238
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1238_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1238_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1238.nii.gz
+
+Case: MCT_LTDiag_1239
+  JSON patient ID: 239
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1239_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1239_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1239.nii.gz
+
+Case: MCT_LTDiag_1240
+  JSON patient ID: 240
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1240_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1240_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1240.nii.gz
+
+Case: MCT_LTDiag_1241
+  JSON patient ID: 241
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1241_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1241_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1241.nii.gz
+
+Case: MCT_LTDiag_1242
+  JSON patient ID: 242
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1242_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1242_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1242.nii.gz
+
+Case: MCT_LTDiag_1243
+  JSON patient ID: 243
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1243_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1243_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1243.nii.gz
+
+Case: MCT_LTDiag_1244
+  JSON patient ID: 244
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1244_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1244_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1244.nii.gz
+
+Case: MCT_LTDiag_1245
+  JSON patient ID: 245
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1245_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1245_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1245.nii.gz
+
+Case: MCT_LTDiag_1246
+  JSON patient ID: 246
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1246_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1246_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1246.nii.gz
+
+Case: MCT_LTDiag_1247
+  JSON patient ID: 247
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1247_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1247_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1247.nii.gz
+
+Case: MCT_LTDiag_1248
+  JSON patient ID: 248
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1248_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1248_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1248.nii.gz
+
+Case: MCT_LTDiag_1249
+  JSON patient ID: 249
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1249_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1249_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1249.nii.gz
+
+Case: MCT_LTDiag_1250
+  JSON patient ID: 250
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1250_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1250_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1250.nii.gz
+
+Case: MCT_LTDiag_1251
+  JSON patient ID: 251
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1251_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1251_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1251.nii.gz
+
+Case: MCT_LTDiag_1252
+  JSON patient ID: 252
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1252_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1252_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1252.nii.gz
+
+Case: MCT_LTDiag_1253
+  JSON patient ID: 253
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1253_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1253_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1253.nii.gz
+
+Case: MCT_LTDiag_1254
+  JSON patient ID: 254
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1254_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1254_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1254.nii.gz
+
+Case: MCT_LTDiag_1255
+  JSON patient ID: 255
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1255_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1255_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1255.nii.gz
+
+Case: MCT_LTDiag_1256
+  JSON patient ID: 256
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1256_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1256_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1256.nii.gz
+
+Case: MCT_LTDiag_1257
+  JSON patient ID: 257
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1257_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1257_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1257.nii.gz
+
+Case: MCT_LTDiag_1258
+  JSON patient ID: 258
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1258_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1258_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1258.nii.gz
+
+Case: MCT_LTDiag_1259
+  JSON patient ID: 259
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1259_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1259_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1259.nii.gz
+
+Case: MCT_LTDiag_1260
+  JSON patient ID: 260
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1260_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1260_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1260.nii.gz
+
+Case: MCT_LTDiag_1261
+  JSON patient ID: 261
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1261_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1261_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1261.nii.gz
+
+Case: MCT_LTDiag_1262
+  JSON patient ID: 262
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1262_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1262_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1262.nii.gz
+
+Case: MCT_LTDiag_1263
+  JSON patient ID: 263
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1263_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1263_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1263.nii.gz
+
+Case: MCT_LTDiag_1264
+  JSON patient ID: 264
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1264_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1264_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1264.nii.gz
+
+Case: MCT_LTDiag_1265
+  JSON patient ID: 265
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1265_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1265_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1265.nii.gz
+
+Case: MCT_LTDiag_1266
+  JSON patient ID: 266
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1266_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1266_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1266.nii.gz
+
+Case: MCT_LTDiag_1267
+  JSON patient ID: 267
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1267_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1267_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1267.nii.gz
+
+Case: MCT_LTDiag_1268
+  JSON patient ID: 268
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1268_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1268_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1268.nii.gz
+
+Case: MCT_LTDiag_1269
+  JSON patient ID: 269
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1269_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1269_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1269.nii.gz
+
+Case: MCT_LTDiag_1270
+  JSON patient ID: 270
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1270_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1270_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1270.nii.gz
+
+Case: MCT_LTDiag_1271
+  JSON patient ID: 271
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1271_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1271_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1271.nii.gz
+
+Case: MCT_LTDiag_1272
+  JSON patient ID: 272
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1272_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1272_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1272.nii.gz
+
+Case: MCT_LTDiag_1273
+  JSON patient ID: 273
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1273_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1273_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1273.nii.gz
+
+Case: MCT_LTDiag_1274
+  JSON patient ID: 274
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1274_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1274_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1274.nii.gz
+
+Case: MCT_LTDiag_1275
+  JSON patient ID: 275
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1275_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1275_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1275.nii.gz
+
+Case: MCT_LTDiag_1276
+  JSON patient ID: 276
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1276_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1276_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1276.nii.gz
+
+Case: MCT_LTDiag_1277
+  JSON patient ID: 277
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1277_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1277_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1277.nii.gz
+
+Case: MCT_LTDiag_1278
+  JSON patient ID: 278
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1278_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1278_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1278.nii.gz
+
+Case: MCT_LTDiag_1279
+  JSON patient ID: 279
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1279_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1279_0000.nii.gz
+      Reference:  MCT_LTDiag_1279_0001.nii.gz
+      Mismatches: direction
+      Old size:   (512, 512, 102)
+      New size:   (512, 512, 102)
+      Old spacing:(0.78125, 0.78125, 5.0)
+      New spacing:(0.78125, 0.78125, 5.0)
+      Old origin: (-200.0, -200.0, -1173.0999755859375)
+      New origin: (-200.0, -200.0, -1173.0999755859375)
+  [FAILED] Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1279_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+
+Case: MCT_LTDiag_1280
+  JSON patient ID: 280
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1280_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1280_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1280.nii.gz
+
+Case: MCT_LTDiag_1281
+  JSON patient ID: 281
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1281_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1281_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1281.nii.gz
+
+Case: MCT_LTDiag_1282
+  JSON patient ID: 282
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1282_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1282_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1282.nii.gz
+
+Case: MCT_LTDiag_1283
+  JSON patient ID: 283
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1283_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1283_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1283.nii.gz
+
+Case: MCT_LTDiag_1284
+  JSON patient ID: 284
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1284_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1284_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1284.nii.gz
+
+Case: MCT_LTDiag_1285
+  JSON patient ID: 285
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1285_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1285_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1285.nii.gz
+
+Case: MCT_LTDiag_1286
+  JSON patient ID: 286
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1286_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1286_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1286.nii.gz
+
+Case: MCT_LTDiag_1287
+  JSON patient ID: 287
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1287_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1287_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1287.nii.gz
+
+Case: MCT_LTDiag_1288
+  JSON patient ID: 288
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1288_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1288_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1288.nii.gz
+
+Case: MCT_LTDiag_1289
+  JSON patient ID: 289
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1289_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1289_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1289.nii.gz
+
+Case: MCT_LTDiag_1290
+  JSON patient ID: 290
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1290_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1290_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1290.nii.gz
+
+Case: MCT_LTDiag_1291
+  JSON patient ID: 291
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1291_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1291_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1291.nii.gz
+
+Case: MCT_LTDiag_1292
+  JSON patient ID: 292
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1292_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1292_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1292.nii.gz
+
+Case: MCT_LTDiag_1293
+  JSON patient ID: 293
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1293_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1293_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1293.nii.gz
+
+Case: MCT_LTDiag_1294
+  JSON patient ID: 294
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1294_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1294_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1294.nii.gz
+
+Case: MCT_LTDiag_1295
+  JSON patient ID: 295
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1295_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1295_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1295.nii.gz
+
+Case: MCT_LTDiag_1296
+  JSON patient ID: 296
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1296_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1296_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1296.nii.gz
+
+Case: MCT_LTDiag_1297
+  JSON patient ID: 297
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1297_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1297_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1297.nii.gz
+
+Case: MCT_LTDiag_1298
+  JSON patient ID: 298
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1298_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1298_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1298.nii.gz
+
+Case: MCT_LTDiag_1299
+  JSON patient ID: 299
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1299_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1299_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1299.nii.gz
+
+Case: MCT_LTDiag_1300
+  JSON patient ID: 300
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1300_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1300_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1300.nii.gz
+
+Case: MCT_LTDiag_1301
+  JSON patient ID: 301
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1301_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1301_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1301.nii.gz
+
+Case: MCT_LTDiag_1302
+  JSON patient ID: 302
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1302_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1302_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1302.nii.gz
+
+Case: MCT_LTDiag_1303
+  JSON patient ID: 303
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1303_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1303_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1303.nii.gz
+
+Case: MCT_LTDiag_1304
+  JSON patient ID: 304
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1304_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1304_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1304.nii.gz
+
+Case: MCT_LTDiag_1305
+  JSON patient ID: 305
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1305_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1305_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1305.nii.gz
+
+Case: MCT_LTDiag_1306
+  JSON patient ID: 306
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1306_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1306_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1306.nii.gz
+
+Case: MCT_LTDiag_1307
+  JSON patient ID: 307
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1307_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1307_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1307.nii.gz
+
+Case: MCT_LTDiag_1308
+  JSON patient ID: 308
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1308_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1308_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1308.nii.gz
+
+Case: MCT_LTDiag_1309
+  JSON patient ID: 309
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1309_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1309_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1309.nii.gz
+
+Case: MCT_LTDiag_1310
+  JSON patient ID: 310
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1310_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1310_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1310.nii.gz
+
+Case: MCT_LTDiag_1311
+  JSON patient ID: 311
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1311_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1311_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1311.nii.gz
+
+Case: MCT_LTDiag_1312
+  JSON patient ID: 312
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1312_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1312_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1312.nii.gz
+
+Case: MCT_LTDiag_1313
+  JSON patient ID: 313
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1313_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1313_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1313.nii.gz
+
+Case: MCT_LTDiag_1314
+  JSON patient ID: 314
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1314_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1314_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1314.nii.gz
+
+Case: MCT_LTDiag_1315
+  JSON patient ID: 315
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1315_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1315_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1315.nii.gz
+
+Case: MCT_LTDiag_1316
+  JSON patient ID: 316
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1316_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1316_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1316.nii.gz
+
+Case: MCT_LTDiag_1317
+  JSON patient ID: 317
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1317_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1317_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1317.nii.gz
+
+Case: MCT_LTDiag_1318
+  JSON patient ID: 318
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1318_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1318_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1318.nii.gz
+
+Case: MCT_LTDiag_1319
+  JSON patient ID: 319
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1319_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1319_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1319.nii.gz
+
+Case: MCT_LTDiag_1320
+  JSON patient ID: 320
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1320_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1320_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1320.nii.gz
+
+Case: MCT_LTDiag_1321
+  JSON patient ID: 321
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1321_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1321_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1321.nii.gz
+
+Case: MCT_LTDiag_1322
+  JSON patient ID: 322
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1322_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1322_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1322.nii.gz
+
+Case: MCT_LTDiag_1323
+  JSON patient ID: 323
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1323_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1323_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1323.nii.gz
+
+Case: MCT_LTDiag_1324
+  JSON patient ID: 324
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1324_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1324_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1324.nii.gz
+
+Case: MCT_LTDiag_1325
+  JSON patient ID: 325
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1325_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1325_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1325.nii.gz
+
+Case: MCT_LTDiag_1326
+  JSON patient ID: 326
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1326_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1326_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1326.nii.gz
+
+Case: MCT_LTDiag_1327
+  JSON patient ID: 327
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1327_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1327_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1327.nii.gz
+
+Case: MCT_LTDiag_1328
+  JSON patient ID: 328
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1328_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1328_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1328.nii.gz
+
+Case: MCT_LTDiag_1329
+  JSON patient ID: 329
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1329_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1329_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1329.nii.gz
+
+Case: MCT_LTDiag_1330
+  JSON patient ID: 330
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1330_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1330_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1330.nii.gz
+
+Case: MCT_LTDiag_1331
+  JSON patient ID: 331
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1331_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1331_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1331.nii.gz
+
+Case: MCT_LTDiag_1332
+  JSON patient ID: 332
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1332_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1332_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1332.nii.gz
+
+Case: MCT_LTDiag_1333
+  JSON patient ID: 333
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1333_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1333_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1333.nii.gz
+
+Case: MCT_LTDiag_1334
+  JSON patient ID: 334
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1334_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1334_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1334.nii.gz
+
+Case: MCT_LTDiag_1335
+  JSON patient ID: 335
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1335_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1335_0000.nii.gz
+      Reference:  MCT_LTDiag_1335_0001.nii.gz
+      Mismatches: direction
+      Old size:   (512, 512, 96)
+      New size:   (512, 512, 96)
+      Old spacing:(0.8515625, 0.8515620231628418, 5.0)
+      New spacing:(0.8515625, 0.8515620231628418, 5.0)
+      Old origin: (-207.60000610351562, -218.0, -1164.300048828125)
+      New origin: (-207.60000610351562, -218.0, -1164.300048828125)
+  [FAILED] Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1335_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+
+Case: MCT_LTDiag_1336
+  JSON patient ID: 336
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1336_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1336_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1336.nii.gz
+
+Case: MCT_LTDiag_1337
+  JSON patient ID: 337
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1337_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1337_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1337.nii.gz
+
+Case: MCT_LTDiag_1338
+  JSON patient ID: 338
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1338_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1338_0000.nii.gz
+      Reference:  MCT_LTDiag_1338_0001.nii.gz
+      Mismatches: direction
+      Old size:   (512, 512, 103)
+      New size:   (512, 512, 103)
+      Old spacing:(0.78125, 0.78125, 5.0)
+      New spacing:(0.78125, 0.78125, 5.0)
+      Old origin: (-224.0, -200.0, -1233.4000244140625)
+      New origin: (-224.0, -200.0, -1233.4000244140625)
+  [FAILED] Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1338_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+
+Case: MCT_LTDiag_1339
+  JSON patient ID: 339
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1339_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1339_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1339.nii.gz
+
+Case: MCT_LTDiag_1340
+  JSON patient ID: 340
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1340_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1340_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1340.nii.gz
+
+Case: MCT_LTDiag_1341
+  JSON patient ID: 341
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1341_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1341_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1341.nii.gz
+
+Case: MCT_LTDiag_1342
+  JSON patient ID: 342
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1342_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1342_0000.nii.gz
+      Reference:  MCT_LTDiag_1342_0001.nii.gz
+      Mismatches: direction
+      Old size:   (512, 512, 88)
+      New size:   (512, 512, 88)
+      Old spacing:(0.78125, 0.78125, 5.0)
+      New spacing:(0.78125, 0.78125, 5.0)
+      Old origin: (-197.0, -200.0, -1202.5)
+      New origin: (-197.0, -200.0, -1202.5)
+  [FAILED] Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1342_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+
+Case: MCT_LTDiag_1343
+  JSON patient ID: 343
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1343_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1343_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1343.nii.gz
+
+Case: MCT_LTDiag_1344
+  JSON patient ID: 344
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1344_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1344_0000.nii.gz
+      Reference:  MCT_LTDiag_1344_0001.nii.gz
+      Mismatches: direction
+      Old size:   (512, 512, 99)
+      New size:   (512, 512, 99)
+      Old spacing:(0.78125, 0.78125, 5.0)
+      New spacing:(0.78125, 0.78125, 5.0)
+      Old origin: (-216.8560028076172, -218.33799743652344, -1263.199951171875)
+      New origin: (-216.8560028076172, -218.33799743652344, -1263.199951171875)
+  [FAILED] Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1344_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+
+Case: MCT_LTDiag_1345
+  JSON patient ID: 345
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1345_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1345_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1345.nii.gz
+
+Case: MCT_LTDiag_1346
+  JSON patient ID: 346
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1346_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1346_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1346.nii.gz
+
+Case: MCT_LTDiag_1347
+  JSON patient ID: 347
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1347_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1347_0000.nii.gz
+      Reference:  MCT_LTDiag_1347_0001.nii.gz
+      Mismatches: direction
+      Old size:   (512, 512, 100)
+      New size:   (512, 512, 100)
+      Old spacing:(0.798828125, 0.7988280057907104, 5.0)
+      New spacing:(0.798828125, 0.7988280057907104, 5.0)
+      Old origin: (-199.0, -204.5, -1265.5999755859375)
+      New origin: (-199.0, -204.5, -1265.5999755859375)
+  [FAILED] Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1347_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+
+Case: MCT_LTDiag_1348
+  JSON patient ID: 348
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1348_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1348_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1348.nii.gz
+
+Case: MCT_LTDiag_1349
+  JSON patient ID: 349
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1349_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1349_0000.nii.gz
+      Reference:  MCT_LTDiag_1349_0001.nii.gz
+      Mismatches: direction
+      Old size:   (512, 512, 100)
+      New size:   (512, 512, 100)
+      Old spacing:(0.78125, 0.78125, 5.0)
+      New spacing:(0.78125, 0.78125, 5.0)
+      Old origin: (-223.10000610351562, -215.281005859375, -1262.5999755859375)
+      New origin: (-223.10000610351562, -215.281005859375, -1262.5999755859375)
+  [FAILED] Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1349_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+
+Case: MCT_LTDiag_1350
+  JSON patient ID: 350
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1350_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1350_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1350.nii.gz
+
+Case: MCT_LTDiag_1351
+  JSON patient ID: 351
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1351_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1351_0000.nii.gz
+      Reference:  MCT_LTDiag_1351_0001.nii.gz
+      Mismatches: direction
+      Old size:   (512, 512, 90)
+      New size:   (512, 512, 90)
+      Old spacing:(0.7890625, 0.7890620231628418, 5.0)
+      New spacing:(0.7890625, 0.7890620231628418, 5.0)
+      Old origin: (-189.39999389648438, -202.0, -1236.5999755859375)
+      New origin: (-189.39999389648438, -202.0, -1236.5999755859375)
+  [FAILED] Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1351_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+
+Case: MCT_LTDiag_1352
+  JSON patient ID: 352
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1352_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1352_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1352.nii.gz
+
+Case: MCT_LTDiag_1353
+  JSON patient ID: 353
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1353_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1353_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1353.nii.gz
+
+Case: MCT_LTDiag_1354
+  JSON patient ID: 354
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1354_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1354_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1354.nii.gz
+
+Case: MCT_LTDiag_1355
+  JSON patient ID: 355
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1355_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1355_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1355.nii.gz
+
+Case: MCT_LTDiag_1356
+  JSON patient ID: 356
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1356_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1356_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1356.nii.gz
+
+Case: MCT_LTDiag_1357
+  JSON patient ID: 357
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1357_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1357_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1357.nii.gz
+
+Case: MCT_LTDiag_1358
+  JSON patient ID: 358
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1358_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1358_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1358.nii.gz
+
+Case: MCT_LTDiag_1359
+  JSON patient ID: 359
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1359_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1359_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1359.nii.gz
+
+Case: MCT_LTDiag_1360
+  JSON patient ID: 360
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1360_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1360_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1360.nii.gz
+
+Case: MCT_LTDiag_1361
+  JSON patient ID: 361
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1361_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1361_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1361.nii.gz
+
+Case: MCT_LTDiag_1362
+  JSON patient ID: 362
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1362_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1362_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1362.nii.gz
+
+Case: MCT_LTDiag_1363
+  JSON patient ID: 363
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1363_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1363_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1363.nii.gz
+
+Case: MCT_LTDiag_1364
+  JSON patient ID: 364
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1364_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1364_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1364.nii.gz
+
+Case: MCT_LTDiag_1365
+  JSON patient ID: 365
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1365_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1365_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1365.nii.gz
+
+Case: MCT_LTDiag_1366
+  JSON patient ID: 366
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1366_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1366_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1366.nii.gz
+
+Case: MCT_LTDiag_1367
+  JSON patient ID: 367
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1367_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1367_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1367.nii.gz
+
+Case: MCT_LTDiag_1368
+  JSON patient ID: 368
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1368_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1368_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1368.nii.gz
+
+Case: MCT_LTDiag_1369
+  JSON patient ID: 369
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1369_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1369_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1369.nii.gz
+
+Case: MCT_LTDiag_1370
+  JSON patient ID: 370
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1370_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1370_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1370.nii.gz
+
+Case: MCT_LTDiag_1371
+  JSON patient ID: 371
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1371_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1371_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1371.nii.gz
+
+Case: MCT_LTDiag_1372
+  JSON patient ID: 372
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1372_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1372_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1372.nii.gz
+
+Case: MCT_LTDiag_1373
+  JSON patient ID: 373
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1373_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1373_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1373.nii.gz
+
+Case: MCT_LTDiag_1374
+  JSON patient ID: 374
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1374_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1374_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1374.nii.gz
+
+Case: MCT_LTDiag_1375
+  JSON patient ID: 375
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1375_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1375_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1375.nii.gz
+
+Case: MCT_LTDiag_1376
+  JSON patient ID: 376
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1376_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1376_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1376.nii.gz
+
+Case: MCT_LTDiag_1377
+  JSON patient ID: 377
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1377_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1377_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1377.nii.gz
+
+Case: MCT_LTDiag_1378
+  JSON patient ID: 378
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1378_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1378_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1378.nii.gz
+
+Case: MCT_LTDiag_1379
+  JSON patient ID: 379
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1379_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1379_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1379.nii.gz
+
+Case: MCT_LTDiag_1380
+  JSON patient ID: 380
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1380_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1380_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1380.nii.gz
+
+Case: MCT_LTDiag_1381
+  JSON patient ID: 381
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1381_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1381_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1381.nii.gz
+
+Case: MCT_LTDiag_1382
+  JSON patient ID: 382
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1382_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1382_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1382.nii.gz
+
+Case: MCT_LTDiag_1383
+  JSON patient ID: 383
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1383_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1383_0000.nii.gz
+      Reference:  MCT_LTDiag_1383_0001.nii.gz
+      Mismatches: direction
+      Old size:   (512, 512, 101)
+      New size:   (512, 512, 101)
+      Old spacing:(0.845703125, 0.8457030057907104, 5.0)
+      New spacing:(0.845703125, 0.8457030057907104, 5.0)
+      Old origin: (-232.5, -216.5, -1276.5)
+      New origin: (-232.5, -216.5, -1276.5)
+  [FAILED] Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1383_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+
+Case: MCT_LTDiag_1384
+  JSON patient ID: 384
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1384_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1384_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1384.nii.gz
+
+Case: MCT_LTDiag_1385
+  JSON patient ID: 385
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1385_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1385_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1385.nii.gz
+
+Case: MCT_LTDiag_1386
+  JSON patient ID: 386
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1386_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1386_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1386.nii.gz
+
+Case: MCT_LTDiag_1387
+  JSON patient ID: 387
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1387_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1387_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1387.nii.gz
+
+Case: MCT_LTDiag_1388
+  JSON patient ID: 388
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1388_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1388_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1388.nii.gz
+
+Case: MCT_LTDiag_1389
+  JSON patient ID: 389
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1389_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1389_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1389.nii.gz
+
+Case: MCT_LTDiag_1390
+  JSON patient ID: 390
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1390_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1390_0000.nii.gz
+      Reference:  MCT_LTDiag_1390_0001.nii.gz
+      Mismatches: direction
+      Old size:   (512, 512, 100)
+      New size:   (512, 512, 100)
+      Old spacing:(0.78125, 0.78125, 5.0)
+      New spacing:(0.78125, 0.78125, 5.0)
+      Old origin: (-200.0, -200.0, -1140.300048828125)
+      New origin: (-200.0, -200.0, -1140.300048828125)
+  [FAILED] Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1390_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+
+Case: MCT_LTDiag_1391
+  JSON patient ID: 391
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1391_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1391_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1391.nii.gz
+
+Case: MCT_LTDiag_1392
+  JSON patient ID: 392
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1392_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1392_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1392.nii.gz
+
+Case: MCT_LTDiag_1393
+  JSON patient ID: 393
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1393_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1393_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1393.nii.gz
+
+Case: MCT_LTDiag_1394
+  JSON patient ID: 394
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1394_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1394_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1394.nii.gz
+
+Case: MCT_LTDiag_1395
+  JSON patient ID: 395
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1395_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1395_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1395.nii.gz
+
+Case: MCT_LTDiag_1396
+  JSON patient ID: 396
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1396_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1396_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1396.nii.gz
+
+Case: MCT_LTDiag_1397
+  JSON patient ID: 397
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1397_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1397_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1397.nii.gz
+
+Case: MCT_LTDiag_1398
+  JSON patient ID: 398
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1398_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1398_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1398.nii.gz
+
+Case: MCT_LTDiag_1399
+  JSON patient ID: 399
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1399_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1399_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1399.nii.gz
+
+Case: MCT_LTDiag_1400
+  JSON patient ID: 400
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1400_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1400_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1400.nii.gz
+
+Case: MCT_LTDiag_1401
+  JSON patient ID: 401
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1401_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1401_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1401.nii.gz
+
+Case: MCT_LTDiag_1402
+  JSON patient ID: 402
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1402_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1402_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1402.nii.gz
+
+Case: MCT_LTDiag_1403
+  JSON patient ID: 403
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1403_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1403_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1403.nii.gz
+
+Case: MCT_LTDiag_1404
+  JSON patient ID: 404
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1404_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1404_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1404.nii.gz
+
+Case: MCT_LTDiag_1405
+  JSON patient ID: 405
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1405_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1405_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1405.nii.gz
+
+Case: MCT_LTDiag_1406
+  JSON patient ID: 406
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1406_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1406_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1406.nii.gz
+
+Case: MCT_LTDiag_1407
+  JSON patient ID: 407
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1407_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1407_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1407.nii.gz
+
+Case: MCT_LTDiag_1408
+  JSON patient ID: 408
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1408_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1408_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1408.nii.gz
+
+Case: MCT_LTDiag_1409
+  JSON patient ID: 409
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1409_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1409_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1409.nii.gz
+
+Case: MCT_LTDiag_1410
+  JSON patient ID: 410
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1410_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1410_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1410.nii.gz
+
+Case: MCT_LTDiag_1411
+  JSON patient ID: 411
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1411_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1411_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1411.nii.gz
+
+Case: MCT_LTDiag_1412
+  JSON patient ID: 412
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1412_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1412_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1412.nii.gz
+
+Case: MCT_LTDiag_1413
+  JSON patient ID: 413
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1413_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1413_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1413.nii.gz
+
+Case: MCT_LTDiag_1414
+  JSON patient ID: 414
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1414_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1414_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1414.nii.gz
+
+Case: MCT_LTDiag_1415
+  JSON patient ID: 415
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1415_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1415_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1415.nii.gz
+
+Case: MCT_LTDiag_1416
+  JSON patient ID: 416
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1416_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1416_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1416.nii.gz
+
+Case: MCT_LTDiag_1417
+  JSON patient ID: 417
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1417_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1417_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1417.nii.gz
+
+Case: MCT_LTDiag_1418
+  JSON patient ID: 418
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1418_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1418_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1418.nii.gz
+
+Case: MCT_LTDiag_1419
+  JSON patient ID: 419
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1419_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1419_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1419.nii.gz
+
+Case: MCT_LTDiag_1420
+  JSON patient ID: 420
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1420_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1420_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1420.nii.gz
+
+Case: MCT_LTDiag_1421
+  JSON patient ID: 421
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1421_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1421_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1421.nii.gz
+
+Case: MCT_LTDiag_1422
+  JSON patient ID: 422
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1422_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1422_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1422.nii.gz
+
+Case: MCT_LTDiag_1423
+  JSON patient ID: 423
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1423_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1423_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1423.nii.gz
+
+Case: MCT_LTDiag_1424
+  JSON patient ID: 424
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1424_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1424_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1424.nii.gz
+
+Case: MCT_LTDiag_1425
+  JSON patient ID: 425
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1425_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1425_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1425.nii.gz
+
+Case: MCT_LTDiag_1426
+  JSON patient ID: 426
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1426_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1426_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1426.nii.gz
+
+Case: MCT_LTDiag_1427
+  JSON patient ID: 427
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1427_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1427_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1427.nii.gz
+
+Case: MCT_LTDiag_1428
+  JSON patient ID: 428
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1428_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1428_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1428.nii.gz
+
+Case: MCT_LTDiag_1429
+  JSON patient ID: 429
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1429_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1429_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1429.nii.gz
+
+Case: MCT_LTDiag_1430
+  JSON patient ID: 430
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1430_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1430_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1430.nii.gz
+
+Case: MCT_LTDiag_1431
+  JSON patient ID: 431
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1431_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1431_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1431.nii.gz
+
+Case: MCT_LTDiag_1432
+  JSON patient ID: 432
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1432_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1432_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1432.nii.gz
+
+Case: MCT_LTDiag_1433
+  JSON patient ID: 433
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1433_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1433_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1433.nii.gz
+
+Case: MCT_LTDiag_1434
+  JSON patient ID: 434
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1434_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1434_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1434.nii.gz
+
+Case: MCT_LTDiag_1435
+  JSON patient ID: 435
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1435_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1435_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1435.nii.gz
+
+Case: MCT_LTDiag_1436
+  JSON patient ID: 436
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1436_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1436_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1436.nii.gz
+
+Case: MCT_LTDiag_1437
+  JSON patient ID: 437
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1437_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1437_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1437.nii.gz
+
+Case: MCT_LTDiag_1438
+  JSON patient ID: 438
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1438_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [RESAMPLE] CT _0000: MCT_LTDiag_1438_0000.nii.gz
+      Reference:  MCT_LTDiag_1438_0001.nii.gz
+      Mismatches: direction
+      Old size:   (512, 512, 103)
+      New size:   (512, 512, 103)
+      Old spacing:(0.78125, 0.78125, 5.0)
+      New spacing:(0.78125, 0.78125, 5.0)
+      Old origin: (-200.0, -200.0, -1211.0)
+      New origin: (-200.0, -200.0, -1211.0)
+  [FAILED] Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1438_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+
+Case: MCT_LTDiag_1439
+  JSON patient ID: 439
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1439_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1439_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1439.nii.gz
+
+Case: MCT_LTDiag_1440
+  JSON patient ID: 440
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1440_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1440_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1440.nii.gz
+
+Case: MCT_LTDiag_1441
+  JSON patient ID: 441
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1441_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1441_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1441.nii.gz
+
+Case: MCT_LTDiag_1442
+  JSON patient ID: 442
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1442_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1442_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1442.nii.gz
+
+Case: MCT_LTDiag_1443
+  JSON patient ID: 443
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1443_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1443_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1443.nii.gz
+
+Case: MCT_LTDiag_1444
+  JSON patient ID: 444
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1444_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1444_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1444.nii.gz
+
+Case: MCT_LTDiag_1445
+  JSON patient ID: 445
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1445_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1445_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1445.nii.gz
+
+Case: MCT_LTDiag_1446
+  JSON patient ID: 446
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1446_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1446_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1446.nii.gz
+
+Case: MCT_LTDiag_1447
+  JSON patient ID: 447
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1447_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1447_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1447.nii.gz
+
+Case: MCT_LTDiag_1448
+  JSON patient ID: 448
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1448_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1448_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1448.nii.gz
+
+Case: MCT_LTDiag_1449
+  JSON patient ID: 449
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1449_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1449_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1449.nii.gz
+
+Case: MCT_LTDiag_1450
+  JSON patient ID: 450
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1450_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1450_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1450.nii.gz
+
+Case: MCT_LTDiag_1451
+  JSON patient ID: 451
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1451_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1451_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1451.nii.gz
+
+Case: MCT_LTDiag_1452
+  JSON patient ID: 452
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1452_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1452_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1452.nii.gz
+
+Case: MCT_LTDiag_1453
+  JSON patient ID: 453
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1453_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1453_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1453.nii.gz
+
+Case: MCT_LTDiag_1454
+  JSON patient ID: 454
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1454_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1454_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1454.nii.gz
+
+Case: MCT_LTDiag_1455
+  JSON patient ID: 455
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1455_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1455_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1455.nii.gz
+
+Case: MCT_LTDiag_1456
+  JSON patient ID: 456
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1456_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1456_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1456.nii.gz
+
+Case: MCT_LTDiag_1457
+  JSON patient ID: 457
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1457_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1457_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1457.nii.gz
+
+Case: MCT_LTDiag_1458
+  JSON patient ID: 458
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1458_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1458_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1458.nii.gz
+
+Case: MCT_LTDiag_1459
+  JSON patient ID: 459
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1459_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1459_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1459.nii.gz
+
+Case: MCT_LTDiag_1460
+  JSON patient ID: 460
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1460_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1460_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1460.nii.gz
+
+Case: MCT_LTDiag_1461
+  JSON patient ID: 461
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1461_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1461_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1461.nii.gz
+
+Case: MCT_LTDiag_1462
+  JSON patient ID: 462
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1462_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1462_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1462.nii.gz
+
+Case: MCT_LTDiag_1463
+  JSON patient ID: 463
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1463_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1463_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1463.nii.gz
+
+Case: MCT_LTDiag_1464
+  JSON patient ID: 464
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1464_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1464_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1464.nii.gz
+
+Case: MCT_LTDiag_1465
+  JSON patient ID: 465
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1465_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1465_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1465.nii.gz
+
+Case: MCT_LTDiag_1466
+  JSON patient ID: 466
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1466_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1466_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1466.nii.gz
+
+Case: MCT_LTDiag_1467
+  JSON patient ID: 467
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1467_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1467_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1467.nii.gz
+
+Case: MCT_LTDiag_1468
+  JSON patient ID: 468
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1468_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1468_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1468.nii.gz
+
+Case: MCT_LTDiag_1469
+  JSON patient ID: 469
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1469_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1469_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1469.nii.gz
+
+Case: MCT_LTDiag_1470
+  JSON patient ID: 470
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1470_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1470_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1470.nii.gz
+
+Case: MCT_LTDiag_1471
+  JSON patient ID: 471
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1471_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1471_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1471.nii.gz
+
+Case: MCT_LTDiag_1472
+  JSON patient ID: 472
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1472_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1472_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1472.nii.gz
+
+Case: MCT_LTDiag_1473
+  JSON patient ID: 473
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1473_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1473_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1473.nii.gz
+
+Case: MCT_LTDiag_1474
+  JSON patient ID: 474
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1474_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1474_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1474.nii.gz
+
+Case: MCT_LTDiag_1475
+  JSON patient ID: 475
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1475_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1475_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1475.nii.gz
+
+Case: MCT_LTDiag_1476
+  JSON patient ID: 476
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1476_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1476_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1476.nii.gz
+
+Case: MCT_LTDiag_1477
+  JSON patient ID: 477
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1477_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1477_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1477.nii.gz
+
+Case: MCT_LTDiag_1478
+  JSON patient ID: 478
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1478_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1478_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1478.nii.gz
+
+Case: MCT_LTDiag_1479
+  JSON patient ID: 479
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1479_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1479_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1479.nii.gz
+
+Case: MCT_LTDiag_1480
+  JSON patient ID: 480
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1480_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1480_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1480.nii.gz
+
+Case: MCT_LTDiag_1481
+  JSON patient ID: 481
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1481_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1481_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1481.nii.gz
+
+Case: MCT_LTDiag_1482
+  JSON patient ID: 482
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1482_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1482_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1482.nii.gz
+
+Case: MCT_LTDiag_1483
+  JSON patient ID: 483
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1483_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1483_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1483.nii.gz
+
+Case: MCT_LTDiag_1484
+  JSON patient ID: 484
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1484_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1484_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1484.nii.gz
+
+Case: MCT_LTDiag_1485
+  JSON patient ID: 485
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1485_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1485_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1485.nii.gz
+
+Case: MCT_LTDiag_1486
+  JSON patient ID: 486
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1486_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1486_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1486.nii.gz
+
+Case: MCT_LTDiag_1487
+  JSON patient ID: 487
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1487_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1487_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1487.nii.gz
+
+Case: MCT_LTDiag_1488
+  JSON patient ID: 488
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1488_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1488_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1488.nii.gz
+
+Case: MCT_LTDiag_1489
+  JSON patient ID: 489
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1489_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1489_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1489.nii.gz
+
+Case: MCT_LTDiag_1490
+  JSON patient ID: 490
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1490_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1490_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1490.nii.gz
+
+Case: MCT_LTDiag_1491
+  JSON patient ID: 491
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1491_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1491_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1491.nii.gz
+
+Case: MCT_LTDiag_1492
+  JSON patient ID: 492
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1492_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1492_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1492.nii.gz
+
+Case: MCT_LTDiag_1493
+  JSON patient ID: 493
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1493_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1493_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1493.nii.gz
+
+Case: MCT_LTDiag_1494
+  JSON patient ID: 494
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1494_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1494_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1494.nii.gz
+
+Case: MCT_LTDiag_1495
+  JSON patient ID: 495
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1495_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1495_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1495.nii.gz
+
+Case: MCT_LTDiag_1496
+  JSON patient ID: 496
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1496_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1496_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1496.nii.gz
+
+Case: MCT_LTDiag_1497
+  JSON patient ID: 497
+  label_phase:     not available
+  Final reference: MCT_LTDiag_1497_0001.nii.gz
+  Rule: no JSON, therefore _0001 is used as reference
+  [OK] CT _0000: MCT_LTDiag_1497_0000.nii.gz
+  [OK] SEG: MCT_LTDiag_1497.nii.gz
+
+Summary
+Cases found:                  498
+Cases processed successfully: 485
+CT images resampled:          9
+Segmentations resampled:      0
+Failed cases:                 13
+
+Failed cases:
+  MCT_LTDiag_1041: Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1041_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+  MCT_LTDiag_1042: Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1042_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+  MCT_LTDiag_1279: Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1279_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+  MCT_LTDiag_1335: Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1335_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+  MCT_LTDiag_1338: Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1338_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+  MCT_LTDiag_1342: Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1342_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+  MCT_LTDiag_1344: Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1344_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+  MCT_LTDiag_1347: Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1347_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+  MCT_LTDiag_1349: Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1349_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+  MCT_LTDiag_1351: Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1351_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+  MCT_LTDiag_1383: Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1383_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+  MCT_LTDiag_1390: Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1390_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+  MCT_LTDiag_1438: Grid verification failed for /projects/prjs2180/data/nnUNet_raw/MCT_LTDiag_grid_fixed/CT/MCT_LTDiag_1438_0000.nii.gz: {'shape': True, 'spacing': True, 'origin': True, 'direction': False}
+
+
+Manual check:
+MCT_LTDiag_1041
+  SEG:        MCT_LTDiag_1041.nii.gz
+  shape:      True
+  spacing:    True
+  origin:     True
+  direction:  True
+  labels:     [0, 1]
+  foreground: 9088
+  RESULT: PASS
+
+MCT_LTDiag_1042
+  SEG:        MCT_LTDiag_1042.nii.gz
+  shape:      True
+  spacing:    True
+  origin:     True
+  direction:  True
+  labels:     [0, 1]
+  foreground: 2030
+  RESULT: PASS
+
+MCT_LTDiag_1279
+  SEG:        MCT_LTDiag_1279.nii.gz
+  shape:      True
+  spacing:    True
+  origin:     True
+  direction:  True
+  labels:     [0, 1]
+  foreground: 3141
+  RESULT: PASS
+
+MCT_LTDiag_1335
+  SEG:        MCT_LTDiag_1335.nii.gz
+  shape:      True
+  spacing:    True
+  origin:     True
+  direction:  True
+  labels:     [0, 1]
+  foreground: 595
+  RESULT: PASS
+
+MCT_LTDiag_1338
+  SEG:        MCT_LTDiag_1338.nii.gz
+  shape:      True
+  spacing:    True
+  origin:     True
+  direction:  True
+  labels:     [0, 1]
+  foreground: 3164
+  RESULT: PASS
+
+MCT_LTDiag_1342
+  SEG:        MCT_LTDiag_1342.nii.gz
+  shape:      True
+  spacing:    True
+  origin:     True
+  direction:  True
+  labels:     [0, 1]
+  foreground: 870
+  RESULT: PASS
+
+MCT_LTDiag_1344
+  SEG:        MCT_LTDiag_1344.nii.gz
+  shape:      True
+  spacing:    True
+  origin:     True
+  direction:  True
+  labels:     [0, 1]
+  foreground: 2156
+  RESULT: PASS
+
+MCT_LTDiag_1347
+  SEG:        MCT_LTDiag_1347.nii.gz
+  shape:      True
+  spacing:    True
+  origin:     True
+  direction:  True
+  labels:     [0, 1]
+  foreground: 66943
+  RESULT: PASS
+
+MCT_LTDiag_1349
+  SEG:        MCT_LTDiag_1349.nii.gz
+  shape:      True
+  spacing:    True
+  origin:     True
+  direction:  True
+  labels:     [0, 1]
+  foreground: 1413
+  RESULT: PASS
+
+MCT_LTDiag_1351
+  SEG:        MCT_LTDiag_1351.nii.gz
+  shape:      True
+  spacing:    True
+  origin:     True
+  direction:  True
+  labels:     [0, 1]
+  foreground: 36553
+  RESULT: PASS
+
+MCT_LTDiag_1390
+  SEG:        MCT_LTDiag_1390.nii.gz
+  shape:      True
+  spacing:    True
+  origin:     True
+  direction:  True
+  labels:     [0, 1]
+  foreground: 360
+  RESULT: PASS
+
+MCT_LTDiag_1438
+  SEG:        MCT_LTDiag_1438.nii.gz
+  shape:      True
+  spacing:    True
+  origin:     True
+  direction:  True
+  labels:     [0, 1]
+  foreground: 87526
+  RESULT: PASS
+
+SUMMARY
+Passed:     12
+Mismatched: 0

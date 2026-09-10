@@ -21,7 +21,7 @@ python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/cr
     --train_ratio 0.8 \
     --seed 42
 
-    
+
 
 python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/create_splits_combined.py \
     --ct_1_dir $nnUNet_raw/MSD/CT1 \
@@ -42,6 +42,15 @@ python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/cr
     --train_ratio 0.8 \
     --seed 42
 
+python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/create_splits_combined.py \
+    --ct_1_dir $nnUNet_raw/MCT_LTDiag_grid_fixed/CT1 \
+    --ct_2_dir $nnUNet_raw/MCT_LTDiag_grid_fixed/CT \
+    --seg_dir $nnUNet_raw/MCT_LTDiag_grid_fixed/SEG \
+    --output_1_dir $nnUNet_raw/Dataset103_MCT_LTDiag \
+    --output_2_dir $nnUNet_raw/Dataset203_MCT_LTDiag \
+    --train_ratio 0.8 \
+    --seed 42
+    
 
 104 for Liver lesions ~(single)
 204 for liver lesions ~(dual)
