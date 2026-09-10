@@ -1,0 +1,13 @@
+python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/fix_grid_single.py \
+    --ct_dir /projects/prjs2180/data/nnUNet_raw/WAW_TACE/CT1 \
+    --seg_dir /projects/prjs2180/data/nnUNet_raw/WAW_TACE/SEG \
+    --output_dir /projects/prjs2180/data/nnUNet_raw/WAW_TACE_grid_fixed
+
+
+
+python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/fix_dualphase_grids.py \
+    --image_dir /projects/prjs2180/data/nnUNet_raw/WAW_TACE/CT \
+    --seg_dir /projects/prjs2180/data/nnUNet_raw/WAW_TACE_grid_fixed/SEG \
+    --ct1_dir /projects/prjs2180/data/nnUNet_raw/WAW_TACE/CT1 \
+    --phase_json /projects/prjs2180/data/nnUNet_raw/WAW_TACE/phase_selection.json \
+    --output_dir /projects/prjs2180/data/nnUNet_raw/WAW_TACE_grid_fixed
