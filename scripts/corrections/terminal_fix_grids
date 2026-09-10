@@ -4,8 +4,7 @@ python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/fi
     --output_dir /projects/prjs2180/data/nnUNet_raw/WAW_TACE_grid_fixed
 
 
-
-python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/fix_dualphase_grids.py \
+python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/corrections/fix_grid_dual.py \
     --image_dir /projects/prjs2180/data/nnUNet_raw/WAW_TACE/CT \
     --seg_dir /projects/prjs2180/data/nnUNet_raw/WAW_TACE_grid_fixed/SEG \
     --ct1_dir /projects/prjs2180/data/nnUNet_raw/WAW_TACE/CT1 \
