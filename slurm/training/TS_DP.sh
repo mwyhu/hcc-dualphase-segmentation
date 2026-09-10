@@ -25,7 +25,7 @@ echo "Job ID: $SLURM_JOB_ID"
 export nnUNet_results=/projects/prjs2180/data/nnUNet_results/TS_DP
 
 nnUNetv2_train \
-    1 \
+    2 \
     3d_fullres \
     0 \
     -tr nnUNetTrainer \
