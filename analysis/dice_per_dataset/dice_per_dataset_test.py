@@ -11,24 +11,24 @@ import matplotlib.pyplot as plt
 # -------------------------------------------------------------------
 
 DICE_FILES = {
-    "Start1": "/Users/michellehu/Desktop/hcc_active_learning/analysis/dice_per_dataset/summary_1channel.json",
-    "Start2": "/Users/michellehu/Desktop/hcc_active_learning/analysis/dice_per_dataset/summary_2channel.json",
-    "Ceiling": "/Users/michellehu/Desktop/hcc_active_learning/analysis/dice_per_dataset/summary_ceiling.json",
-    "TS": "/Users/michellehu/Desktop/hcc_active_learning/analysis/dice_per_dataset/summary_TS.json",
+    "TS_SP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSSP_summary.json",
+    "TS_DP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSDP_summary.json",
+    "TSLL_SP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLLSP_summary.json",
+    "TSLL_DP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLLDP_summary.json",
 }
 
 MODEL_ORDER = [
-    "Start1",
-    "Start2",
-    "Ceiling",
-    "TS",
+    "TS_SP",
+    "TS_DP",
+    "TSLL_SP",
+    "TSLL_DP",
 ]
 
 MODEL_PALETTE = {
-    "Start1": "#4C72B0",
-    "Start2": "#55A868",
-    "Ceiling": "#C44E52",
-    "TS": "#8172B2",
+    "TS_SP": "#4C72B0",
+    "TS_DP": "#55A868",
+    "TSLL_SP": "#C44E52",
+    "TSLL_DP": "#8172B2",
 }
 
 
@@ -44,12 +44,10 @@ def get_dataset(case_name):
     Adjust these prefixes if your case names differ.
     """
     dataset_prefixes = [
-        "HCC_TACE",
-        "TCIA_CRLM",
+        "Liver_Lesions",
+        "MCT_LTDiag",
         "WAW_TACE",
-        "WORC_CRLM",
-        "LiTS",
-        "MSD",
+        "MSD08",
     ]
 
     for dataset in dataset_prefixes:
