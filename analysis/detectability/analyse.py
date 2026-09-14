@@ -16,6 +16,7 @@ MODEL_FILES = {
     "TS_DP": "detectability_TS_DP.csv",
     "TSLL_SP": "detectability_TSLL_SP.csv",
     "TSLL_DP": "detectability_TSLL_DP.csv",
+    "TSLL_DP_1e3": "detectability_TSLL_DP_1e3.csv",
 }
 
 MODEL_ORDER = list(MODEL_FILES)
