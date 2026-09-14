@@ -15,6 +15,7 @@ DICE_FILES = {
     "TS_DP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSDP_summary.json",
     "TSLL_SP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLLSP_summary.json",
     "TSLL_DP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLLDP_summary.json",
+    "TSLL_DP_1e3" : "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLL_DP_1e3_summary.json"
 }
 
 MODEL_ORDER = [
@@ -22,6 +23,7 @@ MODEL_ORDER = [
     "TS_DP",
     "TSLL_SP",
     "TSLL_DP",
+    "TSLL_DP_1e3",
 ]
 
 MODEL_PALETTE = {
@@ -29,6 +31,7 @@ MODEL_PALETTE = {
     "TS_DP": "#55A868",
     "TSLL_SP": "#C44E52",
     "TSLL_DP": "#8172B2",
+    "TSLL_DP_1e3" : "#8572B3"
 }
 
 
