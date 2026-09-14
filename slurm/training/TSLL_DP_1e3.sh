@@ -22,7 +22,7 @@ date
 echo "Node: $SLURMD_NODENAME"
 echo "Job ID: $SLURM_JOB_ID"
 
-export nnUNet_results=/projects/prjs2180/data/nnUNet_results/TSLL_DP
+export nnUNet_results=/projects/prjs2180/data/nnUNet_results/TSLL_DP_1e3
 
 nnUNetv2_train \
     2 \
