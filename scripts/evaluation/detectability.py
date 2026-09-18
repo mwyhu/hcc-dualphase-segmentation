@@ -6,6 +6,8 @@ import pandas as pd
 import SimpleITK as sitk
 from scipy.ndimage import label
 
+import nibabel as nib
+
 
 def calculate_tumour_detectability(prediction, ground_truth, thresholds=(0.0, 0.15, 0.25)):
 
@@ -97,12 +99,32 @@ def calculate_tumour_detectability(prediction, ground_truth, thresholds=(0.0, 0.
 
 
 def load_mask(path):
+    """
+    Load a segmentation mask
+    If the NIfTI contains invalid direction metadata, nibabel is used as fallback
+    """
     try:
         image = sitk.ReadImage(str(path))
-    except RuntimeError as error:
-        raise RuntimeError(f"Failed to read NIfTI file: {path}") from error
+        array = sitk.GetArrayFromImage(image)  # (z, y, x)
 
-    return sitk.GetArrayFromImage(image) > 0
+    except RuntimeError as error:
+        if "orthonormal direction cosines" not in str(error):
+            raise RuntimeError(f"Failed to read NIfTI file: {path}") from error
+
+        print(
+            f"WARNING: Invalid direction metadata in {path}. "
+            "Loading voxel data with nibabel."
+        )
+
+        import nibabel as nib
+
+        image = nib.load(str(path))
+        array = np.asarray(image.dataobj)
+
+        # nibabel: (x, y, z) → SimpleITK convention: (z, y, x)
+        array = np.transpose(array, (2, 1, 0))
+
+    return array > 0
 
 
 def main():
