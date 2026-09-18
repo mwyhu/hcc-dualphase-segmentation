@@ -1,6 +1,5 @@
 #!/bin/bash
 #SBATCH --job-name=TS_SP
-#SBATCH --account=prjs2180
 #SBATCH --partition=gpu_a100
 #SBATCH --gpus=1
 #SBATCH --cpus-per-task=8
@@ -15,8 +14,6 @@ cd /projects/prjs2180/code/hcc-dualphase-segmentation
 
 source setup_env.sh
 
-export OMP_NUM_THREADS=1
-export MKL_NUM_THREADS=1
 export nnUNet_n_proc_DA=$SLURM_CPUS_PER_TASK
 
 echo "Job started"

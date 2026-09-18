@@ -8,14 +8,18 @@ import seaborn as sns
 
 # Settings
 BASE_DIR = Path(
-    "/Users/michellehu/Desktop/hcc_active_learning/analysis/detectability"
+    "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/detectability"
 )
 
 MODEL_FILES = {
-    "Start1": "detectability_start1.csv",
-    "Start2": "detectability_start2.csv",
-    "Ceiling": "detectability_ceiling.csv",
-    "TS": "detectability_TS.csv",
+    "SP_1e2": "detectability_TSLL_SP.csv",
+    "DP_1e2": "detectability_TSLL_DP.csv",
+    "SP_1e3": "detectability_TSLL_SP_1e3.csv",
+    "DP_1e3": "detectability_TSLL_DP_1e3.csv",
+    "CA_SP_1e2": "detectability_TSLL_SP_CA.csv",
+    "CA_DP_1e2": "detectability_TSLL_DP_CA.csv",
+    "CA_SP_1e3": "detectability_TSLL_SP_1e3_CA.csv",
+    "CA_DP_1e3": "detectability_TSLL_DP_1e3_CA.csv",
 }
 
 MODEL_ORDER = list(MODEL_FILES)
@@ -253,7 +257,7 @@ print("\n--- Summary by source, model and IoU threshold ---")
 print(source_model_threshold_summary)
 
 # Main reporting threshold
-REPORT_THRESHOLD = 0.15
+REPORT_THRESHOLD = 0.2
 df_report = df_all[np.isclose(df_all["iou_threshold"], REPORT_THRESHOLD)]
 
 model_summary_report = create_summary(df_report, ["model"])

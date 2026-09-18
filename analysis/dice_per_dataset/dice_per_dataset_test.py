@@ -11,24 +11,36 @@ import matplotlib.pyplot as plt
 # -------------------------------------------------------------------
 
 DICE_FILES = {
-    "Start1": "/Users/michellehu/Desktop/hcc_active_learning/analysis/dice_per_dataset/summary_1channel.json",
-    "Start2": "/Users/michellehu/Desktop/hcc_active_learning/analysis/dice_per_dataset/summary_2channel.json",
-    "Ceiling": "/Users/michellehu/Desktop/hcc_active_learning/analysis/dice_per_dataset/summary_ceiling.json",
-    "TS": "/Users/michellehu/Desktop/hcc_active_learning/analysis/dice_per_dataset/summary_TS.json",
+    "TSLL_SP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLLSP_summary.json",
+    "TSLL_DP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLLDP_summary.json",
+    "TSLL_CA_SP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/SP_CA_summary.json",
+    "TSLL_CA_DP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/DP_CA_summary.json",
+    "TSLL_SP_1e3": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLL_SP_1e3_summary.json",
+    "TSLL_DP_1e3" : "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLL_DP_1e3_summary.json",
+    "TSLL_CA_SP_1e3": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/SP_CA_1e3_summary.json",
+    "TSLL_CA_DP_1e3": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/DP_CA_1e3_summary.json",
 }
 
 MODEL_ORDER = [
-    "Start1",
-    "Start2",
-    "Ceiling",
-    "TS",
+    "TSLL_SP",
+    "TSLL_DP",
+    "TSLL_CA_SP",
+    "TSLL_CA_DP",
+    "TSLL_SP_1e3",
+    "TSLL_DP_1e3",
+    "TSLL_CA_SP_1e3",
+    "TSLL_CA_DP_1e3",
 ]
 
 MODEL_PALETTE = {
-    "Start1": "#4C72B0",
-    "Start2": "#55A868",
-    "Ceiling": "#C44E52",
-    "TS": "#8172B2",
+    "TSLL_SP": "#C44E52",
+    "TSLL_DP": "#8172B2",
+    "TSLL_CA_SP":"#ff3366",
+    "TSLL_CA_DP":"#20a4f3",
+    "TSLL_SP_1e3" : "#D496A7",
+    "TSLL_DP_1e3": "#4C72B0",
+    "TSLL_CA_SP_1e3": "#78e0dc",
+    "TSLL_CA_DP_1e3": "#9d695a",
 }
 
 
@@ -44,12 +56,10 @@ def get_dataset(case_name):
     Adjust these prefixes if your case names differ.
     """
     dataset_prefixes = [
-        "HCC_TACE",
-        "TCIA_CRLM",
+        "Liver_Lesions",
+        "MCT_LTDiag",
         "WAW_TACE",
-        "WORC_CRLM",
-        "LiTS",
-        "MSD",
+        "MSD08",
     ]
 
     for dataset in dataset_prefixes:

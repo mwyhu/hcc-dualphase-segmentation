@@ -1,6 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=TS_DP
-#SBATCH --account=prjs2180
+#SBATCH --job-name=TSLL_DP_lr1e3_CA
 #SBATCH --partition=gpu_a100
 #SBATCH --gpus=1
 #SBATCH --cpus-per-task=8
@@ -15,8 +14,6 @@ cd /projects/prjs2180/code/hcc-dualphase-segmentation
 
 source setup_env.sh
 
-export OMP_NUM_THREADS=1
-export MKL_NUM_THREADS=1
 export nnUNet_n_proc_DA=$SLURM_CPUS_PER_TASK
 
 echo "Job started"
@@ -25,16 +22,18 @@ date
 echo "Node: $SLURMD_NODENAME"
 echo "Job ID: $SLURM_JOB_ID"
 
-export nnUNet_results=/projects/prjs2180/data/nnUNet_results/TS_DP
+export nnUNet_results=/projects/prjs2180/data/nnUNet_results/cosannealing/TSLL_DP_1e3
 
 nnUNetv2_train \
-    1 \
+    2 \
     3d_fullres \
     0 \
-    -tr nnUNetTrainer \
+    -tr nnUNetTrainerCosAnneal \
     -p TSLL_DP_plans \
+    -pretrained_weights /projects/prjs2180/pretrained_models/TotalSegmentator/591_liver_lesions/checkpoint_final_dualphase.pth \
     --npz
 
 echo "Job finished"
 echo "Date and time:"
 date
+
