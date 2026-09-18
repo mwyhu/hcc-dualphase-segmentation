@@ -97,8 +97,12 @@ def calculate_tumour_detectability(prediction, ground_truth, thresholds=(0.0, 0.
 
 
 def load_mask(path):
-    image = sitk.ReadImage(str(path))
-    return sitk.GetArrayFromImage(image)
+    try:
+        image = sitk.ReadImage(str(path))
+    except RuntimeError as error:
+        raise RuntimeError(f"Failed to read NIfTI file: {path}") from error
+
+    return sitk.GetArrayFromImage(image) > 0
 
 
 def main():
