@@ -12,11 +12,14 @@ BASE_DIR = Path(
 )
 
 MODEL_FILES = {
-    "TS_SP": "detectability_TS_SP.csv",
-    "TS_DP": "detectability_TS_DP.csv",
-    "TSLL_SP": "detectability_TSLL_SP.csv",
-    "TSLL_DP": "detectability_TSLL_DP.csv",
-    "TSLL_DP_1e3": "detectability_TSLL_DP_1e3.csv",
+    "SP_1e2": "detectability_TSLL_SP.csv",
+    "DP_1e2": "detectability_TSLL_DP.csv",
+    "SP_1e3": "detectability_TSLL_SP_1e3.csv",
+    "DP_1e3": "detectability_TSLL_DP_1e3.csv",
+    "CA_SP_1e2": "detectability_TSLL_SP_CA.csv",
+    "CA_DP_1e2": "detectability_TSLL_DP_CA.csv",
+    "CA_SP_1e3": "detectability_TSLL_SP_1e3_CA.csv",
+    "CA_DP_1e3": "detectability_TSLL_DP_1e3_CA.csv",
 }
 
 MODEL_ORDER = list(MODEL_FILES)
