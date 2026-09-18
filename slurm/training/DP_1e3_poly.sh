@@ -29,7 +29,7 @@ nnUNetv2_train \
     2 \
     3d_fullres \
     "$FOLD" \
-    -tr nnUNetTrainerCosAnneal \
+    -tr nnUNetTrainer \
     -p TSLL_DP_plans \
     -pretrained_weights /projects/prjs2180/pretrained_models/TotalSegmentator/591_liver_lesions/checkpoint_final_dualphase.pth \
     --npz
