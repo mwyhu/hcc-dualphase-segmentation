@@ -25,7 +25,7 @@ echo "Job ID: $SLUR_JOB_ID"
 
 echo "TSLL DualPhase started"
 python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/detectability.py \
-    --pred_dir /projects/prjs2180/data/nnUNet_results/cosannealing/TSLL_DP/Dataset001_singlephase/nnUNetTrainerCosAnneal__TSLL_SP_plans__3d_fullres/fold_0/validation \
+    --pred_dir /projects/prjs2180/data/nnUNet_results/cosannealing/TSLL_DP/Dataset002_dualphase/nnUNetTrainerCosAnneal__TSLL_DP_plans__3d_fullres/fold_0/validation \
     --gt_dir /projects/prjs2180/data/nnUNet_raw/Dataset002_dualphase/labelsTr \
     --thresholds 0.15 0.2 0.5 \
     --output /projects/prjs2180/evaluation/detectability/detectability_TSLL_DP_CA.csv
