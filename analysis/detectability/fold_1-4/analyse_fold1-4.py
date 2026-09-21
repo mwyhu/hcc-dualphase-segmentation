@@ -11,21 +11,21 @@ BASE_DIR = Path(
     "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/detectability/fold_1-4/"
 )
 
-# MODEL_FILES = {
-#     "fold0": "CA_DP_fold0.csv",
-#     "fold1": "CA_DP_fold1.csv",
-#     "fold2": "CA_DP_fold2.csv",
-#     "fold3": "CA_DP_fold3.csv",
-#     "fold4": "CA_DP_fold4.csv",
-# }
-
 MODEL_FILES = {
-    "fold0": "poly_DP_fold0.csv",
-    "fold1": "poly_DP_fold1.csv",
-    "fold2": "poly_DP_fold2.csv",
-    "fold3": "poly_DP_fold3.csv",
-    "fold4": "poly_DP_fold4.csv",
+    "fold0": "CA_DP_fold0.csv",
+    "fold1": "CA_DP_fold1.csv",
+    "fold2": "CA_DP_fold2.csv",
+    "fold3": "CA_DP_fold3.csv",
+    "fold4": "CA_DP_fold4.csv",
 }
+
+# MODEL_FILES = {
+#     "fold0": "poly_DP_fold0.csv",
+#     "fold1": "poly_DP_fold1.csv",
+#     "fold2": "poly_DP_fold2.csv",
+#     "fold3": "poly_DP_fold3.csv",
+#     "fold4": "poly_DP_fold4.csv",
+# }
 
 
 MODEL_ORDER = list(MODEL_FILES)
@@ -49,34 +49,59 @@ def safe_divide(numerator, denominator):
 
 def create_summary(df, group_columns):
     """
-    Summarise detection performance
+    Summarise detection performance.
 
-    Case-level metrics (each scan has equal weight):
-      - mean_case_detectability: mean of TP / (TP + FN) per scan
-      - mean_case_precision: mean of TP / (TP + FP) per scan
+    Case-level metrics:
+      - mean_case_detectability: mean TP / (TP + FN) across eligible cases
+      - std_case_detectability: sample SD of case detectability
+      - mean_case_precision: mean TP / (TP + FP) across eligible cases
+      - std_case_precision: sample SD of case precision
 
-    Pooled lesion-level metrics (each lesion has equal weight):
+    Pooled lesion-level metrics:
       - lesion_precision: sum(TP) / [sum(TP) + sum(FP)]
       - lesion_recall: sum(TP) / [sum(TP) + sum(FN)]
       - lesion_f1: calculated from pooled TP, FP and FN
+
+    Missing case-level values are excluded from the corresponding
+    mean and standard deviation.
     """
     summary = (
         df.groupby(group_columns, observed=True)
         .agg(
             n_cases=("case", "nunique"),
+            n_detectability_cases=("detectability", "count"),
+            n_precision_cases=("precision", "count"),
+
             mean_case_detectability=("detectability", "mean"),
+            std_case_detectability=("detectability", "std"),
+
             mean_case_precision=("precision", "mean"),
+            std_case_precision=("precision", "std"),
+
             TP=("TP", "sum"),
             FP=("FP", "sum"),
             FN=("FN", "sum"),
         )
     )
 
+    summary["se_case_detectability"] = safe_divide(
+        summary["std_case_detectability"],
+        np.sqrt(summary["n_detectability_cases"]),
+    )
+
+    summary["se_case_precision"] = safe_divide(
+        summary["std_case_precision"],
+        np.sqrt(summary["n_precision_cases"]),
+    )
+
+
     summary["lesion_precision"] = safe_divide(
-        summary["TP"], summary["TP"] + summary["FP"]
+        summary["TP"],
+        summary["TP"] + summary["FP"],
     )
     summary["lesion_recall"] = safe_divide(
-        summary["TP"], summary["TP"] + summary["FN"]
+        summary["TP"],
+        summary["TP"] + summary["FN"],
     )
     summary["lesion_f1"] = safe_divide(
         2 * summary["TP"],
