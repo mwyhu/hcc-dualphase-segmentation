@@ -1,58 +1,42 @@
 #!/bin/bash
 #SBATCH --partition=genoa
-#SBATCH --cpus-per-task=16
-#SBATCH --mem=128G
+#SBATCH --array=1-4
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=32G
 #SBATCH --time=20:00:00
-#SBATCH --job-name="detectability_DP_CA_fold1-4"
-#SBATCH --output=logs/%x_%j.out
-#SBATCH --error=logs/%x_%j.err
+#SBATCH --job-name=detectability_DP_CA
+#SBATCH --output=logs/%x_%A_fold%a.out
+#SBATCH --error=logs/%x_%A_fold%a.err
 
-mkdir -p /projects/prjs2180/evaluation/detectability
+set -euo pipefail
 
 cd /projects/prjs2180/code/hcc-dualphase-segmentation
-
 source setup_env.sh
 
-export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+export OMP_NUM_THREADS="$SLURM_CPUS_PER_TASK"
+
+FOLD="$SLURM_ARRAY_TASK_ID"
+
+OUTPUT_DIR="/projects/prjs2180/evaluation/detectability/fold_1-4"
+
+PRED_DIR="/projects/prjs2180/data/nnUNet_results/cosannealing/TSLL_DP_1e3/Dataset002_dualphase/nnUNetTrainerCosAnneal__TSLL_DP_plans__3d_fullres/fold_${FOLD}/validation"
+
+GT_DIR="/projects/prjs2180/data/nnUNet_raw/Dataset002_dualphase/labelsTr"
+
+mkdir -p "$OUTPUT_DIR"
 
 echo "Job started"
-echo "Date and time:"
-date
+echo "Date and time: $(date)"
 echo "Node: $SLURMD_NODENAME"
-echo "Job ID: $SLUR_JOB_ID"
+echo "Job ID: $SLURM_JOB_ID"
+echo "Array task: $SLURM_ARRAY_TASK_ID"
+echo "Fold: $FOLD"
 
-
-
-echo "Dual Phase, CA"
-echo "Fold 1"
-python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/detectability.py \
-    --pred_dir /projects/prjs2180/data/nnUNet_results/cosannealing/TSLL_DP_1e3/Dataset002_dualphase/nnUNetTrainerCosAnneal__TSLL_DP_plans__3d_fullres/fold_1/validation \
-    --gt_dir /projects/prjs2180/data/nnUNet_raw/Dataset002_dualphase/labelsTr \
+python -u scripts/evaluation/detectability.py \
+    --pred_dir "$PRED_DIR" \
+    --gt_dir "$GT_DIR" \
     --thresholds 0.15 0.2 0.5 \
-    --output /projects/prjs2180/evaluation/detectability/fold_1-4/CA_DP_fold1.csv
+    --output "$OUTPUT_DIR/CA_DP_fold${FOLD}.csv"
 
-echo "Fold 2"
-python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/detectability.py \
-    --pred_dir /projects/prjs2180/data/nnUNet_results/cosannealing/TSLL_DP_1e3/Dataset002_dualphase/nnUNetTrainerCosAnneal__TSLL_DP_plans__3d_fullres/fold_2/validation \
-    --gt_dir /projects/prjs2180/data/nnUNet_raw/Dataset002_dualphase/labelsTr \
-    --thresholds 0.15 0.2 0.5 \
-    --output /projects/prjs2180/evaluation/detectability/fold_1-4/CA_DP_fold2.csv
-
-echo "Fold 3"
-python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/detectability.py \
-    --pred_dir /projects/prjs2180/data/nnUNet_results/cosannealing/TSLL_DP_1e3/Dataset002_dualphase/nnUNetTrainerCosAnneal__TSLL_DP_plans__3d_fullres/fold_3/validation \
-    --gt_dir /projects/prjs2180/data/nnUNet_raw/Dataset002_dualphase/labelsTr \
-    --thresholds 0.15 0.2 0.5 \
-    --output /projects/prjs2180/evaluation/detectability/fold_1-4/CA_DP_fold3.csv
-
-echo "Fold 4"
-python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/detectability.py \
-    --pred_dir /projects/prjs2180/data/nnUNet_results/cosannealing/TSLL_DP_1e3/Dataset002_dualphase/nnUNetTrainerCosAnneal__TSLL_DP_plans__3d_fullres/fold_4/validation \
-    --gt_dir /projects/prjs2180/data/nnUNet_raw/Dataset002_dualphase/labelsTr \
-    --thresholds 0.15 0.2 0.5 \
-    --output /projects/prjs2180/evaluation/detectability/fold_1-4/CA_DP_fold4.csv
-echo "Dual Phase Finished"
-
-echo "Job finished"
-echo "Date and time:"
-date
+echo "Fold $FOLD finished"
+echo "Date and time: $(date)"
