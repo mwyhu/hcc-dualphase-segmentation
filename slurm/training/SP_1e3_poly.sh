@@ -26,7 +26,7 @@ echo "Job ID: $SLURM_JOB_ID"
 echo "Training fold: $FOLD"
 
 nnUNetv2_train \
-    2 \
+    1 \
     3d_fullres \
     "$FOLD" \
     -tr nnUNetTrainer \
