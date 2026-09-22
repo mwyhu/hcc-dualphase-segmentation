@@ -16,7 +16,7 @@ DICE_FILES = {
     "TSLL_CA_SP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/SP_CA_summary.json",
     "TSLL_CA_DP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/DP_CA_summary.json",
     "TSLL_SP_1e3": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLL_SP_1e3_summary.json",
-    "TSLL_DP_1e3" : "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLL_DP_1e3_summary.json",
+    "TSLL_DP_1e3" : "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/DP_poly_1e3_summary.json",
     "TSLL_CA_SP_1e3": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/SP_CA_1e3_summary.json",
     "TSLL_CA_DP_1e3": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/DP_CA_1e3_summary.json",
 }

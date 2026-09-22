@@ -14,66 +14,66 @@ DICE_FILES = {
     "fold0": (
         "/Users/michellehu/Desktop/hcc-dualphase-segmentation/"
         "analysis/dice_per_dataset/fold1-4/"
-        "Poly_DP/"
-        "DP_1e3_fold0_summary.json"
+        "Poly_SP/"
+        "SP_1e3_fold0_summary.json"
     ),
     "fold1": (
         "/Users/michellehu/Desktop/hcc-dualphase-segmentation/"
         "analysis/dice_per_dataset/fold1-4/"
-        "Poly_DP/"
-        "DP_1e3_fold1_summary.json"
+        "Poly_SP/"
+        "SP_1e3_fold1_summary.json"
     ),
     "fold2": (
         "/Users/michellehu/Desktop/hcc-dualphase-segmentation/"
         "analysis/dice_per_dataset/fold1-4/"
-        "Poly_DP/"
-        "DP_1e3_fold2_summary.json"
+        "Poly_SP/"
+        "SP_1e3_fold2_summary.json"
     ),
     "fold3": (
         "/Users/michellehu/Desktop/hcc-dualphase-segmentation/"
         "analysis/dice_per_dataset/fold1-4/"
-        "Poly_DP/"
-        "DP_1e3_fold3_summary.json"
+        "Poly_SP/"
+        "SP_1e3_fold3_summary.json"
     ),
     "fold4": (
         "/Users/michellehu/Desktop/hcc-dualphase-segmentation/"
         "analysis/dice_per_dataset/fold1-4/"
-        "Poly_DP/"
-        "DP_1e3_fold4_summary.json"
+        "Poly_SP/"
+        "SP_1e3_fold4_summary.json"
     ),
 }
 
-#
+
 # DICE_FILES = {
 #     "fold0": (
 #         "/Users/michellehu/Desktop/hcc-dualphase-segmentation/"
 #         "analysis/dice_per_dataset/fold1-4/"
-#         "CA_DP/"
-#         "DP_CA_1e3_fold0_summary.json"
+#         "CA_SP/"
+#         "SP_CA_1e3_fold0_summary.json"
 #     ),
 #     "fold1": (
 #         "/Users/michellehu/Desktop/hcc-dualphase-segmentation/"
 #         "analysis/dice_per_dataset/fold1-4/"
-#         "CA_DP/"
-#         "DP_CA_1e3_fold1_summary.json"
+#         "CA_SP/"
+#         "SP_CA_1e3_fold1_summary.json"
 #     ),
 #     "fold2": (
 #         "/Users/michellehu/Desktop/hcc-dualphase-segmentation/"
 #         "analysis/dice_per_dataset/fold1-4/"
-#         "CA_DP/"
-#         "DP_CA_1e3_fold2_summary.json"
+#         "CA_SP/"
+#         "SP_CA_1e3_fold2_summary.json"
 #     ),
 #     "fold3": (
 #         "/Users/michellehu/Desktop/hcc-dualphase-segmentation/"
 #         "analysis/dice_per_dataset/fold1-4/"
-#         "CA_DP/"
-#         "DP_CA_1e3_fold3_summary.json"
+#         "CA_SP/"
+#         "SP_CA_1e3_fold3_summary.json"
 #     ),
 #     "fold4": (
 #         "/Users/michellehu/Desktop/hcc-dualphase-segmentation/"
 #         "analysis/dice_per_dataset/fold1-4/"
-#         "CA_DP/"
-#         "DP_CA_1e3_fold4_summary.json"
+#         "CA_SP/"
+#         "SP_CA_1e3_fold4_summary.json"
 #     ),
 # }
 
