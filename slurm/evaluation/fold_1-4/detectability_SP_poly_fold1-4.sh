@@ -19,7 +19,7 @@ FOLD="$SLURM_ARRAY_TASK_ID"
 
 OUTPUT_DIR="/projects/prjs2180/evaluation/detectability/fold_1-4"
 
-PRED_DIR="/projects/prjs2180/data/nnUNet_results/TSLL_SP_1e3/Dataset001_singlephase/nnUNetTrainerCosAnneal__TSLL_SP_plans__3d_fullres/fold_${FOLD}/validation"
+PRED_DIR="/projects/prjs2180/data/nnUNet_results/TSLL_SP_1e3/Dataset001_singlephase/nnUNetTrainer__TSLL_SP_plans__3d_fullres/fold_${FOLD}/validation"
 
 GT_DIR="/projects/prjs2180/data/nnUNet_raw/Dataset001_singlephase/labelsTr"
 
@@ -32,7 +32,7 @@ echo "Job ID: $SLURM_JOB_ID"
 echo "Array task: $SLURM_ARRAY_TASK_ID"
 echo "Fold: $FOLD"
 
-python -u scripts/evaluation/detectability.py \
+python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/detectability.py \
     --pred_dir "$PRED_DIR" \
     --gt_dir "$GT_DIR" \
     --thresholds 0.15 0.2 0.5 \
