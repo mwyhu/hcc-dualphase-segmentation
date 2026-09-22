@@ -1,6 +1,5 @@
 #!/bin/bash
 #SBATCH --job-name=SP_poly_1e3
-#SBATCH --partition=genoa
 #SBATCH --partition=gpu_a100
 #SBATCH --gpus=1
 #SBATCH --cpus-per-task=16
@@ -31,7 +30,6 @@ nnUNetv2_train \
     "$FOLD" \
     -tr nnUNetTrainer \
     -p TSLL_SP_plans \
-    --npz \
     --val
 
 echo "Fold $FOLD finished"

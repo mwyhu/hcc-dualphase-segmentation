@@ -1,11 +1,10 @@
 #!/bin/bash
 #SBATCH --job-name=SP_CA_1e3
-#SBATCH --partition=genoa
 #SBATCH --partition=gpu_a100
 #SBATCH --gpus=1
 #SBATCH --cpus-per-task=16
 #SBATCH --time=20:00:00
-#SBATCH --array=1
+#SBATCH --array=1-4
 #SBATCH --output=logs/%x_fold%A_%a.out
 #SBATCH --error=logs/%x_fold%A_%a.err
 
@@ -31,7 +30,6 @@ nnUNetv2_train \
     "$FOLD" \
     -tr nnUNetTrainerCosAnneal \
     -p TSLL_SP_plans \
-    --npz \
     --val
 
 echo "Fold $FOLD finished"
