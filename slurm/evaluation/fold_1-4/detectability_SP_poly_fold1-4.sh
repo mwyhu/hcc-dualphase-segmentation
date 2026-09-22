@@ -19,7 +19,7 @@ FOLD="$SLURM_ARRAY_TASK_ID"
 
 OUTPUT_DIR="/projects/prjs2180/evaluation/detectability/fold_1-4"
 
-PRED_DIR="/projects/prjs2180/data/nnUNet_results/TSLL_DP_1e3/Dataset001_singlephase/nnUNetTrainerCosAnneal__TSLL_SP_plans__3d_fullres/fold_${FOLD}/validation"
+PRED_DIR="/projects/prjs2180/data/nnUNet_results/TSLL_SP_1e3/Dataset001_singlephase/nnUNetTrainerCosAnneal__TSLL_SP_plans__3d_fullres/fold_${FOLD}/validation"
 
 GT_DIR="/projects/prjs2180/data/nnUNet_raw/Dataset001_singlephase/labelsTr"
 

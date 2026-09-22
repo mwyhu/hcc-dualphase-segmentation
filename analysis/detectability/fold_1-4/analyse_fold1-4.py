@@ -7,17 +7,24 @@ import seaborn as sns
 
 
 # Settings
+# BASE_DIR = Path(
+#     "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/detectability/fold_1-4/"
+# )
+
 BASE_DIR = Path(
-    "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/detectability/fold_1-4/"
+    "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/detectability/fold_1-4/SP"
 )
 
-MODEL_FILES = {
-    "fold0": "CA_DP_fold0.csv",
-    "fold1": "CA_DP_fold1.csv",
-    "fold2": "CA_DP_fold2.csv",
-    "fold3": "CA_DP_fold3.csv",
-    "fold4": "CA_DP_fold4.csv",
-}
+######
+## DP
+######
+# MODEL_FILES = {
+#     "fold0": "CA_DP_fold0.csv",
+#     "fold1": "CA_DP_fold1.csv",
+#     "fold2": "CA_DP_fold2.csv",
+#     "fold3": "CA_DP_fold3.csv",
+#     "fold4": "CA_DP_fold4.csv",
+# }
 
 # MODEL_FILES = {
 #     "fold0": "poly_DP_fold0.csv",
@@ -25,6 +32,25 @@ MODEL_FILES = {
 #     "fold2": "poly_DP_fold2.csv",
 #     "fold3": "poly_DP_fold3.csv",
 #     "fold4": "poly_DP_fold4.csv",
+# }
+
+######
+## SP
+######
+MODEL_FILES = {
+    "fold0": "CA_SP_fold0.csv",
+    "fold1": "CA_SP_fold1.csv",
+    "fold2": "CA_SP_fold2.csv",
+    "fold3": "CA_SP_fold3.csv",
+    "fold4": "CA_SP_fold4.csv",
+}
+
+# MODEL_FILES = {
+#     "fold0": "poly_SP_fold0.csv",
+#     "fold1": "poly_SP_fold1.csv",
+#     "fold2": "poly_SP_fold2.csv",
+#     "fold3": "poly_SP_fold3.csv",
+#     "fold4": "poly_SP_fold4.csv",
 # }
 
 
