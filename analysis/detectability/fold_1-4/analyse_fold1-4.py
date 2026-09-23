@@ -37,21 +37,21 @@ BASE_DIR = Path(
 ######
 ## SP
 ######
-MODEL_FILES = {
-    "fold0": "CA_SP_fold0.csv",
-    "fold1": "CA_SP_fold1.csv",
-    "fold2": "CA_SP_fold2.csv",
-    "fold3": "CA_SP_fold3.csv",
-    "fold4": "CA_SP_fold4.csv",
-}
-
 # MODEL_FILES = {
-#     "fold0": "poly_SP_fold0.csv",
-#     "fold1": "poly_SP_fold1.csv",
-#     "fold2": "poly_SP_fold2.csv",
-#     "fold3": "poly_SP_fold3.csv",
-#     "fold4": "poly_SP_fold4.csv",
+#     "fold0": "CA_SP_fold0.csv",
+#     "fold1": "CA_SP_fold1.csv",
+#     "fold2": "CA_SP_fold2.csv",
+#     "fold3": "CA_SP_fold3.csv",
+#     "fold4": "CA_SP_fold4.csv",
 # }
+
+MODEL_FILES = {
+    "fold0": "poly_SP_fold0.csv",
+    "fold1": "poly_SP_fold1.csv",
+    "fold2": "poly_SP_fold2.csv",
+    "fold3": "poly_SP_fold3.csv",
+    "fold4": "poly_SP_fold4.csv",
+}
 
 
 MODEL_ORDER = list(MODEL_FILES)

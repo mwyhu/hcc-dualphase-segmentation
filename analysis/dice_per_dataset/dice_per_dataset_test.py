@@ -9,38 +9,57 @@ import matplotlib.pyplot as plt
 # -------------------------------------------------------------------
 # Paths to nnU-Net evaluation JSON files
 # -------------------------------------------------------------------
+#
+# DICE_FILES = {
+#     "TSLL_SP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLLSP_summary.json",
+#     "TSLL_DP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLLDP_summary.json",
+#     "TSLL_CA_SP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/SP_CA_summary.json",
+#     "TSLL_CA_DP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/DP_CA_summary.json",
+#     "TSLL_SP_1e3": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLL_SP_1e3_summary.json",
+#     "TSLL_DP_1e3" : "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/DP_poly_1e3_summary.json",
+#     "TSLL_CA_SP_1e3": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/SP_CA_1e3_summary.json",
+#     "TSLL_CA_DP_1e3": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/DP_CA_1e3_summary.json",
+# }
+#
+# MODEL_ORDER = [
+#     "TSLL_SP",
+#     "TSLL_DP",
+#     "TSLL_CA_SP",
+#     "TSLL_CA_DP",
+#     "TSLL_SP_1e3",
+#     "TSLL_DP_1e3",
+#     "TSLL_CA_SP_1e3",
+#     "TSLL_CA_DP_1e3",
+# ]
+#
+# MODEL_PALETTE = {
+#     "TSLL_SP": "#C44E52",
+#     "TSLL_DP": "#8172B2",
+#     "TSLL_CA_SP":"#ff3366",
+#     "TSLL_CA_DP":"#20a4f3",
+#     "TSLL_SP_1e3" : "#D496A7",
+#     "TSLL_DP_1e3": "#4C72B0",
+#     "TSLL_CA_SP_1e3": "#78e0dc",
+#     "TSLL_CA_DP_1e3": "#9d695a",
+# }
+
 
 DICE_FILES = {
-    "TSLL_SP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLLSP_summary.json",
-    "TSLL_DP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLLDP_summary.json",
-    "TSLL_CA_SP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/SP_CA_summary.json",
-    "TSLL_CA_DP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/DP_CA_summary.json",
-    "TSLL_SP_1e3": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLL_SP_1e3_summary.json",
-    "TSLL_DP_1e3" : "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/DP_poly_1e3_summary.json",
-    "TSLL_CA_SP_1e3": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/SP_CA_1e3_summary.json",
-    "TSLL_CA_DP_1e3": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/DP_CA_1e3_summary.json",
+    "1000": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/TSLL_DP_1e3_summary.json",
+    "1500": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/1500_ep_summary.json",
+    # "2000": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/2000_ep_summary.json",
 }
 
 MODEL_ORDER = [
-    "TSLL_SP",
-    "TSLL_DP",
-    "TSLL_CA_SP",
-    "TSLL_CA_DP",
-    "TSLL_SP_1e3",
-    "TSLL_DP_1e3",
-    "TSLL_CA_SP_1e3",
-    "TSLL_CA_DP_1e3",
+    "1000",
+    "1500",
+    # "2000",
 ]
 
 MODEL_PALETTE = {
-    "TSLL_SP": "#C44E52",
-    "TSLL_DP": "#8172B2",
-    "TSLL_CA_SP":"#ff3366",
-    "TSLL_CA_DP":"#20a4f3",
-    "TSLL_SP_1e3" : "#D496A7",
-    "TSLL_DP_1e3": "#4C72B0",
-    "TSLL_CA_SP_1e3": "#78e0dc",
-    "TSLL_CA_DP_1e3": "#9d695a",
+    "1000": "#C44E52",
+    "1500": "#8172B2",
+    # "2000":"#ff3366",
 }
 
 

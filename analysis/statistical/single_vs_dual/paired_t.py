@@ -8,47 +8,48 @@ from scipy.stats import t, ttest_rel
 
 BASE_DIR = Path(
     "/Users/michellehu/Desktop/"
-    "hcc-dualphase-segmentation/analysis/statistical"
+    "hcc-dualphase-segmentation/analysis/statistical/single_vs_dual/"
 )
 
-OUTPUT_DIR = BASE_DIR / "scheduler_comparison_ttest"
+OUTPUT_DIR = BASE_DIR / "single_vs_dual_phase_ttest"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 IOU_THRESHOLD = 0.20
 METRICS = ["dice", "detectability", "precision"]
 
 
+
 FILES = {
-    "Polynomial": {
+    "SinglePhase": {
         "dice": {
-            0: BASE_DIR / "summary_fold1-4/Poly_DP/DP_1e3_fold0_summary.json",
-            1: BASE_DIR / "summary_fold1-4/Poly_DP/DP_1e3_fold1_summary.json",
-            2: BASE_DIR / "summary_fold1-4/Poly_DP/DP_1e3_fold2_summary.json",
-            3: BASE_DIR / "summary_fold1-4/Poly_DP/DP_1e3_fold3_summary.json",
-            4: BASE_DIR / "summary_fold1-4/Poly_DP/DP_1e3_fold4_summary.json",
+            0: BASE_DIR / "summary_fold1-4/SP/SP_1e3_fold0_summary.json",
+            1: BASE_DIR / "summary_fold1-4/SP/SP_1e3_fold1_summary.json",
+            2: BASE_DIR / "summary_fold1-4/SP/SP_1e3_fold2_summary.json",
+            3: BASE_DIR / "summary_fold1-4/SP/SP_1e3_fold3_summary.json",
+            4: BASE_DIR / "summary_fold1-4/SP/SP_1e3_fold4_summary.json",
         },
         "detectability": {
-            0: BASE_DIR / "detectability_fold_1-4/Poly_DP/poly_DP_fold0.csv",
-            1: BASE_DIR / "detectability_fold_1-4/Poly_DP/poly_DP_fold1.csv",
-            2: BASE_DIR / "detectability_fold_1-4/Poly_DP/poly_DP_fold2.csv",
-            3: BASE_DIR / "detectability_fold_1-4/Poly_DP/poly_DP_fold3.csv",
-            4: BASE_DIR / "detectability_fold_1-4/Poly_DP/poly_DP_fold4.csv",
+            0: BASE_DIR / "detectability_fold_1-4/SP/poly_SP_fold0.csv",
+            1: BASE_DIR / "detectability_fold_1-4/SP/poly_SP_fold1.csv",
+            2: BASE_DIR / "detectability_fold_1-4/SP/poly_SP_fold2.csv",
+            3: BASE_DIR / "detectability_fold_1-4/SP/poly_SP_fold3.csv",
+            4: BASE_DIR / "detectability_fold_1-4/SP/poly_SP_fold4.csv",
         },
     },
-    "Cosine": {
+    "DualPhase": {
         "dice": {
-            0: BASE_DIR / "summary_fold1-4/CA_DP/DP_CA_1e3_fold0_summary.json",
-            1: BASE_DIR / "summary_fold1-4/CA_DP/DP_CA_1e3_fold1_summary.json",
-            2: BASE_DIR / "summary_fold1-4/CA_DP/DP_CA_1e3_fold2_summary.json",
-            3: BASE_DIR / "summary_fold1-4/CA_DP/DP_CA_1e3_fold3_summary.json",
-            4: BASE_DIR / "summary_fold1-4/CA_DP/DP_CA_1e3_fold4_summary.json",
+            0: BASE_DIR / "summary_fold1-4/DP/DP_1e3_fold0_summary.json",
+            1: BASE_DIR / "summary_fold1-4/DP/DP_1e3_fold1_summary.json",
+            2: BASE_DIR / "summary_fold1-4/DP/DP_1e3_fold2_summary.json",
+            3: BASE_DIR / "summary_fold1-4/DP/DP_1e3_fold3_summary.json",
+            4: BASE_DIR / "summary_fold1-4/DP/DP_1e3_fold4_summary.json",
         },
         "detectability": {
-            0: BASE_DIR / "detectability_fold_1-4/CA_DP/CA_DP_fold0.csv",
-            1: BASE_DIR / "detectability_fold_1-4/CA_DP/CA_DP_fold1.csv",
-            2: BASE_DIR / "detectability_fold_1-4/CA_DP/CA_DP_fold2.csv",
-            3: BASE_DIR / "detectability_fold_1-4/CA_DP/CA_DP_fold3.csv",
-            4: BASE_DIR / "detectability_fold_1-4/CA_DP/CA_DP_fold4.csv",
+            0: BASE_DIR / "detectability_fold_1-4/DP/poly_DP_fold0.csv",
+            1: BASE_DIR / "detectability_fold_1-4/DP/poly_DP_fold1.csv",
+            2: BASE_DIR / "detectability_fold_1-4/DP/poly_DP_fold2.csv",
+            3: BASE_DIR / "detectability_fold_1-4/DP/poly_DP_fold3.csv",
+            4: BASE_DIR / "detectability_fold_1-4/DP/poly_DP_fold4.csv",
         },
     },
 }
@@ -88,12 +89,12 @@ def check_files_exist():
     """
     missing = []
 
-    for scheduler, scheduler_files in FILES.items():
-        for file_type, fold_files in scheduler_files.items():
+    for phase, phase_files in FILES.items():
+        for file_type, fold_files in phase_files.items():
             for fold, path in fold_files.items():
                 if not path.exists():
                     missing.append(
-                        f"{scheduler}, {file_type}, fold {fold}: {path}"
+                        f"{phase}, {file_type}, fold {fold}: {path}"
                     )
 
     if missing:
@@ -103,7 +104,7 @@ def check_files_exist():
         )
 
 
-def load_dice_file(path, fold, scheduler):
+def load_dice_file(path, fold, phase):
     """
     Load per-case Dice scores from an nnU-Net summary JSON
     """
@@ -120,7 +121,7 @@ def load_dice_file(path, fold, scheduler):
                 "case_id": case_id,
                 "dataset": get_dataset(case_id),
                 "fold": fold,
-                "scheduler": scheduler,
+                "phase": phase,
                 "dice": float(entry["metrics"]["1"]["Dice"]),
             }
         )
@@ -133,7 +134,7 @@ def load_dice_file(path, fold, scheduler):
     return result
 
 
-def load_detection_file(path, fold, scheduler):
+def load_detection_file(path, fold, phase):
     """
     Load per-case lesion metrics at IoU threshold
     """
@@ -174,38 +175,38 @@ def load_detection_file(path, fold, scheduler):
         ["case_id", "precision", "detectability"]
     ].copy()
     result["fold"] = fold
-    result["scheduler"] = scheduler
+    result["phase"] = phase
 
     return result
 
 
-def load_scheduler(scheduler):
+def load_phase(phase):
     """
-    Load and combine all validation folds per scheduler
+    Load and combine all validation folds per phase
     """
     fold_results = []
 
     for fold in range(5):
         dice = load_dice_file(
-            FILES[scheduler]["dice"][fold],
+            FILES[phase]["dice"][fold],
             fold,
-            scheduler,
+            phase,
         )
         detection = load_detection_file(
-            FILES[scheduler]["detectability"][fold],
+            FILES[phase]["detectability"][fold],
             fold,
-            scheduler,
+            phase,
         )
 
         if set(dice["case_id"]) != set(detection["case_id"]):
             raise ValueError(
                 f"Dice and detection cases do not match for "
-                f"{scheduler}, fold {fold}."
+                f"{phase}, fold {fold}."
             )
 
         merged = dice.merge(
             detection,
-            on=["case_id", "fold", "scheduler"],
+            on=["case_id", "fold", "phase"],
             how="inner",
             validate="one_to_one",
         )
@@ -215,30 +216,30 @@ def load_scheduler(scheduler):
 
     if result["case_id"].duplicated().any():
         raise ValueError(
-            f"At least one {scheduler} case occurs in multiple folds."
+            f"At least one {phase} case occurs in multiple folds."
         )
 
     return result
 
 
-def pair_schedulers(polynomial, cosine):
+def pair_phases(single, dual):
     """
     Pair results by case ID, dataset, and fold
     """
     keys = ["case_id", "dataset", "fold"]
 
-    if set(map(tuple, polynomial[keys].to_numpy())) != set(
-        map(tuple, cosine[keys].to_numpy())
+    if set(map(tuple, single[keys].to_numpy())) != set(
+        map(tuple, dual[keys].to_numpy())
     ):
         raise ValueError(
-            "Polynomial and cosine cases or folds do not match."
+            "Single- and dual-phase cases, datasets, or folds do not match."
         )
 
-    return polynomial[keys + METRICS].merge(
-        cosine[keys + METRICS],
+    return single[keys + METRICS].merge(
+        dual[keys + METRICS],
         on=keys,
         how="inner",
-        suffixes=("_poly", "_cosine"),
+        suffixes=("_single", "_dual"),
         validate="one_to_one",
     )
 
@@ -300,18 +301,23 @@ def create_paired_ttest_results(paired):
     rows = []
 
     for metric in METRICS:
-        poly_column = f"{metric}_poly"
-        cosine_column = f"{metric}_cosine"
+        single_column = f"{metric}_single"
+        dual_column = f"{metric}_dual"
 
         metric_data = paired[
-            ["case_id", "dataset", "fold", poly_column, cosine_column]
-        ].dropna(subset=[poly_column, cosine_column])
+            ["case_id", "dataset", "fold", single_column, dual_column]
+        ].replace([np.inf, -np.inf], np.nan).dropna(
+            subset=[single_column, dual_column]
+        )
 
-        poly_values = metric_data[poly_column].to_numpy(dtype=float)
-        cosine_values = metric_data[cosine_column].to_numpy(dtype=float)
-        differences = cosine_values - poly_values
+        single_values = metric_data[single_column].to_numpy(dtype=float)
+        dual_values = metric_data[dual_column].to_numpy(dtype=float)
+        differences = dual_values - single_values
 
-        test = ttest_rel(cosine_values, poly_values)
+        test = (
+            ttest_rel(dual_values, single_values)
+            if len(metric_data) >= 2 else None
+        )
         ci_lower, ci_upper = paired_mean_confidence_interval(differences)
 
         rows.append(
@@ -321,18 +327,18 @@ def create_paired_ttest_results(paired):
                     np.nan if metric == "dice" else IOU_THRESHOLD
                 ),
                 "n_paired_cases": len(metric_data),
-                "polynomial_mean": poly_values.mean(),
-                "polynomial_sd": poly_values.std(ddof=1),
-                "cosine_mean": cosine_values.mean(),
-                "cosine_sd": cosine_values.std(ddof=1),
-                "mean_difference_cosine_minus_polynomial": differences.mean(),
-                "sd_paired_difference": differences.std(ddof=1),
+                "single_phase_mean": single_values.mean(),
+                "single_phase_sd": single_values.std(ddof=1),
+                "dual_phase_mean": dual_values.mean(),
+                "dual_phase_sd": dual_values.std(ddof=1),
+                "mean_difference_dual_minus_single": differences.mean(),
+                "sd_paired_difference": differences.std(ddof=1) if len(differences) >= 2 else np.nan,
                 "ci_95_lower": ci_lower,
                 "ci_95_upper": ci_upper,
-                "t_statistic": test.statistic,
-                "paired_t_test_p_value": test.pvalue,
-                "cosine_better_n": int(np.sum(differences > 0)),
-                "polynomial_better_n": int(np.sum(differences < 0)),
+                "t_statistic": test.statistic if test else np.nan,
+                "paired_t_test_p_value": test.pvalue if test else np.nan,
+                "dual_better_n": int(np.sum(differences > 0)),
+                "single_better_n": int(np.sum(differences < 0)),
                 "equal_n": int(np.sum(differences == 0)),
             }
         )
@@ -356,14 +362,14 @@ def create_fold_summary(all_data):
     """
     fold_rows = []
 
-    for (scheduler, fold), group in all_data.groupby(
-        ["scheduler", "fold"]
+    for (phase, fold), group in all_data.groupby(
+        ["phase", "fold"]
     ):
         for metric in METRICS:
             values = group[metric].dropna()
             fold_rows.append(
                 {
-                    "scheduler": scheduler,
+                    "phase": phase,
                     "fold": fold,
                     "metric": metric,
                     "n_valid": len(values),
@@ -375,7 +381,7 @@ def create_fold_summary(all_data):
     fold_summary = pd.DataFrame(fold_rows)
     across_folds = (
         fold_summary
-        .groupby(["scheduler", "metric"], as_index=False)
+        .groupby(["phase", "metric"], as_index=False)
         .agg(
             n_folds=("mean", "count"),
             mean_of_fold_means=("mean", "mean"),
@@ -394,14 +400,14 @@ def create_dataset_summary(all_data):
     """
     rows = []
 
-    for (scheduler, dataset), group in all_data.groupby(
-        ["scheduler", "dataset"]
+    for (phase, dataset), group in all_data.groupby(
+        ["phase", "dataset"]
     ):
         for metric in METRICS:
             values = group[metric].dropna()
             rows.append(
                 {
-                    "scheduler": scheduler,
+                    "phase": phase,
                     "dataset": dataset,
                     "metric": metric,
                     "n_valid": len(values),
@@ -417,15 +423,15 @@ def create_dataset_summary(all_data):
 def main():
     check_files_exist()
 
-    polynomial = load_scheduler("Polynomial")
-    cosine = load_scheduler("Cosine")
-    paired = pair_schedulers(polynomial, cosine)
-    all_data = pd.concat([polynomial, cosine], ignore_index=True)
+    single = load_phase("SinglePhase")
+    dual = load_phase("DualPhase")
+    paired = pair_phases(single, dual)
+    all_data = pd.concat([single, dual], ignore_index=True)
 
     for metric in METRICS:
         paired[f"{metric}_difference"] = (
-            paired[f"{metric}_cosine"]
-            - paired[f"{metric}_poly"]
+            paired[f"{metric}_dual"]
+            - paired[f"{metric}_single"]
         )
 
     statistical_results = create_paired_ttest_results(paired)
@@ -456,9 +462,9 @@ def main():
     display_columns = [
         "metric",
         "n_paired_cases",
-        "polynomial_mean",
-        "cosine_mean",
-        "mean_difference_cosine_minus_polynomial",
+        "single_phase_mean",
+        "dual_phase_mean",
+        "mean_difference_dual_minus_single",
         "ci_95_lower",
         "ci_95_upper",
         "t_statistic",
