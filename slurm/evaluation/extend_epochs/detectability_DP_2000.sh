@@ -27,7 +27,6 @@ echo "Job started"
 echo "Date and time: $(date)"
 echo "Node: $SLURMD_NODENAME"
 echo "Job ID: $SLURM_JOB_ID"
-echo "Array task: $SLURM_ARRAY_TASK_ID"
 echo "Fold: $FOLD"
 
 python -u scripts/evaluation/detectability.py \
