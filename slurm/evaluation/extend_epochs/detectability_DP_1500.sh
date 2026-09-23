@@ -27,7 +27,7 @@ echo "Job started"
 echo "Date and time: $(date)"
 echo "Node: $SLURMD_NODENAME"
 echo "Job ID: $SLURM_JOB_ID"
-echo "Fold: $FOLD"
+
 
 python -u scripts/evaluation/detectability.py \
     --pred_dir "$PRED_DIR" \
@@ -35,5 +35,5 @@ python -u scripts/evaluation/detectability.py \
     --thresholds 0.15 0.2 0.5 \
     --output "$OUTPUT_DIR/DP_1500_epochs.csv"
 
-echo "Fold $FOLD finished"
+
 echo "Date and time: $(date)"
