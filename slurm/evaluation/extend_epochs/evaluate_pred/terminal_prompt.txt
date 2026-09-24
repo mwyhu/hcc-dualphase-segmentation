@@ -1,0 +1,26 @@
+nnUNetv2_evaluate_folder \
+    /projects/prjs2180/data/nnUNet_raw/Full_HCC_TACE_DP/labelsTs \
+    /projects/prjs2180/evaluation/predictions/HCC_TACE/DP_fold0_1000 \
+    -djfile /projects/prjs2180/evaluation/predictions/HCC_TACE/DP_fold0_1000/dataset.json \
+    -pfile /projects/prjs2180/evaluation/predictions/HCC_TACE/DP_fold0_1000/plans.json
+
+    
+nnUNetv2_evaluate_folder \
+    /projects/prjs2180/data/nnUNet_raw/Full_HCC_TACE_DP/labelsTs \
+    /projects/prjs2180/evaluation/predictions/HCC_TACE/DP_fold0_1500 \
+    -djfile /projects/prjs2180/evaluation/predictions/HCC_TACE/DP_fold0_1500/dataset.json \
+    -pfile /projects/prjs2180/evaluation/predictions/HCC_TACE/DP_fold0_1500/plans.json
+
+
+nnUNetv2_evaluate_folder \
+    /projects/prjs2180/data/nnUNet_raw/Full_HCC_TACE_DP/labelsTs \
+    /projects/prjs2180/evaluation/predictions/HCC_TACE/DP_fold0_2000 \
+    -djfile /projects/prjs2180/evaluation/predictions/HCC_TACE/DP_fold0_2000/dataset.json \
+    -pfile /projects/prjs2180/evaluation/predictions/HCC_TACE/DP_fold0_2000/plans.json
+
+
+nnUNetv2_evaluate_folder \
+    /projects/prjs2180/data/nnUNet_raw/Full_HCC_TACE_DP/labelsTs \
+    /projects/prjs2180/evaluation/predictions/HCC_TACE/DP_fold0_3000 \
+    -djfile /projects/prjs2180/evaluation/predictions/HCC_TACE/DP_fold0_3000/dataset.json \
+    -pfile /projects/prjs2180/evaluation/predictions/HCC_TACE/DP_fold0_3000/plans.json
