@@ -14,7 +14,8 @@ BASE_DIR = Path(
 MODEL_FILES = {
     "1000": "detectability_TSLL_DP_1e3_1000.csv",
     "1500": "DP_1500_epochs.csv",
-    # "2000": "DP_2000_epochs.csv",
+    "2000": "DP_2000_epochs.csv",
+    # "3000": "DP_3 000_epochs.csv",
 }
 
 MODEL_ORDER = list(MODEL_FILES)

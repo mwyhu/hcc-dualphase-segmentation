@@ -14,18 +14,21 @@ DICE_FILES = {
     "1000": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/TSLL_DP_1e3_summary.json",
     "1500": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/1500_ep_summary.json",
     "2000": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/2000_ep_summary.json",
+    "3000": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/2000_ep_summary.json",
 }
 
 MODEL_ORDER = [
     "1000",
     "1500",
     "2000",
+    "3000"
 ]
 
 MODEL_PALETTE = {
-    "1000": "#C44E52",
-    "1500": "#8172B2",
+    "1000":"#C44E52",
+    "1500":"#8172B2",
     "2000":"#ff3366",
+    "3000":"#BC3908"
 }
 
 
