@@ -177,15 +177,10 @@ AVERAGE_COLOR = "#4C4C4C"
 def get_dataset(case_name):
     """
     Determine the source dataset from the case filename.
-
-    The longest or most specific prefixes should appear first.
-    Adjust these prefixes if your case names differ.
+    Put the longest or most specific prefixes first.
     """
     dataset_prefixes = [
-        "Liver_Lesions",
-        "MCT_LTDiag",
-        "WAW_TACE",
-        "MSD08",
+        "HCC_TACE",
     ]
 
     for dataset in dataset_prefixes:
@@ -200,9 +195,7 @@ def get_dataset(case_name):
 # -------------------------------------------------------------------
 
 def extract_summary_average_dice(results, json_path):
-    """
-    Support different nnU-Net summary JSON formats.
-    """
+    """Support common nnU-Net summary JSON formats."""
     if (
         "foreground_mean" in results
         and "Dice" in results["foreground_mean"]
@@ -223,44 +216,53 @@ def extract_summary_average_dice(results, json_path):
 
 
 # -------------------------------------------------------------------
-# Read per-case Dice and summary-average Dice
+# Read per-case Dice, TP, FP, and voxel-level precision
 # -------------------------------------------------------------------
 
 def load_dice_results(dice_files):
     case_rows = []
     summary_rows = []
 
-    for fold, json_path in dice_files.items():
+    for model, json_path in dice_files.items():
         with open(json_path, "r") as file:
             results = json.load(file)
 
-        # Average Dice stored directly in the nnU-Net summary file
         summary_average_dice = extract_summary_average_dice(
             results,
             json_path,
         )
 
         summary_rows.append({
-            "model": fold,
+            "model": model,
             "summary_average_dice": summary_average_dice,
         })
 
-        # Per-case Dice scores
         for case_result in results["metric_per_case"]:
-            case_name = (
-                Path(case_result["prediction_file"])
-                .name
-                .removesuffix(".nii.gz")
-                .removesuffix(".nii")
-            )
+            case_name = Path(
+                case_result["prediction_file"]
+            ).name.removesuffix(".nii.gz")
 
-            dice = case_result["metrics"]["1"]["Dice"]
+            metrics = case_result["metrics"]["1"]
+
+            dice = metrics["Dice"]
+            tp = metrics["TP"]
+            fp = metrics["FP"]
+
+            # Undefined when the model predicts no positive voxels
+            precision = (
+                tp / (tp + fp)
+                if (tp + fp) > 0
+                else float("nan")
+            )
 
             case_rows.append({
                 "case": case_name,
                 "source": get_dataset(case_name),
-                "model": fold,
+                "model": model,
                 "dice": dice,
+                "precision": precision,
+                "tp": tp,
+                "fp": fp,
             })
 
     df_dice = pd.DataFrame(case_rows)
@@ -291,7 +293,38 @@ df_dice, summary_file_dice = load_dice_results(DICE_FILES)
 
 
 # -------------------------------------------------------------------
-# Dice summary per dataset and fold
+# Voxel-level precision per model
+# -------------------------------------------------------------------
+
+precision_summary = (
+    df_dice
+    .groupby("model", observed=True)
+    .agg(
+        n_cases=("case", "nunique"),
+        n_cases_with_prediction=("precision", "count"),
+        mean_precision=("precision", "mean"),
+        median_precision=("precision", "median"),
+        std_precision=("precision", "std"),
+        total_tp=("tp", "sum"),
+        total_fp=("fp", "sum"),
+    )
+)
+
+# Across all cases, count each predicted positive voxel equally
+precision_summary["pooled_precision"] = (
+    precision_summary["total_tp"]
+    / (
+        precision_summary["total_tp"]
+        + precision_summary["total_fp"]
+    )
+)
+
+print("\n--- Voxel-level Precision per Model ---")
+print(precision_summary.round(4).to_string())
+
+
+# -------------------------------------------------------------------
+# Dice per dataset and model
 # -------------------------------------------------------------------
 
 dice_summary = (
@@ -308,13 +341,11 @@ dice_summary = (
     )
 )
 
-# Standard error within each dataset and fold
 dice_summary["standard_error"] = (
     dice_summary["std_dice"]
     / dice_summary["n_cases"] ** 0.5
 )
 
-# Normal-approximation 95% CI within each dataset and fold
 dice_summary["ci95_lower"] = (
     dice_summary["mean_dice"]
     - 1.96 * dice_summary["standard_error"]
@@ -327,12 +358,12 @@ dice_summary["ci95_upper"] = (
 
 dice_summary = dice_summary.round(4)
 
-print("\n--- Dice per Dataset and Fold ---")
+print("\n--- Dice per Dataset and Model ---")
 print(dice_summary.to_string())
 
 
 # -------------------------------------------------------------------
-# Overall Dice per fold
+# Overall Dice per model
 # -------------------------------------------------------------------
 
 overall_dice_summary = (
@@ -361,12 +392,10 @@ overall_dice_summary["ci95_upper"] = (
     + 1.96 * overall_dice_summary["standard_error"]
 ).clip(upper=1)
 
-# Add average Dice stored in each summary JSON file
 overall_dice_summary = overall_dice_summary.join(
     summary_file_dice
 )
 
-# Check whether manually calculated and JSON Dice values agree
 overall_dice_summary["difference"] = (
     overall_dice_summary["mean_dice"]
     - overall_dice_summary["summary_average_dice"]
@@ -374,7 +403,7 @@ overall_dice_summary["difference"] = (
 
 overall_dice_summary = overall_dice_summary.round(4)
 
-print("\n--- Overall Dice per Fold ---")
+print("\n--- Overall Dice per Model ---")
 print(overall_dice_summary.to_string())
 
 
@@ -383,7 +412,28 @@ print(summary_file_dice.round(4).to_string())
 
 
 # -------------------------------------------------------------------
-# Mean Dice per dataset and fold
+# Dice and precision comparison
+# -------------------------------------------------------------------
+
+comparison_table = overall_dice_summary[
+    ["n_cases", "mean_dice", "std_dice"]
+].join(
+    precision_summary[
+        [
+            "n_cases_with_prediction",
+            "mean_precision",
+            "std_precision",
+            "pooled_precision",
+        ]
+    ]
+)
+
+print("\n--- Dice and Voxel-level Precision per Model ---")
+print(comparison_table.round(4).to_string())
+
+
+# -------------------------------------------------------------------
+# Mean Dice per dataset and model
 # -------------------------------------------------------------------
 
 dice_print_table = (
@@ -395,125 +445,18 @@ dice_print_table = (
     .mean()
     .unstack("model")
     .reindex(columns=MODEL_ORDER)
+    .round(4)
 )
+
+print("\n--- Mean Dice per Dataset and Model ---")
+print(dice_print_table.to_string())
 
 
 # -------------------------------------------------------------------
-# Average and SD across folds per dataset
-# -------------------------------------------------------------------
-#
-# Each entry in dice_print_table is the mean Dice for one dataset
-# in one fold.
-#
-# The following mean and SD therefore describe variation between the
-# five fold-level dataset means.
-# -------------------------------------------------------------------
-
-dice_print_table["mean_over_folds"] = (
-    dice_print_table[MODEL_ORDER]
-    .mean(axis=1)
-)
-
-dice_print_table["sd_over_folds"] = (
-    dice_print_table[MODEL_ORDER]
-    .std(axis=1, ddof=1)
-)
-
-print("\n--- Mean Dice per Dataset, Fold, and Across Folds ---")
-print(dice_print_table.round(4).to_string())
-
-
-# Separate summary table
-dataset_fold_summary = (
-    dice_print_table[
-        ["mean_over_folds", "sd_over_folds"]
-    ]
-    .copy()
-)
-
-print("\n--- Dataset Mean ± SD Across Folds ---")
-
-for dataset, row in dataset_fold_summary.iterrows():
-    print(
-        f"{dataset}: "
-        f"{row['mean_over_folds']:.4f} "
-        f"± {row['sd_over_folds']:.4f}"
-    )
-
-
-# -------------------------------------------------------------------
-# Overall average and SD across folds
-# -------------------------------------------------------------------
-
-fold_summary_values = (
-    summary_file_dice["summary_average_dice"]
-    .astype(float)
-)
-
-overall_average_over_folds = fold_summary_values.mean()
-
-# Sample SD across the five folds
-overall_sd_over_folds = fold_summary_values.std(ddof=1)
-
-# Standard error of the fold mean
-overall_se_over_folds = (
-    overall_sd_over_folds
-    / len(fold_summary_values) ** 0.5
-)
-
-print("\n--- Overall Mean ± SD Across Folds ---")
-print(
-    f"{overall_average_over_folds:.4f} "
-    f"± {overall_sd_over_folds:.4f}"
-)
-
-print(
-    f"Standard error across folds: "
-    f"{overall_se_over_folds:.4f}"
-)
-
-
-# -------------------------------------------------------------------
-# Pooled out-of-fold Dice
-# -------------------------------------------------------------------
-#
-# Every validation case occurs in one fold. Combining all fold
-# predictions therefore gives the pooled out-of-fold performance.
-# -------------------------------------------------------------------
-
-pooled_cv_summary = pd.Series({
-    "n_cases": df_dice["case"].nunique(),
-    "mean_dice": df_dice["dice"].mean(),
-    "median_dice": df_dice["dice"].median(),
-    "std_dice": df_dice["dice"].std(ddof=1),
-})
-
-print("\n--- Pooled Out-of-Fold Dice Across All Cases ---")
-print(pooled_cv_summary.round(4).to_string())
-
-
-print("\n--- Final Five-Fold Summary ---")
-print(
-    "Unweighted mean ± SD across folds: "
-    f"{overall_average_over_folds:.4f} "
-    f"± {overall_sd_over_folds:.4f}"
-)
-print(
-    "Pooled mean across all out-of-fold cases: "
-    f"{pooled_cv_summary['mean_dice']:.4f}"
-)
-
-
-# -------------------------------------------------------------------
-# Plot settings
+# Per-case Dice distributions per dataset
 # -------------------------------------------------------------------
 
 sns.set_theme(style="whitegrid")
-
-
-# -------------------------------------------------------------------
-# Per-case Dice distributions per dataset and fold
-# -------------------------------------------------------------------
 
 plt.figure(figsize=(11, 6))
 
@@ -526,13 +469,13 @@ sns.boxplot(
     palette=MODEL_PALETTE,
 )
 
-plt.title("Dice Score by Dataset and Fold")
+plt.title("Dice Score by Dataset and Model")
 plt.xlabel("Dataset")
 plt.ylabel("Per-case Dice")
 plt.ylim(0, 1)
 
 plt.legend(
-    title="Fold",
+    title="Model",
     bbox_to_anchor=(1.02, 1),
     loc="upper left",
 )
@@ -542,7 +485,7 @@ plt.show()
 
 
 # -------------------------------------------------------------------
-# Mean Dice per dataset and fold with 95% CI
+# Mean Dice per dataset with values and 95% CI
 # -------------------------------------------------------------------
 
 plt.figure(figsize=(12, 6))
@@ -569,13 +512,13 @@ for container in ax.containers:
             rotation=90,
         )
 
-plt.title("Mean Dice Score by Dataset and Fold")
+plt.title("Mean Dice Score by Dataset and Model")
 plt.xlabel("Dataset")
 plt.ylabel("Mean Per-case Dice")
 plt.ylim(0, 1.12)
 
 plt.legend(
-    title="Fold",
+    title="Model",
     bbox_to_anchor=(1.02, 1),
     loc="upper left",
 )
@@ -585,117 +528,34 @@ plt.show()
 
 
 # -------------------------------------------------------------------
-# Mean Dice across folds per dataset with fold SD
+# Overall average Dice stored in the nnU-Net summary files
 # -------------------------------------------------------------------
 
-dataset_plot = (
-    dataset_fold_summary
-    .reset_index()
-)
+summary_plot = summary_file_dice.reset_index()
 
-plt.figure(figsize=(8, 5))
-
-ax = sns.barplot(
-    data=dataset_plot,
-    x="source",
-    y="mean_over_folds",
-    color=AVERAGE_COLOR,
-    errorbar=None,
-)
-
-ax.errorbar(
-    x=range(len(dataset_plot)),
-    y=dataset_plot["mean_over_folds"],
-    yerr=dataset_plot["sd_over_folds"],
-    fmt="none",
-    ecolor="black",
-    capsize=5,
-    linewidth=1.2,
-)
-
-for container in ax.containers:
-    if hasattr(container, "datavalues"):
-        ax.bar_label(
-            container,
-            fmt="%.3f",
-            padding=4,
-            fontsize=9,
-        )
-
-plt.title("Mean Dice Across Folds per Dataset")
-plt.xlabel("Dataset")
-plt.ylabel("Mean Dice Across Folds")
-plt.ylim(0, 1.05)
-
-plt.tight_layout()
-plt.show()
-
-
-# -------------------------------------------------------------------
-# Overall average Dice per fold plus average across folds
-# -------------------------------------------------------------------
-
-summary_plot = (
-    summary_file_dice
-    .reset_index()
-)
-
-average_row = pd.DataFrame({
-    "model": ["average"],
-    "summary_average_dice": [
-        overall_average_over_folds
-    ],
-})
-
-summary_plot = pd.concat(
-    [summary_plot, average_row],
-    ignore_index=True,
-)
-
-plot_order = MODEL_ORDER + ["average"]
-
-plot_palette = {
-    **MODEL_PALETTE,
-    "average": AVERAGE_COLOR,
-}
-
-plt.figure(figsize=(8, 5))
+plt.figure(figsize=(7, 5))
 
 ax = sns.barplot(
     data=summary_plot,
     x="model",
     y="summary_average_dice",
-    order=plot_order,
+    order=MODEL_ORDER,
     hue="model",
-    hue_order=plot_order,
-    palette=plot_palette,
+    hue_order=MODEL_ORDER,
+    palette=MODEL_PALETTE,
     legend=False,
 )
 
 for container in ax.containers:
-    if hasattr(container, "datavalues"):
-        ax.bar_label(
-            container,
-            fmt="%.3f",
-            padding=4,
-            fontsize=9,
-        )
+    ax.bar_label(
+        container,
+        fmt="%.3f",
+        padding=4,
+        fontsize=9,
+    )
 
-# Add fold SD only to the average bar
-average_position = plot_order.index("average")
-
-ax.errorbar(
-    x=average_position,
-    y=overall_average_over_folds,
-    yerr=overall_sd_over_folds,
-    fmt="none",
-    ecolor="black",
-    capsize=5,
-    linewidth=1.2,
-)
-
-plt.title("Overall Average Dice per Fold")
-plt.xlabel("Fold")
+plt.title("Overall Average Dice per Model")
+plt.xlabel("Model")
 plt.ylabel("Average Dice from nnU-Net Summary")
 plt.ylim(0, 1.05)
 

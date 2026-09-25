@@ -53,15 +53,10 @@ MODEL_PALETTE = {
 def get_dataset(case_name):
     """
     Determine the source dataset from the case filename.
-
-    The longest or most specific prefixes should appear first.
-    Adjust these prefixes if your case names differ.
+    Put the longest or most specific prefixes first.
     """
     dataset_prefixes = [
-        "Liver_Lesions",
-        "MCT_LTDiag",
-        "WAW_TACE",
-        "MSD08",
+        "HCC_TACE",
     ]
 
     for dataset in dataset_prefixes:
@@ -71,11 +66,12 @@ def get_dataset(case_name):
     return case_name.split("_")[0]
 
 
+# -------------------------------------------------------------------
 # Extract average Dice stored in an nnU-Net summary file
+# -------------------------------------------------------------------
+
 def extract_summary_average_dice(results, json_path):
-    """
-    Supports the nnU-Net summary JSON formats
-    """
+    """Support common nnU-Net summary JSON formats."""
     if (
         "foreground_mean" in results
         and "Dice" in results["foreground_mean"]
@@ -95,7 +91,10 @@ def extract_summary_average_dice(results, json_path):
     )
 
 
-# Read per-case Dice and summary-average Dice
+# -------------------------------------------------------------------
+# Read per-case Dice, TP, FP, and voxel-level precision
+# -------------------------------------------------------------------
+
 def load_dice_results(dice_files):
     case_rows = []
     summary_rows = []
@@ -104,7 +103,6 @@ def load_dice_results(dice_files):
         with open(json_path, "r") as file:
             results = json.load(file)
 
-        # Average Dice stored directly in the nnU-Net summary file
         summary_average_dice = extract_summary_average_dice(
             results,
             json_path,
@@ -115,19 +113,32 @@ def load_dice_results(dice_files):
             "summary_average_dice": summary_average_dice,
         })
 
-        # Per-case Dice scores
         for case_result in results["metric_per_case"]:
             case_name = Path(
                 case_result["prediction_file"]
             ).name.removesuffix(".nii.gz")
 
-            dice = case_result["metrics"]["1"]["Dice"]
+            metrics = case_result["metrics"]["1"]
+
+            dice = metrics["Dice"]
+            tp = metrics["TP"]
+            fp = metrics["FP"]
+
+            # Undefined when the model predicts no positive voxels
+            precision = (
+                tp / (tp + fp)
+                if (tp + fp) > 0
+                else float("nan")
+            )
 
             case_rows.append({
                 "case": case_name,
                 "source": get_dataset(case_name),
                 "model": model,
                 "dice": dice,
+                "precision": precision,
+                "tp": tp,
+                "fp": fp,
             })
 
     df_dice = pd.DataFrame(case_rows)
@@ -157,7 +168,41 @@ def load_dice_results(dice_files):
 df_dice, summary_file_dice = load_dice_results(DICE_FILES)
 
 
-# Calculate Dice summary per dataset and model
+# -------------------------------------------------------------------
+# Voxel-level precision per model
+# -------------------------------------------------------------------
+
+precision_summary = (
+    df_dice
+    .groupby("model", observed=True)
+    .agg(
+        n_cases=("case", "nunique"),
+        n_cases_with_prediction=("precision", "count"),
+        mean_precision=("precision", "mean"),
+        median_precision=("precision", "median"),
+        std_precision=("precision", "std"),
+        total_tp=("tp", "sum"),
+        total_fp=("fp", "sum"),
+    )
+)
+
+# Across all cases, count each predicted positive voxel equally
+precision_summary["pooled_precision"] = (
+    precision_summary["total_tp"]
+    / (
+        precision_summary["total_tp"]
+        + precision_summary["total_fp"]
+    )
+)
+
+print("\n--- Voxel-level Precision per Model ---")
+print(precision_summary.round(4).to_string())
+
+
+# -------------------------------------------------------------------
+# Dice per dataset and model
+# -------------------------------------------------------------------
+
 dice_summary = (
     df_dice
     .groupby(
@@ -172,13 +217,11 @@ dice_summary = (
     )
 )
 
-# Standard error
 dice_summary["standard_error"] = (
     dice_summary["std_dice"]
     / dice_summary["n_cases"] ** 0.5
 )
 
-# Normal-approximation 95% confidence interval
 dice_summary["ci95_lower"] = (
     dice_summary["mean_dice"]
     - 1.96 * dice_summary["standard_error"]
@@ -195,7 +238,10 @@ print("\n--- Dice per Dataset and Model ---")
 print(dice_summary.to_string())
 
 
+# -------------------------------------------------------------------
 # Overall Dice per model
+# -------------------------------------------------------------------
+
 overall_dice_summary = (
     df_dice
     .groupby("model", observed=True)
@@ -222,7 +268,6 @@ overall_dice_summary["ci95_upper"] = (
     + 1.96 * overall_dice_summary["standard_error"]
 ).clip(upper=1)
 
-# Add the average Dice stored in each summary JSON file
 overall_dice_summary = overall_dice_summary.join(
     summary_file_dice
 )
@@ -238,12 +283,35 @@ print("\n--- Overall Dice per Model ---")
 print(overall_dice_summary.to_string())
 
 
-# Average dice
 print("\n--- Average Dice Stored in nnU-Net Summary Files ---")
 print(summary_file_dice.round(4).to_string())
 
 
-# Mean dice per dataset and model
+# -------------------------------------------------------------------
+# Dice and precision comparison
+# -------------------------------------------------------------------
+
+comparison_table = overall_dice_summary[
+    ["n_cases", "mean_dice", "std_dice"]
+].join(
+    precision_summary[
+        [
+            "n_cases_with_prediction",
+            "mean_precision",
+            "std_precision",
+            "pooled_precision",
+        ]
+    ]
+)
+
+print("\n--- Dice and Voxel-level Precision per Model ---")
+print(comparison_table.round(4).to_string())
+
+
+# -------------------------------------------------------------------
+# Mean Dice per dataset and model
+# -------------------------------------------------------------------
+
 dice_print_table = (
     df_dice
     .groupby(
@@ -260,8 +328,10 @@ print("\n--- Mean Dice per Dataset and Model ---")
 print(dice_print_table.to_string())
 
 
-
+# -------------------------------------------------------------------
 # Per-case Dice distributions per dataset
+# -------------------------------------------------------------------
+
 sns.set_theme(style="whitegrid")
 
 plt.figure(figsize=(11, 6))
@@ -290,7 +360,10 @@ plt.tight_layout()
 plt.show()
 
 
+# -------------------------------------------------------------------
 # Mean Dice per dataset with values and 95% CI
+# -------------------------------------------------------------------
+
 plt.figure(figsize=(12, 6))
 
 ax = sns.barplot(
@@ -330,12 +403,11 @@ plt.tight_layout()
 plt.show()
 
 
+# -------------------------------------------------------------------
+# Overall average Dice stored in the nnU-Net summary files
+# -------------------------------------------------------------------
 
-# Overall average Dice
-summary_plot = (
-    summary_file_dice
-    .reset_index()
-)
+summary_plot = summary_file_dice.reset_index()
 
 plt.figure(figsize=(7, 5))
 
