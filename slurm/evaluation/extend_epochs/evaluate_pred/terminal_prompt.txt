@@ -1,10 +1,15 @@
+cd /projects/prjs2180/code/hcc_active_learning
+
+source setup_env.sh
+
+
 nnUNetv2_evaluate_folder \
     /projects/prjs2180/data/nnUNet_raw/Full_HCC_TACE_DP/labelsTs \
     /projects/prjs2180/evaluation/predictions/HCC_TACE/DP_fold0_1000 \
     -djfile /projects/prjs2180/evaluation/predictions/HCC_TACE/DP_fold0_1000/dataset.json \
     -pfile /projects/prjs2180/evaluation/predictions/HCC_TACE/DP_fold0_1000/plans.json
 
-    
+
 nnUNetv2_evaluate_folder \
     /projects/prjs2180/data/nnUNet_raw/Full_HCC_TACE_DP/labelsTs \
     /projects/prjs2180/evaluation/predictions/HCC_TACE/DP_fold0_1500 \
