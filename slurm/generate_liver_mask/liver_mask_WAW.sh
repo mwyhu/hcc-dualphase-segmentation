@@ -21,7 +21,7 @@ python -c "import torch; print(torch.cuda.is_available())"
 
 
 PYTHONPATH=/projects/prjs2180/code/hcc-dualphase-segmentation/scripts/postprocessing \
-python /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/postprocessing/generate_liver_masks.py \
+python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/postprocessing/generate_liver_masks.py \
     --input_dir /projects/prjs2180/data/nnUNet_raw/WAW_TACE_grid_fixed/CT1 \
     --output_dir /projects/prjs2180/liver_masks/WAW_TACE
 
