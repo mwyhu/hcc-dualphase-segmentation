@@ -3,7 +3,7 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
 #SBATCH --time=20:00:00
-#SBATCH --job-name=detectability_HCC_2000
+#SBATCH --job-name=detectability_2000_pp
 #SBATCH --output=logs/%x_%A_fold%a.out
 #SBATCH --error=logs/%x_%A_fold%a.err
 
@@ -15,11 +15,11 @@ source setup_env.sh
 export OMP_NUM_THREADS="$SLURM_CPUS_PER_TASK"
 
 
-OUTPUT_DIR="/projects/prjs2180/evaluation/detectability/extend_epochs/external_val_HCC"
+OUTPUT_DIR="/projects/prjs2180/evaluation/detectability/extend_epochs/postprocessed_fold0"
 
-PRED_DIR="/projects/prjs2180/evaluation/predictions/HCC_TACE/DP_fold0_2000"
+PRED_DIR="/projects/prjs2180/postprocessed/validation/DP_2000ep"
 
-GT_DIR="/projects/prjs2180/data/nnUNet_raw/Full_HCC_TACE_DP/labelsTs"
+GT_DIR="/projects/prjs2180/GT_fold0"
 
 mkdir -p "$OUTPUT_DIR"
 

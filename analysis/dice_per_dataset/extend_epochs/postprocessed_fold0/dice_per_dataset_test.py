@@ -12,24 +12,19 @@ import matplotlib.pyplot as plt
 
 DICE_FILES = {
     "1000": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/TSLL_DP_1e3_summary.json",
+    "1000pp": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/postprocessed_fold0/1000_ep_summary.json",
     "1500": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/1500_ep_summary.json",
+    "1500pp": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/postprocessed_fold0/1500_ep_summary.json",
     "2000": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/2000_ep_summary.json",
+    "2000pp": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/postprocessed_fold0/2000_ep_summary.json",
     "3000": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/3000_ep_summary.json",
+    "3000pp": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/postprocessed_fold0/3000_ep_summary.json",
 }
 
-MODEL_ORDER = [
-    "1000",
-    "1500",
-    "2000",
-    "3000"
-]
-
-MODEL_PALETTE = {
-    "1000":"#C44E52",
-    "1500":"#8172B2",
-    "2000":"#ff3366",
-    "3000":"#BC3908"
-}
+MODEL_ORDER = list(DICE_FILES)
+MODEL_PALETTE = dict(
+    zip(MODEL_ORDER, sns.color_palette("Set2", len(MODEL_ORDER)))
+)
 
 
 # -------------------------------------------------------------------
