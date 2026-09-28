@@ -8,7 +8,7 @@ import seaborn as sns
 
 # Settings
 BASE_DIR = Path(
-    "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/detectability/extend_epochs/external_val_HCC"
+    "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/detectability/extend_epochs/postprocessed_fold0"
 )
 
 MODEL_FILES = {
