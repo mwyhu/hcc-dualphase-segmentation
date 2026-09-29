@@ -1,477 +1,297 @@
 from pathlib import Path
 import json
 
+import numpy as np
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 
-# -------------------------------------------------------------------
-# Paths to nnU-Net evaluation JSON files
-# -------------------------------------------------------------------
+ROOT = Path(
+    "/Users/michellehu/Desktop/hcc-dualphase-segmentation/"
+    "analysis/dice_per_dataset/final"
+)
 
-DICE_FILES = {
-    "SinglePhase": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/final/SP_final_summary.json",
-    "DualPhase": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/final/DP_final_summary.json",
+DATASETS = ["HCC_TACE", "TCIA_CRLM", "WORC_CRLM", "LiTS"]
+
+MODELS = [
+    "TotalSegmentator_liver_lesions",
+    "TotalSegmentator_liver_tumor",
+    "COALA",
+    "AtlasNet",
+    "SinglePhase",
+    "DualPhase",
+]
+
+MODEL_CODES = {
+    "TotalSegmentator_liver_lesions": "TSLL",
+    "TotalSegmentator_liver_tumor": "TSLT",
+    "COALA": "COALA",
+    "AtlasNet": "AtlasNet",
+    "SinglePhase": "SP",
+    "DualPhase": "DP",
 }
 
-MODEL_ORDER = list(DICE_FILES)
-MODEL_PALETTE = dict(
-    zip(MODEL_ORDER, sns.color_palette("Set2", len(MODEL_ORDER)))
-)
+DATASET_CODES = {
+    "HCC_TACE": "HCC",
+    "TCIA_CRLM": "TCIA_CRLM",
+    "WORC_CRLM": "WORC_CRLM",
+    "LiTS": "LiTS",
+}
+
+
+# -> ROOT / "SP_HCC_summary.json"
+DICE_FILES = {
+    model: {
+        dataset: ROOT / (
+            f"{MODEL_CODES[model]}_{DATASET_CODES[dataset]}_summary.json"
+        )
+        for dataset in DATASETS
+    }
+    for model in MODELS
+}
 
 
 # -------------------------------------------------------------------
-# Identify the dataset from the case filename
+# Read nnU-Net summary JSON files
 # -------------------------------------------------------------------
 
-def get_dataset(case_name):
-    """
-    Determine the source dataset from the case filename.
-    Put the longest or most specific prefixes first.
-    """
-    dataset_prefixes = [
-        "HCC_TACE",
+def case_id_from_path(path):
+    """Get the case ID from a prediction filename."""
+    name = Path(path).name
+    return name.removesuffix(".nii.gz").removesuffix(".nii")
+
+
+def load_results(file_map):
+    rows = []
+
+    missing_files = [
+        (model, dataset, path)
+        for model, dataset_files in file_map.items()
+        for dataset, path in dataset_files.items()
+        if not Path(path).is_file()
     ]
 
-    for dataset in dataset_prefixes:
-        if case_name.startswith(dataset):
-            return dataset
-
-    return case_name.split("_")[0]
-
-
-# -------------------------------------------------------------------
-# Extract average Dice stored in an nnU-Net summary file
-# -------------------------------------------------------------------
-
-def extract_summary_average_dice(results, json_path):
-    """Support common nnU-Net summary JSON formats."""
-    if (
-        "foreground_mean" in results
-        and "Dice" in results["foreground_mean"]
-    ):
-        return results["foreground_mean"]["Dice"]
-
-    if (
-        "mean" in results
-        and "1" in results["mean"]
-        and "Dice" in results["mean"]["1"]
-    ):
-        return results["mean"]["1"]["Dice"]
-
-    raise KeyError(
-        f"Could not find the average Dice in:\n{json_path}\n"
-        "Expected foreground_mean['Dice'] or mean['1']['Dice']."
-    )
-
-
-# -------------------------------------------------------------------
-# Read per-case Dice, TP, FP, and voxel-level precision
-# -------------------------------------------------------------------
-
-def load_dice_results(dice_files):
-    case_rows = []
-    summary_rows = []
-
-    for model, json_path in dice_files.items():
-        with open(json_path, "r") as file:
-            results = json.load(file)
-
-        summary_average_dice = extract_summary_average_dice(
-            results,
-            json_path,
+    if missing_files:
+        details = "\n".join(
+            f"  {model} / {dataset}: {path}"
+            for model, dataset, path in missing_files
+        )
+        raise FileNotFoundError(
+            f"Missing {len(missing_files)} summary file(s):\n{details}"
         )
 
-        summary_rows.append({
-            "model": model,
-            "summary_average_dice": summary_average_dice,
-        })
+    for model, dataset_files in file_map.items():
+        for dataset, json_path in dataset_files.items():
+            with Path(json_path).open() as file:
+                results = json.load(file)
 
-        for case_result in results["metric_per_case"]:
-            case_name = Path(
-                case_result["prediction_file"]
-            ).name.removesuffix(".nii.gz")
+            if "metric_per_case" not in results:
+                raise KeyError(
+                    f"'metric_per_case' is missing from {json_path}"
+                )
 
-            metrics = case_result["metrics"]["1"]
+            for case_result in results["metric_per_case"]:
+                metrics = case_result["metrics"]["1"]
 
-            dice = metrics["Dice"]
-            tp = metrics["TP"]
-            fp = metrics["FP"]
+                tp = float(metrics["TP"])
+                fp = float(metrics["FP"])
 
-            # Undefined when the model predicts no positive voxels
-            precision = (
-                tp / (tp + fp)
-                if (tp + fp) > 0
-                else float("nan")
+                # Voxel-level precision for this case
+                precision = (
+                    tp / (tp + fp)
+                    if tp + fp > 0
+                    else np.nan
+                )
+
+                rows.append({
+                    "dataset": dataset,
+                    "model": model,
+                    "case": case_id_from_path(
+                        case_result["prediction_file"]
+                    ),
+                    "dice": float(metrics["Dice"]),
+                    "precision": precision,
+                    "tp": tp,
+                    "fp": fp,
+                })
+
+    df = pd.DataFrame(rows)
+
+    if df.empty:
+        raise ValueError("No per-case results were found.")
+
+    duplicates = df.duplicated(
+        subset=["dataset", "model", "case"],
+        keep=False,
+    )
+    if duplicates.any():
+        examples = df.loc[
+            duplicates, ["dataset", "model", "case"]
+        ].head(10)
+        raise ValueError(
+            "Duplicate dataset/model/case combinations:\n"
+            f"{examples.to_string(index=False)}"
+        )
+
+    return df
+
+
+# -------------------------------------------------------------------
+# Check cases
+# -------------------------------------------------------------------
+
+def check_case_sets(df):
+    reference_model = MODELS[0]
+
+    for dataset in DATASETS:
+        reference_cases = set(
+            df.loc[
+                (df["dataset"] == dataset)
+                & (df["model"] == reference_model),
+                "case",
+            ]
+        )
+
+        for model in MODELS[1:]:
+            model_cases = set(
+                df.loc[
+                    (df["dataset"] == dataset)
+                    & (df["model"] == model),
+                    "case",
+                ]
             )
 
-            case_rows.append({
-                "case": case_name,
-                "source": get_dataset(case_name),
-                "model": model,
-                "dice": dice,
-                "precision": precision,
-                "tp": tp,
-                "fp": fp,
-            })
+            if model_cases != reference_cases:
+                missing = sorted(reference_cases - model_cases)
+                extra = sorted(model_cases - reference_cases)
 
-    df_dice = pd.DataFrame(case_rows)
-    df_summary_dice = pd.DataFrame(summary_rows)
-
-    df_dice["model"] = pd.Categorical(
-        df_dice["model"],
-        categories=MODEL_ORDER,
-        ordered=True,
-    )
-
-    df_summary_dice["model"] = pd.Categorical(
-        df_summary_dice["model"],
-        categories=MODEL_ORDER,
-        ordered=True,
-    )
-
-    df_summary_dice = (
-        df_summary_dice
-        .sort_values("model")
-        .set_index("model")
-    )
-
-    return df_dice, df_summary_dice
-
-
-df_dice, summary_file_dice = load_dice_results(DICE_FILES)
+                raise ValueError(
+                    f"Case mismatch for {dataset}, {model}.\n"
+                    f"Missing compared with {reference_model}: "
+                    f"{missing[:10]}"
+                    f"{' ...' if len(missing) > 10 else ''}\n"
+                    f"Extra compared with {reference_model}: "
+                    f"{extra[:10]}"
+                    f"{' ...' if len(extra) > 10 else ''}"
+                )
 
 
 # -------------------------------------------------------------------
-# Voxel-level precision per model
+# Calc Dice and precision summaries
 # -------------------------------------------------------------------
 
-precision_summary = (
-    df_dice
-    .groupby("model", observed=True)
-    .agg(
+def summarise(grouped):
+    summary = grouped.agg(
         n_cases=("case", "nunique"),
-        n_cases_with_prediction=("precision", "count"),
+        n_precision_defined=("precision", "count"),
+
+        mean_dice=("dice", "mean"),
+        median_dice=("dice", "median"),
+        std_dice=("dice", "std"),
+        q1_dice=("dice", lambda x: x.quantile(0.25)),
+        q3_dice=("dice", lambda x: x.quantile(0.75)),
+
         mean_precision=("precision", "mean"),
         median_precision=("precision", "median"),
-        q1_precision=("precision", lambda x: x.quantile(0.25)),
-        q3_precision=("precision", lambda x: x.quantile(0.75)),
         std_precision=("precision", "std"),
-        total_tp=("tp", "sum"),
-        total_fp=("fp", "sum"),
+        q1_precision=(
+            "precision",
+            lambda x: x.quantile(0.25),
+        ),
+        q3_precision=(
+            "precision",
+            lambda x: x.quantile(0.75),
+        ),
     )
-)
 
-precision_summary["iqr_precision"] = (
-    precision_summary["q3_precision"] - precision_summary["q1_precision"]
-)
-
-# Across all cases, count each predicted positive voxel equally
-# precision_summary["pooled_precision"] = (
-#     precision_summary["total_tp"]
-#     / (
-#         precision_summary["total_tp"]
-#         + precision_summary["total_fp"]
-#     )
-# )
-
-print("\n--- Voxel-level Precision per Model ---")
-print(precision_summary.round(4).to_string())
-
-
-# -------------------------------------------------------------------
-# Dice per dataset and model
-# -------------------------------------------------------------------
-
-dice_summary = (
-    df_dice
-    .groupby(
-        ["source", "model"],
-        observed=True,
+    summary["iqr_dice"] = (
+        summary["q3_dice"] - summary["q1_dice"]
     )
-    .agg(
-        n_cases=("case", "nunique"),
-        mean_dice=("dice", "mean"),
-        median_dice=("dice", "median"),
-        q1_dice=("dice", lambda x: x.quantile(0.25)),
-        q3_dice=("dice", lambda x: x.quantile(0.75)),
-        std_dice=("dice", "std"),
+
+    summary["iqr_precision"] = (
+        summary["q3_precision"] - summary["q1_precision"]
     )
-)
 
-dice_summary["iqr_dice"] = dice_summary["q3_dice"] - dice_summary["q1_dice"]
-
-dice_summary["standard_error"] = (
-    dice_summary["std_dice"]
-    / dice_summary["n_cases"] ** 0.5
-)
-
-dice_summary["ci95_lower"] = (
-    dice_summary["mean_dice"]
-    - 1.96 * dice_summary["standard_error"]
-).clip(lower=0)
-
-dice_summary["ci95_upper"] = (
-    dice_summary["mean_dice"]
-    + 1.96 * dice_summary["standard_error"]
-).clip(upper=1)
-
-dice_summary = dice_summary.round(4)
-
-print("\n--- Dice per Dataset and Model ---")
-print(dice_summary.to_string())
-
-
-# -------------------------------------------------------------------
-# Overall Dice per model
-# -------------------------------------------------------------------
-
-overall_dice_summary = (
-    df_dice
-    .groupby("model", observed=True)
-    .agg(
-        n_cases=("case", "nunique"),
-        mean_dice=("dice", "mean"),
-        median_dice=("dice", "median"),
-        q1_dice=("dice", lambda x: x.quantile(0.25)),
-        q3_dice=("dice", lambda x: x.quantile(0.75)),
-        std_dice=("dice", "std"),
-    )
-)
-
-overall_dice_summary["iqr_dice"] = (
-    overall_dice_summary["q3_dice"] - overall_dice_summary["q1_dice"]
-)
-
-overall_dice_summary["standard_error"] = (
-    overall_dice_summary["std_dice"]
-    / overall_dice_summary["n_cases"] ** 0.5
-)
-
-overall_dice_summary["ci95_lower"] = (
-    overall_dice_summary["mean_dice"]
-    - 1.96 * overall_dice_summary["standard_error"]
-).clip(lower=0)
-
-overall_dice_summary["ci95_upper"] = (
-    overall_dice_summary["mean_dice"]
-    + 1.96 * overall_dice_summary["standard_error"]
-).clip(upper=1)
-
-overall_dice_summary = overall_dice_summary.join(
-    summary_file_dice
-)
-
-overall_dice_summary["difference"] = (
-    overall_dice_summary["mean_dice"]
-    - overall_dice_summary["summary_average_dice"]
-)
-
-overall_dice_summary = overall_dice_summary.round(4)
-
-print("\n--- Overall Dice per Model ---")
-print(overall_dice_summary.to_string())
-
-
-print("\n--- Average Dice Stored in nnU-Net Summary Files ---")
-print(summary_file_dice.round(4).to_string())
-
-
-# -------------------------------------------------------------------
-# Dice and precision comparison
-# -------------------------------------------------------------------
-
-comparison_table = overall_dice_summary[
-    ["n_cases", "mean_dice", "std_dice", "median_dice", "q1_dice", "q3_dice", "iqr_dice"]
-].join(
-    precision_summary[
+    return summary[
         [
-            "n_cases_with_prediction",
+            "n_cases",
+            "n_precision_defined",
+            "mean_dice",
+            "std_dice",
+            "median_dice",
+            "q1_dice",
+            "q3_dice",
+            "iqr_dice",
             "mean_precision",
             "std_precision",
             "median_precision",
             "q1_precision",
             "q3_precision",
             "iqr_precision",
-            # "pooled_precision",
         ]
     ]
+
+
+# -------------------------------------------------------------------
+# Analysis
+# -------------------------------------------------------------------
+
+df = load_results(DICE_FILES)
+check_case_sets(df)
+
+overall_table = summarise(
+    df.groupby("model", sort=False)
+).reindex(MODELS)
+
+# Separate summary for each dataset and model.
+per_dataset_table = summarise(
+    df.groupby(["dataset", "model"], sort=False)
+).reindex(
+    pd.MultiIndex.from_product(
+        [DATASETS, MODELS],
+        names=["dataset", "model"],
+    )
 )
 
-print("\n--- Dice and Voxel-level Precision per Model ---")
-print(comparison_table.round(4).to_string())
-
-
-# -------------------------------------------------------------------
-# Mean Dice per dataset and model
-# -------------------------------------------------------------------
-
-dice_print_table = (
-    df_dice
-    .groupby(
-        ["source", "model"],
-        observed=True,
-    )["dice"]
-    .mean()
+mean_dice_table = (
+    per_dataset_table["mean_dice"]
     .unstack("model")
-    .reindex(columns=MODEL_ORDER)
-    .round(4)
+    .reindex(index=DATASETS, columns=MODELS)
 )
+
+median_dice_table = (
+    per_dataset_table["median_dice"]
+    .unstack("model")
+    .reindex(index=DATASETS, columns=MODELS)
+)
+
+
+# -------------------------------------------------------------------
+# Results
+# -------------------------------------------------------------------
+
+pd.set_option("display.width", 200)
+pd.set_option("display.max_columns", None)
+
+print("\n--- Overall Dice and Voxel-Level Precision per Model ---")
+print(overall_table.round(4).to_string())
+
+print("\n--- Dice and Voxel-Level Precision per Dataset and Model ---")
+print(per_dataset_table.round(4).to_string())
 
 print("\n--- Mean Dice per Dataset and Model ---")
-print(dice_print_table.to_string())
+print(mean_dice_table.round(4).to_string())
+
+print("\n--- Median Dice per Dataset and Model ---")
+print(median_dice_table.round(4).to_string())
 
 
 # -------------------------------------------------------------------
-# Per-case Dice distributions per dataset
+# Save
 # -------------------------------------------------------------------
 
-sns.set_theme(style="whitegrid")
-
-plt.figure(figsize=(11, 6))
-
-sns.boxplot(
-    data=df_dice,
-    x="source",
-    y="dice",
-    hue="model",
-    hue_order=MODEL_ORDER,
-    palette=MODEL_PALETTE,
-)
-
-plt.title("Dice Score by Dataset and Model")
-plt.xlabel("Dataset")
-plt.ylabel("Per-case Dice")
-plt.ylim(0, 1)
-
-plt.legend(
-    title="Model",
-    bbox_to_anchor=(1.02, 1),
-    loc="upper left",
-)
-
-plt.tight_layout()
-plt.show()
-
-
-# -------------------------------------------------------------------
-# Overall per-case Dice and voxel-level precision distributions
-# Box: Q1 to Q3; line: median; whiskers: up to 1.5 × IQR.
-# Missing precision values (no positive prediction) are excluded.
-# -------------------------------------------------------------------
-
-fig, axes = plt.subplots(1, 2, figsize=(12, 5))
-
-sns.boxplot(
-    data=df_dice,
-    x="model",
-    y="dice",
-    order=MODEL_ORDER,
-    hue="model",
-    hue_order=MODEL_ORDER,
-    palette=MODEL_PALETTE,
-    legend=False,
-    ax=axes[0],
-)
-axes[0].set(title="Per-case Dice", xlabel="Training epochs", ylabel="Dice", ylim=(0, 1))
-
-sns.boxplot(
-    data=df_dice,
-    x="model",
-    y="precision",
-    order=MODEL_ORDER,
-    hue="model",
-    hue_order=MODEL_ORDER,
-    palette=MODEL_PALETTE,
-    legend=False,
-    ax=axes[1],
-)
-axes[1].set(
-    title="Per-case voxel-level precision",
-    xlabel="Training epochs",
-    ylabel="Precision",
-    ylim=(0, 1),
-)
-
-fig.tight_layout()
-plt.show()
-
-
-# -------------------------------------------------------------------
-# Mean Dice per dataset with values and 95% CI
-# -------------------------------------------------------------------
-
-plt.figure(figsize=(12, 6))
-
-ax = sns.barplot(
-    data=df_dice,
-    x="source",
-    y="dice",
-    hue="model",
-    hue_order=MODEL_ORDER,
-    estimator="mean",
-    errorbar=("ci", 95),
-    capsize=0.1,
-    palette=MODEL_PALETTE,
-)
-
-for container in ax.containers:
-    if hasattr(container, "datavalues"):
-        ax.bar_label(
-            container,
-            fmt="%.3f",
-            padding=8,
-            fontsize=8,
-            rotation=90,
-        )
-
-plt.title("Mean Dice Score by Dataset and Model")
-plt.xlabel("Dataset")
-plt.ylabel("Mean Per-case Dice")
-plt.ylim(0, 1.12)
-
-plt.legend(
-    title="Model",
-    bbox_to_anchor=(1.02, 1),
-    loc="upper left",
-)
-
-plt.tight_layout()
-plt.show()
-
-
-# -------------------------------------------------------------------
-# Overall average Dice stored in the nnU-Net summary files
-# -------------------------------------------------------------------
-
-summary_plot = summary_file_dice.reset_index()
-
-plt.figure(figsize=(7, 5))
-
-ax = sns.barplot(
-    data=summary_plot,
-    x="model",
-    y="summary_average_dice",
-    order=MODEL_ORDER,
-    hue="model",
-    hue_order=MODEL_ORDER,
-    palette=MODEL_PALETTE,
-    legend=False,
-)
-
-for container in ax.containers:
-    ax.bar_label(
-        container,
-        fmt="%.3f",
-        padding=4,
-        fontsize=9,
-    )
-
-plt.title("Overall Average Dice per Model")
-plt.xlabel("Model")
-plt.ylabel("Average Dice from nnU-Net Summary")
-plt.ylim(0, 1.05)
-
-plt.tight_layout()
-plt.show()
+# overall_table.to_csv(ROOT / "overall_model_comparison.csv")
+# per_dataset_table.to_csv(ROOT / "per_dataset_model_comparison.csv")
+# mean_dice_table.to_csv(ROOT / "mean_dice_by_dataset.csv")
+# median_dice_table.to_csv(ROOT / "median_dice_by_dataset.csv")
+#
+# print(f"\nTables saved in: {ROOT}")

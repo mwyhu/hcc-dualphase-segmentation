@@ -1,0 +1,1242 @@
+{
+    "foreground_mean": {
+        "Dice": 0.6098738965615013,
+        "FN": 4476.75,
+        "FP": 900.6315789473684,
+        "IoU": 0.47739783136150066,
+        "TN": 36892106.53947368,
+        "TP": 13404.5,
+        "n_pred": 14305.131578947368,
+        "n_ref": 17881.25
+    },
+    "mean": {
+        "1": {
+            "Dice": 0.6098738965615013,
+            "FN": 4476.75,
+            "FP": 900.6315789473684,
+            "IoU": 0.47739783136150066,
+            "TN": 36892106.53947368,
+            "TP": 13404.5,
+            "n_pred": 14305.131578947368,
+            "n_ref": 17881.25
+        }
+    },
+    "metric_per_case": [
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7483766960727241,
+                    "FN": 5619,
+                    "FP": 0,
+                    "IoU": 0.5979248658318426,
+                    "TN": 12568937,
+                    "TP": 8356,
+                    "n_pred": 8356,
+                    "n_ref": 13975
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1001.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1001.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8181674565560821,
+                    "FN": 2180,
+                    "FP": 122,
+                    "IoU": 0.6922871273893865,
+                    "TN": 20177607,
+                    "TP": 5179,
+                    "n_pred": 5301,
+                    "n_ref": 7359
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1002.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1002.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.761860519133616,
+                    "FN": 3722,
+                    "FP": 379,
+                    "IoU": 0.6153268924115937,
+                    "TN": 22533723,
+                    "TP": 6560,
+                    "n_pred": 6939,
+                    "n_ref": 10282
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1003.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1003.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9378972632528471,
+                    "FN": 15277,
+                    "FP": 4000,
+                    "IoU": 0.8830570064486384,
+                    "TN": 29457431,
+                    "TP": 145564,
+                    "n_pred": 149564,
+                    "n_ref": 160841
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1004.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1004.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6815208503679476,
+                    "FN": 1550,
+                    "FP": 8,
+                    "IoU": 0.5168992248062015,
+                    "TN": 28570471,
+                    "TP": 1667,
+                    "n_pred": 1675,
+                    "n_ref": 3217
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1005.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1005.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5869218500797448,
+                    "FN": 518,
+                    "FP": 0,
+                    "IoU": 0.4153498871331828,
+                    "TN": 24902794,
+                    "TP": 368,
+                    "n_pred": 368,
+                    "n_ref": 886
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1006.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1006.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6801751523997596,
+                    "FN": 3725,
+                    "FP": 0,
+                    "IoU": 0.5153525891230809,
+                    "TN": 22274554,
+                    "TP": 3961,
+                    "n_pred": 3961,
+                    "n_ref": 7686
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1008.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1008.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6966671948449796,
+                    "FN": 5488,
+                    "FP": 255,
+                    "IoU": 0.5345274760901281,
+                    "TN": 37998542,
+                    "TP": 6595,
+                    "n_pred": 6850,
+                    "n_ref": 12083
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1009.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1009.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 924,
+                    "FP": 0,
+                    "IoU": 0.0,
+                    "TN": 20970596,
+                    "TP": 0,
+                    "n_pred": 0,
+                    "n_ref": 924
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1010.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1010.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.696979865771812,
+                    "FN": 1066,
+                    "FP": 740,
+                    "IoU": 0.5348956992016483,
+                    "TN": 53211349,
+                    "TP": 2077,
+                    "n_pred": 2817,
+                    "n_ref": 3143
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1011.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1011.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.755654570856776,
+                    "FN": 5616,
+                    "FP": 855,
+                    "IoU": 0.607270741032955,
+                    "TN": 65519523,
+                    "TP": 10006,
+                    "n_pred": 10861,
+                    "n_ref": 15622
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1012.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1012.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.08681497558328811,
+                    "FN": 376,
+                    "FP": 14771,
+                    "IoU": 0.04537719795802609,
+                    "TN": 25149957,
+                    "TP": 720,
+                    "n_pred": 15491,
+                    "n_ref": 1096
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1013.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1013.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5188364329995231,
+                    "FN": 437,
+                    "FP": 572,
+                    "IoU": 0.3502897617514488,
+                    "TN": 19134959,
+                    "TP": 544,
+                    "n_pred": 1116,
+                    "n_ref": 981
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1014.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1014.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8938230840413898,
+                    "FN": 18745,
+                    "FP": 1449,
+                    "IoU": 0.8080290513627333,
+                    "TN": 22177047,
+                    "TP": 84999,
+                    "n_pred": 86448,
+                    "n_ref": 103744
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1015.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1015.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7246517262265294,
+                    "FN": 1727,
+                    "FP": 546,
+                    "IoU": 0.5681990881458967,
+                    "TN": 53734256,
+                    "TP": 2991,
+                    "n_pred": 3537,
+                    "n_ref": 4718
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1016.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1016.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6110481586402267,
+                    "FN": 8221,
+                    "FP": 17,
+                    "IoU": 0.4399347338364267,
+                    "TN": 55035531,
+                    "TP": 6471,
+                    "n_pred": 6488,
+                    "n_ref": 14692
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1017.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1017.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6235573122529644,
+                    "FN": 577,
+                    "FP": 1804,
+                    "IoU": 0.45302090512290377,
+                    "TN": 24899327,
+                    "TP": 1972,
+                    "n_pred": 3776,
+                    "n_ref": 2549
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1018.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1018.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7092716575370258,
+                    "FN": 4134,
+                    "FP": 165,
+                    "IoU": 0.5495127318453317,
+                    "TN": 29350585,
+                    "TP": 5244,
+                    "n_pred": 5409,
+                    "n_ref": 9378
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1019.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1019.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8896707983473278,
+                    "FN": 5665,
+                    "FP": 2613,
+                    "IoU": 0.8012675853459452,
+                    "TN": 30891338,
+                    "TP": 33376,
+                    "n_pred": 35989,
+                    "n_ref": 39041
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1020.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1020.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7195346857710313,
+                    "FN": 557,
+                    "FP": 1420,
+                    "IoU": 0.561932195878573,
+                    "TN": 35909215,
+                    "TP": 2536,
+                    "n_pred": 3956,
+                    "n_ref": 3093
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1021.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1021.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5949182992557105,
+                    "FN": 9342,
+                    "FP": 128,
+                    "IoU": 0.4234047735021919,
+                    "TN": 20692952,
+                    "TP": 6954,
+                    "n_pred": 7082,
+                    "n_ref": 16296
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1022.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1022.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7327927588157647,
+                    "FN": 2796,
+                    "FP": 38,
+                    "IoU": 0.5782738095238096,
+                    "TN": 22013376,
+                    "TP": 3886,
+                    "n_pred": 3924,
+                    "n_ref": 6682
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1023.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1023.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.46507295870847565,
+                    "FN": 1698,
+                    "FP": 25,
+                    "IoU": 0.3029935275080906,
+                    "TN": 89650776,
+                    "TP": 749,
+                    "n_pred": 774,
+                    "n_ref": 2447
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1024.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1024.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.697566628041715,
+                    "FN": 46,
+                    "FP": 215,
+                    "IoU": 0.5355871886120996,
+                    "TN": 23854542,
+                    "TP": 301,
+                    "n_pred": 516,
+                    "n_ref": 347
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1025.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1025.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7849829351535836,
+                    "FN": 126,
+                    "FP": 63,
+                    "IoU": 0.6460674157303371,
+                    "TN": 41942506,
+                    "TP": 345,
+                    "n_pred": 408,
+                    "n_ref": 471
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1026.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1026.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6485651214128035,
+                    "FN": 1415,
+                    "FP": 177,
+                    "IoU": 0.4799085266252859,
+                    "TN": 13890571,
+                    "TP": 1469,
+                    "n_pred": 1646,
+                    "n_ref": 2884
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1027.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1027.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5818070818070818,
+                    "FN": 3285,
+                    "FP": 825,
+                    "IoU": 0.4102453723633233,
+                    "TN": 26731719,
+                    "TP": 2859,
+                    "n_pred": 3684,
+                    "n_ref": 6144
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1028.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1028.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6777950310559007,
+                    "FN": 2484,
+                    "FP": 6,
+                    "IoU": 0.5126247798003524,
+                    "TN": 26995723,
+                    "TP": 2619,
+                    "n_pred": 2625,
+                    "n_ref": 5103
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1029.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1029.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7872146873966259,
+                    "FN": 4123,
+                    "FP": 1023,
+                    "IoU": 0.6490964882372997,
+                    "TN": 31442615,
+                    "TP": 9519,
+                    "n_pred": 10542,
+                    "n_ref": 13642
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1030.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1030.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7620856843120021,
+                    "FN": 8260,
+                    "FP": 131,
+                    "IoU": 0.615620705451214,
+                    "TN": 39824058,
+                    "TP": 13439,
+                    "n_pred": 13570,
+                    "n_ref": 21699
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1031.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1031.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5402029664324747,
+                    "FN": 332,
+                    "FP": 257,
+                    "IoU": 0.3700534759358289,
+                    "TN": 19922009,
+                    "TP": 346,
+                    "n_pred": 603,
+                    "n_ref": 678
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1032.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1032.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6702222222222223,
+                    "FN": 1262,
+                    "FP": 222,
+                    "IoU": 0.5040106951871658,
+                    "TN": 37483600,
+                    "TP": 1508,
+                    "n_pred": 1730,
+                    "n_ref": 2770
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1033.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1033.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8356853477380148,
+                    "FN": 9686,
+                    "FP": 48,
+                    "IoU": 0.7177487169078204,
+                    "TN": 9140553,
+                    "TP": 24753,
+                    "n_pred": 24801,
+                    "n_ref": 34439
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1034.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1034.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8222535087333362,
+                    "FN": 8051,
+                    "FP": 29,
+                    "IoU": 0.6981583174567597,
+                    "TN": 42178415,
+                    "TP": 18689,
+                    "n_pred": 18718,
+                    "n_ref": 26740
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1035.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1035.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5823996172096176,
+                    "FN": 10461,
+                    "FP": 12,
+                    "IoU": 0.4108348334833483,
+                    "TN": 26720912,
+                    "TP": 7303,
+                    "n_pred": 7315,
+                    "n_ref": 17764
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1036.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1036.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7390939055128288,
+                    "FN": 4018,
+                    "FP": 19,
+                    "IoU": 0.5861609431060995,
+                    "TN": 55564773,
+                    "TP": 5718,
+                    "n_pred": 5737,
+                    "n_ref": 9736
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1037.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1037.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7892234548335975,
+                    "FN": 2514,
+                    "FP": 13,
+                    "IoU": 0.6518324607329843,
+                    "TN": 82830246,
+                    "TP": 4731,
+                    "n_pred": 4744,
+                    "n_ref": 7245
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1038.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1038.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7845907757931219,
+                    "FN": 4776,
+                    "FP": 72,
+                    "IoU": 0.6455363018205746,
+                    "TN": 31705747,
+                    "TP": 8829,
+                    "n_pred": 8901,
+                    "n_ref": 13605
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1039.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1039.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.22092050209205022,
+                    "FN": 931,
+                    "FP": 0,
+                    "IoU": 0.12417685794920037,
+                    "TN": 22543321,
+                    "TP": 132,
+                    "n_pred": 132,
+                    "n_ref": 1063
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1040.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1040.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.34314656536878757,
+                    "FN": 1958,
+                    "FP": 117,
+                    "IoU": 0.20710737485670616,
+                    "TN": 45086151,
+                    "TP": 542,
+                    "n_pred": 659,
+                    "n_ref": 2500
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1041.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1041.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8834991798797157,
+                    "FN": 5123,
+                    "FP": 204,
+                    "IoU": 0.7913108203400454,
+                    "TN": 29858890,
+                    "TP": 20199,
+                    "n_pred": 20403,
+                    "n_ref": 25322
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1042.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1042.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6530366806975346,
+                    "FN": 1055,
+                    "FP": 99,
+                    "IoU": 0.48482142857142857,
+                    "TN": 20707136,
+                    "TP": 1086,
+                    "n_pred": 1185,
+                    "n_ref": 2141
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1043.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1043.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.16616915422885573,
+                    "FN": 698,
+                    "FP": 978,
+                    "IoU": 0.09061313076505698,
+                    "TN": 17561805,
+                    "TP": 167,
+                    "n_pred": 1145,
+                    "n_ref": 865
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1044.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1044.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7329302987197724,
+                    "FN": 1499,
+                    "FP": 3,
+                    "IoU": 0.5784451305079988,
+                    "TN": 58454549,
+                    "TP": 2061,
+                    "n_pred": 2064,
+                    "n_ref": 3560
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1045.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1045.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7033255015362371,
+                    "FN": 6005,
+                    "FP": 561,
+                    "IoU": 0.5424071363858108,
+                    "TN": 36947955,
+                    "TP": 7783,
+                    "n_pred": 8344,
+                    "n_ref": 13788
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1046.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1046.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6802443991853361,
+                    "FN": 59,
+                    "FP": 98,
+                    "IoU": 0.5154320987654321,
+                    "TN": 23592636,
+                    "TP": 167,
+                    "n_pred": 265,
+                    "n_ref": 226
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1047.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1047.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6246547828270148,
+                    "FN": 1384,
+                    "FP": 111,
+                    "IoU": 0.45418035779481564,
+                    "TN": 20182349,
+                    "TP": 1244,
+                    "n_pred": 1355,
+                    "n_ref": 2628
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1048.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1048.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 257,
+                    "FP": 12505,
+                    "IoU": 0.0,
+                    "TN": 35900966,
+                    "TP": 0,
+                    "n_pred": 12505,
+                    "n_ref": 257
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1049.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1049.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.56972408650261,
+                    "FN": 1144,
+                    "FP": 10,
+                    "IoU": 0.3983315954118874,
+                    "TN": 12843138,
+                    "TP": 764,
+                    "n_pred": 774,
+                    "n_ref": 1908
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1050.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1050.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5450765450765451,
+                    "FN": 2775,
+                    "FP": 2039,
+                    "IoU": 0.37464276435437777,
+                    "TN": 78635502,
+                    "TP": 2884,
+                    "n_pred": 4923,
+                    "n_ref": 5659
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1051.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1051.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.28763276767183493,
+                    "FN": 4192,
+                    "FP": 1643,
+                    "IoU": 0.16797376301154998,
+                    "TN": 57926811,
+                    "TP": 1178,
+                    "n_pred": 2821,
+                    "n_ref": 5370
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1052.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1052.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7969369783291217,
+                    "FN": 12519,
+                    "FP": 740,
+                    "IoU": 0.6624233011686229,
+                    "TN": 143877779,
+                    "TP": 26018,
+                    "n_pred": 26758,
+                    "n_ref": 38537
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1053.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1053.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7753396029258098,
+                    "FN": 5359,
+                    "FP": 231,
+                    "IoU": 0.6331058020477816,
+                    "TN": 33825916,
+                    "TP": 9646,
+                    "n_pred": 9877,
+                    "n_ref": 15005
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1054.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1054.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7110802683321767,
+                    "FN": 1242,
+                    "FP": 7,
+                    "IoU": 0.5516870064608758,
+                    "TN": 21493022,
+                    "TP": 1537,
+                    "n_pred": 1544,
+                    "n_ref": 2779
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1055.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1055.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3091,
+                    "FP": 0,
+                    "IoU": 0.0,
+                    "TN": 55571437,
+                    "TP": 0,
+                    "n_pred": 0,
+                    "n_ref": 3091
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1056.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1056.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6571540265832682,
+                    "FN": 1250,
+                    "FP": 504,
+                    "IoU": 0.4893740902474527,
+                    "TN": 19657365,
+                    "TP": 1681,
+                    "n_pred": 2185,
+                    "n_ref": 2931
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1057.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1057.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6791652717330655,
+                    "FN": 2653,
+                    "FP": 222,
+                    "IoU": 0.5141939844542075,
+                    "TN": 30927074,
+                    "TP": 3043,
+                    "n_pred": 3265,
+                    "n_ref": 5696
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1058.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1058.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7424302005505309,
+                    "FN": 1237,
+                    "FP": 73,
+                    "IoU": 0.590368980612883,
+                    "TN": 31191938,
+                    "TP": 1888,
+                    "n_pred": 1961,
+                    "n_ref": 3125
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1059.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1059.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.24771453848422295,
+                    "FN": 2042,
+                    "FP": 3060,
+                    "IoU": 0.1413665432514305,
+                    "TN": 38529226,
+                    "TP": 840,
+                    "n_pred": 3900,
+                    "n_ref": 2882
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1060.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1060.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9245242617212229,
+                    "FN": 27632,
+                    "FP": 4796,
+                    "IoU": 0.8596421367913504,
+                    "TN": 20216194,
+                    "TP": 198610,
+                    "n_pred": 203406,
+                    "n_ref": 226242
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1061.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1061.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7332797571211715,
+                    "FN": 1800,
+                    "FP": 1187,
+                    "IoU": 0.5788805864937262,
+                    "TN": 61858891,
+                    "TP": 4106,
+                    "n_pred": 5293,
+                    "n_ref": 5906
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1062.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1062.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.4667976424361493,
+                    "FN": 4066,
+                    "FP": 5,
+                    "IoU": 0.3044592516658124,
+                    "TN": 83093795,
+                    "TP": 1782,
+                    "n_pred": 1787,
+                    "n_ref": 5848
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1063.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1063.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.4090614886731392,
+                    "FN": 826,
+                    "FP": 87,
+                    "IoU": 0.25711960943856793,
+                    "TN": 53738291,
+                    "TP": 316,
+                    "n_pred": 403,
+                    "n_ref": 1142
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1064.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1064.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.593418789190389,
+                    "FN": 4403,
+                    "FP": 2924,
+                    "IoU": 0.42188732838882753,
+                    "TN": 60280446,
+                    "TP": 5347,
+                    "n_pred": 8271,
+                    "n_ref": 9750
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1065.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1065.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9383867793819402,
+                    "FN": 28911,
+                    "FP": 1773,
+                    "IoU": 0.8839252951612843,
+                    "TN": 9434981,
+                    "TP": 233663,
+                    "n_pred": 235436,
+                    "n_ref": 262574
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1066.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1066.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7846215550335186,
+                    "FN": 7255,
+                    "FP": 263,
+                    "IoU": 0.6455779747312842,
+                    "TN": 23047460,
+                    "TP": 13694,
+                    "n_pred": 13957,
+                    "n_ref": 20949
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1067.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1067.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 12920,
+                    "FP": 183,
+                    "IoU": 0.0,
+                    "TN": 48745681,
+                    "TP": 0,
+                    "n_pred": 183,
+                    "n_ref": 12920
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1068.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1068.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 6667,
+                    "FP": 81,
+                    "IoU": 0.0,
+                    "TN": 23061924,
+                    "TP": 0,
+                    "n_pred": 81,
+                    "n_ref": 6667
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1069.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1069.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 2200,
+                    "FP": 90,
+                    "IoU": 0.0,
+                    "TN": 33289998,
+                    "TP": 0,
+                    "n_pred": 90,
+                    "n_ref": 2200
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1070.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1070.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8064592733317502,
+                    "FN": 4075,
+                    "FP": 0,
+                    "IoU": 0.6756864305610824,
+                    "TN": 42716907,
+                    "TP": 8490,
+                    "n_pred": 8490,
+                    "n_ref": 12565
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1071.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1071.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7880710659898477,
+                    "FN": 3660,
+                    "FP": 348,
+                    "IoU": 0.650261780104712,
+                    "TN": 35115836,
+                    "TP": 7452,
+                    "n_pred": 7800,
+                    "n_ref": 11112
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1072.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1072.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7410748413729837,
+                    "FN": 9959,
+                    "FP": 202,
+                    "IoU": 0.5886567889239738,
+                    "TN": 33267586,
+                    "TP": 14541,
+                    "n_pred": 14743,
+                    "n_ref": 24500
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1073.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1073.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7217877094972067,
+                    "FN": 977,
+                    "FP": 19,
+                    "IoU": 0.5646853146853147,
+                    "TN": 23066384,
+                    "TP": 1292,
+                    "n_pred": 1311,
+                    "n_ref": 2269
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1074.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1074.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5956416464891041,
+                    "FN": 325,
+                    "FP": 9,
+                    "IoU": 0.4241379310344828,
+                    "TN": 60292540,
+                    "TP": 246,
+                    "n_pred": 255,
+                    "n_ref": 571
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1075.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1075.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7612076852698993,
+                    "FN": 100,
+                    "FP": 161,
+                    "IoU": 0.6144756277695717,
+                    "TN": 59768155,
+                    "TP": 416,
+                    "n_pred": 577,
+                    "n_ref": 516
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1076.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1076.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.42799905727079895,
+                    "FN": 7185,
+                    "FP": 96,
+                    "IoU": 0.27226386806596703,
+                    "TN": 20437227,
+                    "TP": 2724,
+                    "n_pred": 2820,
+                    "n_ref": 9909
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor/WORC_CRLM_1077.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs/WORC_CRLM_1077.nii.gz"
+        }
+    ]
+}
