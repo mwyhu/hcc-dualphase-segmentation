@@ -4,7 +4,7 @@
 #SBATCH --gpus=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=128G
-#SBATCH --time=08:00:00
+#SBATCH --time=25:00:00
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
 
@@ -16,7 +16,7 @@ source setup_env.sh
 export nnUNet_results=/projects/prjs2180/data/nnUNet_results/extend_epochs/DP_poly_1e3_2000epochs
 export OMP_NUM_THREADS="$SLURM_CPUS_PER_TASK"
 
-INPUT_DIR=/projects/prjs2180/data/nnUNet_raw/Dataset002_singlephase/imagesTs
+INPUT_DIR=/projects/prjs2180/data/nnUNet_raw/Dataset003_ceiling/imagesTs
 OUTPUT_DIR=/projects/prjs2180/evaluation/predictions/testset
 mkdir -p "$OUTPUT_DIR"
 
