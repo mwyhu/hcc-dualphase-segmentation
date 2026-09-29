@@ -173,13 +173,13 @@ precision_summary = (
 )
 
 # Across all cases, count each predicted positive voxel equally
-precision_summary["pooled_precision"] = (
-    precision_summary["total_tp"]
-    / (
-        precision_summary["total_tp"]
-        + precision_summary["total_fp"]
-    )
-)
+# precision_summary["pooled_precision"] = (
+#     precision_summary["total_tp"]
+#     / (
+#         precision_summary["total_tp"]
+#         + precision_summary["total_fp"]
+#     )
+# )
 
 print("\n--- Voxel-level Precision per Model ---")
 print(precision_summary.round(4).to_string())
@@ -278,14 +278,15 @@ print(summary_file_dice.round(4).to_string())
 # -------------------------------------------------------------------
 
 comparison_table = overall_dice_summary[
-    ["n_cases", "mean_dice", "std_dice"]
+    ["n_cases", "mean_dice", "std_dice", "median_dice", "ci95_lower", "ci95_upper"]
 ].join(
     precision_summary[
         [
             "n_cases_with_prediction",
             "mean_precision",
             "std_precision",
-            "pooled_precision",
+            "median_precision",
+            # "pooled_precision",
         ]
     ]
 )

@@ -17,7 +17,7 @@ export nnUNet_results=/projects/prjs2180/data/nnUNet_results/extend_epochs/SP_po
 export OMP_NUM_THREADS="$SLURM_CPUS_PER_TASK"
 
 INPUT_DIR=/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/imagesTs
-OUTPUT_DIR=/projects/prjs2180/evaluation/predictions/testset
+OUTPUT_DIR=/projects/prjs2180/evaluation/predictions/testset/SP
 mkdir -p "$OUTPUT_DIR"
 
 nnUNetv2_predict \
