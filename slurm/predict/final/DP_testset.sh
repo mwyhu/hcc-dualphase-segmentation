@@ -27,5 +27,4 @@ nnUNetv2_predict \
     -c 3d_fullres \
     -tr nnUNetTrainer \
     -p TSLL_DP_plans \
-    -f 0 \
     -chk checkpoint_final.pth
