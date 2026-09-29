@@ -13,7 +13,7 @@ set -euo pipefail
 cd /projects/prjs2180/code/hcc-dualphase-segmentation
 source setup_env.sh
 
-MODEL_DIR=/projects/prjs2180/code/AbdomentAtlasNet
+MODEL_DIR=/projects/prjs2180/code/COALA/nnUNetTrainer__nnUNetPlans__3d_cascade_fullres
 INPUT_DIR=/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/imagesTs
 OUTPUT_DIR=/projects/prjs2180/evaluation/predictions/WORC_CRLM/COALA
 
