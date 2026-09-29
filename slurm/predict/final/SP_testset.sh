@@ -2,7 +2,7 @@
 #SBATCH --job-name=predict_testset_SP
 #SBATCH --partition=gpu_a100
 #SBATCH --gpus=1
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=16
 #SBATCH --mem=128G
 #SBATCH --time=15:00:00
 #SBATCH --output=logs/%x_%j.out
@@ -16,7 +16,7 @@ source setup_env.sh
 export nnUNet_results=/projects/prjs2180/data/nnUNet_results/extend_epochs/SP_poly_1e3_2000epochs
 export OMP_NUM_THREADS="$SLURM_CPUS_PER_TASK"
 
-INPUT_DIR=/projects/prjs2180/data/nnUNet_raw/Dataset003_ceiling/imagesTs
+INPUT_DIR=/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/imagesTs
 OUTPUT_DIR=/projects/prjs2180/evaluation/predictions/testset
 mkdir -p "$OUTPUT_DIR"
 
