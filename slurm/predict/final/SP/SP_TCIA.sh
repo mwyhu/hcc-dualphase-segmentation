@@ -16,7 +16,7 @@ source setup_env.sh
 export nnUNet_results=/projects/prjs2180/data/nnUNet_results/extend_epochs/SP_poly_1e3_2000epochs
 export OMP_NUM_THREADS="$SLURM_CPUS_PER_TASK"
 
-INPUT_DIR=/projects/prjs2180/data/nnUNet_raw/0_External_Validation/DP/Full_TCIA_CRLM/imagesTs
+INPUT_DIR=/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/imagesTs
 OUTPUT_DIR=/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP
 mkdir -p "$OUTPUT_DIR"
 
