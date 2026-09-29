@@ -23,7 +23,7 @@ mkdir -p "$OUTPUT_DIR"
 nnUNetv2_predict \
     -i "$INPUT_DIR" \
     -o "$OUTPUT_DIR" \
-    -d 2 \
+    -d 1 \
     -c 3d_fullres \
     -tr nnUNetTrainer \
     -p TSLL_SP_plans \
