@@ -33,7 +33,7 @@ python -u scripts/evaluation/detectability.py \
     --pred_dir "$PRED_DIR" \
     --gt_dir "$GT_DIR" \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR/DP_1000_epochs.csv"
+    --output "$OUTPUT_DIR/DP_3000_epochs.csv"
 
 
 echo "Date and time: $(date)"

@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 DICE_FILES = {
     "1000": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/external_val_HCC/1000_ep_summary.json",
     "1500": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/external_val_HCC/1500_ep_summary.json",
-    "2000": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/external_val_HCC/1500_ep_summary.json",
+    "2000": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/external_val_HCC/2000_ep_summary.json",
     "3000": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/external_val_HCC/3000_ep_summary.json",
 }
 
@@ -165,10 +165,16 @@ precision_summary = (
         n_cases_with_prediction=("precision", "count"),
         mean_precision=("precision", "mean"),
         median_precision=("precision", "median"),
+        q1_precision=("precision", lambda x: x.quantile(0.25)),
+        q3_precision=("precision", lambda x: x.quantile(0.75)),
         std_precision=("precision", "std"),
         total_tp=("tp", "sum"),
         total_fp=("fp", "sum"),
     )
+)
+
+precision_summary["iqr_precision"] = (
+    precision_summary["q3_precision"] - precision_summary["q1_precision"]
 )
 
 # Across all cases, count each predicted positive voxel equally
@@ -198,9 +204,13 @@ dice_summary = (
         n_cases=("case", "nunique"),
         mean_dice=("dice", "mean"),
         median_dice=("dice", "median"),
+        q1_dice=("dice", lambda x: x.quantile(0.25)),
+        q3_dice=("dice", lambda x: x.quantile(0.75)),
         std_dice=("dice", "std"),
     )
 )
+
+dice_summary["iqr_dice"] = dice_summary["q3_dice"] - dice_summary["q1_dice"]
 
 dice_summary["standard_error"] = (
     dice_summary["std_dice"]
@@ -234,8 +244,14 @@ overall_dice_summary = (
         n_cases=("case", "nunique"),
         mean_dice=("dice", "mean"),
         median_dice=("dice", "median"),
+        q1_dice=("dice", lambda x: x.quantile(0.25)),
+        q3_dice=("dice", lambda x: x.quantile(0.75)),
         std_dice=("dice", "std"),
     )
+)
+
+overall_dice_summary["iqr_dice"] = (
+    overall_dice_summary["q3_dice"] - overall_dice_summary["q1_dice"]
 )
 
 overall_dice_summary["standard_error"] = (
@@ -277,13 +293,17 @@ print(summary_file_dice.round(4).to_string())
 # -------------------------------------------------------------------
 
 comparison_table = overall_dice_summary[
-    ["n_cases", "mean_dice", "std_dice"]
+    ["n_cases", "mean_dice", "std_dice", "median_dice", "q1_dice", "q3_dice", "iqr_dice"]
 ].join(
     precision_summary[
         [
             "n_cases_with_prediction",
             "mean_precision",
             "std_precision",
+            "median_precision",
+            "q1_precision",
+            "q3_precision",
+            "iqr_precision",
             "pooled_precision",
         ]
     ]
@@ -342,6 +362,49 @@ plt.legend(
 )
 
 plt.tight_layout()
+plt.show()
+
+
+# -------------------------------------------------------------------
+# Overall per-case Dice and voxel-level precision distributions
+# Box: Q1 to Q3; line: median; whiskers: up to 1.5 × IQR.
+# Missing precision values (no positive prediction) are excluded.
+# -------------------------------------------------------------------
+
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+
+sns.boxplot(
+    data=df_dice,
+    x="model",
+    y="dice",
+    order=MODEL_ORDER,
+    hue="model",
+    hue_order=MODEL_ORDER,
+    palette=MODEL_PALETTE,
+    legend=False,
+    ax=axes[0],
+)
+axes[0].set(title="Per-case Dice", xlabel="Training epochs", ylabel="Dice", ylim=(0, 1))
+
+sns.boxplot(
+    data=df_dice,
+    x="model",
+    y="precision",
+    order=MODEL_ORDER,
+    hue="model",
+    hue_order=MODEL_ORDER,
+    palette=MODEL_PALETTE,
+    legend=False,
+    ax=axes[1],
+)
+axes[1].set(
+    title="Per-case voxel-level precision",
+    xlabel="Training epochs",
+    ylabel="Precision",
+    ylim=(0, 1),
+)
+
+fig.tight_layout()
 plt.show()
 
 
