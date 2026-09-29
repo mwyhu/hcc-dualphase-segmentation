@@ -1,0 +1,2570 @@
+{
+    "foreground_mean": {
+        "Dice": 1.3969384972529483e-05,
+        "FN": 30122.955974842767,
+        "FP": 125947.69811320755,
+        "IoU": 6.991610127997547e-06,
+        "TN": 23397317.396226414,
+        "TP": 3.0440251572327046,
+        "n_pred": 125950.74213836477,
+        "n_ref": 30126.0
+    },
+    "mean": {
+        "1": {
+            "Dice": 1.3969384972529483e-05,
+            "FN": 30122.955974842767,
+            "FP": 125947.69811320755,
+            "IoU": 6.991610127997547e-06,
+            "TN": 23397317.396226414,
+            "TP": 3.0440251572327046,
+            "n_pred": 125950.74213836477,
+            "n_ref": 30126.0
+        }
+    },
+    "metric_per_case": [
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1379,
+                    "FP": 263093,
+                    "IoU": 0.0,
+                    "TN": 41940712,
+                    "TP": 0,
+                    "n_pred": 263093,
+                    "n_ref": 1379
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1001.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1001.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 643,
+                    "FP": 151835,
+                    "IoU": 0.0,
+                    "TN": 46509154,
+                    "TP": 0,
+                    "n_pred": 151835,
+                    "n_ref": 643
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1002.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1002.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 728,
+                    "FP": 65854,
+                    "IoU": 0.0,
+                    "TN": 13302762,
+                    "TP": 0,
+                    "n_pred": 65854,
+                    "n_ref": 728
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1003.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1003.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 473,
+                    "FP": 38234,
+                    "IoU": 0.0,
+                    "TN": 10709197,
+                    "TP": 0,
+                    "n_pred": 38234,
+                    "n_ref": 473
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1004.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1004.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 52187,
+                    "FP": 160048,
+                    "IoU": 0.0,
+                    "TN": 36750069,
+                    "TP": 0,
+                    "n_pred": 160048,
+                    "n_ref": 52187
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1005.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1005.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 4740,
+                    "FP": 50031,
+                    "IoU": 0.0,
+                    "TN": 13314573,
+                    "TP": 0,
+                    "n_pred": 50031,
+                    "n_ref": 4740
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1006.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1006.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 112,
+                    "FP": 36723,
+                    "IoU": 0.0,
+                    "TN": 13332509,
+                    "TP": 0,
+                    "n_pred": 36723,
+                    "n_ref": 112
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1007.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1007.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 389,
+                    "FP": 169346,
+                    "IoU": 0.0,
+                    "TN": 38627577,
+                    "TP": 0,
+                    "n_pred": 169346,
+                    "n_ref": 389
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1008.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1008.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 213905,
+                    "FP": 253748,
+                    "IoU": 0.0,
+                    "TN": 36494651,
+                    "TP": 0,
+                    "n_pred": 253748,
+                    "n_ref": 213905
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1009.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1009.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 486,
+                    "FP": 72306,
+                    "IoU": 0.0,
+                    "TN": 12247976,
+                    "TP": 0,
+                    "n_pred": 72306,
+                    "n_ref": 486
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1010.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1010.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 984,
+                    "FP": 27748,
+                    "IoU": 0.0,
+                    "TN": 9408452,
+                    "TP": 0,
+                    "n_pred": 27748,
+                    "n_ref": 984
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1011.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1011.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 809,
+                    "FP": 161750,
+                    "IoU": 0.0,
+                    "TN": 41256193,
+                    "TP": 0,
+                    "n_pred": 161750,
+                    "n_ref": 809
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1012.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1012.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 7794,
+                    "FP": 191799,
+                    "IoU": 0.0,
+                    "TN": 34141271,
+                    "TP": 0,
+                    "n_pred": 191799,
+                    "n_ref": 7794
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1013.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1013.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1351,
+                    "FP": 79571,
+                    "IoU": 0.0,
+                    "TN": 14336998,
+                    "TP": 0,
+                    "n_pred": 79571,
+                    "n_ref": 1351
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1014.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1014.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 979,
+                    "FP": 43710,
+                    "IoU": 0.0,
+                    "TN": 12538223,
+                    "TP": 0,
+                    "n_pred": 43710,
+                    "n_ref": 979
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1015.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1015.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 949,
+                    "FP": 38546,
+                    "IoU": 0.0,
+                    "TN": 9135545,
+                    "TP": 0,
+                    "n_pred": 38546,
+                    "n_ref": 949
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1016.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1016.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 2110,
+                    "FP": 162654,
+                    "IoU": 0.0,
+                    "TN": 30506084,
+                    "TP": 0,
+                    "n_pred": 162654,
+                    "n_ref": 2110
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1017.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1017.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 14009,
+                    "FP": 163022,
+                    "IoU": 0.0,
+                    "TN": 21580921,
+                    "TP": 0,
+                    "n_pred": 163022,
+                    "n_ref": 14009
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1018.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1018.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1752,
+                    "FP": 232644,
+                    "IoU": 0.0,
+                    "TN": 37776484,
+                    "TP": 0,
+                    "n_pred": 232644,
+                    "n_ref": 1752
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1019.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1019.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1937,
+                    "FP": 32408,
+                    "IoU": 0.0,
+                    "TN": 7043543,
+                    "TP": 0,
+                    "n_pred": 32408,
+                    "n_ref": 1937
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1020.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1020.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 499,
+                    "FP": 45777,
+                    "IoU": 0.0,
+                    "TN": 8342332,
+                    "TP": 0,
+                    "n_pred": 45777,
+                    "n_ref": 499
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1021.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1021.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3165,
+                    "FP": 40577,
+                    "IoU": 0.0,
+                    "TN": 7820578,
+                    "TP": 0,
+                    "n_pred": 40577,
+                    "n_ref": 3165
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1022.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1022.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 2724,
+                    "FP": 45799,
+                    "IoU": 0.0,
+                    "TN": 10437237,
+                    "TP": 0,
+                    "n_pred": 45799,
+                    "n_ref": 2724
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1023.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1023.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 454,
+                    "FP": 270911,
+                    "IoU": 0.0,
+                    "TN": 42720251,
+                    "TP": 0,
+                    "n_pred": 270911,
+                    "n_ref": 454
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1025.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1025.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 279424,
+                    "FP": 166701,
+                    "IoU": 0.0,
+                    "TN": 47526227,
+                    "TP": 0,
+                    "n_pred": 166701,
+                    "n_ref": 279424
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1026.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1026.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 972,
+                    "FP": 50456,
+                    "IoU": 0.0,
+                    "TN": 6764316,
+                    "TP": 0,
+                    "n_pred": 50456,
+                    "n_ref": 972
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1027.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1027.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1075,
+                    "FP": 42117,
+                    "IoU": 0.0,
+                    "TN": 11753288,
+                    "TP": 0,
+                    "n_pred": 42117,
+                    "n_ref": 1075
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1028.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1028.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 8105,
+                    "FP": 201328,
+                    "IoU": 0.0,
+                    "TN": 37277159,
+                    "TP": 0,
+                    "n_pred": 201328,
+                    "n_ref": 8105
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1029.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1029.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 12919,
+                    "FP": 162933,
+                    "IoU": 0.0,
+                    "TN": 30757140,
+                    "TP": 0,
+                    "n_pred": 162933,
+                    "n_ref": 12919
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1030.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1030.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 14503,
+                    "FP": 44614,
+                    "IoU": 0.0,
+                    "TN": 11475219,
+                    "TP": 0,
+                    "n_pred": 44614,
+                    "n_ref": 14503
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1031.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1031.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 739505,
+                    "FP": 225104,
+                    "IoU": 0.0,
+                    "TN": 43075583,
+                    "TP": 0,
+                    "n_pred": 225104,
+                    "n_ref": 739505
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1032.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1032.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 303377,
+                    "FP": 86786,
+                    "IoU": 0.0,
+                    "TN": 13765613,
+                    "TP": 0,
+                    "n_pred": 86786,
+                    "n_ref": 303377
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1033.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1033.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 2308,
+                    "FP": 49789,
+                    "IoU": 0.0,
+                    "TN": 10695807,
+                    "TP": 0,
+                    "n_pred": 49789,
+                    "n_ref": 2308
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1034.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1034.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1742,
+                    "FP": 36743,
+                    "IoU": 0.0,
+                    "TN": 12544427,
+                    "TP": 0,
+                    "n_pred": 36743,
+                    "n_ref": 1742
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1035.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1035.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1184,
+                    "FP": 31824,
+                    "IoU": 0.0,
+                    "TN": 9142032,
+                    "TP": 0,
+                    "n_pred": 31824,
+                    "n_ref": 1184
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1036.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1036.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 14340,
+                    "FP": 262627,
+                    "IoU": 0.0,
+                    "TN": 37471769,
+                    "TP": 0,
+                    "n_pred": 262627,
+                    "n_ref": 14340
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1037.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1037.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 793,
+                    "FP": 54985,
+                    "IoU": 0.0,
+                    "TN": 9905694,
+                    "TP": 0,
+                    "n_pred": 54985,
+                    "n_ref": 793
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1038.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1038.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1570,
+                    "FP": 55256,
+                    "IoU": 0.0,
+                    "TN": 12001798,
+                    "TP": 0,
+                    "n_pred": 55256,
+                    "n_ref": 1570
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1039.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1039.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3052,
+                    "FP": 46739,
+                    "IoU": 0.0,
+                    "TN": 6241665,
+                    "TP": 0,
+                    "n_pred": 46739,
+                    "n_ref": 3052
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1040.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1040.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3387,
+                    "FP": 55723,
+                    "IoU": 0.0,
+                    "TN": 9115930,
+                    "TP": 0,
+                    "n_pred": 55723,
+                    "n_ref": 3387
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1041.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1041.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 2616,
+                    "FP": 202663,
+                    "IoU": 0.0,
+                    "TN": 38592033,
+                    "TP": 0,
+                    "n_pred": 202663,
+                    "n_ref": 2616
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1042.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1042.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 71451,
+                    "FP": 161533,
+                    "IoU": 0.0,
+                    "TN": 31486440,
+                    "TP": 0,
+                    "n_pred": 161533,
+                    "n_ref": 71451
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1043.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1043.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1607,
+                    "FP": 43163,
+                    "IoU": 0.0,
+                    "TN": 7295262,
+                    "TP": 0,
+                    "n_pred": 43163,
+                    "n_ref": 1607
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1044.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1044.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.00012864982013765532,
+                    "FN": 23448,
+                    "FP": 178625,
+                    "IoU": 6.432904802905694e-05,
+                    "TN": 36760218,
+                    "TP": 13,
+                    "n_pred": 178638,
+                    "n_ref": 23461
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1045.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1045.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3625,
+                    "FP": 51836,
+                    "IoU": 0.0,
+                    "TN": 12265307,
+                    "TP": 0,
+                    "n_pred": 51836,
+                    "n_ref": 3625
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1046.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1046.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 26766,
+                    "FP": 65632,
+                    "IoU": 0.0,
+                    "TN": 11704082,
+                    "TP": 0,
+                    "n_pred": 65632,
+                    "n_ref": 26766
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1047.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1047.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1021,
+                    "FP": 74631,
+                    "IoU": 0.0,
+                    "TN": 11982972,
+                    "TP": 0,
+                    "n_pred": 74631,
+                    "n_ref": 1021
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1048.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1048.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0020924823904945322,
+                    "FN": 321705,
+                    "FP": 127536,
+                    "IoU": 0.001047336962322553,
+                    "TN": 33104720,
+                    "TP": 471,
+                    "n_pred": 128007,
+                    "n_ref": 322176
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1049.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1049.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 35541,
+                    "FP": 258051,
+                    "IoU": 0.0,
+                    "TN": 36144424,
+                    "TP": 0,
+                    "n_pred": 258051,
+                    "n_ref": 35541
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1050.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1050.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1520,
+                    "FP": 181967,
+                    "IoU": 0.0,
+                    "TN": 42283841,
+                    "TP": 0,
+                    "n_pred": 181967,
+                    "n_ref": 1520
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1051.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1051.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 4407,
+                    "FP": 67365,
+                    "IoU": 0.0,
+                    "TN": 15132580,
+                    "TP": 0,
+                    "n_pred": 67365,
+                    "n_ref": 4407
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1052.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1052.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 76476,
+                    "FP": 239199,
+                    "IoU": 0.0,
+                    "TN": 34811621,
+                    "TP": 0,
+                    "n_pred": 239199,
+                    "n_ref": 76476
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1053.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1053.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 578,
+                    "FP": 29681,
+                    "IoU": 0.0,
+                    "TN": 12028365,
+                    "TP": 0,
+                    "n_pred": 29681,
+                    "n_ref": 578
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1054.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1054.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 6643,
+                    "FP": 130846,
+                    "IoU": 0.0,
+                    "TN": 31581935,
+                    "TP": 0,
+                    "n_pred": 130846,
+                    "n_ref": 6643
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1055.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1055.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 5749,
+                    "FP": 193862,
+                    "IoU": 0.0,
+                    "TN": 37549125,
+                    "TP": 0,
+                    "n_pred": 193862,
+                    "n_ref": 5749
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1056.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1056.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 106257,
+                    "FP": 211668,
+                    "IoU": 0.0,
+                    "TN": 39265819,
+                    "TP": 0,
+                    "n_pred": 211668,
+                    "n_ref": 106257
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1057.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1057.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 2181,
+                    "FP": 64830,
+                    "IoU": 0.0,
+                    "TN": 11205181,
+                    "TP": 0,
+                    "n_pred": 64830,
+                    "n_ref": 2181
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1058.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1058.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3152,
+                    "FP": 1409,
+                    "IoU": 0.0,
+                    "TN": 9694767,
+                    "TP": 0,
+                    "n_pred": 1409,
+                    "n_ref": 3152
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1059.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1059.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3217,
+                    "FP": 74659,
+                    "IoU": 0.0,
+                    "TN": 13553612,
+                    "TP": 0,
+                    "n_pred": 74659,
+                    "n_ref": 3217
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1060.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1060.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 65309,
+                    "FP": 230891,
+                    "IoU": 0.0,
+                    "TN": 41908984,
+                    "TP": 0,
+                    "n_pred": 230891,
+                    "n_ref": 65309
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1061.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1061.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 2900,
+                    "FP": 251120,
+                    "IoU": 0.0,
+                    "TN": 31203260,
+                    "TP": 0,
+                    "n_pred": 251120,
+                    "n_ref": 2900
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1062.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1062.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1910,
+                    "FP": 32724,
+                    "IoU": 0.0,
+                    "TN": 10713270,
+                    "TP": 0,
+                    "n_pred": 32724,
+                    "n_ref": 1910
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1063.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1063.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 11712,
+                    "FP": 304415,
+                    "IoU": 0.0,
+                    "TN": 34024737,
+                    "TP": 0,
+                    "n_pred": 304415,
+                    "n_ref": 11712
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1064.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1064.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 2266,
+                    "FP": 213199,
+                    "IoU": 0.0,
+                    "TN": 33601111,
+                    "TP": 0,
+                    "n_pred": 213199,
+                    "n_ref": 2266
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1065.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1065.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 16684,
+                    "FP": 79360,
+                    "IoU": 0.0,
+                    "TN": 11438292,
+                    "TP": 0,
+                    "n_pred": 79360,
+                    "n_ref": 16684
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1066.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1066.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1153,
+                    "FP": 70041,
+                    "IoU": 0.0,
+                    "TN": 12773862,
+                    "TP": 0,
+                    "n_pred": 70041,
+                    "n_ref": 1153
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1067.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1067.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 17721,
+                    "FP": 289917,
+                    "IoU": 0.0,
+                    "TN": 45305418,
+                    "TP": 0,
+                    "n_pred": 289917,
+                    "n_ref": 17721
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1068.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1068.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1663,
+                    "FP": 135419,
+                    "IoU": 0.0,
+                    "TN": 28960902,
+                    "TP": 0,
+                    "n_pred": 135419,
+                    "n_ref": 1663
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1069.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1069.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 24608,
+                    "FP": 249254,
+                    "IoU": 0.0,
+                    "TN": 40096314,
+                    "TP": 0,
+                    "n_pred": 249254,
+                    "n_ref": 24608
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1070.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1070.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3517,
+                    "FP": 173707,
+                    "IoU": 0.0,
+                    "TN": 28396472,
+                    "TP": 0,
+                    "n_pred": 173707,
+                    "n_ref": 3517
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1071.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1071.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3785,
+                    "FP": 249138,
+                    "IoU": 0.0,
+                    "TN": 62661637,
+                    "TP": 0,
+                    "n_pred": 249138,
+                    "n_ref": 3785
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1072.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1072.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 5484,
+                    "FP": 95288,
+                    "IoU": 0.0,
+                    "TN": 14317148,
+                    "TP": 0,
+                    "n_pred": 95288,
+                    "n_ref": 5484
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1073.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1073.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 7946,
+                    "FP": 77091,
+                    "IoU": 0.0,
+                    "TN": 12760019,
+                    "TP": 0,
+                    "n_pred": 77091,
+                    "n_ref": 7946
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1074.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1074.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3590,
+                    "FP": 75508,
+                    "IoU": 0.0,
+                    "TN": 12241670,
+                    "TP": 0,
+                    "n_pred": 75508,
+                    "n_ref": 3590
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1075.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1075.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 7543,
+                    "FP": 91701,
+                    "IoU": 0.0,
+                    "TN": 10910804,
+                    "TP": 0,
+                    "n_pred": 91701,
+                    "n_ref": 7543
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1076.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1076.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 802,
+                    "FP": 198886,
+                    "IoU": 0.0,
+                    "TN": 38597624,
+                    "TP": 0,
+                    "n_pred": 198886,
+                    "n_ref": 802
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1077.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1077.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3646,
+                    "FP": 258989,
+                    "IoU": 0.0,
+                    "TN": 36699669,
+                    "TP": 0,
+                    "n_pred": 258989,
+                    "n_ref": 3646
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1078.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1078.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 4917,
+                    "FP": 71503,
+                    "IoU": 0.0,
+                    "TN": 12768636,
+                    "TP": 0,
+                    "n_pred": 71503,
+                    "n_ref": 4917
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1079.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1079.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 289789,
+                    "FP": 157972,
+                    "IoU": 0.0,
+                    "TN": 43068143,
+                    "TP": 0,
+                    "n_pred": 157972,
+                    "n_ref": 289789
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1080.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1080.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 5165,
+                    "FP": 315159,
+                    "IoU": 0.0,
+                    "TN": 44506300,
+                    "TP": 0,
+                    "n_pred": 315159,
+                    "n_ref": 5165
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1081.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1081.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 26925,
+                    "FP": 143831,
+                    "IoU": 0.0,
+                    "TN": 25781500,
+                    "TP": 0,
+                    "n_pred": 143831,
+                    "n_ref": 26925
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1082.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1082.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 332954,
+                    "FP": 197140,
+                    "IoU": 0.0,
+                    "TN": 40102226,
+                    "TP": 0,
+                    "n_pred": 197140,
+                    "n_ref": 332954
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1083.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1083.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 785,
+                    "FP": 77351,
+                    "IoU": 0.0,
+                    "TN": 12242632,
+                    "TP": 0,
+                    "n_pred": 77351,
+                    "n_ref": 785
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1084.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1084.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3522,
+                    "FP": 25620,
+                    "IoU": 0.0,
+                    "TN": 5475882,
+                    "TP": 0,
+                    "n_pred": 25620,
+                    "n_ref": 3522
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1085.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1085.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 61870,
+                    "FP": 261099,
+                    "IoU": 0.0,
+                    "TN": 35328615,
+                    "TP": 0,
+                    "n_pred": 261099,
+                    "n_ref": 61870
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1086.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1086.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1827,
+                    "FP": 35152,
+                    "IoU": 0.0,
+                    "TN": 7827341,
+                    "TP": 0,
+                    "n_pred": 35152,
+                    "n_ref": 1827
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1087.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1087.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 40303,
+                    "FP": 256819,
+                    "IoU": 0.0,
+                    "TN": 37189470,
+                    "TP": 0,
+                    "n_pred": 256819,
+                    "n_ref": 40303
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1088.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1088.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 801,
+                    "FP": 72226,
+                    "IoU": 0.0,
+                    "TN": 12772029,
+                    "TP": 0,
+                    "n_pred": 72226,
+                    "n_ref": 801
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1089.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1089.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 2816,
+                    "FP": 44694,
+                    "IoU": 0.0,
+                    "TN": 5719658,
+                    "TP": 0,
+                    "n_pred": 44694,
+                    "n_ref": 2816
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1090.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1090.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 6739,
+                    "FP": 64169,
+                    "IoU": 0.0,
+                    "TN": 14609156,
+                    "TP": 0,
+                    "n_pred": 64169,
+                    "n_ref": 6739
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1091.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1091.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 4167,
+                    "FP": 91684,
+                    "IoU": 0.0,
+                    "TN": 10652053,
+                    "TP": 0,
+                    "n_pred": 91684,
+                    "n_ref": 4167
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1092.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1092.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1054,
+                    "FP": 303945,
+                    "IoU": 0.0,
+                    "TN": 39016601,
+                    "TP": 0,
+                    "n_pred": 303945,
+                    "n_ref": 1054
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1093.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1093.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 13435,
+                    "FP": 42459,
+                    "IoU": 0.0,
+                    "TN": 6235562,
+                    "TP": 0,
+                    "n_pred": 42459,
+                    "n_ref": 13435
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1094.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1094.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 9295,
+                    "FP": 157580,
+                    "IoU": 0.0,
+                    "TN": 20280357,
+                    "TP": 0,
+                    "n_pred": 157580,
+                    "n_ref": 9295
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1095.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1095.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 7422,
+                    "FP": 241920,
+                    "IoU": 0.0,
+                    "TN": 36712962,
+                    "TP": 0,
+                    "n_pred": 241920,
+                    "n_ref": 7422
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1096.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1096.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1449,
+                    "FP": 58971,
+                    "IoU": 0.0,
+                    "TN": 12260348,
+                    "TP": 0,
+                    "n_pred": 58971,
+                    "n_ref": 1449
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1097.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1097.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 13177,
+                    "FP": 60070,
+                    "IoU": 0.0,
+                    "TN": 10936801,
+                    "TP": 0,
+                    "n_pred": 60070,
+                    "n_ref": 13177
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1098.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1098.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 10314,
+                    "FP": 44481,
+                    "IoU": 0.0,
+                    "TN": 13052405,
+                    "TP": 0,
+                    "n_pred": 44481,
+                    "n_ref": 10314
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1099.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1099.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 21008,
+                    "FP": 110984,
+                    "IoU": 0.0,
+                    "TN": 29752424,
+                    "TP": 0,
+                    "n_pred": 110984,
+                    "n_ref": 21008
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1100.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1100.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 16066,
+                    "FP": 45872,
+                    "IoU": 0.0,
+                    "TN": 10423822,
+                    "TP": 0,
+                    "n_pred": 45872,
+                    "n_ref": 16066
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1101.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1101.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1585,
+                    "FP": 60525,
+                    "IoU": 0.0,
+                    "TN": 12782946,
+                    "TP": 0,
+                    "n_pred": 60525,
+                    "n_ref": 1585
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1102.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1102.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 30810,
+                    "FP": 157902,
+                    "IoU": 0.0,
+                    "TN": 34414296,
+                    "TP": 0,
+                    "n_pred": 157902,
+                    "n_ref": 30810
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1103.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1103.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1478,
+                    "FP": 56821,
+                    "IoU": 0.0,
+                    "TN": 8854597,
+                    "TP": 0,
+                    "n_pred": 56821,
+                    "n_ref": 1478
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1104.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1104.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3257,
+                    "FP": 59081,
+                    "IoU": 0.0,
+                    "TN": 11471998,
+                    "TP": 0,
+                    "n_pred": 59081,
+                    "n_ref": 3257
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1105.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1105.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 45633,
+                    "FP": 204947,
+                    "IoU": 0.0,
+                    "TN": 23080236,
+                    "TP": 0,
+                    "n_pred": 204947,
+                    "n_ref": 45633
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1106.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1106.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 4455,
+                    "FP": 278404,
+                    "IoU": 0.0,
+                    "TN": 39300885,
+                    "TP": 0,
+                    "n_pred": 278404,
+                    "n_ref": 4455
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1107.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1107.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 362,
+                    "FP": 63230,
+                    "IoU": 0.0,
+                    "TN": 10684312,
+                    "TP": 0,
+                    "n_pred": 63230,
+                    "n_ref": 362
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1108.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1108.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 6075,
+                    "FP": 44965,
+                    "IoU": 0.0,
+                    "TN": 11221152,
+                    "TP": 0,
+                    "n_pred": 44965,
+                    "n_ref": 6075
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1109.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1109.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3997,
+                    "FP": 130585,
+                    "IoU": 0.0,
+                    "TN": 27390538,
+                    "TP": 0,
+                    "n_pred": 130585,
+                    "n_ref": 3997
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1110.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1110.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 20419,
+                    "FP": 168848,
+                    "IoU": 0.0,
+                    "TN": 20782253,
+                    "TP": 0,
+                    "n_pred": 168848,
+                    "n_ref": 20419
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1111.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1111.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 150634,
+                    "FP": 170980,
+                    "IoU": 0.0,
+                    "TN": 36640690,
+                    "TP": 0,
+                    "n_pred": 170980,
+                    "n_ref": 150634
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1112.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1112.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 370268,
+                    "FP": 209612,
+                    "IoU": 0.0,
+                    "TN": 46081752,
+                    "TP": 0,
+                    "n_pred": 209612,
+                    "n_ref": 370268
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1113.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1113.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 9775,
+                    "FP": 136773,
+                    "IoU": 0.0,
+                    "TN": 42845068,
+                    "TP": 0,
+                    "n_pred": 136773,
+                    "n_ref": 9775
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1114.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1114.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 436,
+                    "FP": 56138,
+                    "IoU": 0.0,
+                    "TN": 8856322,
+                    "TP": 0,
+                    "n_pred": 56138,
+                    "n_ref": 436
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1115.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1115.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 2343,
+                    "FP": 68074,
+                    "IoU": 0.0,
+                    "TN": 9891055,
+                    "TP": 0,
+                    "n_pred": 68074,
+                    "n_ref": 2343
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1116.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1116.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3145,
+                    "FP": 138205,
+                    "IoU": 0.0,
+                    "TN": 42063834,
+                    "TP": 0,
+                    "n_pred": 138205,
+                    "n_ref": 3145
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1117.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1117.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 9579,
+                    "FP": 246703,
+                    "IoU": 0.0,
+                    "TN": 44570342,
+                    "TP": 0,
+                    "n_pred": 246703,
+                    "n_ref": 9579
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1118.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1118.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 917,
+                    "FP": 57582,
+                    "IoU": 0.0,
+                    "TN": 9378685,
+                    "TP": 0,
+                    "n_pred": 57582,
+                    "n_ref": 917
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1119.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1119.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 14358,
+                    "FP": 48114,
+                    "IoU": 0.0,
+                    "TN": 13044728,
+                    "TP": 0,
+                    "n_pred": 48114,
+                    "n_ref": 14358
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1120.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1120.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 30817,
+                    "FP": 157268,
+                    "IoU": 0.0,
+                    "TN": 47259979,
+                    "TP": 0,
+                    "n_pred": 157268,
+                    "n_ref": 30817
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1121.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1121.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 4543,
+                    "FP": 213910,
+                    "IoU": 0.0,
+                    "TN": 41200299,
+                    "TP": 0,
+                    "n_pred": 213910,
+                    "n_ref": 4543
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1122.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1122.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3180,
+                    "FP": 91256,
+                    "IoU": 0.0,
+                    "TN": 15896348,
+                    "TP": 0,
+                    "n_pred": 91256,
+                    "n_ref": 3180
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1123.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1123.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 15030,
+                    "FP": 81476,
+                    "IoU": 0.0,
+                    "TN": 10913542,
+                    "TP": 0,
+                    "n_pred": 81476,
+                    "n_ref": 15030
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1124.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1124.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 14750,
+                    "FP": 224407,
+                    "IoU": 0.0,
+                    "TN": 41966027,
+                    "TP": 0,
+                    "n_pred": 224407,
+                    "n_ref": 14750
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1125.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1125.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 22571,
+                    "FP": 156276,
+                    "IoU": 0.0,
+                    "TN": 39404897,
+                    "TP": 0,
+                    "n_pred": 156276,
+                    "n_ref": 22571
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1126.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1126.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 31540,
+                    "FP": 50480,
+                    "IoU": 0.0,
+                    "TN": 12238748,
+                    "TP": 0,
+                    "n_pred": 50480,
+                    "n_ref": 31540
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1127.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1127.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 28363,
+                    "FP": 218571,
+                    "IoU": 0.0,
+                    "TN": 46414698,
+                    "TP": 0,
+                    "n_pred": 218571,
+                    "n_ref": 28363
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1128.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1128.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 10599,
+                    "FP": 55090,
+                    "IoU": 0.0,
+                    "TN": 12255079,
+                    "TP": 0,
+                    "n_pred": 55090,
+                    "n_ref": 10599
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1129.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1129.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 2536,
+                    "FP": 73975,
+                    "IoU": 0.0,
+                    "TN": 11719969,
+                    "TP": 0,
+                    "n_pred": 73975,
+                    "n_ref": 2536
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1130.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1130.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 674,
+                    "FP": 78383,
+                    "IoU": 0.0,
+                    "TN": 14338863,
+                    "TP": 0,
+                    "n_pred": 78383,
+                    "n_ref": 674
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1131.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1131.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 4966,
+                    "FP": 57602,
+                    "IoU": 0.0,
+                    "TN": 14355352,
+                    "TP": 0,
+                    "n_pred": 57602,
+                    "n_ref": 4966
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1132.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1132.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3584,
+                    "FP": 139940,
+                    "IoU": 0.0,
+                    "TN": 43110236,
+                    "TP": 0,
+                    "n_pred": 139940,
+                    "n_ref": 3584
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1133.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1133.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 20192,
+                    "FP": 64541,
+                    "IoU": 0.0,
+                    "TN": 13808899,
+                    "TP": 0,
+                    "n_pred": 64541,
+                    "n_ref": 20192
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1134.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1134.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 41461,
+                    "FP": 298399,
+                    "IoU": 0.0,
+                    "TN": 41865324,
+                    "TP": 0,
+                    "n_pred": 298399,
+                    "n_ref": 41461
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1135.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1135.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 2291,
+                    "FP": 40156,
+                    "IoU": 0.0,
+                    "TN": 8870449,
+                    "TP": 0,
+                    "n_pred": 40156,
+                    "n_ref": 2291
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1136.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1136.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 149975,
+                    "FP": 145507,
+                    "IoU": 0.0,
+                    "TN": 22511046,
+                    "TP": 0,
+                    "n_pred": 145507,
+                    "n_ref": 149975
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1137.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1137.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 16956,
+                    "FP": 249078,
+                    "IoU": 0.0,
+                    "TN": 34074830,
+                    "TP": 0,
+                    "n_pred": 249078,
+                    "n_ref": 16956
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1138.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1138.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 282,
+                    "FP": 87922,
+                    "IoU": 0.0,
+                    "TN": 12756852,
+                    "TP": 0,
+                    "n_pred": 87922,
+                    "n_ref": 282
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1139.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1139.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 17517,
+                    "FP": 53048,
+                    "IoU": 0.0,
+                    "TN": 7793755,
+                    "TP": 0,
+                    "n_pred": 53048,
+                    "n_ref": 17517
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1140.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1140.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 990,
+                    "FP": 46061,
+                    "IoU": 0.0,
+                    "TN": 7555125,
+                    "TP": 0,
+                    "n_pred": 46061,
+                    "n_ref": 990
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1141.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1141.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 8616,
+                    "FP": 187018,
+                    "IoU": 0.0,
+                    "TN": 38601678,
+                    "TP": 0,
+                    "n_pred": 187018,
+                    "n_ref": 8616
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1142.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1142.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 2054,
+                    "FP": 49003,
+                    "IoU": 0.0,
+                    "TN": 9386127,
+                    "TP": 0,
+                    "n_pred": 49003,
+                    "n_ref": 2054
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1143.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1143.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 2679,
+                    "FP": 32510,
+                    "IoU": 0.0,
+                    "TN": 8615563,
+                    "TP": 0,
+                    "n_pred": 32510,
+                    "n_ref": 2679
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1144.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1144.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 32411,
+                    "FP": 198711,
+                    "IoU": 0.0,
+                    "TN": 37517614,
+                    "TP": 0,
+                    "n_pred": 198711,
+                    "n_ref": 32411
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1145.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1145.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 2802,
+                    "FP": 57590,
+                    "IoU": 0.0,
+                    "TN": 12784664,
+                    "TP": 0,
+                    "n_pred": 57590,
+                    "n_ref": 2802
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1146.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1146.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 6305,
+                    "FP": 160976,
+                    "IoU": 0.0,
+                    "TN": 36008591,
+                    "TP": 0,
+                    "n_pred": 160976,
+                    "n_ref": 6305
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1147.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1147.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 630,
+                    "FP": 136862,
+                    "IoU": 0.0,
+                    "TN": 22669036,
+                    "TP": 0,
+                    "n_pred": 136862,
+                    "n_ref": 630
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1148.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1148.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 3168,
+                    "FP": 160354,
+                    "IoU": 0.0,
+                    "TN": 34963774,
+                    "TP": 0,
+                    "n_pred": 160354,
+                    "n_ref": 3168
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1149.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1149.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1736,
+                    "FP": 69308,
+                    "IoU": 0.0,
+                    "TN": 9628284,
+                    "TP": 0,
+                    "n_pred": 69308,
+                    "n_ref": 1736
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1150.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1150.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 2442,
+                    "FP": 121658,
+                    "IoU": 0.0,
+                    "TN": 27663164,
+                    "TP": 0,
+                    "n_pred": 121658,
+                    "n_ref": 2442
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1151.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1151.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 31513,
+                    "FP": 229937,
+                    "IoU": 0.0,
+                    "TN": 31720118,
+                    "TP": 0,
+                    "n_pred": 229937,
+                    "n_ref": 31513
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1152.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1152.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 24769,
+                    "FP": 228818,
+                    "IoU": 0.0,
+                    "TN": 46408045,
+                    "TP": 0,
+                    "n_pred": 228818,
+                    "n_ref": 24769
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1153.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1153.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 631,
+                    "FP": 205241,
+                    "IoU": 0.0,
+                    "TN": 39640016,
+                    "TP": 0,
+                    "n_pred": 205241,
+                    "n_ref": 631
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1154.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1154.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 73384,
+                    "FP": 57778,
+                    "IoU": 0.0,
+                    "TN": 12976038,
+                    "TP": 0,
+                    "n_pred": 57778,
+                    "n_ref": 73384
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1155.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1155.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 2212,
+                    "FP": 47222,
+                    "IoU": 0.0,
+                    "TN": 11747046,
+                    "TP": 0,
+                    "n_pred": 47222,
+                    "n_ref": 2212
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1156.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1156.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 413,
+                    "FP": 74799,
+                    "IoU": 0.0,
+                    "TN": 10672692,
+                    "TP": 0,
+                    "n_pred": 74799,
+                    "n_ref": 413
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1157.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1157.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 19394,
+                    "FP": 251231,
+                    "IoU": 0.0,
+                    "TN": 34856671,
+                    "TP": 0,
+                    "n_pred": 251231,
+                    "n_ref": 19394
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1158.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1158.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 11605,
+                    "FP": 37949,
+                    "IoU": 0.0,
+                    "TN": 8863342,
+                    "TP": 0,
+                    "n_pred": 37949,
+                    "n_ref": 11605
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1159.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1159.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 1630,
+                    "FP": 89520,
+                    "IoU": 0.0,
+                    "TN": 12229618,
+                    "TP": 0,
+                    "n_pred": 89520,
+                    "n_ref": 1630
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/AtlasNet/TCIA_CRLM_1160.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1160.nii.gz"
+        }
+    ]
+}
