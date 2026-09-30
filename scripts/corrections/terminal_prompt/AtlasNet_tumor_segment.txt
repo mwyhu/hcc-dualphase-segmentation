@@ -1,0 +1,35 @@
+
+python - <<'PY'
+from pathlib import Path
+import nibabel as nib
+import numpy as np
+
+input_dir = Path("/projects/prjs2180/evaluation/predictions/WORC_CRLM/AtlasNet")
+output_dir = Path("/projects/prjs2180/evaluation/predictions/WORC_CRLM/AN")
+output_dir.mkdir(parents=True, exist_ok=True)
+
+files = sorted(input_dir.glob("*.nii.gz"))
+if not files:
+    raise SystemExit(f"No predictions found in {input_dir}")
+
+for path in files:
+    image = nib.load(path)
+    data = np.asanyarray(image.dataobj)
+
+    mask = np.isin(data, range(23, 32)).astype(np.uint8)
+
+    header = image.header.copy()
+    header.set_data_dtype(np.uint8)
+    header.set_slope_inter(1, 0)
+
+    output = image.__class__(mask, image.affine, header)
+    qform, qcode = image.get_qform(coded=True)
+    sform, scode = image.get_sform(coded=True)
+    output.set_qform(qform, int(qcode))
+    output.set_sform(sform, int(scode))
+
+    nib.save(output, output_dir / path.name)
+    print(f"Saved: {path.name}")
+
+print(f"Done. Binary liver-tumour masks saved to {output_dir}")
+PY
