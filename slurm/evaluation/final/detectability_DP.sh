@@ -2,7 +2,7 @@
 #SBATCH --partition=genoa
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=128G
-#SBATCH --time=20:00:00
+#SBATCH --time=08:00:00
 #SBATCH --job-name="final_detectability_DP"
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
