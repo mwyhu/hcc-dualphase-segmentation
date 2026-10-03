@@ -415,28 +415,128 @@ print(median_recall_iqr_table.to_string())
 
 
 # -------------------------------------------------------------------
-# Plots per dataset
+# Boxplots with individual scan points: one figure per metric
 # -------------------------------------------------------------------
-
 import matplotlib.pyplot as plt
-from matplotlib.patches import Patch
+import seaborn as sns
 
-PLOT_DIR = ROOT / "plots_per_dataset"
+sns.set_theme(style="whitegrid")
+
+MODEL_PALETTE = {
+    "TotalSegmentator_liver_lesions": "#4C78A8",
+    "TotalSegmentator_liver_tumor": "#F58518",
+    "AtlasNet": "#54A24B",
+    "SinglePhase": "#B279A2",
+    "DualPhase": "#E45756",
+    "COALA": "#72B7B2",
+}
+
+PLOT_DIR = ROOT / "plots_per_metric"
 PLOT_DIR.mkdir(parents=True, exist_ok=True)
 
-MODEL_LABELS = [MODEL_CODES[model] for model in MODELS]
+METRICS = {
+    "dice": "Dice",
+    "precision": "Voxel-level precision",
+    "recall": "Voxel-level recall",
+}
 
-MODEL_COLOURS = [
-    "#4C78A8",
-    "#F58518",
-    "#54A24B",
-    "#B279A2",
-    "#E45756",
-    "#72B7B2",
-]
 
+def plot_metric_by_dataset(df, metric, ylabel):
+    n_columns = 2
+    n_rows = (len(DATASETS) + n_columns - 1) // n_columns
+
+    fig, axes = plt.subplots(
+        n_rows,
+        n_columns,
+        figsize=(14, 5 * n_rows),
+        sharey=True,
+        squeeze=False,
+    )
+
+    rng = np.random.default_rng(42)
+
+    for ax, dataset in zip(axes.flat, DATASETS):
+        plot_df = df.loc[
+            df["dataset"] == dataset
+        ].dropna(subset=[metric])
+
+        sns.boxplot(
+            data=plot_df,
+            x="model",
+            y=metric,
+            order=MODELS,
+            hue="model",
+            hue_order=MODELS,
+            palette=MODEL_PALETTE,
+            dodge=False,
+            width=0.6,
+            showfliers=False,
+            ax=ax,
+        )
+
+        legend = ax.get_legend()
+        if legend is not None:
+            legend.remove()
+
+        # Individual scan scores, including outliers.
+        for position, model in enumerate(MODELS):
+            scores = plot_df.loc[
+                plot_df["model"] == model, metric
+            ].to_numpy()
+
+            x_positions = position + rng.uniform(
+                -0.2, 0.2, size=len(scores)
+            )
+
+            ax.scatter(
+                x_positions,
+                scores,
+                color="black",
+                alpha=0.25,
+                s=8,
+                linewidths=0,
+                zorder=3,
+            )
+
+        ax.set_xticks(range(len(MODELS)))
+        ax.set_xticklabels([MODEL_CODES[model] for model in MODELS])
+
+        ax.set_title(DATASET_CODES[dataset])
+        ax.set_xlabel("")
+        ax.set_ylabel(ylabel)
+        ax.set_ylim(-0.03, 1.03)
+        ax.grid(axis="x", visible=False)
+
+    for ax in list(axes.flat)[len(DATASETS):]:
+        ax.set_visible(False)
+
+    fig.suptitle(
+        f"Per-case {ylabel.lower()}",
+        fontsize=15,
+    )
+    fig.tight_layout(rect=[0, 0, 1, 0.96])
+
+    fig.savefig(
+        PLOT_DIR / f"{metric}_boxplots_per_dataset.png",
+        dpi=300,
+        bbox_inches="tight",
+    )
+
+    plt.show()
+    plt.close(fig)
+
+
+for metric, ylabel in METRICS.items():
+    plot_metric_by_dataset(df, metric, ylabel)
+
+print(f"\nPlots saved in: {PLOT_DIR}")
+
+
+# -------------------------------------------------------------------
+# Dice, precision and recall  per dataset
+# -------------------------------------------------------------------
 for dataset in DATASETS:
-    dataset_df = df.loc[df["dataset"] == dataset]
+    dataset_df = df.loc[df["dataset"] == dataset].copy()
 
     fig, axes = plt.subplots(
         1,
@@ -445,95 +545,69 @@ for dataset in DATASETS:
         sharey=True,
     )
 
-    for ax, metric, title in zip(
-        axes,
-        ["dice", "precision", "recall"],
-        ["Dice", "Voxel-level precision", "Voxel-level recall"],
-    ):
-        values = [
-            dataset_df.loc[
-                dataset_df["model"] == model,
-                metric,
-            ].dropna().to_numpy()
-            for model in MODELS
-        ]
+    rng = np.random.default_rng(42)
 
-        boxplot = ax.boxplot(
-            values,
-            positions=np.arange(1, len(MODELS) + 1),
-            widths=0.6,
-            patch_artist=True,
-            showfliers=True,
-            medianprops={
-                "color": "darkorange",
-                "linewidth": 2,
-            },
-            whiskerprops={"linewidth": 1.2},
-            capprops={"linewidth": 1.2},
-            flierprops={
-                "marker": ".",
-                "markersize": 3,
-                "alpha": 0.4,
-                "markeredgecolor": "grey",
-            },
+    for ax, (metric, ylabel) in zip(axes, METRICS.items()):
+        plot_df = dataset_df.dropna(subset=[metric])
+
+        sns.boxplot(
+            data=plot_df,
+            x="model",
+            y=metric,
+            order=MODELS,
+            hue="model",
+            hue_order=MODELS,
+            palette=MODEL_PALETTE,
+            dodge=False,
+            width=0.6,
+            showfliers=False,
+            ax=ax,
         )
 
-        for box, colour in zip(
-            boxplot["boxes"],
-            MODEL_COLOURS,
-        ):
-            box.set_facecolor(colour)
-            box.set_alpha(0.75)
+        legend = ax.get_legend()
+        if legend is not None:
+            legend.remove()
 
-        ax.set_xticks(np.arange(1, len(MODELS) + 1))
-        ax.set_xticklabels(MODEL_LABELS, rotation=30, ha="right")
-        ax.set_title(title)
-        ax.set_xlabel("Model")
-        ax.set_ylim(-0.03, 1.09)
-        ax.set_yticks(np.linspace(0, 1, 6))
-        ax.grid(axis="y", alpha=0.25)
-        ax.set_axisbelow(True)
+        # Individual scan scores, including outliers.
+        for position, model in enumerate(MODELS):
+            scores = plot_df.loc[
+                plot_df["model"] == model, metric
+            ].to_numpy()
 
-        # Number of cases with a defined metric
-        for position, model_values in enumerate(values, start=1):
-            ax.text(
-                position,
-                1.035,
-                f"n={len(model_values)}",
-                ha="center",
-                va="center",
-                fontsize=9,
+            x_positions = position + rng.uniform(
+                -0.2, 0.2, size=len(scores)
             )
+
+            ax.scatter(
+                x_positions,
+                scores,
+                color="black",
+                alpha=0.25,
+                s=8,
+                linewidths=0,
+                zorder=3,
+            )
+
+        ax.set_xticks(range(len(MODELS)))
+        ax.set_xticklabels(
+            [MODEL_CODES[model] for model in MODELS],
+            rotation=30,
+            ha="right",
+        )
+
+        ax.set_title(ylabel)
+        ax.set_xlabel("")
+        ax.set_ylabel("")
+        ax.set_ylim(-0.03, 1.03)
+        ax.grid(axis="x", visible=False)
 
     axes[0].set_ylabel("Score")
 
     fig.suptitle(
-        f"{dataset}: model comparison",
-        fontsize=14,
-        fontweight="bold",
+        f"{DATASET_CODES[dataset]}: model comparison",
+        fontsize=15,
     )
-
-    fig.legend(
-        handles=[
-            Patch(
-                facecolor="lightgrey",
-                edgecolor="black",
-                label="Box: Q1–Q3 (IQR)",
-            ),
-            plt.Line2D(
-                [0],
-                [0],
-                color="darkorange",
-                linewidth=2,
-                label="Median",
-            ),
-        ],
-        loc="lower center",
-        ncol=2,
-        frameon=False,
-    )
-
-    fig.tight_layout(rect=[0, 0.07, 1, 0.94])
+    fig.tight_layout(rect=[0, 0, 1, 0.94])
 
     fig.savefig(
         PLOT_DIR / f"{dataset}_dice_precision_recall_boxplots.png",
@@ -543,5 +617,3 @@ for dataset in DATASETS:
 
     plt.show()
     plt.close(fig)
-
-print(f"\nPlots saved in: {PLOT_DIR}")

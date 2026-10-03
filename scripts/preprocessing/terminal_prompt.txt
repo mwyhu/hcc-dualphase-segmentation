@@ -1,0 +1,2 @@
+python /Users/michellehu/Desktop/hcc-dualphase-segmentation/scripts/preprocessing/zero_fill_phase.py \
+    --images_dir /Users/michellehu/Desktop/imagesTs

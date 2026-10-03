@@ -31,7 +31,7 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/HCC_TACE/TotalSegmentator_liver_lesions \
     --gt_dir "$GT_DIR"/Full_HCC_TACE/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/Detect_TSLL_HCC.sh
+    --output "$OUTPUT_DIR"/Detect_TSLL_HCC.csv
 echo "HCC Finished"
 
 
@@ -40,7 +40,7 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/LiTS/TotalSegmentator_liver_lesions \
     --gt_dir "$GT_DIR"/Full_LiTS/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/Detect_TSLL_LiTS.sh
+    --output "$OUTPUT_DIR"/Detect_TSLL_LiTS.csv
 echo "LiTS Finished"
 
 
@@ -49,7 +49,7 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/WORC_CRLM/TotalSegmentator_liver_lesions \
     --gt_dir "$GT_DIR"/Full_WORC_CRLM/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/Detect_TSLL_WORC.sh
+    --output "$OUTPUT_DIR"/Detect_TSLL_WORC.csv
 echo "WORC Finished"
 
 
@@ -58,7 +58,7 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/TCIA_CRLM/TotalSegmentator_liver_lesions \
     --gt_dir "$GT_DIR"/Full_TCIA_CRLM/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/Detect_TSLL_TCIA.sh
+    --output "$OUTPUT_DIR"/Detect_TSLL_TCIA.csv
 echo "TCIA Finished"
 
 

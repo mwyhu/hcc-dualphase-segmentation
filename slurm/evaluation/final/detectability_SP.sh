@@ -13,6 +13,7 @@ cd /projects/prjs2180/code/hcc-dualphase-segmentation
 
 source setup_env.sh
 
+
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 echo "Job started"
@@ -31,7 +32,8 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/HCC_TACE/SP \
     --gt_dir "$GT_DIR"/Full_HCC_TACE/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/Detect_SP_HCC.sh
+    --output "$OUTPUT_DIR"/Detect_SP_HCC.csv
+
 echo "HCC Finished"
 
 
@@ -40,7 +42,8 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/LiTS/SP \
     --gt_dir "$GT_DIR"/Full_LiTS/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/Detect_SP_LiTS.sh
+    --output "$OUTPUT_DIR"/Detect_SP_LiTS.csv
+
 echo "LiTS Finished"
 
 
@@ -49,7 +52,8 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/WORC_CRLM/SP \
     --gt_dir "$GT_DIR"/Full_WORC_CRLM/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/Detect_SP_WORC.sh
+    --output "$OUTPUT_DIR"/Detect_SP_WORC.csv
+
 echo "WORC Finished"
 
 
@@ -58,7 +62,8 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/TCIA_CRLM/SP \
     --gt_dir "$GT_DIR"/Full_TCIA_CRLM/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/Detect_SP_TCIA.sh
+    --output "$OUTPUT_DIR"/Detect_SP_TCIA.csv
+
 echo "TCIA Finished"
 
 

@@ -31,7 +31,7 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/HCC_TACE/AN \
     --gt_dir "$GT_DIR"/Full_HCC_TACE/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/Detect_AN_HCC.sh
+    --output "$OUTPUT_DIR"/Detect_AN_HCC.csv
 echo "HCC Finished"
 
 
@@ -40,7 +40,7 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/LiTS/AN \
     --gt_dir "$GT_DIR"/Full_LiTS/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/Detect_AN_LiTS.sh
+    --output "$OUTPUT_DIR"/Detect_AN_LiTS.csv
 echo "LiTS Finished"
 
 
@@ -49,7 +49,7 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/WORC_CRLM/AN \
     --gt_dir "$GT_DIR"/Full_WORC_CRLM/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/Detect_AN_WORC.sh
+    --output "$OUTPUT_DIR"/Detect_AN_WORC.csv
 echo "WORC Finished"
 
 
@@ -58,7 +58,7 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/TCIA_CRLM/AN \
     --gt_dir "$GT_DIR"/Full_TCIA_CRLM/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/Detect_AN_TCIA.sh
+    --output "$OUTPUT_DIR"/Detect_AN_TCIA.csv
 echo "TCIA Finished"
 
 
