@@ -1,0 +1,16 @@
+Omnibus: Friedman tests across all five models, with Holm correction across four metrics per scope.
+Friedman tests ranks, not means. Mean rank 1 is best. Pairwise t-tests test mean differences.
+Friedman uses cases valid for all five models per metric; pairwise tests can use different cases.
+Chi-square approximation: interpret very small complete-case samples cautiously.
+Planned pairwise tests are reported independently of the omnibus result; they are not rank-based Friedman post-hoc tests.
+Primary overall comparison: HCC, TCIA and WORC, excluding LiTS consistently for all models.
+Additional overall comparison: all four datasets. TSLT comparisons including LiTS have possible training overlap.
+HCC-specific results address the HCC research question directly.
+Two-sided paired t-tests; differences model A minus model B. Positive differences favour model A.
+Holm correction: 28 planned tests separately within each scope. No correction across scopes; interpret additional scopes as exploratory.
+95% confidence intervals are unadjusted. Overall results weight patients equally, not datasets equally.
+Precision and recall are per-case voxel metrics from summary TP/FP/FN. Undefined denominators produce NaN.
+Each metric excludes pairs with an undefined value in either model. Descriptive means can use different cases.
+Detectability reads CSV rows at threshold 0.2; assumes the detection script used IoU >= 0.2.
+Assumes one independent scan per patient and no unaccounted cross-dataset patient duplicates.
+Independence from model training must be checked for every evaluated model.

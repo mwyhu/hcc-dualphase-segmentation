@@ -1,0 +1,5 @@
+scope,metric,test,datasets_included,n_complete_cases,n_excluded_cases,n_models,friedman_statistic,degrees_of_freedom,p_value,kendalls_w,possible_training_overlap,holm_adjusted_p_value,significance,significant_after_holm
+LiTS,dice,Friedman,LiTS,121,10,5,100.56621797655221,4,7.452424405948805e-21,0.2077814421003145,True,2.980969762379522e-20,Significant,True
+LiTS,precision,Friedman,LiTS,114,17,5,71.65050320219565,4,1.0172709429408178e-14,0.1571282964960431,True,2.0345418858816356e-14,Significant,True
+LiTS,recall,Friedman,LiTS,118,13,5,60.019113814074856,4,2.8741576878660317e-12,0.12715913943659926,True,2.8741576878660317e-12,Significant,True
+LiTS,detectability,Friedman,LiTS,118,13,5,94.83769633507856,4,1.2338727030910156e-19,0.2009273227438105,True,3.701618109273047e-19,Significant,True

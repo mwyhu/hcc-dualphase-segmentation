@@ -1,0 +1,5 @@
+scope,metric,test,datasets_included,n_complete_cases,n_excluded_cases,n_models,friedman_statistic,degrees_of_freedom,p_value,kendalls_w,possible_training_overlap,holm_adjusted_p_value,significance,significant_after_holm
+overall_all_datasets,dice,Friedman,HCC;LiTS;TCIA;WORC,438,10,5,397.2752401030693,4,1.0789966518887774e-84,0.22675527403143222,True,3.236989955666332e-84,Significant,True
+overall_all_datasets,precision,Friedman,HCC;LiTS;TCIA;WORC,421,27,5,115.4073003252621,4,5.108439507683589e-24,0.06853165102450244,True,5.108439507683589e-24,Significant,True
+overall_all_datasets,recall,Friedman,HCC;LiTS;TCIA;WORC,435,13,5,552.6483065744745,4,2.7348449317113653e-118,0.31761396929567504,True,1.0939379726845461e-117,Significant,True
+overall_all_datasets,detectability,Friedman,HCC;LiTS;TCIA;WORC,435,13,5,161.04021447721198,4,8.746342627786697e-34,0.09255184740069654,True,1.7492685255573394e-33,Significant,True

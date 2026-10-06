@@ -1,0 +1,5 @@
+scope,metric,test,datasets_included,n_complete_cases,n_excluded_cases,n_models,friedman_statistic,degrees_of_freedom,p_value,kendalls_w,possible_training_overlap,holm_adjusted_p_value,significance,significant_after_holm
+TCIA,dice,Friedman,TCIA,159,0,5,149.30235559858022,4,2.872242526259623e-31,0.2347521314443085,False,8.616727578778869e-31,Significant,True
+TCIA,precision,Friedman,TCIA,154,5,5,76.11565951916836,4,1.1571846132779215e-15,0.12356438233631227,False,2.314369226555843e-15,Significant,True
+TCIA,recall,Friedman,TCIA,159,0,5,249.93602584814195,4,6.719575706671845e-53,0.39298117271720434,False,2.687830282668738e-52,Significant,True
+TCIA,detectability,Friedman,TCIA,159,0,5,11.798627002287773,4,0.01891326810497746,0.018551300318062538,False,0.01891326810497746,Significant,True

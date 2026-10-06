@@ -1,0 +1,1338 @@
+{
+    "foreground_mean": {
+        "Dice": 0.6849922241001297,
+        "FN": 73045.31707317074,
+        "FP": 43340.48780487805,
+        "IoU": 0.5757266511280749,
+        "TN": 22469267.768292684,
+        "TP": 198496.28048780488,
+        "n_pred": 241836.76829268291,
+        "n_ref": 271541.5975609756
+    },
+    "mean": {
+        "1": {
+            "Dice": 0.6849922241001297,
+            "FN": 73045.31707317074,
+            "FP": 43340.48780487805,
+            "IoU": 0.5757266511280749,
+            "TN": 22469267.768292684,
+            "TP": 198496.28048780488,
+            "n_pred": 241836.76829268291,
+            "n_ref": 271541.5975609756
+        }
+    },
+    "metric_per_case": [
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8518344605882193,
+                    "FN": 41431,
+                    "FP": 57017,
+                    "IoU": 0.7419090987738794,
+                    "TN": 28192249,
+                    "TP": 282999,
+                    "n_pred": 340016,
+                    "n_ref": 324430
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1002.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1002.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.03423511081297136,
+                    "FN": 1392538,
+                    "FP": 1311200,
+                    "IoU": 0.017415669087023834,
+                    "TN": 22152020,
+                    "TP": 47922,
+                    "n_pred": 1359122,
+                    "n_ref": 1440460
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1003.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1003.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8782317740949822,
+                    "FN": 13390,
+                    "FP": 26860,
+                    "IoU": 0.7828994919039041,
+                    "TN": 20523978,
+                    "TP": 145148,
+                    "n_pred": 172008,
+                    "n_ref": 158538
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1004.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1004.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5862566686006198,
+                    "FN": 99727,
+                    "FP": 17225,
+                    "IoU": 0.41468394975226464,
+                    "TN": 23131006,
+                    "TP": 82858,
+                    "n_pred": 100083,
+                    "n_ref": 182585
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1005.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1005.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.035718454534843,
+                    "FN": 8251,
+                    "FP": 10,
+                    "IoU": 0.01818397908248158,
+                    "TN": 18079522,
+                    "TP": 153,
+                    "n_pred": 163,
+                    "n_ref": 8404
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1006.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1006.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9277848195319808,
+                    "FN": 38242,
+                    "FP": 44370,
+                    "IoU": 0.8652972243192872,
+                    "TN": 19047509,
+                    "TP": 530679,
+                    "n_pred": 575049,
+                    "n_ref": 568921
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1007.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1007.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7495594329178333,
+                    "FN": 80992,
+                    "FP": 23745,
+                    "IoU": 0.5994362728225369,
+                    "TN": 20710046,
+                    "TP": 156737,
+                    "n_pred": 180482,
+                    "n_ref": 237729
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1008.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1008.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9388932332063313,
+                    "FN": 74204,
+                    "FP": 50670,
+                    "IoU": 0.8848244706264308,
+                    "TN": 17003730,
+                    "TP": 959332,
+                    "n_pred": 1010002,
+                    "n_ref": 1033536
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1009.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1009.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.34862132606120705,
+                    "FN": 43652,
+                    "FP": 3642,
+                    "IoU": 0.2111092577147623,
+                    "TN": 20125138,
+                    "TP": 12656,
+                    "n_pred": 16298,
+                    "n_ref": 56308
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1010.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1010.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7290994073146051,
+                    "FN": 32888,
+                    "FP": 844,
+                    "IoU": 0.5736872037914692,
+                    "TN": 20630251,
+                    "TP": 45393,
+                    "n_pred": 46237,
+                    "n_ref": 78281
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1011.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1011.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.19465012340737775,
+                    "FN": 3936,
+                    "FP": 68502,
+                    "IoU": 0.10781850428613657,
+                    "TN": 18531032,
+                    "TP": 8754,
+                    "n_pred": 77256,
+                    "n_ref": 12690
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1012.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1012.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7049074214660732,
+                    "FN": 34667,
+                    "FP": 2260,
+                    "IoU": 0.5442911442393129,
+                    "TN": 21152632,
+                    "TP": 44105,
+                    "n_pred": 46365,
+                    "n_ref": 78772
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1013.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1013.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 35356,
+                    "FP": 1021,
+                    "IoU": 0.0,
+                    "TN": 16478695,
+                    "TP": 0,
+                    "n_pred": 1021,
+                    "n_ref": 35356
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1014.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1014.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6972651116012755,
+                    "FN": 26023,
+                    "FP": 466,
+                    "IoU": 0.5352317787837316,
+                    "TN": 15933790,
+                    "TP": 30505,
+                    "n_pred": 30971,
+                    "n_ref": 56528
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1015.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1015.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7252503545794473,
+                    "FN": 27318,
+                    "FP": 4645,
+                    "IoU": 0.5689355217197805,
+                    "TN": 25353819,
+                    "TP": 42186,
+                    "n_pred": 46831,
+                    "n_ref": 69504
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1016.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1016.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.03298156455000389,
+                    "FN": 223458,
+                    "FP": 312,
+                    "IoU": 0.01676728797026179,
+                    "TN": 16287486,
+                    "TP": 3816,
+                    "n_pred": 4128,
+                    "n_ref": 227274
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1017.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1017.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8399003022750172,
+                    "FN": 5454,
+                    "FP": 584,
+                    "IoU": 0.7239897604680929,
+                    "TN": 10463884,
+                    "TP": 15838,
+                    "n_pred": 16422,
+                    "n_ref": 21292
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1018.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1018.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.278792128177675,
+                    "FN": 39695,
+                    "FP": 36422,
+                    "IoU": 0.1619746997104449,
+                    "TN": 17472819,
+                    "TP": 14712,
+                    "n_pred": 51134,
+                    "n_ref": 54407
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1019.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1019.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.16031794499895036,
+                    "FN": 171513,
+                    "FP": 4481,
+                    "IoU": 0.08714437615083379,
+                    "TN": 21565157,
+                    "TP": 16801,
+                    "n_pred": 21282,
+                    "n_ref": 188314
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1020.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1020.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8023915601882986,
+                    "FN": 102219,
+                    "FP": 10617,
+                    "IoU": 0.66999491112008,
+                    "TN": 20367454,
+                    "TP": 229086,
+                    "n_pred": 239703,
+                    "n_ref": 331305
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1021.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1021.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.13627485630313063,
+                    "FN": 92468,
+                    "FP": 398,
+                    "IoU": 0.07311961034813158,
+                    "TN": 17987744,
+                    "TP": 7326,
+                    "n_pred": 7724,
+                    "n_ref": 99794
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1023.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1023.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7235205465688737,
+                    "FN": 12144,
+                    "FP": 1615,
+                    "IoU": 0.5668093948743782,
+                    "TN": 17007598,
+                    "TP": 18003,
+                    "n_pred": 19618,
+                    "n_ref": 30147
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1024.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1024.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8871072122358682,
+                    "FN": 89729,
+                    "FP": 110358,
+                    "IoU": 0.7971183046465056,
+                    "TN": 18674575,
+                    "TP": 786138,
+                    "n_pred": 896496,
+                    "n_ref": 875867
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1025.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1025.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.785286434282397,
+                    "FN": 7325,
+                    "FP": 812,
+                    "IoU": 0.6464786896641612,
+                    "TN": 19113495,
+                    "TP": 14880,
+                    "n_pred": 15692,
+                    "n_ref": 22205
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1026.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1026.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.38255362460888903,
+                    "FN": 14186,
+                    "FP": 2193,
+                    "IoU": 0.23651703724420828,
+                    "TN": 20687923,
+                    "TP": 5074,
+                    "n_pred": 7267,
+                    "n_ref": 19260
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1027.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1027.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7713477939537557,
+                    "FN": 11117,
+                    "FP": 8374,
+                    "IoU": 0.6277999503504115,
+                    "TN": 29569905,
+                    "TP": 32876,
+                    "n_pred": 41250,
+                    "n_ref": 43993
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1028.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1028.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9007286569657623,
+                    "FN": 37907,
+                    "FP": 185402,
+                    "IoU": 0.8193870081972185,
+                    "TN": 19472981,
+                    "TP": 1013086,
+                    "n_pred": 1198488,
+                    "n_ref": 1050993
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1029.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1029.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.33589891077086015,
+                    "FN": 71457,
+                    "FP": 1280,
+                    "IoU": 0.20185006364394506,
+                    "TN": 23239684,
+                    "TP": 18395,
+                    "n_pred": 19675,
+                    "n_ref": 89852
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1030.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1030.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7483806912202733,
+                    "FN": 4854,
+                    "FP": 5790,
+                    "IoU": 0.5979299663808408,
+                    "TN": 22780055,
+                    "TP": 15829,
+                    "n_pred": 21619,
+                    "n_ref": 20683
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1031.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1031.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9148472091958034,
+                    "FN": 4728,
+                    "FP": 34312,
+                    "IoU": 0.8430584309863118,
+                    "TN": 15217741,
+                    "TP": 209715,
+                    "n_pred": 244027,
+                    "n_ref": 214443
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1032.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1032.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7669292370175065,
+                    "FN": 50885,
+                    "FP": 6043,
+                    "IoU": 0.6219669300750382,
+                    "TN": 18985922,
+                    "TP": 93662,
+                    "n_pred": 99705,
+                    "n_ref": 144547
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1033.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1033.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8879275623909184,
+                    "FN": 3026,
+                    "FP": 4487,
+                    "IoU": 0.7984439973172368,
+                    "TN": 18574949,
+                    "TP": 29762,
+                    "n_pred": 34249,
+                    "n_ref": 32788
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1034.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1034.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7516233766233766,
+                    "FN": 733,
+                    "FP": 491,
+                    "IoU": 0.6020806241872562,
+                    "TN": 24900604,
+                    "TP": 1852,
+                    "n_pred": 2343,
+                    "n_ref": 2585
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1035.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1035.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5962464777333025,
+                    "FN": 417267,
+                    "FP": 96557,
+                    "IoU": 0.4247515452502796,
+                    "TN": 26107611,
+                    "TP": 379397,
+                    "n_pred": 475954,
+                    "n_ref": 796664
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1037.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1037.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7724112484516248,
+                    "FN": 35596,
+                    "FP": 7581,
+                    "IoU": 0.6292101059718668,
+                    "TN": 22165794,
+                    "TP": 73269,
+                    "n_pred": 80850,
+                    "n_ref": 108865
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1038.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1038.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8890992055079399,
+                    "FN": 11102,
+                    "FP": 32840,
+                    "IoU": 0.8003407774269032,
+                    "TN": 19965003,
+                    "TP": 176143,
+                    "n_pred": 208983,
+                    "n_ref": 187245
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1039.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1039.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7278661029990231,
+                    "FN": 60254,
+                    "FP": 2702,
+                    "IoU": 0.5721615505372106,
+                    "TN": 20562227,
+                    "TP": 84193,
+                    "n_pred": 86895,
+                    "n_ref": 144447
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1040.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1040.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8632252072254428,
+                    "FN": 119701,
+                    "FP": 256400,
+                    "IoU": 0.7593634312725617,
+                    "TN": 25962178,
+                    "TP": 1186841,
+                    "n_pred": 1443241,
+                    "n_ref": 1306542
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1041.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1041.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.06900560764524001,
+                    "FN": 1261,
+                    "FP": 184518,
+                    "IoU": 0.03573578873063987,
+                    "TN": 27332456,
+                    "TP": 6885,
+                    "n_pred": 191403,
+                    "n_ref": 8146
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1042.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1042.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.1402508551881414,
+                    "FN": 19101,
+                    "FP": 503,
+                    "IoU": 0.07541385652973635,
+                    "TN": 19115309,
+                    "TP": 1599,
+                    "n_pred": 2102,
+                    "n_ref": 20700
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1043.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1043.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8107435170714911,
+                    "FN": 14459,
+                    "FP": 6976,
+                    "IoU": 0.6817230166154394,
+                    "TN": 22214893,
+                    "TP": 45912,
+                    "n_pred": 52888,
+                    "n_ref": 60371
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1044.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1044.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.602953115486097,
+                    "FN": 17652,
+                    "FP": 13648,
+                    "IoU": 0.4315911814913013,
+                    "TN": 19081446,
+                    "TP": 23766,
+                    "n_pred": 37414,
+                    "n_ref": 41418
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1045.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1045.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6872524358863157,
+                    "FN": 39488,
+                    "FP": 3780,
+                    "IoU": 0.5235221566381817,
+                    "TN": 25861448,
+                    "TP": 47540,
+                    "n_pred": 51320,
+                    "n_ref": 87028
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1047.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1047.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 5535,
+                    "FP": 49,
+                    "IoU": 0.0,
+                    "TN": 23325232,
+                    "TP": 0,
+                    "n_pred": 49,
+                    "n_ref": 5535
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1048.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1048.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8553711634546752,
+                    "FN": 150726,
+                    "FP": 14616,
+                    "IoU": 0.7472912931639255,
+                    "TN": 25297977,
+                    "TP": 488937,
+                    "n_pred": 503553,
+                    "n_ref": 639663
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1049.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1049.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8106183635227983,
+                    "FN": 3899,
+                    "FP": 2165,
+                    "IoU": 0.6815460560865455,
+                    "TN": 23836062,
+                    "TP": 12978,
+                    "n_pred": 15143,
+                    "n_ref": 16877
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1050.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1050.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8940971259361723,
+                    "FN": 21488,
+                    "FP": 75897,
+                    "IoU": 0.8084770795925873,
+                    "TN": 22822339,
+                    "TP": 411092,
+                    "n_pred": 486989,
+                    "n_ref": 432580
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1051.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1051.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8409292265999583,
+                    "FN": 37141,
+                    "FP": 11695,
+                    "IoU": 0.7255201717606592,
+                    "TN": 31541502,
+                    "TP": 129086,
+                    "n_pred": 140781,
+                    "n_ref": 166227
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1052.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1052.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5736745373890065,
+                    "FN": 102501,
+                    "FP": 13017,
+                    "IoU": 0.4022045125232871,
+                    "TN": 21040424,
+                    "TP": 77722,
+                    "n_pred": 90739,
+                    "n_ref": 180223
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1053.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1053.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8131899437362011,
+                    "FN": 6474,
+                    "FP": 1395,
+                    "IoU": 0.6851896303408546,
+                    "TN": 18587228,
+                    "TP": 17127,
+                    "n_pred": 18522,
+                    "n_ref": 23601
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1055.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1055.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6928002650052874,
+                    "FN": 188867,
+                    "FP": 52251,
+                    "IoU": 0.529988070268458,
+                    "TN": 25439252,
+                    "TP": 271886,
+                    "n_pred": 324137,
+                    "n_ref": 460753
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1056.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1056.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8855946995592663,
+                    "FN": 140037,
+                    "FP": 48729,
+                    "IoU": 0.7946791882711114,
+                    "TN": 20314293,
+                    "TP": 730605,
+                    "n_pred": 779334,
+                    "n_ref": 870642
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1057.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1057.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9647797503262502,
+                    "FN": 17778,
+                    "FP": 25134,
+                    "IoU": 0.9319560263917761,
+                    "TN": 21127301,
+                    "TP": 587739,
+                    "n_pred": 612873,
+                    "n_ref": 605517
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1058.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1058.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9379496739512911,
+                    "FN": 6498,
+                    "FP": 10078,
+                    "IoU": 0.8831499326786835,
+                    "TN": 25286111,
+                    "TP": 125281,
+                    "n_pred": 135359,
+                    "n_ref": 131779
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1059.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1059.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.790018283739527,
+                    "FN": 4906,
+                    "FP": 5545,
+                    "IoU": 0.6529175384411012,
+                    "TN": 23824993,
+                    "TP": 19660,
+                    "n_pred": 25205,
+                    "n_ref": 24566
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1060.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1060.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8264894342194956,
+                    "FN": 19976,
+                    "FP": 5478,
+                    "IoU": 0.7042880211903296,
+                    "TN": 22720451,
+                    "TP": 60623,
+                    "n_pred": 66101,
+                    "n_ref": 80599
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1061.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1061.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9241903457161613,
+                    "FN": 929,
+                    "FP": 17664,
+                    "IoU": 0.859064930339736,
+                    "TN": 28966058,
+                    "TP": 113333,
+                    "n_pred": 130997,
+                    "n_ref": 114262
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1062.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1062.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8502297712443192,
+                    "FN": 1370,
+                    "FP": 4529,
+                    "IoU": 0.7394779843660292,
+                    "TN": 25929613,
+                    "TP": 16744,
+                    "n_pred": 21273,
+                    "n_ref": 18114
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1063.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1063.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7601303790006588,
+                    "FN": 44111,
+                    "FP": 25065,
+                    "IoU": 0.6130728313094645,
+                    "TN": 28394913,
+                    "TP": 109607,
+                    "n_pred": 134672,
+                    "n_ref": 153718
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1064.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1064.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6286082332519067,
+                    "FN": 1213128,
+                    "FP": 252645,
+                    "IoU": 0.45837247130518455,
+                    "TN": 28226754,
+                    "TP": 1240465,
+                    "n_pred": 1493110,
+                    "n_ref": 2453593
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1065.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1065.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9458419314112341,
+                    "FN": 16665,
+                    "FP": 75692,
+                    "IoU": 0.8972486760713809,
+                    "TN": 26626280,
+                    "TP": 806483,
+                    "n_pred": 882175,
+                    "n_ref": 823148
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1066.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1066.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.931455047258485,
+                    "FN": 41213,
+                    "FP": 21721,
+                    "IoU": 0.8717041289359846,
+                    "TN": 19170262,
+                    "TP": 427604,
+                    "n_pred": 449325,
+                    "n_ref": 468817
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1067.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1067.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.861686872637205,
+                    "FN": 913,
+                    "FP": 1209,
+                    "IoU": 0.7569857993586807,
+                    "TN": 25943524,
+                    "TP": 6610,
+                    "n_pred": 7819,
+                    "n_ref": 7523
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1069.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1069.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9550765383274813,
+                    "FN": 15922,
+                    "FP": 50326,
+                    "IoU": 0.9140157852315544,
+                    "TN": 19414621,
+                    "TP": 704219,
+                    "n_pred": 754545,
+                    "n_ref": 720141
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1070.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1070.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.3214171720395787,
+                    "FN": 3084,
+                    "FP": 1168,
+                    "IoU": 0.19148127020346073,
+                    "TN": 33287029,
+                    "TP": 1007,
+                    "n_pred": 2175,
+                    "n_ref": 4091
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1071.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1071.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8967468517432546,
+                    "FN": 6360,
+                    "FP": 10719,
+                    "IoU": 0.8128205690237166,
+                    "TN": 17996692,
+                    "TP": 74165,
+                    "n_pred": 84884,
+                    "n_ref": 80525
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1072.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1072.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9520240992193083,
+                    "FN": 13114,
+                    "FP": 13403,
+                    "IoU": 0.9084408319982321,
+                    "TN": 27235504,
+                    "TP": 263099,
+                    "n_pred": 276502,
+                    "n_ref": 276213
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1073.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1073.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.717965880616483,
+                    "FN": 32295,
+                    "FP": 571,
+                    "IoU": 0.5600208838137056,
+                    "TN": 48421941,
+                    "TP": 41833,
+                    "n_pred": 42404,
+                    "n_ref": 74128
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1074.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1074.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9502594023419774,
+                    "FN": 75102,
+                    "FP": 68922,
+                    "IoU": 0.9052325921870713,
+                    "TN": 27053933,
+                    "TP": 1375739,
+                    "n_pred": 1444661,
+                    "n_ref": 1450841
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1075.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1075.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6049030669812289,
+                    "FN": 19054,
+                    "FP": 205,
+                    "IoU": 0.4335921416387271,
+                    "TN": 23296814,
+                    "TP": 14743,
+                    "n_pred": 14948,
+                    "n_ref": 33797
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1076.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1076.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.880058934573415,
+                    "FN": 1316,
+                    "FP": 1289,
+                    "IoU": 0.7858082552211807,
+                    "TN": 20172926,
+                    "TP": 9557,
+                    "n_pred": 10846,
+                    "n_ref": 10873
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1078.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1078.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7881426718086335,
+                    "FN": 8218,
+                    "FP": 3703,
+                    "IoU": 0.6503592902185071,
+                    "TN": 19626705,
+                    "TP": 22174,
+                    "n_pred": 25877,
+                    "n_ref": 30392
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1079.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1079.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9376699751095553,
+                    "FN": 60858,
+                    "FP": 15920,
+                    "IoU": 0.8826541217323258,
+                    "TN": 27919408,
+                    "TP": 577510,
+                    "n_pred": 593430,
+                    "n_ref": 638368
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1080.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1080.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7903747041651149,
+                    "FN": 9000,
+                    "FP": 8449,
+                    "IoU": 0.6534045765135865,
+                    "TN": 23280472,
+                    "TP": 32895,
+                    "n_pred": 41344,
+                    "n_ref": 41895
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1081.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1081.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7931619786614937,
+                    "FN": 3107,
+                    "FP": 305,
+                    "IoU": 0.65722322684348,
+                    "TN": 20175134,
+                    "TP": 6542,
+                    "n_pred": 6847,
+                    "n_ref": 9649
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1082.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1082.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8831346583531229,
+                    "FN": 7499,
+                    "FP": 12481,
+                    "IoU": 0.7907261738920951,
+                    "TN": 24808207,
+                    "TP": 75493,
+                    "n_pred": 87974,
+                    "n_ref": 82992
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1083.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1083.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6327842659869898,
+                    "FN": 4413,
+                    "FP": 5240,
+                    "IoU": 0.46282693377851974,
+                    "TN": 21739982,
+                    "TP": 8317,
+                    "n_pred": 13557,
+                    "n_ref": 12730
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1084.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1084.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5983128875169642,
+                    "FN": 14620,
+                    "FP": 475,
+                    "IoU": 0.42685195732239817,
+                    "TN": 23304479,
+                    "TP": 11242,
+                    "n_pred": 11717,
+                    "n_ref": 25862
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1086.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1086.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9093742488794272,
+                    "FN": 36206,
+                    "FP": 32416,
+                    "IoU": 0.8338096252954624,
+                    "TN": 20296464,
+                    "TP": 344290,
+                    "n_pred": 376706,
+                    "n_ref": 380496
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1087.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1087.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9198587651493463,
+                    "FN": 4726,
+                    "FP": 7871,
+                    "IoU": 0.8516097112768138,
+                    "TN": 21148773,
+                    "TP": 72294,
+                    "n_pred": 80165,
+                    "n_ref": 77020
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1088.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1088.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6913557228424266,
+                    "FN": 16629,
+                    "FP": 23100,
+                    "IoU": 0.5282991985752449,
+                    "TN": 24295167,
+                    "TP": 44496,
+                    "n_pred": 67596,
+                    "n_ref": 61125
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1090.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1090.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.49091441969519345,
+                    "FN": 2644,
+                    "FP": 830,
+                    "IoU": 0.32530588463779375,
+                    "TN": 22801379,
+                    "TP": 1675,
+                    "n_pred": 2505,
+                    "n_ref": 4319
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor/HCC_TACE_1098.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs/HCC_TACE_1098.nii.gz"
+        }
+    ]
+}
