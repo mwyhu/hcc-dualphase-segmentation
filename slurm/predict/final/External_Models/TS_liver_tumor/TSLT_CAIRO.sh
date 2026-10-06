@@ -19,16 +19,16 @@ OUTPUT_DIR=/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liv
 mkdir -p "$OUTPUT_DIR"
 
 shopt -s nullglob
-images=("$INPUT_DIR"/*_0000.nii.gz)
+images=("$INPUT_DIR"/*_0001.nii.gz)
 
 if ((${#images[@]} == 0)); then
-    echo "No *_0000.nii.gz images found in $INPUT_DIR" >&2
+    echo "No *_0001.nii.gz images found in $INPUT_DIR" >&2
     exit 1
 fi
 
 for image in "${images[@]}"; do
     filename=${image##*/}
-    case_id=${filename%_0000.nii.gz}
+    case_id=${filename%_0001.nii.gz}
     output_file="$OUTPUT_DIR/$case_id.nii.gz"
 
     echo "Processing $case_id"

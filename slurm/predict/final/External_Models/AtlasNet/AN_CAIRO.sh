@@ -21,10 +21,10 @@ BINARY_OUTPUT_DIR=/projects/prjs2180/evaluation/predictions/CAIRO5/AN
 mkdir -p "$OUTPUT_DIR" "$BINARY_OUTPUT_DIR"
 
 shopt -s nullglob
-images=("$INPUT_DIR"/*_0000.nii.gz)
+images=("$INPUT_DIR"/*_0001.nii.gz)
 
 if ((${#images[@]} == 0)); then
-    echo "No *_0000.nii.gz images found in $INPUT_DIR" >&2
+    echo "No *_0001.nii.gz images found in $INPUT_DIR" >&2
     exit 1
 fi
 
