@@ -16,7 +16,7 @@ BASE_DIR = Path(
 
 # MODELS = ["TSLL", "TSLT", "AN", "SP", "DP", "COALA"]
 MODELS = ["TSLL", "TSLT", "AN", "SP", "DP"]
-DATASETS = ["HCC", "WORC", "TCIA", "LiTS"]
+DATASETS = ["HCC", "WORC", "TCIA", "LiTS", "CAIRO5"]
 
 REPORT_THRESHOLD = 0.2
 

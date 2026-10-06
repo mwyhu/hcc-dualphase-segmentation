@@ -10,7 +10,7 @@ ROOT = Path(
     "analysis/dice_per_dataset/final"
 )
 
-DATASETS = ["HCC_TACE", "TCIA_CRLM", "WORC_CRLM", "LiTS"]
+DATASETS = ["HCC_TACE", "TCIA_CRLM", "WORC_CRLM", "LiTS", "CAIRO5"]
 
 MODELS = [
     "TotalSegmentator_liver_lesions",
@@ -35,6 +35,7 @@ DATASET_CODES = {
     "TCIA_CRLM": "TCIA",
     "WORC_CRLM": "WORC",
     "LiTS": "LiTS",
+    "CAIRO5": "CAIRO5",
 }
 
 
