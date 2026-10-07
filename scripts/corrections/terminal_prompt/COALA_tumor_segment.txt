@@ -1,0 +1,35 @@
+cd /projects/prjs2180/code/hcc-dualphase-segmentation
+source setup_env.sh
+
+
+python - <<'PY'
+from pathlib import Path
+
+import nibabel as nib
+import numpy as np
+
+input_dir = Path("/projects/prjs2180/evaluation/predictions/CAIRO5/COALA_casc")
+output_dir = Path("/projects/prjs2180/evaluation/predictions/CAIRO5/COALA")
+output_dir.mkdir(parents=True, exist_ok=True)
+
+files = sorted(input_dir.glob("*.nii.gz"))
+if not files:
+    raise SystemExit(f"No .nii.gz files found in {input_dir}")
+
+for path in files:
+    image = nib.load(path)
+    data = np.asanyarray(image.dataobj)
+
+    mask = (data == 13).astype(np.uint8)
+
+    header = image.header.copy()
+    header.set_data_dtype(np.uint8)
+    header.set_slope_inter(1, 0)
+
+    output_image = image.__class__(mask, image.affine, header)
+    nib.save(output_image, output_dir / path.name)
+
+    print(f"{path.name}: {np.count_nonzero(mask)} tumour voxels")
+
+print(f"Saved {len(files)} tumour masks to {output_dir}")
+PY

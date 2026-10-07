@@ -1,0 +1,257 @@
+EVAL external validation
+
+srun \
+--partition=genoa \
+--cpus-per-task=16 \
+--mem=128G \
+--time=01:00:00 \
+--pty bash
+
+cd /projects/prjs2180/code/hcc-dualphase-segmentation
+
+source setup_env.sh
+
+#######
+TOTAL SEGMENTATOR LESIONS
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs \
+  /projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_lesions \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/dataset.json \
+  -pfile /projects/prjs2180/pretrained_models/TotalSegmentator/591_liver_lesions/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_lesions \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/dataset.json \
+  -pfile /projects/prjs2180/pretrained_models/TotalSegmentator/591_liver_lesions/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/TCIA_CRLM/TotalSegmentator_liver_lesions \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/dataset.json \
+  -pfile /projects/prjs2180/pretrained_models/TotalSegmentator/591_liver_lesions/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_LiTS/labelsTs \
+  /projects/prjs2180/evaluation/predictions/LiTS/TotalSegmentator_liver_lesions \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_LiTS/dataset.json \
+  -pfile /projects/prjs2180/pretrained_models/TotalSegmentator/591_liver_lesions/plans.json
+
+
+
+#######
+TOTAL SEGMENTATOR TUMOR
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs \
+  /projects/prjs2180/evaluation/predictions/HCC_TACE/TotalSegmentator_liver_tumor \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/dataset.json \
+  -pfile /projects/prjs2180/pretrained_models/TotalSegmentator/591_liver_lesions/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/WORC_CRLM/TotalSegmentator_liver_tumor \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/dataset.json \
+  -pfile /projects/prjs2180/pretrained_models/TotalSegmentator/591_liver_lesions/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/TCIA_CRLM/TotalSegmentator_liver_tumor \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/dataset.json \
+  -pfile /projects/prjs2180/pretrained_models/TotalSegmentator/591_liver_lesions/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_LiTS/labelsTs \
+  /projects/prjs2180/evaluation/predictions/LiTS/TotalSegmentator_liver_tumor \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_LiTS/dataset.json \
+  -pfile /projects/prjs2180/pretrained_models/TotalSegmentator/591_liver_lesions/plans.json
+
+
+#######
+COALA
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs \
+  /projects/prjs2180/evaluation/predictions/HCC_TACE/COALA \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/HCC_TACE/SP/plans.json
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_LiTS/labelsTs \
+  /projects/prjs2180/evaluation/predictions/LiTS/COALA \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_LiTS/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/LiTS/SP/plans.json
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/WORC_CRLM/COALA \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/WORC_CRLM/SP/plans.json
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/TCIA_CRLM/COALA \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/plans.json
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs \
+  /projects/prjs2180/evaluation/predictions/CAIRO5/COALA \
+  -djfile /projects/prjs2180/evaluation/predictions/CAIRO5/SP/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/CAIRO5/SP/plans.json
+
+
+#######
+ATLAS NET
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs \
+  /projects/prjs2180/evaluation/predictions/HCC_TACE/AN \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/dataset.json \
+  -pfile /projects/prjs2180/code/AbdomentAtlasNet/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_LiTS/labelsTs \
+  /projects/prjs2180/evaluation/predictions/LiTS/AN \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_LiTS/dataset.json \
+  -pfile /projects/prjs2180/code/AbdomentAtlasNet/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/TCIA_CRLM/AN \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/dataset.json \
+  -pfile /projects/prjs2180/code/AbdomentAtlasNet/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/WORC_CRLM/AN \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/dataset.json \
+  -pfile /projects/prjs2180/code/AbdomentAtlasNet/plans.json
+
+
+#######
+DUAL PHASE
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/DP/Full_HCC_TACE/labelsTs \
+  /projects/prjs2180/evaluation/predictions/HCC_TACE/DP \
+  -djfile /projects/prjs2180/evaluation/predictions/HCC_TACE/DP/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/HCC_TACE/DP/plans.json
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/DP/Full_LiTS/labelsTs \
+  /projects/prjs2180/evaluation/predictions/LiTS/DP \
+  -djfile /projects/prjs2180/evaluation/predictions/LiTS/DP/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/LiTS/DP/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/DP/Full_TCIA_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/TCIA_CRLM/DP \
+  -djfile /projects/prjs2180/evaluation/predictions/TCIA_CRLM/DP/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/TCIA_CRLM/DP/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/DP/Full_WORC_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/WORC_CRLM/DP \
+  -djfile /projects/prjs2180/evaluation/predictions/WORC_CRLM/DP/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/WORC_CRLM/DP/plans.json
+
+
+
+#######
+SINGLE PHASE
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_HCC_TACE/labelsTs \
+  /projects/prjs2180/evaluation/predictions/HCC_TACE/SP \
+  -djfile /projects/prjs2180/evaluation/predictions/HCC_TACE/SP/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/HCC_TACE/SP/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_LiTS/labelsTs \
+  /projects/prjs2180/evaluation/predictions/LiTS/SP \
+  -djfile /projects/prjs2180/evaluation/predictions/LiTS/SP/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/LiTS/SP/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP \
+  -djfile /projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_WORC_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/WORC_CRLM/SP \
+  -djfile /projects/prjs2180/evaluation/predictions/WORC_CRLM/SP/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/WORC_CRLM/SP/plans.json
+
+
+
+#######
+INTERNAL TESTSET
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/Dataset001_singlephase/labelsTs \
+  /projects/prjs2180/evaluation/predictions/internal_testset/SP \
+  -djfile /projects/prjs2180/data/nnUNet_preprocessed/Dataset001_singlephase/dataset.json \
+  -pfile /projects/prjs2180/data/nnUNet_preprocessed/Dataset001_singlephase/TSLL_SP_plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/Dataset002_dualphase/labelsTs \
+  /projects/prjs2180/evaluation/predictions/internal_testset/DP \
+  -djfile /projects/prjs2180/data/nnUNet_preprocessed/Dataset002_dualphase/dataset.json \
+  -pfile /projects/prjs2180/data/nnUNet_preprocessed/Dataset002_dualphase/TSLL_DP_plans.json
+
+
+#######
+CAIRO5
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs \
+  /projects/prjs2180/evaluation/predictions/CAIRO5/AN \
+  -djfile /projects/prjs2180/evaluation/predictions/CAIRO5/SP/dataset.json \
+  -pfile /projects/prjs2180/code/AbdomentAtlasNet/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs \
+  /projects/prjs2180/evaluation/predictions/CAIRO5/SP \
+  -djfile /projects/prjs2180/evaluation/predictions/CAIRO5/SP/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/CAIRO5/SP/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs \
+  /projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions \
+  -djfile /projects/prjs2180/evaluation/predictions/CAIRO5/SP/dataset.json \
+  -pfile /projects/prjs2180/pretrained_models/TotalSegmentator/591_liver_lesions/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs \
+  /projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_tumor \
+  -djfile /projects/prjs2180/evaluation/predictions/CAIRO5/SP/dataset.json \
+  -pfile /projects/prjs2180/pretrained_models/TotalSegmentator/591_liver_lesions/plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/DP/CAIRO5/labelsTs \
+  /projects/prjs2180/evaluation/predictions/CAIRO5/DP \
+  -djfile /projects/prjs2180/evaluation/predictions/CAIRO5/DP/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/CAIRO5/DP/plans.json
