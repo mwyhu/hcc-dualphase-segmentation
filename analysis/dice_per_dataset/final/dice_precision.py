@@ -15,7 +15,7 @@ DATASETS = ["HCC_TACE", "TCIA_CRLM", "WORC_CRLM", "LiTS", "CAIRO5"]
 MODELS = [
     "TotalSegmentator_liver_lesions",
     "TotalSegmentator_liver_tumor",
-    # "COALA",
+    "COALA",
     "AtlasNet",
     "SinglePhase",
     "DualPhase",
@@ -24,7 +24,7 @@ MODELS = [
 MODEL_CODES = {
     "TotalSegmentator_liver_lesions": "TSLL",
     "TotalSegmentator_liver_tumor": "TSLT",
-    # "COALA": "COALA",
+    "COALA": "COALA",
     "AtlasNet": "AtlasNet",
     "SinglePhase": "SP",
     "DualPhase": "DP",

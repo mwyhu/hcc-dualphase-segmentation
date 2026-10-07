@@ -64,9 +64,9 @@ echo "TCIA Finished"
 echo "COALA Started"
 python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/detectability.py \
     --pred_dir "$PRED_DIR"/CAIRO5/COALA \
-    --gt_dir "$GT_DIR"/SP/CAIRO5/labelsTs \
+    --gt_dir "$GT_DIR"/CAIRO5/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/COALA/Detect_COALA_CAIRO5.csv
+    --output "$OUTPUT_DIR"/Detect_COALA_CAIRO5.csv
 echo "COALA Finished"
 
 echo "Job finished"
