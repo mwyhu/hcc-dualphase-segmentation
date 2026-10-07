@@ -23,7 +23,7 @@ echo "Job ID: $SLUR_JOB_ID"
 
 nnUNetv2_preprocess \
     -d 003 \
-    -plans_name TSLL_DP_plans \
+    -plans_name TSLL_ceiling_plans \
     -c 3d_fullres \
     -np 8
 
