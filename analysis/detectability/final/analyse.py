@@ -14,8 +14,7 @@ BASE_DIR = Path(
     "analysis/detectability/final"
 )
 
-# MODELS = ["TSLL", "TSLT", "AN", "SP", "DP", "COALA"]
-MODELS = ["TSLL", "TSLT", "AN", "SP", "DP"]
+MODELS = ["TSLL", "TSLT", "AN", "SP", "DP", "COALA"]
 DATASETS = ["HCC", "WORC", "TCIA", "LiTS", "CAIRO5"]
 
 REPORT_THRESHOLD = 0.2
@@ -30,7 +29,7 @@ MODEL_PALETTE = [
     "#54A24B",
     "#B279A2",
     "#E45756",
-    # "#72B7B2",
+    "#72B7B2",
 ]
 
 sns.set_theme(style="whitegrid")

@@ -5,7 +5,6 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=128G
 #SBATCH --time=60:00:00
-#SBATCH --array=1-4
 #SBATCH --output=logs/%x_fold%A_%a.out
 #SBATCH --error=logs/%x_fold%A_%a.err
 
@@ -17,21 +16,17 @@ source setup_env.sh
 export nnUNet_n_proc_DA="$SLURM_CPUS_PER_TASK"
 export nnUNet_results=/projects/prjs2180/data/nnUNet_results/ceiling
 
-FOLD="$SLURM_ARRAY_TASK_ID"
-
 echo "Job started"
 echo "Date and time: $(date)"
 echo "Node: $SLURMD_NODENAME"
 echo "Job ID: $SLURM_JOB_ID"
-echo "Training fold: $FOLD"
 
 nnUNetv2_train \
     3 \
     3d_fullres \
-    "$FOLD" \
+    all \
     -tr nnUNetTrainer \
     -p TSLL_DP_plans \
     -pretrained_weights /projects/prjs2180/pretrained_models/TotalSegmentator/591_liver_lesions/checkpoint_final_dualphase.pth
 
-echo "Fold $FOLD finished"
 echo "Date and time: $(date)"
