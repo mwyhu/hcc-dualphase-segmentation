@@ -26,7 +26,7 @@ nnUNetv2_train \
     3d_fullres \
     all \
     -tr nnUNetTrainer \
-    -p TSLL_DP_plans \
+    -p TSLL_ceiling_plans \
     -pretrained_weights /projects/prjs2180/pretrained_models/TotalSegmentator/591_liver_lesions/checkpoint_final_dualphase.pth
 
 echo "Date and time: $(date)"
