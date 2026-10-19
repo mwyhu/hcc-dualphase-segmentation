@@ -437,8 +437,8 @@ PLOT_DIR.mkdir(parents=True, exist_ok=True)
 
 METRICS = {
     "dice": "Dice",
-    "precision": "Voxel-level precision",
-    "recall": "Voxel-level recall",
+    "precision": "Precision",
+    "recall": "Sensitivity",
 }
 
 
@@ -618,3 +618,248 @@ for dataset in DATASETS:
 
     plt.show()
     plt.close(fig)
+
+
+# -------------------------------------------------------------------
+# Combined CRLM: equal weighting of WORC, TCIA and CAIRO5
+# -------------------------------------------------------------------
+
+CRLM_DATASETS = ["WORC_CRLM", "TCIA_CRLM", "CAIRO5"]
+
+
+def weighted_quantile(values, weights, probabilities):
+    """Quantiles from the weighted empirical distribution."""
+    values = np.asarray(values, dtype=float)
+    weights = np.asarray(weights, dtype=float)
+
+    order = np.argsort(values)
+    values = values[order]
+    weights = weights[order]
+
+    cumulative_weights = np.cumsum(weights)
+    cumulative_weights /= cumulative_weights[-1]
+
+    indices = np.searchsorted(
+        cumulative_weights,
+        probabilities,
+        side="left",
+    )
+    indices = np.clip(indices, 0, len(values) - 1)
+
+    return values[indices]
+
+
+def plot_combined_crlm(df):
+    crlm_df = df.loc[
+        df["dataset"].isin(CRLM_DATASETS)
+    ].copy()
+
+    fig, axes = plt.subplots(
+        1,
+        len(METRICS),
+        figsize=(18, 5.5),
+        sharey=True,
+    )
+
+    rng = np.random.default_rng(42)
+    summary_rows = []
+
+    for ax, (metric, ylabel) in zip(axes, METRICS.items()):
+        box_statistics = []
+        macro_means = []
+        model_values = []
+
+        for model in MODELS:
+            values_parts = []
+            weight_parts = []
+            dataset_means = []
+
+            for dataset in CRLM_DATASETS:
+                values = crlm_df.loc[
+                    (crlm_df["model"] == model)
+                    & (crlm_df["dataset"] == dataset),
+                    metric,
+                ].to_numpy(dtype=float)
+
+                values = values[np.isfinite(values)]
+
+                if len(values) == 0:
+                    raise ValueError(
+                        f"No valid scores for "
+                        f"{dataset}/{model}/{metric}"
+                    )
+
+                values_parts.append(values)
+
+                # All cases within a dataset share its 1/3 weight.
+                weight_parts.append(
+                    np.full(
+                        len(values),
+                        1 / (len(CRLM_DATASETS) * len(values)),
+                    )
+                )
+
+                dataset_means.append(float(values.mean()))
+
+            values = np.concatenate(values_parts)
+            weights = np.concatenate(weight_parts)
+
+            q1, median, q3 = weighted_quantile(
+                values,
+                weights,
+                [0.25, 0.50, 0.75],
+            )
+
+            iqr = q3 - q1
+            lower_fence = q1 - 1.5 * iqr
+            upper_fence = q3 + 1.5 * iqr
+
+            # Whiskers reach the most extreme observed values
+            # within the weighted quartile-based fences.
+            lower_values = values[values >= lower_fence]
+            upper_values = values[values <= upper_fence]
+
+            box_statistics.append({
+                "label": MODEL_CODES[model],
+                "q1": float(q1),
+                "med": float(median),
+                "q3": float(q3),
+                "whislo": float(lower_values.min()),
+                "whishi": float(upper_values.max()),
+                "fliers": [],
+            })
+
+            macro_mean = float(np.mean(dataset_means))
+            macro_means.append(macro_mean)
+            model_values.append(values)
+
+            summary_rows.append({
+                "tumour_group": "CRLM",
+                "model": MODEL_CODES[model],
+                "metric": metric,
+                "n_valid": len(values),
+                "macro_mean": macro_mean,
+                "weighted_median": float(median),
+                "weighted_q1": float(q1),
+                "weighted_q3": float(q3),
+                "weighted_iqr": float(iqr),
+            })
+
+        positions = np.arange(len(MODELS))
+
+        artists = ax.bxp(
+            box_statistics,
+            positions=positions,
+            widths=0.6,
+            patch_artist=True,
+            showfliers=False,
+            medianprops={
+                "color": "#222222",
+                "linewidth": 1.5,
+            },
+            boxprops={"linewidth": 1.2},
+            whiskerprops={"linewidth": 1.2},
+            capprops={"linewidth": 1.2},
+        )
+
+        for box, model in zip(artists["boxes"], MODELS):
+            box.set_facecolor(MODEL_PALETTE[model])
+            box.set_alpha(0.8)
+
+        # Raw case points are displayed for context.
+        # Their density reflects sample size, not dataset weight.
+        for position, values in zip(positions, model_values):
+            x_positions = position + rng.uniform(
+                -0.2,
+                0.2,
+                size=len(values),
+            )
+
+            ax.scatter(
+                x_positions,
+                values,
+                color="black",
+                alpha=0.15,
+                s=8,
+                linewidths=0,
+                zorder=3,
+            )
+
+        ax.scatter(
+            positions,
+            macro_means,
+            marker="D",
+            color="black",
+            edgecolors="white",
+            linewidths=0.8,
+            s=55,
+            zorder=5,
+            label="Equal-dataset mean",
+        )
+
+        ax.set_xticks(positions)
+        ax.set_xticklabels(
+            [MODEL_CODES[model] for model in MODELS],
+            rotation=30,
+            ha="right",
+        )
+
+        ax.set_title(ylabel)
+        ax.set_xlabel("")
+        ax.set_ylabel("")
+        ax.set_ylim(-0.03, 1.03)
+        ax.grid(axis="x", visible=False)
+
+    axes[0].set_ylabel("Score")
+
+    fig.suptitle(
+        "CRLM: model comparison across WORC, TCIA and CAIRO5",
+        fontsize=15,
+    )
+
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(
+        handles,
+        labels,
+        loc="lower center",
+        bbox_to_anchor=(0.5, 0.065),
+        frameon=False,
+    )
+
+    fig.text(
+        0.5,
+        0.015,
+        "Boxes: equal-dataset-weighted median and quartiles. "
+        "Diamonds: average of the three dataset means.\n"
+        "Each dataset contributes one third; "
+        "dots show individual case scores.",
+        ha="center",
+        fontsize=9,
+    )
+
+    fig.tight_layout(rect=[0, 0.16, 1, 0.94])
+
+    figure_path = (
+        PLOT_DIR
+        / "CRLM_equal_dataset_dice_precision_recall.png"
+    )
+
+    fig.savefig(
+        figure_path,
+        dpi=300,
+        bbox_inches="tight",
+        facecolor="white",
+    )
+
+    pd.DataFrame(summary_rows).to_csv(
+        PLOT_DIR / "CRLM_equal_dataset_summary.csv",
+        index=False,
+    )
+
+    print(f"Saved: {figure_path}")
+
+    plt.show()
+    plt.close(fig)
+
+
+plot_combined_crlm(df)

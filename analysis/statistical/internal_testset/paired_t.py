@@ -39,7 +39,9 @@ FILES = {
 # -------------------------------------------------------------------
 
 def remove_nifti_extension(filename):
-    """Return the filename without .nii or .nii.gz."""
+    """
+    Return the filename without .nii or .nii.gz
+    """
     filename = str(filename).replace("\\", "/").rsplit("/", 1)[-1]
 
     if filename.endswith(".nii.gz"):
@@ -68,7 +70,9 @@ def get_dataset(case_id):
 
 
 def check_files_exist():
-    """Check all configured input paths before running the analysis."""
+    """
+    Check all configured input paths before running the analysis
+    """
     missing = []
 
     for phase, phase_files in FILES.items():
@@ -84,7 +88,9 @@ def check_files_exist():
 
 
 def validate_metric_values(data, metrics, path):
-    """Allow missing values, but reject infinite or out-of-range scores."""
+    """
+    Allow missing values, but reject infinite or out-of-range scores
+    """
     for metric in metrics:
         values = data[metric].to_numpy(dtype=float)
 
@@ -102,7 +108,9 @@ def validate_metric_values(data, metrics, path):
 
 
 def load_summary_file(path, phase):
-    """Load per-case Dice, voxel precision and voxel recall."""
+    """
+    Load per-case Dice, voxel precision and voxel recall
+    """
     with path.open() as file:
         data = json.load(file)
 
@@ -180,7 +188,9 @@ def load_summary_file(path, phase):
 
 
 def load_detection_file(path, phase):
-    """Load lesion detectability at the configured IoU threshold."""
+    """
+    Load lesion detectability at the configured IoU threshold
+    """
     data = pd.read_csv(path)
 
     required = {"case", "iou_threshold", "detectability"}
@@ -237,7 +247,9 @@ def load_detection_file(path, phase):
 
 
 def load_phase(phase):
-    """Combine summary metrics and lesion detectability for one model."""
+    """
+    Combine summary metrics and lesion detectability for one model
+    """
     summary = load_summary_file(
         FILES[phase]["summary"],
         phase,
@@ -268,7 +280,9 @@ def load_phase(phase):
 
 
 def pair_phases(single, dual):
-    """Pair single- and dual-phase results by case ID and dataset."""
+    """
+    Pair single- and dual-phase results by case ID and dataset
+    """
     keys = ["case_id", "dataset"]
 
     single_keys = set(map(tuple, single[keys].to_numpy()))
@@ -295,25 +309,34 @@ def pair_phases(single, dual):
 # -------------------------------------------------------------------
 
 def paired_mean_confidence_interval(differences, confidence=0.95):
-    """Parametric confidence interval for the mean paired difference."""
+    """
+    Parametric confidence interval for the mean paired difference
+    """
     differences = np.asarray(differences, dtype=float)
     differences = differences[np.isfinite(differences)]
+
     n = len(differences)
 
     if n < 2:
         return np.nan, np.nan
 
     mean_difference = differences.mean()
+
     standard_error = differences.std(ddof=1) / np.sqrt(n)
+
     alpha = 1.0 - confidence
+
     critical_value = t.ppf(1.0 - alpha / 2.0, df=n - 1)
+
     margin = critical_value * standard_error
 
     return mean_difference - margin, mean_difference + margin
 
 
 def holm_correction(p_values):
-    """Holm correction across the configured family of metric tests."""
+    """
+    Holm correction across the configured family of metric tests
+    """
     p_values = np.asarray(p_values, dtype=float)
     adjusted = np.full(len(p_values), np.nan)
     valid_indices = np.flatnonzero(np.isfinite(p_values))
@@ -344,7 +367,9 @@ def safe_sd(values):
 
 
 def create_paired_ttest_results(paired):
-    """Run two-sided paired t-tests for the four configured metrics."""
+    """
+    Run two-sided paired t-tests for the four configured metrics
+    """
     rows = []
 
     for metric in METRICS:

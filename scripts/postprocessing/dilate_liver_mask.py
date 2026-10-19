@@ -29,7 +29,7 @@ def dilate_liver_mask(liver_path, output_path, margin_mm=10.0):
 
 def process_folder(liver_dir, output_dir, margin_mm=10.0):
 
-    liver_paths = sorted(liver_dir.glob("*.nii.gz"))
+    liver_paths = sorted(liver_dir.glob("*.nii"))
     output_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"Found {len(liver_paths)} liver masks")

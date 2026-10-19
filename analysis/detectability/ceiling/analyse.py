@@ -8,21 +8,32 @@ import seaborn as sns
 
 # Settings
 BASE_DIR = Path(
-    "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/detectability/extend_epochs"
+    "/Users/michellehu/Desktop/hcc-dualphase-segmentation/"
+    "analysis"
 )
+
+DICE_DIR = BASE_DIR / "dice_per_dataset" / "ceiling"
+DETECT_DIR = BASE_DIR / "detectability" / "ceiling"
 
 MODEL_FILES = {
-    "1000": "detectability_TSLL_DP_1e3_1000.csv",
-    "1500": "DP_1500_epochs.csv",
-    "2000": "DP_2000_epochs.csv",
-    "3000": "DP_3000_epochs.csv",
+    "SP": DETECT_DIR / "Detect_SP_on_ceiling_testset.csv",
+    "SP ceiling": (
+        DETECT_DIR / "Detect_SPceiling_on_ceiling_testset.csv"
+    ),
+    "DP": DETECT_DIR / "Detect_DP_on_ceiling_testset.csv",
+    "DP ceiling": (
+        DETECT_DIR / "Detect_DPceiling_on_ceiling_testset.csv"
+    ),
 }
 
-MODEL_ORDER = list(MODEL_FILES)
-MODEL_PALETTE = dict(
-    zip(MODEL_ORDER, sns.color_palette("Set2", len(MODEL_ORDER)))
-)
+MODEL_ORDER = ["SP", "SP ceiling", "DP", "DP ceiling"]
 
+MODEL_PALETTE = {
+    "SP": "#B279A2",
+    "SP ceiling": "#D9B9D0",
+    "DP": "#E45756",
+    "DP ceiling": "#F2AAA9",
+}
 sns.set_theme(style="whitegrid")
 
 

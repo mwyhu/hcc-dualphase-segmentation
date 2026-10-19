@@ -18,8 +18,8 @@ DICE_FILES = {
 MODEL_ORDER = ["SP", "DP"]
 
 MODEL_PALETTE = {
-    "SP": "#C44E52",
-    "DP": "#8172B2",
+    "SP": "#B279A2",
+    "DP": "#E45756",
 }
 
 
@@ -370,8 +370,8 @@ print(
 
 METRIC_LABELS = {
     "dice": "Dice",
-    "precision": "Voxel-level Precision",
-    "recall": "Voxel-level Recall",
+    "precision": "Precision",
+    "recall": "Sensitivity",
 }
 
 for metric, metric_label in METRIC_LABELS.items():

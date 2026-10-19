@@ -1,0 +1,2 @@
+dataset,case_id,seg_available,tumour_present,n_lesions,total_tumour_volume_ml,mean_lesion_volume_ml,median_lesion_volume_ml,has_ART,has_PV,ART_zero_filled,PV_zero_filled,ART_n_slices,ART_spacing_x_mm,ART_spacing_y_mm,ART_spacing_z_mm,ART_tumour_mean_hu,PV_n_slices,PV_spacing_x_mm,PV_spacing_y_mm,PV_spacing_z_mm,PV_tumour_mean_hu,phase_pattern
+WAW_TACE,WAW_TACE_1002,True,True,2,22.139024,11.069512,11.069512,True,True,False,False,205,0.767578,0.767578,1.250000,74.965503,205,0.767578,0.767578,1.250000,82.819467,ART+PV

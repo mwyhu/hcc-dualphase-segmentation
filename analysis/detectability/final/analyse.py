@@ -17,20 +17,31 @@ BASE_DIR = Path(
 MODELS = ["TSLL", "TSLT", "AN", "SP", "DP", "COALA"]
 DATASETS = ["HCC", "WORC", "TCIA", "LiTS", "CAIRO5"]
 
-REPORT_THRESHOLD = 0.2
+PLOT_MODELS = ["TSLL", "TSLT", "COALA", "AN", "SP", "DP"]
+PLOT_DATASETS = ["HCC", "LiTS", "TCIA", "WORC", "CAIRO5"]
+CRLM_DATASETS = ["TCIA", "WORC", "CAIRO5"]
 
-# MODEL_PALETTE = dict(
-#     zip(MODELS, sns.color_palette("Set2", len(MODELS)))
-# )
+MODEL_LABELS = {
+    "TSLL": "TSLL",
+    "TSLT": "TSLT",
+    "COALA": "COALA",
+    "AN": "AtlasNet",
+    "SP": "SP",
+    "DP": "DP",
+}
 
-MODEL_PALETTE = [
-    "#4C78A8",
-    "#F58518",
-    "#54A24B",
-    "#B279A2",
-    "#E45756",
-    "#72B7B2",
-]
+MODEL_PALETTE = {
+    "TSLL": "#4C78A8",
+    "TSLT": "#F58518",
+    "COALA": "#72B7B2",
+    "AN": "#54A24B",
+    "SP": "#B279A2",
+    "DP": "#E45756",
+}
+
+REPORT_THRESHOLD = 0.20
+
+PLOT_DIR = BASE_DIR / "plots"
 
 sns.set_theme(style="whitegrid")
 
@@ -58,25 +69,36 @@ def load_results():
         for model in MODELS:
             filepath = BASE_DIR / f"Detect_{model}_{dataset}.csv"
 
-            if not filepath.exists():
+            if not filepath.is_file():
                 missing_files.append(str(filepath))
                 continue
 
             df = pd.read_csv(filepath)
 
-            missing_columns = required_columns.difference(df.columns)
+            missing_columns = required_columns.difference(
+                df.columns
+            )
+
             if missing_columns:
                 raise ValueError(
                     f"{filepath.name}: missing columns "
                     f"{sorted(missing_columns)}"
                 )
 
-            for column in ["detectability", "precision", "iou_threshold"]:
-                df[column] = pd.to_numeric(df[column], errors="raise")
+            for column in [
+                "detectability",
+                "precision",
+                "iou_threshold",
+            ]:
+                df[column] = pd.to_numeric(
+                    df[column],
+                    errors="raise",
+                )
 
             if df[["case", "iou_threshold"]].isna().any().any():
                 raise ValueError(
-                    f"{filepath.name}: missing case IDs or IoU thresholds."
+                    f"{filepath.name}: missing case IDs "
+                    "or IoU thresholds."
                 )
 
             for metric in ["detectability", "precision"]:
@@ -88,7 +110,8 @@ def load_results():
                     )
 
             duplicates = df.duplicated(
-                subset=["case", "iou_threshold"], keep=False
+                subset=["case", "iou_threshold"],
+                keep=False,
             )
             if duplicates.any():
                 raise ValueError(
@@ -102,19 +125,23 @@ def load_results():
 
     if missing_files:
         raise FileNotFoundError(
-            "Missing expected CSV files:\n" + "\n".join(missing_files)
+            "Missing expected CSV files:\n"
+            + "\n".join(missing_files)
         )
 
     df_all = pd.concat(frames, ignore_index=True)
 
     df_all["model"] = pd.Categorical(
-        df_all["model"], categories=MODELS, ordered=True
+        df_all["model"],
+        categories=MODELS,
+        ordered=True,
     )
     df_all["dataset"] = pd.Categorical(
-        df_all["dataset"], categories=DATASETS, ordered=True
+        df_all["dataset"],
+        categories=DATASETS,
+        ordered=True,
     )
 
-    # Unique cases
     df_all["case_key"] = (
         df_all["dataset"].astype(str)
         + "::"
@@ -125,15 +152,11 @@ def load_results():
 
 
 # -------------------------------------------------------------------
-# Summaries
+# Summaries: original calculations
 # -------------------------------------------------------------------
 def create_summary(df, group_columns):
     """
-    Summarize per-case scores; each scan has equal weight.
-
-    SD is the sample standard deviation (ddof=1).
-    Q1 and Q3 are the 25th and 75th percentiles.
-    Missing values are excluded separately for each metric.
+    Summarise per-case scores; each scan has equal weight.
     """
     return (
         df.groupby(group_columns, observed=True)
@@ -146,10 +169,12 @@ def create_summary(df, group_columns):
             std_case_detectability=("detectability", "std"),
             median_case_detectability=("detectability", "median"),
             q1_case_detectability=(
-                "detectability", lambda x: x.quantile(0.25)
+                "detectability",
+                lambda x: x.quantile(0.25),
             ),
             q3_case_detectability=(
-                "detectability", lambda x: x.quantile(0.75)
+                "detectability",
+                lambda x: x.quantile(0.75),
             ),
 
             mean_case_precision=("precision", "mean"),
@@ -164,14 +189,20 @@ def create_summary(df, group_columns):
 
 
 def print_dataset_model_tables(dataset_summary, threshold):
-    """Print dataset × model tables at the reporting threshold."""
+    """
+    Print dataset X model tables at the reporting threshold
+    """
 
     def as_table(series):
-        return (
+        table = (
             series.unstack("model")
-            .reindex(index=DATASETS, columns=MODELS)
+            .reindex(
+                index=PLOT_DATASETS,
+                columns=PLOT_MODELS,
+            )
             .fillna("—")
         )
+        return table.rename(columns=MODEL_LABELS)
 
     def format_mean_sd(row):
         mean = row["mean_case_detectability"]
@@ -197,13 +228,20 @@ def print_dataset_model_tables(dataset_summary, threshold):
     )
 
     median_iqr_table = as_table(
-        dataset_summary.apply(format_median_quartiles, axis=1)
+        dataset_summary.apply(
+            format_median_quartiles,
+            axis=1,
+        )
     )
 
     precision_table = (
         dataset_summary["mean_case_precision"]
         .unstack("model")
-        .reindex(index=DATASETS, columns=MODELS)
+        .reindex(
+            index=PLOT_DATASETS,
+            columns=PLOT_MODELS,
+        )
+        .rename(columns=MODEL_LABELS)
     )
 
     print(
@@ -219,68 +257,331 @@ def print_dataset_model_tables(dataset_summary, threshold):
     print(median_iqr_table.to_string())
 
     print(
-        f"\n--- Mean per-case precision "
+        f"\n--- Mean per-case lesion-level precision "
         f"at IoU ≥ {threshold:.2f} ---"
     )
     print(precision_table.round(4).to_string())
 
 # -------------------------------------------------------------------
-# Plots: per-case distributions at the reporting threshold
+# Detectability plots
 # -------------------------------------------------------------------
-def plot_metric_by_dataset(df_report, metric, ylabel, threshold):
-    """
-    Show each model's per-case score distribution per dataset.
-
-    Boxes: median and 25th–75th percentiles.
-    Whiskers: up to 1.5 × IQR.
-    Points: individual scans, including outliers.
-    """
-    n_columns = 2
-    n_rows = (len(DATASETS) + n_columns - 1) // n_columns
-
-    fig, axes = plt.subplots(
-        n_rows,
-        n_columns,
-        figsize=(14, 5 * n_rows),
-        sharey=True,
-        squeeze=False,
-    )
-
+def draw_detectability_panel(
+    ax,
+    df_report,
+    datasets,
+    title,
+    equal_dataset_weighting=False,
+):
     rng = np.random.default_rng(42)
 
-    for ax, dataset in zip(axes.flat, DATASETS):
+    if equal_dataset_weighting:
+        boxes = []
+
+        for model in PLOT_MODELS:
+            parts = [
+                df_report.loc[
+                    (df_report["dataset"] == dataset)
+                    & (df_report["model"] == model),
+                    "detectability",
+                ].dropna().to_numpy(dtype=float)
+                for dataset in datasets
+            ]
+
+            if any(len(a) == 0 for a in parts):
+                raise ValueError(
+                    f"Missing detectability scores for "
+                    f"{model} in {datasets}"
+                )
+
+            values = np.concatenate(parts)
+
+            # Each dataset receives the same total weight.
+            weights = np.concatenate([
+                np.full(
+                    len(a),
+                    1 / (len(datasets) * len(a)),
+                )
+                for a in parts
+            ])
+
+            order = np.argsort(values)
+            sorted_values = values[order]
+
+            cumulative = np.cumsum(weights[order])
+            cumulative /= cumulative[-1]
+
+            indices = np.searchsorted(
+                cumulative,
+                [0.25, 0.50, 0.75],
+                side="left",
+            )
+
+            q1, median, q3 = sorted_values[indices]
+            iqr = q3 - q1
+
+            boxes.append({
+                "q1": float(q1),
+                "med": float(median),
+                "q3": float(q3),
+                "whislo": float(
+                    values[values >= q1 - 1.5 * iqr].min()
+                ),
+                "whishi": float(
+                    values[values <= q3 + 1.5 * iqr].max()
+                ),
+                "fliers": [],
+            })
+
+        artists = ax.bxp(
+            boxes,
+            positions=np.arange(len(PLOT_MODELS)),
+            widths=0.6,
+            patch_artist=True,
+            showfliers=False,
+            medianprops={
+                "color": "#222222",
+                "linewidth": 1.5,
+            },
+        )
+
+        for box, model in zip(
+            artists["boxes"],
+            PLOT_MODELS,
+        ):
+            box.set_facecolor(MODEL_PALETTE[model])
+
+    else:
         subset = df_report.loc[
-            df_report["dataset"] == dataset
-        ].dropna(subset=[metric])
+            df_report["dataset"].isin(datasets)
+        ].dropna(subset=["detectability"])
 
         sns.boxplot(
             data=subset,
             x="model",
-            y=metric,
-            order=MODELS,
+            y="detectability",
+            order=PLOT_MODELS,
             hue="model",
-            hue_order=MODELS,
+            hue_order=PLOT_MODELS,
             palette=MODEL_PALETTE,
             dodge=False,
-            legend=False,
             width=0.6,
             showfliers=False,
             ax=ax,
         )
 
-        # Draw all scan scores with horizontal jitter
-        for position, model in enumerate(MODELS):
-            scores = subset.loc[
-                subset["model"] == model, metric
-            ].to_numpy()
+        legend = ax.get_legend()
+        if legend is not None:
+            legend.remove()
 
-            x_positions = position + rng.uniform(
-                -0.2, 0.2, size=len(scores)
-            )
+    # Individual cases, including outliers.
+    subset = df_report.loc[
+        df_report["dataset"].isin(datasets)
+    ].dropna(subset=["detectability"])
+
+    for position, model in enumerate(PLOT_MODELS):
+        values = subset.loc[
+            subset["model"] == model,
+            "detectability",
+        ].to_numpy(dtype=float)
+
+        ax.scatter(
+            position + rng.uniform(
+                -0.2,
+                0.2,
+                size=len(values),
+            ),
+            values,
+            color="black",
+            alpha=0.25,
+            s=8,
+            linewidths=0,
+            zorder=3,
+        )
+
+    ax.set_xticks(range(len(PLOT_MODELS)))
+    ax.set_xticklabels(
+        [MODEL_LABELS[model] for model in PLOT_MODELS],
+        rotation=30,
+        ha="right",
+    )
+
+    ax.set_title(title)
+    ax.set_xlabel("")
+    ax.set_ylabel("")
+    ax.set_ylim(-0.03, 1.03)
+    ax.grid(axis="x", visible=False)
+
+
+def finish_detectability_figure(fig, filename):
+    PLOT_DIR.mkdir(parents=True, exist_ok=True)
+
+    path = PLOT_DIR / filename
+
+    fig.savefig(
+        path,
+        dpi=300,
+        bbox_inches="tight",
+        facecolor="white",
+    )
+
+    print(f"Saved: {path}")
+    plt.show()
+    plt.close(fig)
+
+
+def plot_case_distributions(df_report, threshold):
+    threshold_token = f"{threshold:.2f}".replace(".", "p")
+
+    for dataset in PLOT_DATASETS:
+        fig, ax = plt.subplots(figsize=(8, 5))
+
+        draw_detectability_panel(
+            ax,
+            df_report,
+            datasets=[dataset],
+            title=(
+                f"{dataset}: detectability "
+                f"at IoU ≥ {threshold:.2f}"
+            ),
+        )
+
+        ax.set_ylabel("Detectability")
+        fig.tight_layout()
+
+        finish_detectability_figure(
+            fig,
+            f"{dataset}_detectability_IoU_{threshold_token}.png",
+        )
+
+    # All 5 external datasets in one figure
+    fig, axes = plt.subplots(
+        1,
+        5,
+        figsize=(23, 5),
+        sharey=True,
+    )
+
+    for ax, dataset in zip(axes, PLOT_DATASETS):
+        draw_detectability_panel(
+            ax,
+            df_report,
+            datasets=[dataset],
+            title=dataset,
+        )
+
+    axes[0].set_ylabel("Detectability")
+
+    fig.suptitle(
+        f"Detectability at IoU ≥ {threshold:.2f}",
+        fontsize=16,
+    )
+
+    fig.tight_layout(rect=[0, 0, 1, 0.94])
+
+    finish_detectability_figure(
+        fig,
+        f"all_datasets_detectability_IoU_{threshold_token}.png",
+    )
+
+    # HCC, LiTS, and combined CRLM in one figure
+    fig, axes = plt.subplots(
+        1,
+        3,
+        figsize=(16, 5.5),
+        sharey=True,
+    )
+
+    draw_detectability_panel(
+        axes[0],
+        df_report,
+        datasets=["HCC"],
+        title="HCC",
+    )
+
+    draw_detectability_panel(
+        axes[1],
+        df_report,
+        datasets=["LiTS"],
+        title="LiTS: mixed tumours",
+    )
+
+    draw_detectability_panel(
+        axes[2],
+        df_report,
+        datasets=CRLM_DATASETS,
+        title="CRLM: TCIA, WORC and CAIRO5",
+        equal_dataset_weighting=True,
+    )
+
+    axes[0].set_ylabel("Detectability")
+
+    fig.suptitle(
+        f"Detectability by tumour group "
+        f"at IoU ≥ {threshold:.2f}",
+        fontsize=16,
+    )
+
+    fig.text(
+        0.5,
+        0.02,
+        "CRLM boxes give TCIA, WORC and CAIRO5 equal weight. "
+        "Dots show individual cases; their density reflects sample size.",
+        ha="center",
+        fontsize=9,
+    )
+
+    fig.tight_layout(rect=[0, 0.08, 1, 0.94])
+
+    finish_detectability_figure(
+        fig,
+        f"HCC_LiTS_CRLM_detectability_IoU_{threshold_token}.png",
+    )
+
+
+def plot_lesion_precision(df_report, threshold):
+    fig, axes = plt.subplots(
+        1,
+        len(PLOT_DATASETS),
+        figsize=(23, 5),
+        sharey=True,
+    )
+
+    rng = np.random.default_rng(42)
+
+    for ax, dataset in zip(axes, PLOT_DATASETS):
+        subset = df_report.loc[
+            df_report["dataset"] == dataset
+        ].dropna(subset=["precision"])
+
+        sns.boxplot(
+            data=subset,
+            x="model",
+            y="precision",
+            order=PLOT_MODELS,
+            hue="model",
+            hue_order=PLOT_MODELS,
+            palette=MODEL_PALETTE,
+            dodge=False,
+            width=0.6,
+            showfliers=False,
+            ax=ax,
+        )
+
+        legend = ax.get_legend()
+        if legend is not None:
+            legend.remove()
+
+        for position, model in enumerate(PLOT_MODELS):
+            values = subset.loc[
+                subset["model"] == model,
+                "precision",
+            ].to_numpy(dtype=float)
 
             ax.scatter(
-                x_positions,
-                scores,
+                position + rng.uniform(
+                    -0.2, 0.2, size=len(values)
+                ),
+                values,
                 color="black",
                 alpha=0.25,
                 s=8,
@@ -288,36 +589,93 @@ def plot_metric_by_dataset(df_report, metric, ylabel, threshold):
                 zorder=3,
             )
 
+        ax.set_xticks(range(len(PLOT_MODELS)))
+        ax.set_xticklabels(
+            [MODEL_LABELS[model] for model in PLOT_MODELS],
+            rotation=30,
+            ha="right",
+        )
+
         ax.set_title(dataset)
         ax.set_xlabel("")
-        ax.set_ylabel(ylabel)
+        ax.set_ylabel("")
         ax.set_ylim(-0.03, 1.03)
         ax.grid(axis="x", visible=False)
 
-    for ax in list(axes.flat)[len(DATASETS):]:
-        ax.set_visible(False)
+    axes[0].set_ylabel("Lesion-level precision")
 
     fig.suptitle(
-        f"Per-case {ylabel.lower()} at IoU ≥ {threshold:.2f}",
-        fontsize=15,
+        f"Lesion-level precision at IoU ≥ {threshold:.2f}",
+        fontsize=16,
     )
-    fig.tight_layout(rect=[0, 0, 1, 0.96])
-    plt.show()
+    fig.tight_layout(rect=[0, 0, 1, 0.94])
 
+    threshold_token = f"{threshold:.2f}".replace(".", "p")
 
-def plot_case_distributions(df_report, threshold):
-    plot_metric_by_dataset(
-        df_report,
-        metric="detectability",
-        ylabel="Detectability",
-        threshold=threshold,
+    finish_detectability_figure(
+        fig,
+        f"all_datasets_lesion_precision_IoU_{threshold_token}.png",
     )
 
-    plot_metric_by_dataset(
-        df_report,
-        metric="precision",
-        ylabel="Precision",
-        threshold=threshold,
+
+def plot_lesion_precision_by_tumour_group(df_report, threshold):
+    precision_df = df_report.drop(
+        columns=["detectability"]
+    ).rename(columns={"precision": "detectability"})
+
+    fig, axes = plt.subplots(
+        1,
+        3,
+        figsize=(16, 5.5),
+        sharey=True,
+    )
+
+    draw_detectability_panel(
+        axes[0],
+        precision_df,
+        datasets=["HCC"],
+        title="HCC",
+    )
+
+    draw_detectability_panel(
+        axes[1],
+        precision_df,
+        datasets=["LiTS"],
+        title="LiTS: mixed tumours",
+    )
+
+    draw_detectability_panel(
+        axes[2],
+        precision_df,
+        datasets=CRLM_DATASETS,
+        title="CRLM: TCIA, WORC and CAIRO5",
+        equal_dataset_weighting=True,
+    )
+
+    axes[0].set_ylabel("Lesion-level precision")
+
+    fig.suptitle(
+        f"Lesion-level precision by tumour group "
+        f"at IoU ≥ {threshold:.2f}",
+        fontsize=16,
+    )
+
+    fig.text(
+        0.5,
+        0.02,
+        "CRLM boxes give TCIA, WORC and CAIRO5 equal weight. "
+        "Dots show individual cases; their density reflects sample size.",
+        ha="center",
+        fontsize=9,
+    )
+
+    fig.tight_layout(rect=[0, 0.08, 1, 0.94])
+
+    threshold_token = f"{threshold:.2f}".replace(".", "p")
+
+    finish_detectability_figure(
+        fig,
+        f"HCC_LiTS_CRLM_lesion_precision_IoU_{threshold_token}.png",
     )
 
 
@@ -327,28 +685,37 @@ def plot_case_distributions(df_report, threshold):
 def main():
     df_all = load_results()
 
-    # Overall results across all datasets and thresholds
     model_threshold_summary = create_summary(
-        df_all, ["model", "iou_threshold"]
+        df_all,
+        ["model", "iou_threshold"],
     )
 
-    print("\n--- Overall summary by model and IoU threshold ---")
+    print(
+        "\n--- Overall pooled summary "
+        "by model and IoU threshold ---"
+    )
     print(model_threshold_summary.round(4))
 
-    # Separate results for each dataset and threshold
     dataset_model_threshold_summary = create_summary(
-        df_all, ["dataset", "model", "iou_threshold"]
+        df_all,
+        ["dataset", "model", "iou_threshold"],
     )
 
-    print("\n--- Summary by dataset, model and IoU threshold ---")
+    print(
+        "\n--- Summary by dataset, model "
+        "and IoU threshold ---"
+    )
     print(dataset_model_threshold_summary.round(4))
 
-    # Select the reporting threshold
     df_report = df_all.loc[
-        np.isclose(df_all["iou_threshold"], REPORT_THRESHOLD)
+        np.isclose(
+            df_all["iou_threshold"],
+            REPORT_THRESHOLD,
+            rtol=0,
+            atol=1e-8,
+        )
     ].copy()
 
-    # Verify
     available = set(
         df_report[["dataset", "model"]]
         .astype(str)
@@ -367,30 +734,69 @@ def main():
             f"{sorted(missing)}"
         )
 
-    model_summary_report = create_summary(df_report, ["model"])
+    duplicates = df_report.duplicated(
+        subset=["dataset", "model", "case"],
+        keep=False,
+    )
+
+    if duplicates.any():
+        raise ValueError(
+            "Multiple reporting-threshold rows "
+            "for the same dataset/model/case:\n"
+            + df_report.loc[
+                duplicates,
+                ["dataset", "model", "case", "iou_threshold"],
+            ].to_string(index=False)
+        )
+
+    model_summary_report = create_summary(
+        df_report,
+        ["model"],
+    )
+
     dataset_model_summary_report = create_summary(
-        df_report, ["dataset", "model"]
+        df_report,
+        ["dataset", "model"],
     )
 
     print(
-        f"\n--- Overall model summary at IoU "
-        f"{REPORT_THRESHOLD:.2f} ---"
+        f"\n--- Overall pooled model summary "
+        f"at IoU {REPORT_THRESHOLD:.2f} ---"
     )
     print(model_summary_report.round(4))
 
     print(
-        f"\n--- Dataset-specific summary at IoU "
-        f"{REPORT_THRESHOLD:.2f} ---"
+        f"\n--- Dataset-specific summary "
+        f"at IoU {REPORT_THRESHOLD:.2f} ---"
     )
     print(dataset_model_summary_report.round(4))
 
-    # Tables: datasets as rows, models as columns
     print_dataset_model_tables(
-        dataset_model_summary_report, REPORT_THRESHOLD
+        dataset_model_summary_report,
+        REPORT_THRESHOLD,
     )
 
-    # Boxplots of per-case detectability and precision per dataset
-    plot_case_distributions(df_report, REPORT_THRESHOLD)
+    plot_case_distributions(
+        df_report,
+        REPORT_THRESHOLD,
+    )
+
+    plot_case_distributions(
+        df_report,
+        REPORT_THRESHOLD,
+    )
+
+    plot_lesion_precision(
+        df_report,
+        REPORT_THRESHOLD,
+    )
+
+    plot_lesion_precision_by_tumour_group(
+        df_report,
+        REPORT_THRESHOLD,
+    )
+
+    print(f"\nPlots saved in: {PLOT_DIR}")
 
 
 if __name__ == "__main__":

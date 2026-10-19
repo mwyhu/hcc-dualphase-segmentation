@@ -1,0 +1,5 @@
+scope,datasets_included,metric,n_complete_cases,n_excluded_cases,n_models,friedman_statistic,degrees_of_freedom,friedman_p_value,kendalls_w,holm_adjusted_p_value,significant_after_holm,significance
+CAIRO5,CAIRO5,dice,22,0,6,54.170068027210974,5,1.9337464466385524e-10,0.4924551638837361,7.73498578655421e-10,True,Significant
+CAIRO5,CAIRO5,precision,22,0,6,36.86394557823133,5,6.377630265045606e-07,0.3351267779839212,6.377630265045606e-07,True,Significant
+CAIRO5,CAIRO5,recall,22,0,6,47.748299319727906,5,3.997924064654286e-09,0.4340754483611628,1.1993772193962857e-08,True,Significant
+CAIRO5,CAIRO5,detectability,22,0,6,38.76353790613723,5,2.649825285783084e-07,0.3523957991467021,5.299650571566168e-07,True,Significant

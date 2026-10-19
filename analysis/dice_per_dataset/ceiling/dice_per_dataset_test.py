@@ -10,16 +10,34 @@ import matplotlib.pyplot as plt
 # Paths to nnU-Net evaluation JSON files
 # -------------------------------------------------------------------
 
+BASE_DIR = Path(
+    "/Users/michellehu/Desktop/hcc-dualphase-segmentation/"
+    "analysis"
+)
+
+DICE_DIR = BASE_DIR / "dice_per_dataset" / "ceiling"
+DETECT_DIR = BASE_DIR / "detectability" / "ceiling"
+
 DICE_FILES = {
-    "SP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/internal_testset/SP_summary.json",
-    "DP": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/internal_testset/DP_summary.json",
+    "SP": DICE_DIR / "SP_on_ceiling_testset.json",
+    "SP ceiling": DICE_DIR / "SPCeiling_on_ceiling_testset.json",
+    "DP": DICE_DIR / "DP_on_ceiling_testset.json",
+    "DP ceiling": DICE_DIR / "DPCeiling_on_ceiling_testset.json",
 }
 
-MODEL_ORDER = ["SP", "DP"]
+MODEL_ORDER = ["SP", "SP ceiling", "DP", "DP ceiling"]
 
 MODEL_PALETTE = {
-    "SP": "#C44E52",
-    "DP": "#8172B2",
+    "SP": "#B279A2",
+    "SP ceiling": "#D9B9D0",
+    "DP": "#E45756",
+    "DP ceiling": "#F2AAA9",
+}
+
+METRIC_LABELS = {
+    "dice": "Dice",
+    "precision": "Precision",
+    "recall": "Sensitivity",
 }
 
 
@@ -69,6 +87,19 @@ def extract_summary_average_dice(results, json_path):
 # Formatting helpers
 # -------------------------------------------------------------------
 
+def format_mean_sd(row, metric):
+    """Format the mean and sample standard deviation as mean ± SD."""
+    mean = row[f"mean_{metric}"]
+    sd = row[f"std_{metric}"]
+
+    if pd.isna(mean):
+        return "NaN"
+
+    sd_text = "NaN" if pd.isna(sd) else f"{sd:.4f}"
+
+    return f"{mean:.4f} ± {sd_text}"
+
+
 def format_median_iqr(row, metric):
     """Format median and interquartile interval as median [Q1, Q3]."""
     median = row[f"median_{metric}"]
@@ -82,24 +113,40 @@ def format_median_iqr(row, metric):
 
 
 def format_summary_for_print(summary, metrics):
-    """Format median columns while retaining numeric source tables."""
+    """Display mean ± SD and median [Q1, Q3]; retain numeric source data."""
     formatted = summary.copy()
 
     for metric in metrics:
+        formatted[f"mean_{metric}"] = summary.apply(
+            lambda row: format_mean_sd(row, metric),
+            axis=1,
+        )
+
         formatted[f"median_{metric}"] = summary.apply(
             lambda row: format_median_iqr(row, metric),
             axis=1,
         )
 
         formatted = formatted.drop(
-            columns=[f"q1_{metric}", f"q3_{metric}"]
+            columns=[
+                f"std_{metric}",
+                f"q1_{metric}",
+                f"q3_{metric}",
+            ]
         )
+
+        label = "sensitivity" if metric == "recall" else metric
+
+        formatted = formatted.rename(columns={
+            f"mean_{metric}": f"{label}: Mean ± SD",
+            f"median_{metric}": f"{label}: Median [Q1, Q3]",
+        })
 
     return formatted.round(4)
 
 
 # -------------------------------------------------------------------
-# Read per-case Dice, TP, FP, FN, precision, and recall
+# Read per-case Dice, TP, FP, FN, precision, and sensitivity
 # -------------------------------------------------------------------
 
 def load_dice_results(dice_files):
@@ -130,14 +177,14 @@ def load_dice_results(dice_files):
             fp = metrics["FP"]
             fn = metrics["FN"]
 
-            # Undefined when no positive voxels are predicted
+            # Undefined when no positive voxels are predicted.
             precision = (
                 tp / (tp + fp)
                 if (tp + fp) > 0
                 else float("nan")
             )
 
-            # Undefined when the ground truth contains no tumour voxels
+            # Undefined when the ground truth contains no tumour voxels.
             recall = (
                 tp / (tp + fn)
                 if (tp + fn) > 0
@@ -181,7 +228,7 @@ def load_dice_results(dice_files):
 
 
 # -------------------------------------------------------------------
-# Precision and recall summary helper
+# Precision and sensitivity summary helper
 # -------------------------------------------------------------------
 
 def summarise_precision_recall(df, group_columns):
@@ -219,8 +266,10 @@ def summarise_dice(df, group_columns):
             n_cases=("case", "nunique"),
             n_cases_with_dice=("dice", "count"),
             mean_dice=("dice", "mean"),
-            median_dice=("dice", "median"),
             std_dice=("dice", "std"),
+            median_dice=("dice", "median"),
+            q1_dice=("dice", lambda x: x.quantile(0.25)),
+            q3_dice=("dice", lambda x: x.quantile(0.75)),
         )
     )
 
@@ -248,9 +297,14 @@ def summarise_dice(df, group_columns):
 
 df_dice, summary_file_dice = load_dice_results(DICE_FILES)
 
+print(
+    "\nTable format: mean ± SD and median [Q1, Q3]. "
+    "Undefined values are excluded per metric."
+)
+
 
 # -------------------------------------------------------------------
-# Precision and recall per model
+# Precision and sensitivity per model
 # -------------------------------------------------------------------
 
 overall_precision_recall = summarise_precision_recall(
@@ -259,8 +313,8 @@ overall_precision_recall = summarise_precision_recall(
 )
 
 print(
-    "\n--- Overall Voxel-level Precision and Recall per Model "
-    "(Median [Q1, Q3]) ---"
+    "\n--- Overall Voxel-level Precision and Sensitivity per Model "
+    "(Mean ± SD; Median [Q1, Q3]) ---"
 )
 
 print(
@@ -272,7 +326,7 @@ print(
 
 
 # -------------------------------------------------------------------
-# Precision and recall per dataset and model
+# Precision and sensitivity per dataset and model
 # -------------------------------------------------------------------
 
 dataset_precision_recall = summarise_precision_recall(
@@ -281,8 +335,8 @@ dataset_precision_recall = summarise_precision_recall(
 )
 
 print(
-    "\n--- Voxel-level Precision and Recall per Dataset and Model "
-    "(Median [Q1, Q3]) ---"
+    "\n--- Voxel-level Precision and Sensitivity per Dataset and Model "
+    "(Mean ± SD; Median [Q1, Q3]) ---"
 )
 
 print(
@@ -302,8 +356,17 @@ dice_summary = summarise_dice(
     ["source", "model"],
 )
 
-print("\n--- Dice per Dataset and Model ---")
-print(dice_summary.round(4).to_string())
+print(
+    "\n--- Dice per Dataset and Model "
+    "(Mean ± SD; Median [Q1, Q3]) ---"
+)
+
+print(
+    format_summary_for_print(
+        dice_summary,
+        ["dice"],
+    ).to_string()
+)
 
 
 # -------------------------------------------------------------------
@@ -324,24 +387,36 @@ overall_dice_summary["difference"] = (
     - overall_dice_summary["summary_average_dice"]
 )
 
-print("\n--- Overall Dice per Model ---")
-print(overall_dice_summary.round(4).to_string())
+print(
+    "\n--- Overall Dice per Model "
+    "(Mean ± SD; Median [Q1, Q3]) ---"
+)
+
+print(
+    format_summary_for_print(
+        overall_dice_summary,
+        ["dice"],
+    ).to_string()
+)
 
 print("\n--- Average Dice Stored in nnU-Net Summary Files ---")
 print(summary_file_dice.round(4).to_string())
 
 
 # -------------------------------------------------------------------
-# Overall Dice, precision, and recall comparison
+# Overall Dice, precision, and sensitivity comparison
 # -------------------------------------------------------------------
 
 comparison_table = (
     overall_dice_summary[
         [
             "n_cases",
+            "n_cases_with_dice",
             "mean_dice",
             "std_dice",
             "median_dice",
+            "q1_dice",
+            "q3_dice",
             "ci95_lower",
             "ci95_upper",
         ]
@@ -352,80 +427,71 @@ comparison_table = (
 )
 
 print(
-    "\n--- Dice, Voxel-level Precision and Recall per Model "
-    "(Median Precision/Recall [Q1, Q3]) ---"
+    "\n--- Dice, Voxel-level Precision and Sensitivity per Model "
+    "(Mean ± SD; Median [Q1, Q3]) ---"
 )
 
 print(
     format_summary_for_print(
         comparison_table,
-        ["precision", "recall"],
+        ["dice", "precision", "recall"],
     ).to_string()
 )
 
 
 # -------------------------------------------------------------------
-# Mean tables per dataset and model
+# Mean ± SD and median [Q1, Q3] tables per dataset and model
 # -------------------------------------------------------------------
-
-METRIC_LABELS = {
-    "dice": "Dice",
-    "precision": "Voxel-level Precision",
-    "recall": "Voxel-level Recall",
-}
 
 for metric, metric_label in METRIC_LABELS.items():
-    mean_table = (
+    summary = (
         df_dice
-        .groupby(["source", "model"], observed=True)[metric]
-        .mean()
+        .groupby(["source", "model"], observed=True)
+        .agg(
+            mean=(metric, "mean"),
+            sd=(metric, "std"),
+            median=(metric, "median"),
+            q1=(metric, lambda x: x.quantile(0.25)),
+            q3=(metric, lambda x: x.quantile(0.75)),
+        )
+        .rename(columns={
+            "mean": f"mean_{metric}",
+            "sd": f"std_{metric}",
+            "median": f"median_{metric}",
+            "q1": f"q1_{metric}",
+            "q3": f"q3_{metric}",
+        })
+    )
+
+    mean_table = (
+        summary.apply(
+            lambda row: format_mean_sd(row, metric),
+            axis=1,
+        )
         .unstack("model")
         .reindex(columns=MODEL_ORDER)
-        .round(4)
     )
 
-    print(f"\n--- Mean {metric_label} per Dataset and Model ---")
-    print(mean_table.to_string())
-
-
-# -------------------------------------------------------------------
-# Median Dice per dataset and model
-# -------------------------------------------------------------------
-
-median_dice_table = (
-    df_dice
-    .groupby(["source", "model"], observed=True)["dice"]
-    .median()
-    .unstack("model")
-    .reindex(columns=MODEL_ORDER)
-    .round(4)
-)
-
-print("\n--- Median Dice per Dataset and Model ---")
-print(median_dice_table.to_string())
-
-
-# -------------------------------------------------------------------
-# Median precision and recall per dataset with IQR [Q1, Q3]
-# -------------------------------------------------------------------
-
-for metric in ["precision", "recall"]:
-    formatted_medians = dataset_precision_recall.apply(
-        lambda row: format_median_iqr(row, metric),
-        axis=1,
-    )
-
-    median_iqr_table = (
-        formatted_medians
+    median_table = (
+        summary.apply(
+            lambda row: format_median_iqr(row, metric),
+            axis=1,
+        )
         .unstack("model")
         .reindex(columns=MODEL_ORDER)
     )
 
     print(
-        f"\n--- Median Voxel-level {metric.title()} "
-        "per Dataset and Model [Q1, Q3] ---"
+        f"\n--- Mean {metric_label} per Dataset and Model "
+        "(Mean ± SD) ---"
     )
-    print(median_iqr_table.to_string())
+    print(mean_table.to_string())
+
+    print(
+        f"\n--- Median {metric_label} per Dataset and Model "
+        "(Median [Q1, Q3]) ---"
+    )
+    print(median_table.to_string())
 
 
 # -------------------------------------------------------------------
@@ -436,7 +502,7 @@ sns.set_theme(style="whitegrid")
 
 
 # -------------------------------------------------------------------
-# Per-case Dice, precision, and recall distributions per dataset
+# Per-case Dice, precision, and sensitivity distributions per dataset
 # -------------------------------------------------------------------
 
 for metric, metric_label in METRIC_LABELS.items():

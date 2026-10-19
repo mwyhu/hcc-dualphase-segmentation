@@ -1,0 +1,639 @@
+from pathlib import Path
+import json
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import seaborn as sns
+
+
+# -------------------------------------------------------------------
+# Settings
+# -------------------------------------------------------------------
+
+BASE_DIR = Path(
+    "/Users/michellehu/Desktop/hcc-dualphase-segmentation/"
+    "analysis"
+)
+
+DICE_FILES = {
+    model: BASE_DIR
+    / "dice_per_dataset"
+    / "internal_testset"
+    / f"{model}_summary.json"
+    for model in ["SP", "DP"]
+}
+
+DETECT_FILES = {
+    model: BASE_DIR
+    / "detectability"
+    / "internal_testset"
+    / f"Detect_{model}_internal.csv"
+    for model in ["SP", "DP"]
+}
+
+MODEL_ORDER = ["SP", "DP"]
+
+MODEL_PALETTE = {
+    "SP": "#B279A2",
+    "DP": "#E45756",
+}
+
+METRICS = {
+    "dice": "Dice",
+    "precision": "Precision",
+    "recall": "Sensitivity",
+    "detectability": "Detectability",
+}
+
+REPORT_THRESHOLD = 0.20
+TUMOUR_LABEL = "1"
+
+PLOT_DIR = Path(
+    "/Users/michellehu/Desktop/hcc-dualphase-segmentation/"
+    "benchmark/SP_vs_DP/plots"
+)
+
+sns.set_theme(style="whitegrid")
+
+
+
+def case_id(value):
+    name = str(value).replace("\\", "/").rsplit("/", 1)[-1]
+    return name.removesuffix(".nii.gz").removesuffix(".nii")
+
+
+def validate_scores(df, metrics):
+    for metric in metrics:
+        df[metric] = pd.to_numeric(
+            df[metric],
+            errors="raise",
+        )
+
+        values = df[metric].dropna()
+
+        if not values.between(0, 1).all():
+            raise ValueError(
+                f"{metric}: scores must be between 0 and 1"
+            )
+
+    if df.duplicated(["model", "case"]).any():
+        raise ValueError("Duplicate model/case scores found")
+
+    return df
+
+
+# -------------------------------------------------------------------
+# Load Dice, voxel precision and voxel recall
+# -------------------------------------------------------------------
+
+def load_voxel_results():
+    rows = []
+
+    for model, path in DICE_FILES.items():
+        with path.open(encoding="utf-8") as handle:
+            results = json.load(handle)
+
+        for entry in results["metric_per_case"]:
+            filename = (
+                entry.get("reference_file")
+                or entry.get("prediction_file")
+            )
+
+            if not filename:
+                raise ValueError(
+                    f"Missing case filename in {path}"
+                )
+
+            metrics = entry["metrics"][TUMOUR_LABEL]
+
+            tp = float(metrics["TP"])
+            fp = float(metrics["FP"])
+            fn = float(metrics["FN"])
+
+            counts = np.array([tp, fp, fn])
+
+            if (
+                not np.isfinite(counts).all()
+                or (counts < 0).any()
+            ):
+                raise ValueError(
+                    f"Invalid TP/FP/FN for {filename}"
+                )
+
+            rows.append({
+                "model": model,
+                "case": case_id(filename),
+                "dice": metrics["Dice"],
+                "precision": (
+                    tp / (tp + fp)
+                    if tp + fp > 0
+                    else np.nan
+                ),
+                "recall": (
+                    tp / (tp + fn)
+                    if tp + fn > 0
+                    else np.nan
+                ),
+            })
+
+    return validate_scores(
+        pd.DataFrame(rows),
+        ["dice", "precision", "recall"],
+    )
+
+
+# -------------------------------------------------------------------
+# Load lesion detectability
+# -------------------------------------------------------------------
+
+def load_detectability_results():
+    frames = []
+
+    for model, path in DETECT_FILES.items():
+        df = pd.read_csv(path)
+
+        required = {
+            "case",
+            "detectability",
+            "iou_threshold",
+        }
+
+        missing = required - set(df.columns)
+
+        if missing:
+            raise ValueError(
+                f"{path.name}: missing columns {sorted(missing)}"
+            )
+
+        df["iou_threshold"] = pd.to_numeric(
+            df["iou_threshold"],
+            errors="raise",
+        )
+
+        df = df.loc[
+            np.isclose(
+                df["iou_threshold"],
+                REPORT_THRESHOLD,
+                rtol=0,
+                atol=1e-8,
+            )
+        ].copy()
+
+        if df.empty:
+            raise ValueError(
+                f"{path.name}: no rows at IoU "
+                f"{REPORT_THRESHOLD:.2f}"
+            )
+
+        if df["case"].isna().any():
+            raise ValueError(
+                f"{path.name}: missing case IDs"
+            )
+
+        df["case"] = df["case"].map(case_id)
+        df["model"] = model
+
+        # CSV precision is lesion-level precision.
+        # Precision uses voxel precision.
+        frames.append(
+            df[["model", "case", "detectability"]]
+        )
+
+    return validate_scores(
+        pd.concat(frames, ignore_index=True),
+        ["detectability"],
+    )
+
+
+# -------------------------------------------------------------------
+# Combine sources
+# -------------------------------------------------------------------
+
+def load_combined_results():
+    voxel_df = load_voxel_results()
+    detect_df = load_detectability_results()
+
+    for model in MODEL_ORDER:
+        voxel_cases = set(
+            voxel_df.loc[voxel_df["model"] == model, "case"]
+        )
+        detect_cases = set(
+            detect_df.loc[detect_df["model"] == model, "case"]
+        )
+
+        if voxel_cases != detect_cases:
+            raise ValueError(
+                f"{model}: JSON and detectability case IDs "
+                "do not match.\n"
+                f"Only JSON: {sorted(voxel_cases - detect_cases)[:10]}\n"
+                f"Only CSV: {sorted(detect_cases - voxel_cases)[:10]}"
+            )
+
+    return voxel_df.merge(
+        detect_df,
+        on=["model", "case"],
+        how="inner",
+        validate="one_to_one",
+    )
+
+
+# -------------------------------------------------------------------
+# Plot all four metrics in one figure
+# -------------------------------------------------------------------
+
+def plot_combined_metrics(df):
+    fig, axes = plt.subplots(
+        1,
+        4,
+        figsize=(15, 5),
+        sharey=True,
+    )
+
+    rng = np.random.default_rng(42)
+
+    for ax, (metric, label) in zip(axes, METRICS.items()):
+        subset = df.dropna(subset=[metric])
+
+        sns.boxplot(
+            data=subset,
+            x="model",
+            y=metric,
+            order=MODEL_ORDER,
+            hue="model",
+            hue_order=MODEL_ORDER,
+            palette=MODEL_PALETTE,
+            dodge=False,
+            width=0.55,
+            showfliers=False,
+            ax=ax,
+        )
+
+        legend = ax.get_legend()
+        if legend is not None:
+            legend.remove()
+
+        for position, model in enumerate(MODEL_ORDER):
+            values = subset.loc[
+                subset["model"] == model,
+                metric,
+            ].to_numpy(dtype=float)
+
+            ax.scatter(
+                position + rng.uniform(
+                    -0.16,
+                    0.16,
+                    size=len(values),
+                ),
+                values,
+                color="black",
+                alpha=0.25,
+                s=9,
+                linewidths=0,
+                zorder=3,
+            )
+
+        ax.set_title(label, fontsize=12)
+        ax.set_xlabel("")
+        ax.set_ylabel("")
+        ax.set_ylim(-0.03, 1.03)
+        ax.grid(axis="x", visible=False)
+
+    axes[0].set_ylabel("Per-case score")
+
+    fig.suptitle(
+        "Internal test set: Single-Phase versus Dual-Phase",
+        fontsize=16,
+    )
+
+    fig.text(
+        0.5,
+        0.02,
+        "Voxel level: Dice, Precision, Sensitivity.\n"
+        f"Lesion level: Detectability (IoU ≥ {REPORT_THRESHOLD:.2f}).",
+        ha="center",
+        fontsize=9,
+    )
+
+    fig.tight_layout(rect=[0, 0.07, 1, 0.94])
+
+    PLOT_DIR.mkdir(parents=True, exist_ok=True)
+
+    path = PLOT_DIR / "SP_DP_dice_detectability_precision_recall.png"
+
+    fig.savefig(
+        path,
+        dpi=300,
+        bbox_inches="tight",
+        facecolor="white",
+    )
+
+    print(f"Saved: {path}")
+
+    plt.show()
+    plt.close(fig)
+
+
+def print_metric_table(df):
+    rows = []
+
+    for metric, label in METRICS.items():
+        for model in MODEL_ORDER:
+            values = df.loc[
+                df["model"] == model,
+                metric,
+            ].dropna()
+
+            if values.empty:
+                mean_sd = "NA"
+                median_iqr = "NA"
+            else:
+                mean = values.mean()
+                sd = values.std(ddof=1)
+                median = values.median()
+                q1 = values.quantile(0.25)
+                q3 = values.quantile(0.75)
+
+                mean_sd = (
+                    f"{mean:.4f} ± {sd:.4f}"
+                    if len(values) > 1
+                    else f"{mean:.4f} ± NA"
+                )
+                median_iqr = (
+                    f"{median:.4f} [{q1:.4f}, {q3:.4f}]"
+                )
+
+            rows.append({
+                "Metric": label,
+                "Model": model,
+                "N": len(values),
+                "Mean ± SD": mean_sd,
+                "Median [Q1, Q3]": median_iqr,
+            })
+
+    table = pd.DataFrame(rows)
+
+    print("\n--- Internal test set: SP versus DP ---")
+    print(
+        f"Detectability: IoU ≥ {REPORT_THRESHOLD:.2f}. "
+        "Undefined scores are excluded per metric."
+    )
+    print(table.to_string(index=False))
+
+
+
+def get_dataset(case_name):
+    dataset_prefixes = {
+        "WAW_TACE": "WAW-TACE",
+        "WAW": "WAW-TACE",
+        "MSD": "MSD-Hepatic Vessels",
+        "MCT_LTDiag": "MCT-LTDiag",
+        "MCT": "MCT-LTDiag",
+        "Liver_Lesions": "Liver Lesions",
+        "Liver": "Liver Lesions",
+    }
+
+    # Check longer prefixes first
+    for prefix in sorted(
+        dataset_prefixes,
+        key=len,
+        reverse=True,
+    ):
+        if (
+            case_name == prefix
+            or case_name.startswith(prefix + "_")
+        ):
+            return dataset_prefixes[prefix]
+
+    # Keep unrecognised prefixes visible.
+    return case_name.split("_")[0]
+
+
+def get_dataset_order(df):
+    preferred = [
+        "WAW-TACE",
+        "MSD-Hepatic Vessels",
+        "MCT-LTDiag",
+        "Liver Lesions",
+    ]
+
+    available = set(df["source"])
+
+    return (
+        [dataset for dataset in preferred if dataset in available]
+        + sorted(available - set(preferred))
+    )
+
+
+def print_dataset_metric_tables(df):
+    rows = []
+
+    for dataset in get_dataset_order(df):
+        for metric, label in METRICS.items():
+            for model in MODEL_ORDER:
+                values = df.loc[
+                    (df["source"] == dataset)
+                    & (df["model"] == model),
+                    metric,
+                ].dropna()
+
+                if values.empty:
+                    mean_sd = "NA"
+                    median_iqr = "NA"
+                    iqr = "NA"
+                else:
+                    mean = values.mean()
+                    sd = values.std(ddof=1)
+                    median = values.median()
+                    q1 = values.quantile(0.25)
+                    q3 = values.quantile(0.75)
+
+                    mean_sd = (
+                        f"{mean:.4f} ± {sd:.4f}"
+                        if len(values) > 1
+                        else f"{mean:.4f} ± NA"
+                    )
+
+                    median_iqr = (
+                        f"{median:.4f} "
+                        f"[{q1:.4f}, {q3:.4f}]"
+                    )
+
+                    iqr = f"{q3 - q1:.4f}"
+
+                rows.append({
+                    "Dataset": dataset,
+                    "Metric": label,
+                    "Model": model,
+                    "N": len(values),
+                    "Mean ± SD": mean_sd,
+                    "Median [Q1, Q3]": median_iqr,
+                    "IQR": iqr,
+                })
+
+    table = pd.DataFrame(rows)
+
+    print(
+        "\n--- Internal test set: metrics per dataset and model ---"
+    )
+    print(
+        f"Detectability: IoU ≥ {REPORT_THRESHOLD:.2f}. "
+        "Undefined scores are excluded per metric."
+    )
+
+    for metric, label in METRICS.items():
+        metric_table = table.loc[
+            table["Metric"] == label
+        ].drop(columns="Metric")
+
+        print(f"\n--- {label} ---")
+        print(metric_table.to_string(index=False))
+
+    PLOT_DIR.mkdir(parents=True, exist_ok=True)
+
+    table.to_csv(
+        PLOT_DIR / "SP_DP_metrics_per_dataset.csv",
+        index=False,
+    )
+
+
+def plot_metrics_by_dataset(df):
+    dataset_order = get_dataset_order(df)
+
+    fig, axes = plt.subplots(
+        1,
+        4,
+        figsize=(23, 6),
+        sharey=True,
+    )
+
+    rng = np.random.default_rng(42)
+
+    for ax, (metric, label) in zip(axes, METRICS.items()):
+        subset = df.dropna(subset=[metric])
+
+        sns.boxplot(
+            data=subset,
+            x="source",
+            y=metric,
+            order=dataset_order,
+            hue="model",
+            hue_order=MODEL_ORDER,
+            palette=MODEL_PALETTE,
+            width=0.7,
+            showfliers=False,
+            ax=ax,
+        )
+
+        for dataset_position, dataset in enumerate(dataset_order):
+            for model_position, model in enumerate(MODEL_ORDER):
+                values = subset.loc[
+                    (subset["source"] == dataset)
+                    & (subset["model"] == model),
+                    metric,
+                ].to_numpy(dtype=float)
+
+                offset = (
+                    (model_position + 0.5) / len(MODEL_ORDER) - 0.5
+                ) * 0.7
+
+                ax.scatter(
+                    dataset_position
+                    + offset
+                    + rng.uniform(
+                        -0.10,
+                        0.10,
+                        size=len(values),
+                    ),
+                    values,
+                    color="black",
+                    alpha=0.25,
+                    s=9,
+                    linewidths=0,
+                    zorder=3,
+                )
+
+        ax.set_title(label, fontsize=14)
+        ax.set_xlabel("")
+        ax.set_ylabel("")
+        ax.set_ylim(-0.03, 1.03)
+        ax.grid(axis="x", visible=False)
+
+        ax.set_xticks(range(len(dataset_order)))
+        ax.set_xticklabels(
+            dataset_order,
+            rotation=30,
+            ha="right",
+        )
+
+        if ax is axes[0]:
+            handles, labels = ax.get_legend_handles_labels()
+
+        legend = ax.get_legend()
+        if legend is not None:
+            legend.remove()
+
+    axes[0].set_ylabel("Per-case score")
+
+    fig.suptitle(
+        "Internal test set: Single-Phase versus Dual-Phase by source dataset",
+        fontsize=16,
+    )
+
+    fig.legend(
+        handles,
+        labels,
+        title="Model",
+        loc="lower center",
+        bbox_to_anchor=(0.5, 0.065),
+        ncol=len(MODEL_ORDER),
+        frameon=False,
+    )
+
+    fig.text(
+        0.5,
+        0.015,
+        "Voxel level: Dice, Precision, Sensitivity.\n"
+        f"Lesion level: Detectability (IoU ≥ {REPORT_THRESHOLD:.2f}).",
+        ha="center",
+        fontsize=10,
+    )
+
+    fig.tight_layout(rect=[0, 0.17, 1, 0.94])
+
+    PLOT_DIR.mkdir(parents=True, exist_ok=True)
+
+    filename = "SP_DP_all_metrics_by_dataset"
+
+    for extension in ("png", "pdf"):
+        path = PLOT_DIR / f"{filename}.{extension}"
+
+        fig.savefig(
+            path,
+            dpi=300,
+            bbox_inches="tight",
+            facecolor="white",
+        )
+
+        print(f"Saved: {path}")
+
+    plt.show()
+    plt.close(fig)
+
+
+def main():
+    df = load_combined_results()
+
+    df["source"] = df["case"].map(get_dataset)
+
+    # Overall results and existing four-panel figure
+    print_metric_table(df)
+    plot_combined_metrics(df)
+
+    # Per-dataset results for all four metrics
+    print_dataset_metric_tables(df)
+    plot_metrics_by_dataset(df)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,2 @@
+dataset,ct_dir,seg_dir,art_pattern,pv_pattern,seg_pattern,tumour_labels,connectivity,output
+WAW_TACE,/Users/michellehu/Desktop/hcc-dualphase-segmentation/data_characteristics/WAW_TACE/CT,/Users/michellehu/Desktop/hcc-dualphase-segmentation/data_characteristics/WAW_TACE/SEG,{case_id}_0000.nii,{case_id}_0001.nii,{case_id}.nii,[1],26,/Users/michellehu/Desktop/hcc-dualphase-segmentation/data_characteristics/characteristics/WAW-TACE
