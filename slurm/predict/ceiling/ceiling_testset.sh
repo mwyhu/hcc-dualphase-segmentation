@@ -24,6 +24,7 @@ nnUNetv2_predict \
     -i "$INPUT_DIR" \
     -o "$OUTPUT_DIR" \
     -d 3 \
+    -f all \
     -c 3d_fullres \
     -tr nnUNetTrainer \
     -p TSLL_ceiling_plans \
