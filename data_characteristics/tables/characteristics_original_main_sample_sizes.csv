@@ -1,0 +1,21 @@
+dataset,characteristic,metric,n
+WAW-TACE,Lesions per tumour-positive patient,lesions_per_tumour_positive_patient,197.0
+MSD,Lesions per tumour-positive patient,lesions_per_tumour_positive_patient,303.0
+MCT-LTDiag,Lesions per tumour-positive patient,lesions_per_tumour_positive_patient,498.0
+Liver Lesions,Lesions per tumour-positive patient,lesions_per_tumour_positive_patient,815.0
+WAW-TACE,Individual lesion volume (mL),individual_lesion_volume_lesion_weighted,311.0
+MSD,Individual lesion volume (mL),individual_lesion_volume_lesion_weighted,544.0
+MCT-LTDiag,Individual lesion volume (mL),individual_lesion_volume_lesion_weighted,2192.0
+Liver Lesions,Individual lesion volume (mL),individual_lesion_volume_lesion_weighted,8017.0
+WAW-TACE,Total tumour volume per tumour-positive patient (mL),total_tumour_volume_per_tumour_positive_patient,197.0
+MSD,Total tumour volume per tumour-positive patient (mL),total_tumour_volume_per_tumour_positive_patient,303.0
+MCT-LTDiag,Total tumour volume per tumour-positive patient (mL),total_tumour_volume_per_tumour_positive_patient,498.0
+Liver Lesions,Total tumour volume per tumour-positive patient (mL),total_tumour_volume_per_tumour_positive_patient,815.0
+WAW-TACE,ART slice spacing (mm),ART_spacing_z_mm,194.0
+MSD,ART slice spacing (mm),ART_spacing_z_mm,0.0
+MCT-LTDiag,ART slice spacing (mm),ART_spacing_z_mm,498.0
+Liver Lesions,ART slice spacing (mm),ART_spacing_z_mm,49.0
+WAW-TACE,PV slice spacing (mm),PV_spacing_z_mm,197.0
+MSD,PV slice spacing (mm),PV_spacing_z_mm,303.0
+MCT-LTDiag,PV slice spacing (mm),PV_spacing_z_mm,498.0
+Liver Lesions,PV slice spacing (mm),PV_spacing_z_mm,793.0

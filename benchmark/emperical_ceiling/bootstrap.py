@@ -11,8 +11,8 @@ from scipy.stats import t, ttest_rel
 # -------------------------------------------------------------------
 
 BASE_DIR = Path(
-    "/Users/michellehu/Desktop/hcc-dualphase-segmentation/"
-    "analysis"
+    "/Users/michellehu/Desktop/"
+    "hcc-dualphase-segmentation/analysis"
 )
 
 OUTPUT_DIR = Path(
@@ -30,28 +30,43 @@ BOOTSTRAP_SEED = 42
 
 FILES = {
     "SP": {
-        "summary": BASE_DIR / "dice_per_dataset/ceiling/SP_on_ceiling_testset.json",
-        "detectability": BASE_DIR / "detectability/ceiling/Detect_SP_on_ceiling_testset.csv",
+        "summary": (
+            BASE_DIR / "dice_per_dataset/ceiling/SP_on_ceiling_testset.json"
+        ),
+        "detectability": (
+            BASE_DIR / "detectability/ceiling/Detect_SP_on_ceiling_testset.csv"
+        ),
     },
     "SP ceiling": {
-        "summary": BASE_DIR / "dice_per_dataset/ceiling/SPCeiling_on_ceiling_testset.json",
+        "summary": (
+            BASE_DIR
+            / "dice_per_dataset/ceiling/SPCeiling_on_ceiling_testset.json"
+        ),
         "detectability": (
-            BASE_DIR / "detectability/ceiling/Detect_SPceiling_on_ceiling_testset.csv"
+            BASE_DIR
+            / "detectability/ceiling/Detect_SPceiling_on_ceiling_testset.csv"
         ),
     },
     "DP": {
-        "summary": BASE_DIR / "dice_per_dataset/ceiling/DP_on_ceiling_testset.json",
-        "detectability": BASE_DIR / "detectability/ceiling/Detect_DP_on_ceiling_testset.csv",
+        "summary": (
+            BASE_DIR / "dice_per_dataset/ceiling/DP_on_ceiling_testset.json"
+        ),
+        "detectability": (
+            BASE_DIR / "detectability/ceiling/Detect_DP_on_ceiling_testset.csv"
+        ),
     },
     "DP ceiling": {
-        "summary": BASE_DIR / "dice_per_dataset/ceiling/DPCeiling_on_ceiling_testset.json",
+        "summary": (
+            BASE_DIR
+            / "dice_per_dataset/ceiling/DPCeiling_on_ceiling_testset.json"
+        ),
         "detectability": (
-            BASE_DIR / "detectability/ceiling/Detect_DPceiling_on_ceiling_testset.csv"
+            BASE_DIR
+            / "detectability/ceiling/Detect_DPceiling_on_ceiling_testset.csv"
         ),
     },
 }
 
-# Each comparison uses ceiling minus original.
 COMPARISONS = [
     ("SP ceiling versus SP", "SP", "SP ceiling"),
     ("DP ceiling versus DP", "DP", "DP ceiling"),
@@ -78,14 +93,20 @@ def remove_nifti_extension(filename):
 
 def get_dataset(case_id):
     """
-    Determine the source dataset from the case id
+    Determine the source dataset from the case ID
     """
     prefixes = [
         "Liver_Lesions",
         "MCT_LTDiag",
         "WAW_TACE",
         "HCC_TACE",
+        "TCIA_CRLM",
+        "WORC_CRLM",
+        "CAIRO5",
+        "LiTS",
         "MSD",
+        "TCIA",
+        "WORC",
     ]
 
     for prefix in prefixes:
@@ -127,6 +148,7 @@ def validate_metric_values(data, metrics, path):
 
         if invalid.any():
             cases = data.loc[invalid, "case_id"].tolist()
+
             raise ValueError(
                 f"Invalid {metric} values in {path}. "
                 f"Expected scores between 0 and 1 or NaN. Cases: {cases}"
@@ -309,27 +331,27 @@ def load_phase(phase):
     )
 
 
-def pair_phases(single, dual):
+def pair_phases(original, ceiling):
     """
-    Pair single- and dual-phase results by case ID and dataset
+    Pair original and ceiling results by case ID and dataset
     """
     keys = ["case_id", "dataset"]
 
-    single_keys = set(map(tuple, single[keys].to_numpy()))
-    dual_keys = set(map(tuple, dual[keys].to_numpy()))
+    original_keys = set(map(tuple, original[keys].to_numpy()))
+    ceiling_keys = set(map(tuple, ceiling[keys].to_numpy()))
 
-    if single_keys != dual_keys:
+    if original_keys != ceiling_keys:
         raise ValueError(
-            "Single- and dual-phase cases or datasets do not match.\n"
-            f"Only in single phase: {sorted(single_keys - dual_keys)}\n"
-            f"Only in dual phase: {sorted(dual_keys - single_keys)}"
+            "Original and ceiling cases or datasets do not match.\n"
+            f"Only in original: {sorted(original_keys - ceiling_keys)}\n"
+            f"Only in ceiling: {sorted(ceiling_keys - original_keys)}"
         )
 
-    return single[keys + METRICS].merge(
-        dual[keys + METRICS],
+    return original[keys + METRICS].merge(
+        ceiling[keys + METRICS],
         on=keys,
         how="inner",
-        suffixes=("_single", "_dual"),
+        suffixes=("_original", "_ceiling"),
         validate="one_to_one",
     )
 
@@ -361,9 +383,14 @@ def paired_mean_confidence_interval(differences, confidence=0.95):
     return mean_difference - margin, mean_difference + margin
 
 
-def paired_bootstrap_test(differences, n_resamples=N_BOOTSTRAP, confidence=0.95, seed=BOOTSTRAP_SEED,):
+def paired_bootstrap_test(
+    differences,
+    n_resamples=N_BOOTSTRAP,
+    confidence=0.95,
+    seed=BOOTSTRAP_SEED,
+):
     """
-    Bootstrap the mean paired difference (DP - SP).
+    Bootstrap the mean paired difference: ceiling minus original
     """
     differences = np.asarray(differences, dtype=float)
     differences = differences[np.isfinite(differences)]
@@ -464,21 +491,21 @@ def create_paired_ttest_results(paired):
     rows = []
 
     for metric in METRICS:
-        single_column = f"{metric}_single"
-        dual_column = f"{metric}_dual"
+        original_column = f"{metric}_original"
+        ceiling_column = f"{metric}_ceiling"
 
         metric_data = (
             paired[
-                ["case_id", "dataset", single_column, dual_column]
+                ["case_id", "dataset", original_column, ceiling_column]
             ]
             .replace([np.inf, -np.inf], np.nan)
-            .dropna(subset=[single_column, dual_column])
+            .dropna(subset=[original_column, ceiling_column])
         )
 
-        single_values = metric_data[single_column].to_numpy(dtype=float)
-        dual_values = metric_data[dual_column].to_numpy(dtype=float)
+        original_values = metric_data[original_column].to_numpy(dtype=float)
+        ceiling_values = metric_data[ceiling_column].to_numpy(dtype=float)
 
-        differences = dual_values - single_values
+        differences = ceiling_values - original_values
         n = len(differences)
 
         t_statistic = np.nan
@@ -495,8 +522,8 @@ def create_paired_ttest_results(paired):
 
             else:
                 test = ttest_rel(
-                    dual_values,
-                    single_values,
+                    ceiling_values,
+                    original_values,
                     alternative="two-sided",
                 )
                 t_statistic = float(test.statistic)
@@ -519,11 +546,11 @@ def create_paired_ttest_results(paired):
                 ),
                 "n_paired_cases": n,
                 "n_excluded_pairs": len(paired) - n,
-                "single_phase_mean": safe_mean(single_values),
-                "single_phase_sd": safe_sd(single_values),
-                "dual_phase_mean": safe_mean(dual_values),
-                "dual_phase_sd": safe_sd(dual_values),
-                "mean_difference_dual_minus_single": safe_mean(
+                "original_mean": safe_mean(original_values),
+                "original_sd": safe_sd(original_values),
+                "ceiling_mean": safe_mean(ceiling_values),
+                "ceiling_sd": safe_sd(ceiling_values),
+                "mean_difference_ceiling_minus_original": safe_mean(
                     differences
                 ),
                 "sd_paired_difference": safe_sd(differences),
@@ -536,33 +563,14 @@ def create_paired_ttest_results(paired):
                 "bootstrap_p_value": bootstrap_p,
                 "bootstrap_n_resamples": N_BOOTSTRAP,
                 "bootstrap_seed": BOOTSTRAP_SEED,
-                "dual_better_n": int(np.sum(differences > 0)),
-                "single_better_n": int(np.sum(differences < 0)),
+                "ceiling_better_n": int(np.sum(differences > 0)),
+                "original_better_n": int(np.sum(differences < 0)),
                 "equal_n": int(np.sum(differences == 0)),
             }
         )
 
-    results = pd.DataFrame(rows)
-
-    # Separate correction across the four paired t-tests
-    results["holm_adjusted_p_value"] = holm_correction(
-        results["paired_t_test_p_value"].to_numpy()
-    )
-
-    results["significant_after_holm"] = (
-        results["holm_adjusted_p_value"] < 0.05
-    )
-
-    # Separate correction across the four bootstrap tests
-    results["bootstrap_holm_adjusted_p_value"] = holm_correction(
-        results["bootstrap_p_value"].to_numpy()
-    )
-
-    results["bootstrap_significant_after_holm"] = (
-        results["bootstrap_holm_adjusted_p_value"] < 0.05
-    )
-
-    return results
+    # Apply Holm correction in main() across both comparisons.
+    return pd.DataFrame(rows)
 
 
 # -------------------------------------------------------------------
@@ -634,44 +642,24 @@ def create_dataset_summary(all_data):
 def main():
     check_files_exist()
 
-    model_data = {
-        model: load_model(model)
-        for model in FILES
+    phase_data = {
+        phase: load_phase(phase)
+        for phase in FILES
     }
 
-    # Check that all four models use the same test cases.
-    reference_model = next(iter(model_data))
-    reference_cases = set(model_data[reference_model]["case_id"])
-
-    for model, data in model_data.items():
-        model_cases = set(data["case_id"])
-
-        if model_cases != reference_cases:
-            raise ValueError(
-                f"{model}: cases differ from {reference_model}.\n"
-                f"Only in {model}: "
-                f"{sorted(model_cases - reference_cases)}\n"
-                f"Only in {reference_model}: "
-                f"{sorted(reference_cases - model_cases)}"
-            )
-
     all_data = pd.concat(
-        list(model_data.values()),
+        list(phase_data.values()),
         ignore_index=True,
     )
 
     statistical_frames = []
     paired_frames = []
 
-    for comparison, original_model, ceiling_model in COMPARISONS:
-        paired = pair_models(
-            model_data[original_model],
-            model_data[ceiling_model],
-        )
+    for comparison, original_phase, ceiling_phase in COMPARISONS:
+        original = phase_data[original_phase]
+        ceiling = phase_data[ceiling_phase]
 
-        paired["comparison"] = comparison
-        paired["original_model"] = original_model
-        paired["ceiling_model"] = ceiling_model
+        paired = pair_phases(original, ceiling)
 
         for metric in METRICS:
             paired[f"{metric}_difference"] = (
@@ -679,15 +667,17 @@ def main():
                 - paired[f"{metric}_original"]
             )
 
-        statistical_frames.append(
-            create_paired_ttest_results(
-                paired,
-                comparison,
-                original_model,
-                ceiling_model,
-            )
-        )
+        paired["comparison"] = comparison
+        paired["original_model"] = original_phase
+        paired["ceiling_model"] = ceiling_phase
 
+        results = create_paired_ttest_results(paired)
+
+        results.insert(0, "comparison", comparison)
+        results.insert(1, "original_model", original_phase)
+        results.insert(2, "ceiling_model", ceiling_phase)
+
+        statistical_frames.append(results)
         paired_frames.append(paired)
 
     statistical_results = pd.concat(
@@ -700,7 +690,7 @@ def main():
         ignore_index=True,
     )
 
-    # Holm correction across eight t-tests:
+    # Separate correction across eight paired t-tests:
     # two comparisons × four metrics.
     statistical_results["holm_adjusted_p_value"] = holm_correction(
         statistical_results["paired_t_test_p_value"].to_numpy()
@@ -710,7 +700,7 @@ def main():
         statistical_results["holm_adjusted_p_value"] < 0.05
     )
 
-    # Separate Holm correction across eight bootstrap tests.
+    # Separate correction across eight bootstrap tests.
     statistical_results["bootstrap_holm_adjusted_p_value"] = (
         holm_correction(
             statistical_results["bootstrap_p_value"].to_numpy()
@@ -726,6 +716,7 @@ def main():
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
+    # Contains both t-test and bootstrap results.
     statistical_results.to_csv(
         OUTPUT_DIR / "paired_ttest_results.csv",
         index=False,
@@ -782,7 +773,7 @@ def main():
         "bootstrap_significant_after_holm",
     ]
 
-    print("\nCEILING TEST SET: PAIRED T-TEST COMPARISONS")
+    print("\nPAIRED ORIGINAL VS CEILING T-TEST COMPARISONS")
     print("Comparisons: SP ceiling versus SP; DP ceiling versus DP")
     print("Dice, precision and recall: voxel metrics from summary JSON")
     print(f"Detectability: lesion matching at IoU >= {IOU_THRESHOLD}")
@@ -797,13 +788,13 @@ def main():
         .to_string(index=False)
     )
 
-    print("\nCEILING TEST SET: PAIRED BOOTSTRAP COMPARISONS")
+    print("\nPAIRED ORIGINAL VS CEILING BOOTSTRAP COMPARISONS")
     print(f"Bootstrap resamples: {N_BOOTSTRAP:,}")
     print(f"Random seed: {BOOTSTRAP_SEED}")
     print("Statistic: mean paired difference, ceiling minus original")
     print("Resampling unit: independent case, preserving model pairing")
     print("Test: approximate two-sided null-centred bootstrap")
-    print("Holm correction across eight bootstrap tests")
+    print("Holm correction across eight bootstrap metric tests")
     print("Confidence intervals: unadjusted 95% percentile bootstrap CIs")
 
     print(

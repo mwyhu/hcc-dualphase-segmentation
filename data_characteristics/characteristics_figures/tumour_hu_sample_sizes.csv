@@ -1,0 +1,19 @@
+dataset,panel,phase,n,unit_of_observation
+CAIRO5,Tumour attenuation by contrast phase,ART,0,patient_phase
+CAIRO5,Tumour attenuation by contrast phase,PV,18,patient_phase
+HCC_TACE,Tumour attenuation by contrast phase,ART,75,patient_phase
+HCC_TACE,Tumour attenuation by contrast phase,PV,75,patient_phase
+LiTS,Tumour attenuation by contrast phase,ART,0,patient_phase
+LiTS,Tumour attenuation by contrast phase,PV,118,patient_phase
+Liver_Lesions,Tumour attenuation by contrast phase,ART,48,patient_phase
+Liver_Lesions,Tumour attenuation by contrast phase,PV,767,patient_phase
+MCT_LTDiag_grid_fixed,Tumour attenuation by contrast phase,ART,498,patient_phase
+MCT_LTDiag_grid_fixed,Tumour attenuation by contrast phase,PV,498,patient_phase
+MSD,Tumour attenuation by contrast phase,ART,0,patient_phase
+MSD,Tumour attenuation by contrast phase,PV,301,patient_phase
+TCIA_CRLM,Tumour attenuation by contrast phase,ART,0,patient_phase
+TCIA_CRLM,Tumour attenuation by contrast phase,PV,159,patient_phase
+WAW_TACE_grid_fixed,Tumour attenuation by contrast phase,ART,194,patient_phase
+WAW_TACE_grid_fixed,Tumour attenuation by contrast phase,PV,197,patient_phase
+WORC_CRLM,Tumour attenuation by contrast phase,ART,0,patient_phase
+WORC_CRLM,Tumour attenuation by contrast phase,PV,76,patient_phase

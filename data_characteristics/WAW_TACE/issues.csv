@@ -1,0 +1,4 @@
+dataset,case_id,file,issue
+WAW_TACE_grid_fixed,WAW_TACE_1368,/projects/prjs2180/data/nnUNet_raw/WAW_TACE_grid_fixed/CT/WAW_TACE_1368_0000.nii.gz,Zero-filled ART; treated as missing.
+WAW_TACE_grid_fixed,WAW_TACE_1378,/projects/prjs2180/data/nnUNet_raw/WAW_TACE_grid_fixed/CT/WAW_TACE_1378_0000.nii.gz,Zero-filled ART; treated as missing.
+WAW_TACE_grid_fixed,WAW_TACE_1458,/projects/prjs2180/data/nnUNet_raw/WAW_TACE_grid_fixed/CT/WAW_TACE_1458_0000.nii.gz,Zero-filled ART; treated as missing.

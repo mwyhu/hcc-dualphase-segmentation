@@ -1,0 +1,26 @@
+dataset,characteristic,metric,n
+HCC-TACE-Seg,Lesions per tumour-positive patient,lesions_per_tumour_positive_patient,82.0
+LiTS,Lesions per tumour-positive patient,lesions_per_tumour_positive_patient,118.0
+TCIA-CRLM,Lesions per tumour-positive patient,lesions_per_tumour_positive_patient,159.0
+WORC-CRLM,Lesions per tumour-positive patient,lesions_per_tumour_positive_patient,76.0
+CAIRO5,Lesions per tumour-positive patient,lesions_per_tumour_positive_patient,22.0
+HCC-TACE-Seg,Individual lesion volume (mL),individual_lesion_volume_lesion_weighted,127.0
+LiTS,Individual lesion volume (mL),individual_lesion_volume_lesion_weighted,908.0
+TCIA-CRLM,Individual lesion volume (mL),individual_lesion_volume_lesion_weighted,419.0
+WORC-CRLM,Individual lesion volume (mL),individual_lesion_volume_lesion_weighted,92.0
+CAIRO5,Individual lesion volume (mL),individual_lesion_volume_lesion_weighted,418.0
+HCC-TACE-Seg,Total tumour volume per tumour-positive patient (mL),total_tumour_volume_per_tumour_positive_patient,82.0
+LiTS,Total tumour volume per tumour-positive patient (mL),total_tumour_volume_per_tumour_positive_patient,118.0
+TCIA-CRLM,Total tumour volume per tumour-positive patient (mL),total_tumour_volume_per_tumour_positive_patient,159.0
+WORC-CRLM,Total tumour volume per tumour-positive patient (mL),total_tumour_volume_per_tumour_positive_patient,76.0
+CAIRO5,Total tumour volume per tumour-positive patient (mL),total_tumour_volume_per_tumour_positive_patient,22.0
+HCC-TACE-Seg,ART slice spacing (mm),ART_spacing_z_mm,82.0
+LiTS,ART slice spacing (mm),ART_spacing_z_mm,0.0
+TCIA-CRLM,ART slice spacing (mm),ART_spacing_z_mm,0.0
+WORC-CRLM,ART slice spacing (mm),ART_spacing_z_mm,0.0
+CAIRO5,ART slice spacing (mm),ART_spacing_z_mm,0.0
+HCC-TACE-Seg,PV slice spacing (mm),PV_spacing_z_mm,82.0
+LiTS,PV slice spacing (mm),PV_spacing_z_mm,131.0
+TCIA-CRLM,PV slice spacing (mm),PV_spacing_z_mm,159.0
+WORC-CRLM,PV slice spacing (mm),PV_spacing_z_mm,76.0
+CAIRO5,PV slice spacing (mm),PV_spacing_z_mm,23.0

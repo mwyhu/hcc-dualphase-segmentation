@@ -266,7 +266,7 @@ def plot_ceiling_comparison(results):
             )
 
     ax.set_title(
-        "Ceiling Test Set: Empirical Ceiling versus Original Models",
+        "Ceiling test set: Primary versus Empirical Ceiling models",
         fontsize=16,
         weight="bold",
         pad=16,

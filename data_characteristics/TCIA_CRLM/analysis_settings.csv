@@ -1,0 +1,2 @@
+dataset,ct_dir,seg_dir,art_pattern,pv_pattern,seg_pattern,tumour_labels,connectivity,output
+TCIA_CRLM,/projects/prjs2180/data/nnUNet_raw/TCIA_CRLM/CT,/projects/prjs2180/data/nnUNet_raw/TCIA_CRLM/SEG,{case_id}_0000.nii.gz,{case_id}_0001.nii.gz,{case_id}.nii.gz,[1],26,/projects/prjs2180/dataset_characteristics/TCIA_CRLM

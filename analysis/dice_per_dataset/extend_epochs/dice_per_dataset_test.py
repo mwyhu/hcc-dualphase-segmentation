@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 DICE_FILES = {
     "1000": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/TSLL_DP_1e3_summary.json",
     "1500": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/1500_ep_summary.json",
-    "2000": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/1500_ep_summary.json",
+    "2000": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/2000_ep_summary.json",
     "3000": "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/dice_per_dataset/extend_epochs/3000_ep_summary.json",
 }
 
@@ -21,14 +21,14 @@ MODEL_ORDER = [
     "1000",
     "1500",
     "2000",
-    "3000"
+    "3000",
 ]
 
 MODEL_PALETTE = {
-    "1000":"#C44E52",
-    "1500":"#8172B2",
-    "2000":"#ff3366",
-    "3000":"#BC3908"
+    "1000": "#C44E52",
+    "1500": "#8172B2",
+    "2000": "#ff3366",
+    "3000": "#BC3908",
 }
 
 
@@ -78,7 +78,7 @@ def extract_summary_average_dice(results, json_path):
 
 
 # -------------------------------------------------------------------
-# Read per-case Dice, TP, FP, and voxel-level precision
+# Read per-case Dice, TP, FP, FN, precision, and sensitivity
 # -------------------------------------------------------------------
 
 def load_dice_results(dice_files):
@@ -109,11 +109,19 @@ def load_dice_results(dice_files):
             dice = metrics["Dice"]
             tp = metrics["TP"]
             fp = metrics["FP"]
+            fn = metrics["FN"]
 
             # Undefined when the model predicts no positive voxels
             precision = (
                 tp / (tp + fp)
                 if (tp + fp) > 0
+                else float("nan")
+            )
+
+            # Undefined when the reference contains no positive voxels
+            sensitivity = (
+                tp / (tp + fn)
+                if (tp + fn) > 0
                 else float("nan")
             )
 
@@ -123,8 +131,10 @@ def load_dice_results(dice_files):
                 "model": model,
                 "dice": dice,
                 "precision": precision,
+                "sensitivity": sensitivity,
                 "tp": tp,
                 "fp": fp,
+                "fn": fn,
             })
 
     df_dice = pd.DataFrame(case_rows)
@@ -167,22 +177,71 @@ precision_summary = (
         mean_precision=("precision", "mean"),
         median_precision=("precision", "median"),
         std_precision=("precision", "std"),
+        q1_precision=("precision", lambda x: x.quantile(0.25)),
+        q3_precision=("precision", lambda x: x.quantile(0.75)),
         total_tp=("tp", "sum"),
         total_fp=("fp", "sum"),
     )
 )
 
+precision_summary["iqr_precision"] = (
+    precision_summary["q3_precision"]
+    - precision_summary["q1_precision"]
+)
+
 # Across all cases, count each predicted positive voxel equally
-# precision_summary["pooled_precision"] = (
-#     precision_summary["total_tp"]
-#     / (
-#         precision_summary["total_tp"]
-#         + precision_summary["total_fp"]
-#     )
-# )
+precision_denominator = (
+    precision_summary["total_tp"]
+    + precision_summary["total_fp"]
+)
+
+precision_summary["pooled_precision"] = (
+    precision_summary["total_tp"]
+    / precision_denominator.where(precision_denominator > 0)
+)
 
 print("\n--- Voxel-level Precision per Model ---")
 print(precision_summary.round(4).to_string())
+
+
+# -------------------------------------------------------------------
+# Voxel-level sensitivity per model
+# -------------------------------------------------------------------
+
+sensitivity_summary = (
+    df_dice
+    .groupby("model", observed=True)
+    .agg(
+        n_cases=("case", "nunique"),
+        n_cases_with_reference=("sensitivity", "count"),
+        mean_sensitivity=("sensitivity", "mean"),
+        median_sensitivity=("sensitivity", "median"),
+        std_sensitivity=("sensitivity", "std"),
+        q1_sensitivity=("sensitivity", lambda x: x.quantile(0.25)),
+        q3_sensitivity=("sensitivity", lambda x: x.quantile(0.75)),
+        total_tp=("tp", "sum"),
+        total_fn=("fn", "sum"),
+    )
+)
+
+sensitivity_summary["iqr_sensitivity"] = (
+    sensitivity_summary["q3_sensitivity"]
+    - sensitivity_summary["q1_sensitivity"]
+)
+
+# Across all cases, count each reference positive voxel equally
+sensitivity_denominator = (
+    sensitivity_summary["total_tp"]
+    + sensitivity_summary["total_fn"]
+)
+
+sensitivity_summary["pooled_sensitivity"] = (
+    sensitivity_summary["total_tp"]
+    / sensitivity_denominator.where(sensitivity_denominator > 0)
+)
+
+print("\n--- Voxel-level Sensitivity per Model ---")
+print(sensitivity_summary.round(4).to_string())
 
 
 # -------------------------------------------------------------------
@@ -197,15 +256,23 @@ dice_summary = (
     )
     .agg(
         n_cases=("case", "nunique"),
+        n_valid_dice=("dice", "count"),
         mean_dice=("dice", "mean"),
         median_dice=("dice", "median"),
         std_dice=("dice", "std"),
+        q1_dice=("dice", lambda x: x.quantile(0.25)),
+        q3_dice=("dice", lambda x: x.quantile(0.75)),
     )
+)
+
+dice_summary["iqr_dice"] = (
+    dice_summary["q3_dice"]
+    - dice_summary["q1_dice"]
 )
 
 dice_summary["standard_error"] = (
     dice_summary["std_dice"]
-    / dice_summary["n_cases"] ** 0.5
+    / dice_summary["n_valid_dice"] ** 0.5
 )
 
 dice_summary["ci95_lower"] = (
@@ -218,10 +285,38 @@ dice_summary["ci95_upper"] = (
     + 1.96 * dice_summary["standard_error"]
 ).clip(upper=1)
 
-dice_summary = dice_summary.round(4)
-
 print("\n--- Dice per Dataset and Model ---")
-print(dice_summary.to_string())
+print(dice_summary.round(4).to_string())
+
+
+# -------------------------------------------------------------------
+# Precision and sensitivity per dataset and model
+# -------------------------------------------------------------------
+
+for metric in ["precision", "sensitivity"]:
+    metric_summary = (
+        df_dice
+        .groupby(["source", "model"], observed=True)
+        .agg(
+            n_cases=("case", "nunique"),
+            n_valid=(metric, "count"),
+            mean=(metric, "mean"),
+            median=(metric, "median"),
+            std=(metric, "std"),
+            q1=(metric, lambda x: x.quantile(0.25)),
+            q3=(metric, lambda x: x.quantile(0.75)),
+        )
+    )
+
+    metric_summary["iqr"] = (
+        metric_summary["q3"] - metric_summary["q1"]
+    )
+
+    print(
+        f"\n--- Voxel-level {metric.title()} "
+        "per Dataset and Model ---"
+    )
+    print(metric_summary.round(4).to_string())
 
 
 # -------------------------------------------------------------------
@@ -233,15 +328,23 @@ overall_dice_summary = (
     .groupby("model", observed=True)
     .agg(
         n_cases=("case", "nunique"),
+        n_valid_dice=("dice", "count"),
         mean_dice=("dice", "mean"),
         median_dice=("dice", "median"),
         std_dice=("dice", "std"),
+        q1_dice=("dice", lambda x: x.quantile(0.25)),
+        q3_dice=("dice", lambda x: x.quantile(0.75)),
     )
+)
+
+overall_dice_summary["iqr_dice"] = (
+    overall_dice_summary["q3_dice"]
+    - overall_dice_summary["q1_dice"]
 )
 
 overall_dice_summary["standard_error"] = (
     overall_dice_summary["std_dice"]
-    / overall_dice_summary["n_cases"] ** 0.5
+    / overall_dice_summary["n_valid_dice"] ** 0.5
 )
 
 overall_dice_summary["ci95_lower"] = (
@@ -263,10 +366,8 @@ overall_dice_summary["difference"] = (
     - overall_dice_summary["summary_average_dice"]
 )
 
-overall_dice_summary = overall_dice_summary.round(4)
-
 print("\n--- Overall Dice per Model ---")
-print(overall_dice_summary.to_string())
+print(overall_dice_summary.round(4).to_string())
 
 
 print("\n--- Average Dice Stored in nnU-Net Summary Files ---")
@@ -274,11 +375,20 @@ print(summary_file_dice.round(4).to_string())
 
 
 # -------------------------------------------------------------------
-# Dice and precision comparison
+# Dice, precision, and sensitivity comparison
 # -------------------------------------------------------------------
 
 comparison_table = overall_dice_summary[
-    ["n_cases", "mean_dice", "std_dice", "median_dice", "ci95_lower", "ci95_upper"]
+    [
+        "n_cases",
+        "n_valid_dice",
+        "mean_dice",
+        "std_dice",
+        "median_dice",
+        "q1_dice",
+        "q3_dice",
+        "iqr_dice",
+    ]
 ].join(
     precision_summary[
         [
@@ -286,13 +396,86 @@ comparison_table = overall_dice_summary[
             "mean_precision",
             "std_precision",
             "median_precision",
-            # "pooled_precision",
+            "q1_precision",
+            "q3_precision",
+            "iqr_precision",
+            "pooled_precision",
+        ]
+    ]
+).join(
+    sensitivity_summary[
+        [
+            "n_cases_with_reference",
+            "mean_sensitivity",
+            "std_sensitivity",
+            "median_sensitivity",
+            "q1_sensitivity",
+            "q3_sensitivity",
+            "iqr_sensitivity",
+            "pooled_sensitivity",
         ]
     ]
 )
 
-print("\n--- Dice and Voxel-level Precision per Model ---")
+print("\n--- Dice, Voxel-level Precision and Sensitivity per Model ---")
 print(comparison_table.round(4).to_string())
+
+
+# -------------------------------------------------------------------
+# Compact tables: mean ± SD and median [Q1, Q3]
+# -------------------------------------------------------------------
+
+for group_columns, title in [
+    (["model"], "Overall Metrics per Model"),
+    (["source", "model"], "Metrics per Dataset and Model"),
+]:
+    table_rows = []
+
+    for metric in ["dice", "precision", "sensitivity"]:
+        summary = (
+            df_dice
+            .groupby(group_columns, observed=True)[metric]
+            .agg(
+                n="count",
+                mean="mean",
+                std="std",
+                median="median",
+                q1=lambda x: x.quantile(0.25),
+                q3=lambda x: x.quantile(0.75),
+            )
+            .reset_index()
+        )
+
+        summary["Metric"] = metric.title()
+
+        summary["Mean ± SD"] = summary.apply(
+            lambda row: f"{row['mean']:.4f} ± {row['std']:.4f}",
+            axis=1,
+        )
+
+        summary["Median [Q1, Q3]"] = summary.apply(
+            lambda row: (
+                f"{row['median']:.4f} "
+                f"[{row['q1']:.4f}, {row['q3']:.4f}]"
+            ),
+            axis=1,
+        )
+
+        summary["IQR"] = (
+            summary["q3"] - summary["q1"]
+        ).map(lambda value: f"{value:.4f}")
+
+        table_rows.append(
+            summary[
+                group_columns
+                + ["Metric", "n", "Mean ± SD", "Median [Q1, Q3]", "IQR"]
+            ]
+        )
+
+    compact_table = pd.concat(table_rows, ignore_index=True)
+
+    print(f"\n--- {title} ---")
+    print(compact_table.to_string(index=False))
 
 
 # -------------------------------------------------------------------
@@ -410,12 +593,13 @@ ax = sns.barplot(
 )
 
 for container in ax.containers:
-    ax.bar_label(
-        container,
-        fmt="%.3f",
-        padding=4,
-        fontsize=9,
-    )
+    if hasattr(container, "datavalues"):
+        ax.bar_label(
+            container,
+            fmt="%.3f",
+            padding=4,
+            fontsize=9,
+        )
 
 plt.title("Overall Average Dice per Model")
 plt.xlabel("Model")

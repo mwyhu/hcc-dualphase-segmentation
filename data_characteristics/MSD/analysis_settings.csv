@@ -1,0 +1,2 @@
+dataset,ct_dir,seg_dir,art_pattern,pv_pattern,seg_pattern,tumour_labels,connectivity,output
+MSD,/projects/prjs2180/data/nnUNet_raw/MSD/CT,/projects/prjs2180/data/nnUNet_raw/MSD/SEG,{case_id}_0000.nii.gz,{case_id}_0001.nii.gz,{case_id}.nii.gz,[1],26,/projects/prjs2180/dataset_characteristics/MSD

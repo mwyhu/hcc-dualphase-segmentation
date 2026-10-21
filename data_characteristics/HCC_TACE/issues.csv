@@ -1,0 +1,15 @@
+dataset,case_id,file,issue
+HCC_TACE,HCC_TACE_1003,/projects/prjs2180/data/nnUNet_raw/HCC_TACE/CT/HCC_TACE_1003_0000.nii.gz,CT/SEG geometry mismatch; HU omitted.
+HCC_TACE,HCC_TACE_1003,/projects/prjs2180/data/nnUNet_raw/HCC_TACE/CT/HCC_TACE_1003_0001.nii.gz,CT/SEG geometry mismatch; HU omitted.
+HCC_TACE,HCC_TACE_1014,/projects/prjs2180/data/nnUNet_raw/HCC_TACE/CT/HCC_TACE_1014_0000.nii.gz,CT/SEG geometry mismatch; HU omitted.
+HCC_TACE,HCC_TACE_1014,/projects/prjs2180/data/nnUNet_raw/HCC_TACE/CT/HCC_TACE_1014_0001.nii.gz,CT/SEG geometry mismatch; HU omitted.
+HCC_TACE,HCC_TACE_1019,/projects/prjs2180/data/nnUNet_raw/HCC_TACE/CT/HCC_TACE_1019_0000.nii.gz,CT/SEG geometry mismatch; HU omitted.
+HCC_TACE,HCC_TACE_1019,/projects/prjs2180/data/nnUNet_raw/HCC_TACE/CT/HCC_TACE_1019_0001.nii.gz,CT/SEG geometry mismatch; HU omitted.
+HCC_TACE,HCC_TACE_1024,/projects/prjs2180/data/nnUNet_raw/HCC_TACE/CT/HCC_TACE_1024_0000.nii.gz,CT/SEG geometry mismatch; HU omitted.
+HCC_TACE,HCC_TACE_1024,/projects/prjs2180/data/nnUNet_raw/HCC_TACE/CT/HCC_TACE_1024_0001.nii.gz,CT/SEG geometry mismatch; HU omitted.
+HCC_TACE,HCC_TACE_1028,/projects/prjs2180/data/nnUNet_raw/HCC_TACE/CT/HCC_TACE_1028_0000.nii.gz,CT/SEG geometry mismatch; HU omitted.
+HCC_TACE,HCC_TACE_1028,/projects/prjs2180/data/nnUNet_raw/HCC_TACE/CT/HCC_TACE_1028_0001.nii.gz,CT/SEG geometry mismatch; HU omitted.
+HCC_TACE,HCC_TACE_1043,/projects/prjs2180/data/nnUNet_raw/HCC_TACE/CT/HCC_TACE_1043_0000.nii.gz,CT/SEG geometry mismatch; HU omitted.
+HCC_TACE,HCC_TACE_1043,/projects/prjs2180/data/nnUNet_raw/HCC_TACE/CT/HCC_TACE_1043_0001.nii.gz,CT/SEG geometry mismatch; HU omitted.
+HCC_TACE,HCC_TACE_1048,/projects/prjs2180/data/nnUNet_raw/HCC_TACE/CT/HCC_TACE_1048_0000.nii.gz,CT/SEG geometry mismatch; HU omitted.
+HCC_TACE,HCC_TACE_1048,/projects/prjs2180/data/nnUNet_raw/HCC_TACE/CT/HCC_TACE_1048_0001.nii.gz,CT/SEG geometry mismatch; HU omitted.

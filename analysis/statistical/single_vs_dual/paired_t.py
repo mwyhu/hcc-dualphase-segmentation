@@ -12,61 +12,69 @@ BASE_DIR = Path(
 )
 
 OUTPUT_DIR = BASE_DIR / "single_vs_dual_phase_ttest"
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 IOU_THRESHOLD = 0.20
-TUMOUR_LABEL = "1"
+METRICS = ["dice", "detectability", "precision"]
 
-METRICS = ["dice", "precision", "recall", "detectability"]
+
 
 FILES = {
     "SinglePhase": {
-        "summary": {
-            fold: BASE_DIR
-            / f"summary_fold1-4/SP/SP_1e3_fold{fold}_summary.json"
-            for fold in range(5)
+        "dice": {
+            0: BASE_DIR / "summary_fold1-4/SP/SP_1e3_fold0_summary.json",
+            1: BASE_DIR / "summary_fold1-4/SP/SP_1e3_fold1_summary.json",
+            2: BASE_DIR / "summary_fold1-4/SP/SP_1e3_fold2_summary.json",
+            3: BASE_DIR / "summary_fold1-4/SP/SP_1e3_fold3_summary.json",
+            4: BASE_DIR / "summary_fold1-4/SP/SP_1e3_fold4_summary.json",
         },
         "detectability": {
-            fold: BASE_DIR
-            / f"detectability_fold_1-4/SP/poly_SP_fold{fold}.csv"
-            for fold in range(5)
+            0: BASE_DIR / "detectability_fold_1-4/SP/poly_SP_fold0.csv",
+            1: BASE_DIR / "detectability_fold_1-4/SP/poly_SP_fold1.csv",
+            2: BASE_DIR / "detectability_fold_1-4/SP/poly_SP_fold2.csv",
+            3: BASE_DIR / "detectability_fold_1-4/SP/poly_SP_fold3.csv",
+            4: BASE_DIR / "detectability_fold_1-4/SP/poly_SP_fold4.csv",
         },
     },
     "DualPhase": {
-        "summary": {
-            fold: BASE_DIR
-            / f"summary_fold1-4/DP/DP_1e3_fold{fold}_summary.json"
-            for fold in range(5)
+        "dice": {
+            0: BASE_DIR / "summary_fold1-4/DP/DP_1e3_fold0_summary.json",
+            1: BASE_DIR / "summary_fold1-4/DP/DP_1e3_fold1_summary.json",
+            2: BASE_DIR / "summary_fold1-4/DP/DP_1e3_fold2_summary.json",
+            3: BASE_DIR / "summary_fold1-4/DP/DP_1e3_fold3_summary.json",
+            4: BASE_DIR / "summary_fold1-4/DP/DP_1e3_fold4_summary.json",
         },
         "detectability": {
-            fold: BASE_DIR
-            / f"detectability_fold_1-4/DP/poly_DP_fold{fold}.csv"
-            for fold in range(5)
+            0: BASE_DIR / "detectability_fold_1-4/DP/poly_DP_fold0.csv",
+            1: BASE_DIR / "detectability_fold_1-4/DP/poly_DP_fold1.csv",
+            2: BASE_DIR / "detectability_fold_1-4/DP/poly_DP_fold2.csv",
+            3: BASE_DIR / "detectability_fold_1-4/DP/poly_DP_fold3.csv",
+            4: BASE_DIR / "detectability_fold_1-4/DP/poly_DP_fold4.csv",
         },
     },
 }
 
 
+# Loading and validation
 def remove_nifti_extension(filename):
-    """Return the filename without .nii or .nii.gz."""
-    filename = str(filename).replace("\\", "/").rsplit("/", 1)[-1]
+    """
+    Return the filename without .nii or .nii.gz
+    """
+    filename = Path(filename).name
 
     if filename.endswith(".nii.gz"):
         return filename[:-7]
     if filename.endswith(".nii"):
         return filename[:-4]
 
-    return filename
+    return Path(filename).stem
 
 
 def get_dataset(case_id):
-    """Determine the source dataset from the case identifier."""
-    prefixes = [
-        "Liver_Lesions",
-        "MCT_LTDiag",
-        "WAW_TACE",
-        "HCC_TACE",
-        "MSD",
-    ]
+    """
+    Determine the source dataset from the case identifier
+    """
+    prefixes = ["Liver_Lesions", "MCT_LTDiag", "WAW_TACE", "MSD"]
 
     for prefix in prefixes:
         if case_id.startswith(prefix):
@@ -76,13 +84,15 @@ def get_dataset(case_id):
 
 
 def check_files_exist():
-    """Check all configured input files."""
+    """
+    Check all configured input paths before running the analysis
+    """
     missing = []
 
     for phase, phase_files in FILES.items():
         for file_type, fold_files in phase_files.items():
             for fold, path in fold_files.items():
-                if not path.is_file():
+                if not path.exists():
                     missing.append(
                         f"{phase}, {file_type}, fold {fold}: {path}"
                     )
@@ -94,25 +104,10 @@ def check_files_exist():
         )
 
 
-def validate_scores(data, metrics, path):
-    """Allow NaN, but reject infinite or out-of-range scores."""
-    for metric in metrics:
-        values = data[metric].to_numpy(dtype=float)
-
-        invalid = (
-            np.isinf(values)
-            | (np.isfinite(values) & ((values < 0) | (values > 1)))
-        )
-
-        if invalid.any():
-            cases = data.loc[invalid, "case_id"].tolist()
-            raise ValueError(
-                f"Invalid {metric} scores in {path}: {cases}"
-            )
-
-
-def load_summary_file(path, fold, phase):
-    """Load per-case Dice, voxel precision and voxel recall."""
+def load_dice_file(path, fold, phase):
+    """
+    Load per-case Dice scores from an nnU-Net summary JSON
+    """
     with path.open() as file:
         data = json.load(file)
 
@@ -120,21 +115,6 @@ def load_summary_file(path, fold, phase):
 
     for entry in data["metric_per_case"]:
         case_id = remove_nifti_extension(entry["reference_file"])
-        metrics = entry["metrics"][TUMOUR_LABEL]
-
-        tp = float(metrics["TP"])
-        fp = float(metrics["FP"])
-        fn = float(metrics["FN"])
-
-        counts = np.array([tp, fp, fn], dtype=float)
-
-        if not np.isfinite(counts).all() or (counts < 0).any():
-            raise ValueError(
-                f"Invalid TP, FP or FN for {case_id} in {path}"
-            )
-
-        precision_denominator = tp + fp
-        recall_denominator = tp + fn
 
         records.append(
             {
@@ -142,117 +122,89 @@ def load_summary_file(path, fold, phase):
                 "dataset": get_dataset(case_id),
                 "fold": fold,
                 "phase": phase,
-                "dice": (
-                    float(metrics["Dice"])
-                    if metrics["Dice"] is not None else np.nan
-                ),
-                "precision": (
-                    tp / precision_denominator
-                    if precision_denominator > 0 else np.nan
-                ),
-                "recall": (
-                    tp / recall_denominator
-                    if recall_denominator > 0 else np.nan
-                ),
+                "dice": float(entry["metrics"]["1"]["Dice"]),
             }
         )
 
     result = pd.DataFrame(records)
 
-    if result.empty:
-        raise ValueError(f"No per-case metrics found in {path}")
-
     if result["case_id"].duplicated().any():
-        raise ValueError(f"Duplicate summary cases found in {path}")
-
-    validate_scores(result, ["dice", "precision", "recall"], path)
+        raise ValueError(f"Duplicate Dice cases found in {path}")
 
     return result
 
 
 def load_detection_file(path, fold, phase):
-    """Load lesion detectability at the configured IoU threshold."""
+    """
+    Load per-case lesion metrics at IoU threshold
+    """
     data = pd.read_csv(path)
 
-    required = {"case", "iou_threshold", "detectability"}
+    required = {
+        "case",
+        "iou_threshold",
+        "precision",
+        "detectability",
+    }
     missing = required.difference(data.columns)
 
     if missing:
-        raise ValueError(
-            f"{path} is missing columns: {sorted(missing)}"
-        )
-
-    thresholds = pd.to_numeric(
-        data["iou_threshold"],
-        errors="raise",
-    )
+        raise ValueError(f"{path} is missing columns: {sorted(missing)}")
 
     data = data[
         np.isclose(
-            thresholds,
+            data["iou_threshold"].astype(float),
             IOU_THRESHOLD,
-            rtol=0,
-            atol=1e-8,
         )
     ].copy()
 
     if data.empty:
-        raise ValueError(
-            f"No IoU {IOU_THRESHOLD} rows found in {path}"
-        )
-
-    if data["case"].isna().any():
-        raise ValueError(f"Missing case identifiers in {path}")
+        raise ValueError(f"No IoU {IOU_THRESHOLD} rows found in {path}")
 
     data["case_id"] = data["case"].apply(remove_nifti_extension)
+    data["precision"] = pd.to_numeric(data["precision"], errors="coerce")
     data["detectability"] = pd.to_numeric(
         data["detectability"],
-        errors="raise",
+        errors="coerce",
     )
 
     if data["case_id"].duplicated().any():
-        raise ValueError(f"Duplicate detection cases found in {path}")
+        raise ValueError(f"Duplicate cases found in {path}")
 
-    result = data[["case_id", "detectability"]].copy()
+    result = data[
+        ["case_id", "precision", "detectability"]
+    ].copy()
     result["fold"] = fold
     result["phase"] = phase
-
-    validate_scores(result, ["detectability"], path)
 
     return result
 
 
 def load_phase(phase):
-    """Load and combine the five out-of-fold validation sets."""
+    """
+    Load and combine all validation folds per phase
+    """
     fold_results = []
 
     for fold in range(5):
-        summary = load_summary_file(
-            FILES[phase]["summary"][fold],
+        dice = load_dice_file(
+            FILES[phase]["dice"][fold],
             fold,
             phase,
         )
-
         detection = load_detection_file(
             FILES[phase]["detectability"][fold],
             fold,
             phase,
         )
 
-        summary_cases = set(summary["case_id"])
-        detection_cases = set(detection["case_id"])
-
-        if summary_cases != detection_cases:
+        if set(dice["case_id"]) != set(detection["case_id"]):
             raise ValueError(
-                f"Summary and detection cases do not match for "
-                f"{phase}, fold {fold}.\n"
-                f"Only in summary: "
-                f"{sorted(summary_cases - detection_cases)}\n"
-                f"Only in detection: "
-                f"{sorted(detection_cases - summary_cases)}"
+                f"Dice and detection cases do not match for "
+                f"{phase}, fold {fold}."
             )
 
-        merged = summary.merge(
+        merged = dice.merge(
             detection,
             on=["case_id", "fold", "phase"],
             how="inner",
@@ -271,18 +223,16 @@ def load_phase(phase):
 
 
 def pair_phases(single, dual):
-    """Pair results by case ID, dataset and validation fold."""
+    """
+    Pair results by case ID, dataset, and fold
+    """
     keys = ["case_id", "dataset", "fold"]
 
-    single_keys = set(map(tuple, single[keys].to_numpy()))
-    dual_keys = set(map(tuple, dual[keys].to_numpy()))
-
-    if single_keys != dual_keys:
+    if set(map(tuple, single[keys].to_numpy())) != set(
+        map(tuple, dual[keys].to_numpy())
+    ):
         raise ValueError(
-            "Single- and dual-phase cases, datasets or folds "
-            "do not match.\n"
-            f"Only in single phase: {sorted(single_keys - dual_keys)}\n"
-            f"Only in dual phase: {sorted(dual_keys - single_keys)}"
+            "Single- and dual-phase cases, datasets, or folds do not match."
         )
 
     return single[keys + METRICS].merge(
@@ -294,8 +244,11 @@ def pair_phases(single, dual):
     )
 
 
+# Statistical analysis
 def paired_mean_confidence_interval(differences, confidence=0.95):
-    """Parametric confidence interval for the mean paired difference."""
+    """
+    Parametric CI for the mean paired difference
+    """
     differences = np.asarray(differences, dtype=float)
     differences = differences[np.isfinite(differences)]
     n = len(differences)
@@ -305,106 +258,85 @@ def paired_mean_confidence_interval(differences, confidence=0.95):
 
     mean_difference = differences.mean()
     standard_error = differences.std(ddof=1) / np.sqrt(n)
-    critical_value = t.ppf(
-        1.0 - (1.0 - confidence) / 2.0,
-        df=n - 1,
-    )
+    alpha = 1.0 - confidence
+    critical_value = t.ppf(1.0 - alpha / 2.0, df=n - 1)
     margin = critical_value * standard_error
 
     return mean_difference - margin, mean_difference + margin
 
 
 def holm_correction(p_values):
-    """Holm correction across the four configured metric tests."""
+    """
+    Holm's family-wise multiple-testing correction
+    """
     p_values = np.asarray(p_values, dtype=float)
     adjusted = np.full(len(p_values), np.nan)
-    valid_indices = np.flatnonzero(np.isfinite(p_values))
+    valid_indices = np.where(np.isfinite(p_values))[0]
 
     if len(valid_indices) == 0:
         return adjusted
 
-    order = valid_indices[np.argsort(p_values[valid_indices])]
+    valid_p = p_values[valid_indices]
+    order = np.argsort(valid_p)
+    ordered_p = valid_p[order]
+    ordered_adjusted = np.empty(len(ordered_p))
     running_maximum = 0.0
-    family_size = len(p_values)
 
-    for rank, index in enumerate(order):
-        corrected = (family_size - rank) * p_values[index]
+    for rank, p_value in enumerate(ordered_p):
+        corrected = (len(ordered_p) - rank) * p_value
         running_maximum = max(running_maximum, corrected)
-        adjusted[index] = min(running_maximum, 1.0)
+        ordered_adjusted[rank] = min(running_maximum, 1.0)
+
+    reverse_order = np.empty(len(order), dtype=int)
+    reverse_order[order] = np.arange(len(order))
+    adjusted[valid_indices] = ordered_adjusted[reverse_order]
 
     return adjusted
 
 
-def safe_mean(values):
-    return float(np.mean(values)) if len(values) else np.nan
-
-
-def safe_sd(values):
-    return float(np.std(values, ddof=1)) if len(values) >= 2 else np.nan
-
-
 def create_paired_ttest_results(paired):
-    """Run two-sided paired t-tests across all out-of-fold cases."""
+    """
+    Run paired t-tests for Dice, detectability, and precision
+    """
     rows = []
 
     for metric in METRICS:
         single_column = f"{metric}_single"
         dual_column = f"{metric}_dual"
 
-        metric_data = (
-            paired[
-                [
-                    "case_id",
-                    "dataset",
-                    "fold",
-                    single_column,
-                    dual_column,
-                ]
-            ]
-            .replace([np.inf, -np.inf], np.nan)
-            .dropna(subset=[single_column, dual_column])
+        metric_data = paired[
+            ["case_id", "dataset", "fold", single_column, dual_column]
+        ].replace([np.inf, -np.inf], np.nan).dropna(
+            subset=[single_column, dual_column]
         )
 
         single_values = metric_data[single_column].to_numpy(dtype=float)
         dual_values = metric_data[dual_column].to_numpy(dtype=float)
         differences = dual_values - single_values
 
-        t_statistic = np.nan
-        p_value = np.nan
-
-        if len(differences) >= 2:
-            if np.all(differences == 0):
-                t_statistic = 0.0
-                p_value = 1.0
-            elif np.all(differences == differences[0]):
-                t_statistic = np.copysign(np.inf, differences[0])
-                p_value = 0.0
-            else:
-                test = ttest_rel(dual_values, single_values)
-                t_statistic = float(test.statistic)
-                p_value = float(test.pvalue)
-
+        test = (
+            ttest_rel(dual_values, single_values)
+            if len(metric_data) >= 2 else None
+        )
         ci_lower, ci_upper = paired_mean_confidence_interval(differences)
 
         rows.append(
             {
                 "metric": metric,
                 "iou_threshold": (
-                    IOU_THRESHOLD
-                    if metric == "detectability" else np.nan
+                    np.nan if metric == "dice" else IOU_THRESHOLD
                 ),
                 "n_paired_cases": len(metric_data),
-                "n_excluded_pairs": len(paired) - len(metric_data),
-                "single_phase_mean": safe_mean(single_values),
-                "single_phase_sd": safe_sd(single_values),
-                "dual_phase_mean": safe_mean(dual_values),
-                "dual_phase_sd": safe_sd(dual_values),
-                "mean_difference_dual_minus_single": safe_mean(differences),
-                "sd_paired_difference": safe_sd(differences),
+                "single_phase_mean": single_values.mean(),
+                "single_phase_sd": single_values.std(ddof=1),
+                "dual_phase_mean": dual_values.mean(),
+                "dual_phase_sd": dual_values.std(ddof=1),
+                "mean_difference_dual_minus_single": differences.mean(),
+                "sd_paired_difference": differences.std(ddof=1) if len(differences) >= 2 else np.nan,
                 "ci_95_lower": ci_lower,
                 "ci_95_upper": ci_upper,
-                "t_statistic": t_statistic,
-                "paired_t_test_p_value": p_value,
+                "t_statistic": test.statistic if test else np.nan,
+                "paired_t_test_p_value": test.pvalue if test else np.nan,
                 "dual_better_n": int(np.sum(differences > 0)),
                 "single_better_n": int(np.sum(differences < 0)),
                 "equal_n": int(np.sum(differences == 0)),
@@ -412,7 +344,6 @@ def create_paired_ttest_results(paired):
         )
 
     results = pd.DataFrame(rows)
-
     results["holm_adjusted_p_value"] = holm_correction(
         results["paired_t_test_p_value"].to_numpy()
     )
@@ -423,45 +354,31 @@ def create_paired_ttest_results(paired):
     return results
 
 
-def summarise_values(group, metric):
-    """Calculate per-case descriptive statistics."""
-    values = (
-        group[metric]
-        .replace([np.inf, -np.inf], np.nan)
-        .dropna()
-    )
 
-    return {
-        "metric": metric,
-        "n_valid": len(values),
-        "n_missing": len(group) - len(values),
-        "mean": values.mean(),
-        "sd": values.std(ddof=1),
-        "median": values.median(),
-        "q1": values.quantile(0.25),
-        "q3": values.quantile(0.75),
-    }
-
-
+# Summaries
 def create_fold_summary(all_data):
-    """Calculate within-fold summaries and variation across fold means."""
-    rows = []
+    """
+    Calculate means within folds and mean +- SD across folds
+    """
+    fold_rows = []
 
-    for (phase, fold), group in all_data.groupby(["phase", "fold"]):
+    for (phase, fold), group in all_data.groupby(
+        ["phase", "fold"]
+    ):
         for metric in METRICS:
-            summary = summarise_values(group, metric)
-            summary["sd_within_fold"] = summary.pop("sd")
-
-            rows.append(
+            values = group[metric].dropna()
+            fold_rows.append(
                 {
                     "phase": phase,
                     "fold": fold,
-                    **summary,
+                    "metric": metric,
+                    "n_valid": len(values),
+                    "mean": values.mean(),
+                    "sd_within_fold": values.std(ddof=1),
                 }
             )
 
-    fold_summary = pd.DataFrame(rows)
-
+    fold_summary = pd.DataFrame(fold_rows)
     across_folds = (
         fold_summary
         .groupby(["phase", "metric"], as_index=False)
@@ -477,37 +394,30 @@ def create_fold_summary(all_data):
     return fold_summary, across_folds
 
 
-def create_overall_summary(all_data):
-    """Calculate overall means and medians across out-of-fold cases."""
-    rows = []
-
-    for phase, group in all_data.groupby("phase", sort=False):
-        for metric in METRICS:
-            rows.append(
-                {
-                    "phase": phase,
-                    **summarise_values(group, metric),
-                }
-            )
-
-    return pd.DataFrame(rows)
-
-
 def create_dataset_summary(all_data):
-    """Calculate descriptive results per phase and source dataset."""
+    """
+    Calc descriptive results per source dataset
+    """
     rows = []
 
-    for (phase, dataset), group in all_data.groupby(["phase", "dataset"]):
+    for (phase, dataset), group in all_data.groupby(
+        ["phase", "dataset"]
+    ):
         for metric in METRICS:
+            values = group[metric].dropna()
             rows.append(
                 {
                     "phase": phase,
                     "dataset": dataset,
-                    **summarise_values(group, metric),
+                    "metric": metric,
+                    "n_valid": len(values),
+                    "mean": values.mean(),
+                    "sd": values.std(ddof=1),
                 }
             )
 
     return pd.DataFrame(rows)
+
 
 
 def main():
@@ -515,7 +425,6 @@ def main():
 
     single = load_phase("SinglePhase")
     dual = load_phase("DualPhase")
-
     paired = pair_phases(single, dual)
     all_data = pd.concat([single, dual], ignore_index=True)
 
@@ -527,27 +436,32 @@ def main():
 
     statistical_results = create_paired_ttest_results(paired)
     fold_summary, across_folds = create_fold_summary(all_data)
-    overall_summary = create_overall_summary(all_data)
     dataset_summary = create_dataset_summary(all_data)
 
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
-    outputs = {
-        "paired_ttest_results.csv": statistical_results,
-        "paired_case_level_results.csv": paired,
-        "fold_level_summary.csv": fold_summary,
-        "summary_across_folds.csv": across_folds,
-        "overall_summary.csv": overall_summary,
-        "dataset_specific_summary.csv": dataset_summary,
-    }
-
-    for filename, table in outputs.items():
-        table.to_csv(OUTPUT_DIR / filename, index=False)
+    statistical_results.to_csv(
+        OUTPUT_DIR / "paired_ttest_results.csv",
+        index=False,
+    )
+    paired.to_csv(
+        OUTPUT_DIR / "paired_case_level_results.csv",
+        index=False,
+    )
+    fold_summary.to_csv(
+        OUTPUT_DIR / "fold_level_summary.csv",
+        index=False,
+    )
+    across_folds.to_csv(
+        OUTPUT_DIR / "summary_across_folds.csv",
+        index=False,
+    )
+    dataset_summary.to_csv(
+        OUTPUT_DIR / "dataset_specific_summary.csv",
+        index=False,
+    )
 
     display_columns = [
         "metric",
         "n_paired_cases",
-        "n_excluded_pairs",
         "single_phase_mean",
         "dual_phase_mean",
         "mean_difference_dual_minus_single",
@@ -556,30 +470,18 @@ def main():
         "t_statistic",
         "paired_t_test_p_value",
         "holm_adjusted_p_value",
-        "significant_after_holm",
     ]
 
     print("\nPAIRED OUT-OF-FOLD T-TEST COMPARISON")
-    print("Dice, precision and recall: voxel metrics from summary JSON")
-    print(f"Detectability: lesion matching at IoU >= {IOU_THRESHOLD}")
-    print("Difference: dual phase minus single phase")
-    print("Holm correction across the four metric tests")
-    print("Confidence intervals: unadjusted 95% paired-difference CIs")
+    print(f"Lesion matching threshold: IoU >= {IOU_THRESHOLD}")
     print(
         statistical_results[display_columns]
         .round(4)
         .to_string(index=False)
     )
 
-    print("\nOVERALL DESCRIPTIVE RESULTS")
-    print(overall_summary.round(4).to_string(index=False))
-
     print("\nMEAN ± SD ACROSS THE FIVE FOLD MEANS")
     print(across_folds.round(4).to_string(index=False))
-
-    print("\nDESCRIPTIVE RESULTS PER DATASET")
-    print(dataset_summary.round(4).to_string(index=False))
-
     print(f"\nResults saved to:\n{OUTPUT_DIR}")
 
 

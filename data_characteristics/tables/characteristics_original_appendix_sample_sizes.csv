@@ -1,0 +1,33 @@
+dataset,characteristic,metric,n
+WAW-TACE,ART slices per CT volume,ART_n_slices,194.0
+MSD,ART slices per CT volume,ART_n_slices,0.0
+MCT-LTDiag,ART slices per CT volume,ART_n_slices,498.0
+Liver Lesions,ART slices per CT volume,ART_n_slices,49.0
+WAW-TACE,PV slices per CT volume,PV_n_slices,197.0
+MSD,PV slices per CT volume,PV_n_slices,303.0
+MCT-LTDiag,PV slices per CT volume,PV_n_slices,498.0
+Liver Lesions,PV slices per CT volume,PV_n_slices,793.0
+WAW-TACE,"ART voxel spacing, x (mm)",ART_spacing_x_mm,194.0
+MSD,"ART voxel spacing, x (mm)",ART_spacing_x_mm,0.0
+MCT-LTDiag,"ART voxel spacing, x (mm)",ART_spacing_x_mm,498.0
+Liver Lesions,"ART voxel spacing, x (mm)",ART_spacing_x_mm,49.0
+WAW-TACE,"ART voxel spacing, y (mm)",ART_spacing_y_mm,194.0
+MSD,"ART voxel spacing, y (mm)",ART_spacing_y_mm,0.0
+MCT-LTDiag,"ART voxel spacing, y (mm)",ART_spacing_y_mm,498.0
+Liver Lesions,"ART voxel spacing, y (mm)",ART_spacing_y_mm,49.0
+WAW-TACE,"PV voxel spacing, x (mm)",PV_spacing_x_mm,197.0
+MSD,"PV voxel spacing, x (mm)",PV_spacing_x_mm,303.0
+MCT-LTDiag,"PV voxel spacing, x (mm)",PV_spacing_x_mm,498.0
+Liver Lesions,"PV voxel spacing, x (mm)",PV_spacing_x_mm,793.0
+WAW-TACE,"PV voxel spacing, y (mm)",PV_spacing_y_mm,197.0
+MSD,"PV voxel spacing, y (mm)",PV_spacing_y_mm,303.0
+MCT-LTDiag,"PV voxel spacing, y (mm)",PV_spacing_y_mm,498.0
+Liver Lesions,"PV voxel spacing, y (mm)",PV_spacing_y_mm,793.0
+WAW-TACE,ART mean tumour attenuation (HU),ART_tumour_mean_hu,194.0
+MSD,ART mean tumour attenuation (HU),ART_tumour_mean_hu,0.0
+MCT-LTDiag,ART mean tumour attenuation (HU),ART_tumour_mean_hu,498.0
+Liver Lesions,ART mean tumour attenuation (HU),ART_tumour_mean_hu,48.0
+WAW-TACE,PV mean tumour attenuation (HU),PV_tumour_mean_hu,197.0
+MSD,PV mean tumour attenuation (HU),PV_tumour_mean_hu,301.0
+MCT-LTDiag,PV mean tumour attenuation (HU),PV_tumour_mean_hu,498.0
+Liver Lesions,PV mean tumour attenuation (HU),PV_tumour_mean_hu,767.0

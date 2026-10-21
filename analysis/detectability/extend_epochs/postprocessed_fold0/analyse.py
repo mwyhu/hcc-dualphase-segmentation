@@ -6,7 +6,10 @@ import pandas as pd
 import seaborn as sns
 
 
+# -------------------------------------------------------------------
 # Settings
+# -------------------------------------------------------------------
+
 BASE_DIR = Path(
     "/Users/michellehu/Desktop/hcc-dualphase-segmentation/analysis/detectability/extend_epochs/postprocessed_fold0"
 )
@@ -19,6 +22,7 @@ MODEL_FILES = {
 }
 
 MODEL_ORDER = list(MODEL_FILES)
+
 MODEL_PALETTE = dict(
     zip(MODEL_ORDER, sns.color_palette("Set2", len(MODEL_ORDER)))
 )
@@ -26,7 +30,10 @@ MODEL_PALETTE = dict(
 sns.set_theme(style="whitegrid")
 
 
+# -------------------------------------------------------------------
 # Functions
+# -------------------------------------------------------------------
+
 def safe_divide(numerator, denominator):
     """Divide safely and return 0 when the denominator is 0."""
     return np.divide(
@@ -38,24 +45,29 @@ def safe_divide(numerator, denominator):
 
 
 def create_summary(df, group_columns):
-    """
-    Summarise detection performance
-
-    Case-level metrics (each scan has equal weight):
-      - mean_case_detectability: mean of TP / (TP + FN) per scan
-      - mean_case_precision: mean of TP / (TP + FP) per scan
-
-    Pooled lesion-level metrics (each lesion has equal weight):
-      - lesion_precision: sum(TP) / [sum(TP) + sum(FP)]
-      - lesion_recall: sum(TP) / [sum(TP) + sum(FN)]
-      - lesion_f1: calculated from pooled TP, FP and FN
-    """
+    """Summarise per-case and pooled lesion-level performance."""
     summary = (
         df.groupby(group_columns, observed=True)
         .agg(
             n_cases=("case", "nunique"),
             mean_case_detectability=("detectability", "mean"),
+            std_case_detectability=("detectability", "std"),
+            median_case_detectability=("detectability", "median"),
+            q1_case_detectability=(
+                "detectability", lambda x: x.quantile(0.25)
+            ),
+            q3_case_detectability=(
+                "detectability", lambda x: x.quantile(0.75)
+            ),
             mean_case_precision=("precision", "mean"),
+            std_case_precision=("precision", "std"),
+            median_case_precision=("precision", "median"),
+            q1_case_precision=(
+                "precision", lambda x: x.quantile(0.25)
+            ),
+            q3_case_precision=(
+                "precision", lambda x: x.quantile(0.75)
+            ),
             TP=("TP", "sum"),
             FP=("FP", "sum"),
             FN=("FN", "sum"),
@@ -65,15 +77,53 @@ def create_summary(df, group_columns):
     summary["lesion_precision"] = safe_divide(
         summary["TP"], summary["TP"] + summary["FP"]
     )
+
     summary["lesion_recall"] = safe_divide(
         summary["TP"], summary["TP"] + summary["FN"]
     )
+
     summary["lesion_f1"] = safe_divide(
         2 * summary["TP"],
         2 * summary["TP"] + summary["FP"] + summary["FN"],
     )
 
-    return summary.round(3)
+    return summary
+
+
+def print_summary(summary):
+    """Print mean ± SD and median [Q1, Q3]; preserve numeric plot data."""
+    table = summary.copy()
+
+    for metric in ["detectability", "precision"]:
+        table[f"mean_case_{metric}"] = [
+            f"{mean:.4f} ± {sd:.4f}"
+            for mean, sd in zip(
+                summary[f"mean_case_{metric}"],
+                summary[f"std_case_{metric}"],
+            )
+        ]
+
+        table[f"median_case_{metric}"] = [
+            f"{median:.4f} [{q1:.4f}, {q3:.4f}]"
+            for median, q1, q3 in zip(
+                summary[f"median_case_{metric}"],
+                summary[f"q1_case_{metric}"],
+                summary[f"q3_case_{metric}"],
+            )
+        ]
+
+        table = table.drop(columns=[
+            f"std_case_{metric}",
+            f"q1_case_{metric}",
+            f"q3_case_{metric}",
+        ])
+
+        table = table.rename(columns={
+            f"mean_case_{metric}": f"{metric}: mean ± SD",
+            f"median_case_{metric}": f"{metric}: median [Q1, Q3]",
+        })
+
+    print(table.to_string(float_format=lambda x: f"{x:.4f}"))
 
 
 def load_results():
@@ -86,9 +136,11 @@ def load_results():
 
     df_all = pd.concat(frames, ignore_index=True)
     df_all["source"] = df_all["case"].str.split("_").str[0]
+
     df_all["model"] = pd.Categorical(
         df_all["model"], categories=MODEL_ORDER, ordered=True
     )
+
     df_all["iou_threshold"] = pd.to_numeric(df_all["iou_threshold"])
 
     required_columns = {
@@ -100,6 +152,7 @@ def load_results():
         "FN",
         "iou_threshold",
     }
+
     missing = required_columns.difference(df_all.columns)
     if missing:
         raise ValueError(f"Missing required columns: {sorted(missing)}")
@@ -136,10 +189,16 @@ def plot_case_level_metrics(df_all):
         height=4.5,
         aspect=1.1,
     )
+
     g.set_axis_labels("IoU threshold", "Mean score across cases")
     g.set(ylim=(0, 1))
     g.set_titles("{col_name}")
-    g.fig.suptitle("Case-level performance (each scan has equal weight)", y=1.04)
+
+    g.fig.suptitle(
+        "Case-level performance (each scan has equal weight)",
+        y=1.04,
+    )
+
     plt.show()
 
 
@@ -160,6 +219,7 @@ def plot_lesion_level_metrics(model_threshold_summary):
         "lesion_recall": "Lesion recall",
         "lesion_f1": "Lesion F1",
     }
+
     plot_df["metric"] = plot_df["metric"].map(metric_names)
 
     g = sns.relplot(
@@ -177,10 +237,16 @@ def plot_lesion_level_metrics(model_threshold_summary):
         height=4,
         aspect=1,
     )
+
     g.set_axis_labels("IoU threshold", "Pooled score")
     g.set(ylim=(0, 1))
     g.set_titles("{col_name}")
-    g.fig.suptitle("Lesion-level performance (each lesion has equal weight)", y=1.04)
+
+    g.fig.suptitle(
+        "Lesion-level performance (each lesion has equal weight)",
+        y=1.04,
+    )
+
     plt.show()
 
 
@@ -193,6 +259,7 @@ def plot_summary_at_threshold(model_summary, threshold):
         "lesion_recall",
         "lesion_f1",
     ]
+
     names = {
         "mean_case_detectability": "Mean case detectability",
         "mean_case_precision": "Mean case precision",
@@ -207,9 +274,11 @@ def plot_summary_at_threshold(model_summary, threshold):
         var_name="metric",
         value_name="score",
     )
+
     plot_df["metric"] = plot_df["metric"].map(names)
 
     plt.figure(figsize=(12, 6))
+
     sns.barplot(
         data=plot_df,
         x="metric",
@@ -218,6 +287,7 @@ def plot_summary_at_threshold(model_summary, threshold):
         hue_order=MODEL_ORDER,
         palette=MODEL_PALETTE,
     )
+
     plt.title(f"Detection summary at IoU threshold {threshold:.2f}")
     plt.xlabel("")
     plt.ylabel("Score")
@@ -228,8 +298,10 @@ def plot_summary_at_threshold(model_summary, threshold):
     plt.show()
 
 
-#
+# -------------------------------------------------------------------
 # Main analysis
+# -------------------------------------------------------------------
+
 df_all = load_results()
 
 pd.set_option("display.max_rows", None)
@@ -242,28 +314,34 @@ model_threshold_summary = create_summary(
 )
 
 print("\n--- Overall summary by model and IoU threshold ---")
-print(model_threshold_summary)
+print_summary(model_threshold_summary)
 
-# Sep results for each data source
+# Separate results for each data source
 source_model_threshold_summary = create_summary(
     df_all, ["source", "model", "iou_threshold"]
 )
 
 print("\n--- Summary by source, model and IoU threshold ---")
-print(source_model_threshold_summary)
+print_summary(source_model_threshold_summary)
 
 # Main reporting threshold
 REPORT_THRESHOLD = 0.2
-df_report = df_all[np.isclose(df_all["iou_threshold"], REPORT_THRESHOLD)]
+
+df_report = df_all[
+    np.isclose(df_all["iou_threshold"], REPORT_THRESHOLD)
+]
 
 model_summary_report = create_summary(df_report, ["model"])
-source_model_summary_report = create_summary(df_report, ["source", "model"])
+
+source_model_summary_report = create_summary(
+    df_report, ["source", "model"]
+)
 
 print(f"\n--- Overall model summary at IoU {REPORT_THRESHOLD:.2f} ---")
-print(model_summary_report)
+print_summary(model_summary_report)
 
 print(f"\n--- Source-specific summary at IoU {REPORT_THRESHOLD:.2f} ---")
-print(source_model_summary_report)
+print_summary(source_model_summary_report)
 
 plot_case_level_metrics(df_all)
 plot_lesion_level_metrics(model_threshold_summary)
