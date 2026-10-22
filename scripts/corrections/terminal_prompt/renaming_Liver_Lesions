@@ -1,0 +1,9 @@
+counter=1000
+
+for f in $(find . -maxdepth 1 -type f \( -name "*_0000.nii.gz" -o -name "*_0001.nii.gz" \) | sort -V); do
+    suffix="${f##*_}"   # 0000.nii.gz or 0001.nii.gz
+    new="Liver_Lesions_${counter}_0000.nii.gz"
+    echo "Renaming $f -> $new"
+    mv "$f" "$new"
+    ((counter++))
+done

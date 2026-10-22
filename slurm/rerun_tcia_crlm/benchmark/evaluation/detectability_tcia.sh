@@ -31,7 +31,7 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/TCIA_CRLM/AN \
     --gt_dir "$GT_DIR"/SP/TCIA_CRLM/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/AN/Detect_AN_TCIA_CRLM.csv
+    --output "$OUTPUT_DIR"/AN/Detect_AN_TCIA2.csv
 echo "AN Finished"
 
 
@@ -40,7 +40,7 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/TCIA_CRLM/COALA \
     --gt_dir "$GT_DIR"/SP/TCIA_CRLM/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/COALA/Detect_COALA_TCIA_CRLM.csv
+    --output "$OUTPUT_DIR"/COALA/Detect_COALA_TCIA2.csv
 echo "COALA Finished"
 
 
@@ -49,7 +49,7 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/TCIA_CRLM/TotalSegmentator_liver_lesions \
     --gt_dir "$GT_DIR"/SP/TCIA_CRLM/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/TotalSegmentator_liver_lesions/Detect_TSLL_TCIA_CRLM.csv
+    --output "$OUTPUT_DIR"/TotalSegmentator_liver_lesions/Detect_TSLL_TCIA2.csv
 echo "TSLL Finished"
 
 
@@ -58,7 +58,7 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/TCIA_CRLM/TotalSegmentator_liver_tumor \
     --gt_dir "$GT_DIR"/SP/TCIA_CRLM/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/TotalSegmentator_liver_tumor/Detect_TSLT_TCIA_CRLM.csv
+    --output "$OUTPUT_DIR"/TotalSegmentator_liver_tumor/Detect_TSLT_TCIA2.csv
 echo "TSLT Finished"
 
 
@@ -67,7 +67,7 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/TCIA_CRLM/SP \
     --gt_dir "$GT_DIR"/SP/TCIA_CRLM/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/SP/Detect_SP_TCIA_CRLM.csv
+    --output "$OUTPUT_DIR"/SP/Detect_SP_TCIA2.csv
 echo "SP Finished"
 
 
@@ -76,7 +76,7 @@ python -u /projects/prjs2180/code/hcc-dualphase-segmentation/scripts/evaluation/
     --pred_dir "$PRED_DIR"/TCIA_CRLM/DP \
     --gt_dir "$GT_DIR"/DP/TCIA_CRLM/labelsTs \
     --thresholds 0.15 0.2 0.5 \
-    --output "$OUTPUT_DIR"/DP/Detect_DP_TCIA_CRLM.csv
+    --output "$OUTPUT_DIR"/DP/Detect_DP_TCIA2.csv
 echo "DP Finished"
 
 

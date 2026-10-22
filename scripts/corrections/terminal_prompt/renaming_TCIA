@@ -1,0 +1,36 @@
+##### Segmentation
+for file in CRLM-CT-*.nii.gz; do
+    [ -e "$file" ] || continue
+    mv -n -- "$file" "TCIA_CRLM_${file#CRLM-CT-}"
+done
+
+
+
+##### CT scan
+for file in CRLM-CT-*_000[01].nii.gz; do
+    [ -e "$file" ] || continue
+    echo -n -- "$file" "TCIA_CRLM_${file#CRLM-CT-}"
+done
+
+for file in CRLM-CT-*_000[01].nii.gz; do
+    [ -e "$file" ] || continue
+    mv -n -- "$file" "TCIA_CRLM_${file#CRLM-CT-}"
+done
+
+
+
+##### SP CT
+mkdir -p /projects/prjs2180/data/nnUNet_raw/TCIA_CRLM/CT1
+
+for file in /projects/prjs2180/data/nnUNet_raw/TCIA_CRLM/CT/*_0001.nii.gz; do
+    [ -f "$file" ] || continue
+    cp -n -- "$file" /projects/prjs2180/data/nnUNet_raw/TCIA_CRLM/CT1/
+done
+
+
+cd /projects/prjs2180/data/nnUNet_raw/TCIA_CRLM/CT1
+
+for file in *_0001.nii.gz; do
+    [ -f "$file" ] || continue
+    mv -n -- "$file" "${file%_0001.nii.gz}_0000.nii.gz"
+done
