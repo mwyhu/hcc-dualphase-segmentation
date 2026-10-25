@@ -1,0 +1,73 @@
+EVAL external validation
+
+srun \
+--partition=genoa \
+--cpus-per-task=16 \
+--mem=128G \
+--time=01:00:00 \
+--pty bash
+
+cd /projects/prjs2180/code/hcc-dualphase-segmentation
+
+source setup_env.sh
+
+#######
+TOTAL SEGMENTATOR LESIONS
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/TCIA_CRLM/TotalSegmentator_liver_lesions \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/dataset.json \
+  -pfile /projects/prjs2180/pretrained_models/TotalSegmentator/591_liver_lesions/plans.json
+
+
+#######
+TOTAL SEGMENTATOR TUMOR
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/TCIA_CRLM/TotalSegmentator_liver_tumor \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/dataset.json \
+  -pfile /projects/prjs2180/pretrained_models/TotalSegmentator/591_liver_lesions/plans.json
+
+
+#######
+COALA
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/TCIA_CRLM/COALA \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/plans.json
+
+
+#######
+ATLAS NET
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/TCIA_CRLM/AN \
+  -djfile /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/dataset.json \
+  -pfile /projects/prjs2180/code/AbdomentAtlasNet/plans.json
+
+
+
+
+#######
+DUAL PHASE
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/DP/Full_TCIA_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/TCIA_CRLM/DP \
+  -djfile /projects/prjs2180/evaluation/predictions/TCIA_CRLM/DP/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/TCIA_CRLM/DP/plans.json
+
+
+#######
+SINGLE PHASE
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs \
+  /projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP \
+  -djfile /projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/plans.json

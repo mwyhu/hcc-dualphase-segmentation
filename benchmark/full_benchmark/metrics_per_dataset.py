@@ -54,12 +54,12 @@ METRICS = {
 }
 
 MODEL_PALETTE = {
-    "TSLL": "#4C78A8",
-    "TSLT": "#F58518",
-    "COALA": "#72B7B2",
-    "AtlasNet": "#54A24B",
-    "SP": "#B279A2",
-    "DP": "#E45756",
+    "TSLL": "#a7a5c6",
+    "TSLT": "#77ada1",
+    "COALA": "#C94242",
+    "AtlasNet": "#38296d",
+    "SP": "#033943",
+    "DP": "#f0781a",
 }
 
 REPORT_THRESHOLD = 0.20

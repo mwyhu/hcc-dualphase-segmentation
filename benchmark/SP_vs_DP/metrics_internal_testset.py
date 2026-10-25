@@ -35,8 +35,8 @@ DETECT_FILES = {
 MODEL_ORDER = ["SP", "DP"]
 
 MODEL_PALETTE = {
-    "SP": "#B279A2",
-    "DP": "#E45756",
+    "SP": "#033943",
+    "DP": "#f0781a",
 }
 
 METRICS = {

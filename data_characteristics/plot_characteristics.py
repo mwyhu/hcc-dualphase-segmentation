@@ -50,8 +50,8 @@ PATTERN_LABELS = [
 ]
 
 PATTERN_COLORS = [
-    "#f07814",
-    "#003741",
+    "#f0781a",
+    "#033943",
     "#77ada1",
     "#c6c6c6",
 ]

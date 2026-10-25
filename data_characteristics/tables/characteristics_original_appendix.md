@@ -15,16 +15,29 @@
 | PV mean tumour attenuation (HU) | 84.3 [71.8, 96.2] | 90.9 [75.7, 106.8] | 76.2 [64.2, 88.6] | 60.1 [45.8, 74.6] |
 
 Values are n (%) or median [Q1, Q3]. Each case represents one patient.
+
 Tumour presence refers to the reference annotations. Tumour-positive and tumour-negative percentages use patients with readable segmentations as the denominator; phase percentages use all cases.
+
 Lesions are connected components in the reference masks. Individual lesion-volume summaries give each lesion equal weight. Total tumour volume gives each tumour-positive patient equal weight.
+
 Zero-filled channels are treated as missing phases. Slice spacing is the z-axis voxel spacing and is not necessarily the acquisition slice thickness.
+
 Tumour HU values summarise the per-patient mean over annotated tumour voxels. Missing or undefined measurements are shown as —.
+
 These tables describe the raw datasets supplied to the extraction script, before any subsequent cohort exclusions.
+
 Available n for ART slices per CT volume: WAW-TACE: 194; MSD: 0; MCT-LTDiag: 498; Liver Lesions: 49.
+
 Available n for PV slices per CT volume: WAW-TACE: 197; MSD: 303; MCT-LTDiag: 498; Liver Lesions: 793.
+
 Available n for ART voxel spacing, x (mm): WAW-TACE: 194; MSD: 0; MCT-LTDiag: 498; Liver Lesions: 49.
+
 Available n for ART voxel spacing, y (mm): WAW-TACE: 194; MSD: 0; MCT-LTDiag: 498; Liver Lesions: 49.
+
 Available n for PV voxel spacing, x (mm): WAW-TACE: 197; MSD: 303; MCT-LTDiag: 498; Liver Lesions: 793.
+
 Available n for PV voxel spacing, y (mm): WAW-TACE: 197; MSD: 303; MCT-LTDiag: 498; Liver Lesions: 793.
+
 Available n for ART mean tumour attenuation (HU): WAW-TACE: 194; MSD: 0; MCT-LTDiag: 498; Liver Lesions: 48.
+
 Available n for PV mean tumour attenuation (HU): WAW-TACE: 197; MSD: 301; MCT-LTDiag: 498; Liver Lesions: 767.

@@ -255,3 +255,41 @@ nnUNetv2_evaluate_folder \
   /projects/prjs2180/evaluation/predictions/CAIRO5/DP \
   -djfile /projects/prjs2180/evaluation/predictions/CAIRO5/DP/dataset.json \
   -pfile /projects/prjs2180/evaluation/predictions/CAIRO5/DP/plans.json
+
+
+
+
+#######
+Ceiling on ceiling
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/Dataset003_ceiling/labelsTs \
+  /projects/prjs2180/evaluation/predictions/ceiling \
+  -djfile /projects/prjs2180/data/nnUNet_preprocessed/Dataset003_ceiling/dataset.json \
+  -pfile /projects/prjs2180/data/nnUNet_preprocessed/Dataset003_ceiling/TSLL_ceiling_plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs \
+  /projects/prjs2180/evaluation/predictions/ceiling_SP \
+  -djfile /projects/prjs2180/data/nnUNet_preprocessed/Dataset004_ceiling_SP/dataset.json \
+  -pfile /projects/prjs2180/data/nnUNet_preprocessed/Dataset004_ceiling_SP/TSLL_ceiling_SP_plans.json
+
+
+
+#######
+DP/SP on ceiling
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/Dataset003_ceiling/labelsTs \
+  /projects/prjs2180/evaluation/predictions/ceiling/DP_on_ceiling_testset \
+  -djfile /projects/prjs2180/data/nnUNet_preprocessed/Dataset003_ceiling/dataset.json \
+  -pfile /projects/prjs2180/data/nnUNet_preprocessed/Dataset002_dualphase/TSLL_DP_plans.json
+
+
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs \
+  /projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset \
+  -djfile /projects/prjs2180/data/nnUNet_preprocessed/Dataset004_ceiling_SP/dataset.json \
+  -pfile /projects/prjs2180/data/nnUNet_preprocessed/Dataset001_singlephase/TSLL_SP_plans.json
+

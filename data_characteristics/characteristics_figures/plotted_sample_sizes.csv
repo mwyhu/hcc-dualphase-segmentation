@@ -14,7 +14,7 @@ LiTS,A. Phase availability,PV_only,131,patient
 Liver_Lesions,A. Phase availability,PV_only,793,patient
 MCT_LTDiag_grid_fixed,A. Phase availability,PV_only,0,patient
 MSD,A. Phase availability,PV_only,303,patient
-TCIA_CRLM,A. Phase availability,PV_only,159,patient
+TCIA_CRLM,A. Phase availability,PV_only,197,patient
 WAW_TACE_grid_fixed,A. Phase availability,PV_only,3,patient
 WORC_CRLM,A. Phase availability,PV_only,76,patient
 CAIRO5,A. Phase availability,ART+PV,0,patient
@@ -41,7 +41,7 @@ LiTS,B. Lesions per patient,,131,patient
 Liver_Lesions,B. Lesions per patient,,842,patient
 MCT_LTDiag_grid_fixed,B. Lesions per patient,,498,patient
 MSD,B. Lesions per patient,,303,patient
-TCIA_CRLM,B. Lesions per patient,,159,patient
+TCIA_CRLM,B. Lesions per patient,,197,patient
 WAW_TACE_grid_fixed,B. Lesions per patient,,197,patient
 WORC_CRLM,B. Lesions per patient,,76,patient
 CAIRO5,C. Individual lesion volume,,418,lesion
@@ -50,7 +50,7 @@ LiTS,C. Individual lesion volume,,908,lesion
 Liver_Lesions,C. Individual lesion volume,,8017,lesion
 MCT_LTDiag_grid_fixed,C. Individual lesion volume,,2192,lesion
 MSD,C. Individual lesion volume,,544,lesion
-TCIA_CRLM,C. Individual lesion volume,,419,lesion
+TCIA_CRLM,C. Individual lesion volume,,525,lesion
 WAW_TACE_grid_fixed,C. Individual lesion volume,,311,lesion
 WORC_CRLM,C. Individual lesion volume,,92,lesion
 CAIRO5,D. Slices by phase,ART,0,volume
@@ -66,7 +66,7 @@ MCT_LTDiag_grid_fixed,D. Slices by phase,PV,498,volume
 MSD,D. Slices by phase,ART,0,volume
 MSD,D. Slices by phase,PV,303,volume
 TCIA_CRLM,D. Slices by phase,ART,0,volume
-TCIA_CRLM,D. Slices by phase,PV,159,volume
+TCIA_CRLM,D. Slices by phase,PV,197,volume
 WAW_TACE_grid_fixed,D. Slices by phase,ART,194,volume
 WAW_TACE_grid_fixed,D. Slices by phase,PV,197,volume
 WORC_CRLM,D. Slices by phase,ART,0,volume

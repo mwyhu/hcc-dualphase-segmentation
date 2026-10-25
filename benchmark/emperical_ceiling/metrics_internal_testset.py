@@ -40,10 +40,10 @@ DETECT_FILES = {
 MODEL_ORDER = ["SP", "SP ceiling", "DP", "DP ceiling"]
 
 MODEL_PALETTE = {
-    "SP": "#B279A2",
-    "SP ceiling": "#D9B9D0",
-    "DP": "#E45756",
-    "DP ceiling": "#F2AAA9",
+    "SP": "#033943",
+    "SP ceiling": "#5E9E98",
+    "DP": "#f0781a",
+    "DP ceiling": "#E8A524",
 }
 
 METRICS = {
