@@ -609,7 +609,7 @@ def plot_metrics_by_dataset(df):
     axes[0].set_ylabel("Per-case score")
 
     fig.suptitle(
-        "Pooled external validation performance: Single-Phase versus Dual-Phase"
+        "Pooled external validation performance: Single-Phase versus Dual-Phase",
         fontsize=16,
     )
 
