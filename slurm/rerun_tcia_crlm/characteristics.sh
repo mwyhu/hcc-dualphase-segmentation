@@ -22,7 +22,7 @@ echo "Node: $SLURMD_NODENAME"
 echo "Job ID: $SLUR_JOB_ID"
 
 
-python -u /projects/prjs2180/code/hcc-dualphase-segmentation/data_characteristics/characteristics.py \
+python -u /projects/prjs2180/code/hcc-dualphase-segmentation/data_characteristics/extract_characteristics.py \
     --dataset TCIA_CRLM \
     --ct-dir /projects/prjs2180/data/nnUNet_raw/TCIA_CRLM/CT \
     --seg-dir /projects/prjs2180/data/nnUNet_raw/TCIA_CRLM/SEG \

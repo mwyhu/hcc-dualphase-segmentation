@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=predict_CAIRO_ceiling
+#SBATCH --job-name=predict_CAIRO_ceiling_DP
 #SBATCH --partition=gpu_a100
 #SBATCH --gpus=1
 #SBATCH --cpus-per-task=16

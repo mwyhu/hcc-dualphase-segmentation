@@ -48,3 +48,6 @@ results/*
 slurm-*.out
 *.err
 *.log
+
+/Ceiling_SinglePhase_Segmentation_Model.zip
+/SinglePhase_Segmentation_Model.zip
