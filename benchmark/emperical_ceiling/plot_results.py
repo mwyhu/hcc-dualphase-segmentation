@@ -26,8 +26,8 @@ COMPARISONS = [
 ]
 
 COMPARISON_LABELS = {
-    "SP ceiling versus SP": "SP ceiling − SP",
-    "DP ceiling versus DP": "DP ceiling − DP",
+    "SP ceiling versus SP": "SP − Expanded SP",
+    "DP ceiling versus DP": "DP − Expanded DP",
 }
 
 METRICS = ["dice", "precision", "recall", "detectability"]
@@ -40,7 +40,7 @@ METRIC_LABELS = {
 }
 
 DIFFERENCE_COLUMN = "mean_difference_ceiling_minus_original"
-P_VALUE_COLUMN = "bootstrap_holm_adjusted_p_value"
+P_VALUE_COLUMN = "holm_adjusted_p_value"
 
 COLOURS = {
     "reduction": "#E6A09B",
@@ -182,18 +182,19 @@ def load_results():
 # Prepare matrix
 # -------------------------------------------------------------------
 
-def prepare_matrix(results):
-    shape = (len(COMPARISONS), len(METRICS))
+def prepare_matrix(results, comparisons):
+    shape = (len(comparisons), len(METRICS))
 
     codes = np.zeros(shape, dtype=float)
     annotations = np.empty(shape, dtype=object)
     unavailable = np.zeros(shape, dtype=bool)
 
-    for row_index, comparison in enumerate(COMPARISONS):
+    for row_index, comparison in enumerate(comparisons):
         for column, metric in enumerate(METRICS):
             result = results.loc[(comparison, metric)]
 
-            difference = float(result[DIFFERENCE_COLUMN])
+            # Reverse ceiling minus original to original minus ceiling.
+            difference = -float(result[DIFFERENCE_COLUMN])
             adjusted_p = float(result[P_VALUE_COLUMN])
 
             if not np.isfinite(difference):
@@ -230,10 +231,14 @@ def prepare_matrix(results):
 # Draw and save
 # -------------------------------------------------------------------
 
-def plot_ceiling_comparison(results):
-    codes, annotations, unavailable = prepare_matrix(results)
+def plot_ceiling_comparison(results, comparisons, filename):
+    codes, annotations, unavailable = prepare_matrix(
+        results, comparisons
+    )
 
-    fig, ax = plt.subplots(figsize=(11, 5))
+    figure_height = 3.8 if len(comparisons) == 1 else 5.0
+
+    fig, ax = plt.subplots(figsize=(10, figure_height))
     ax.set_facecolor(COLOURS["unavailable"])
 
     sns.heatmap(
@@ -247,13 +252,13 @@ def plot_ceiling_comparison(results):
         linecolor="white",
         xticklabels=[METRIC_LABELS[m] for m in METRICS],
         yticklabels=[
-            COMPARISON_LABELS[c] for c in COMPARISONS
+            COMPARISON_LABELS[c] for c in comparisons
         ],
         ax=ax,
     )
 
     # Manual annotations also display unavailable results.
-    for row_index in range(len(COMPARISONS)):
+    for row_index in range(len(comparisons)):
         for column in range(len(METRICS)):
             ax.text(
                 column + 0.5,
@@ -266,7 +271,7 @@ def plot_ceiling_comparison(results):
             )
 
     ax.set_title(
-        "Ceiling test set: Primary versus Empirical Ceiling models",
+        "Expanded test set: Primary versus Expanded model",
         fontsize=16,
         weight="bold",
         pad=16,
@@ -315,7 +320,7 @@ def plot_ceiling_comparison(results):
     fig.legend(
         handles=legend,
         loc="lower center",
-        bbox_to_anchor=(0.5, 0.13),
+        bbox_to_anchor=(0.5, 0.15),
         ncol=len(legend),
         frameon=False,
         fontsize=10,
@@ -326,22 +331,20 @@ def plot_ceiling_comparison(results):
         0.025,
         "Voxel level: Dice, Precision, Sensitivity. "
         "Lesion level: Detectability (IoU ≥ 0.20).\n"
-        "Values: mean paired differences (named model − comparison model).\n"
+        "Values: mean paired differences "
+        "(primary model − expanded model).\n"
         "* Holm-adjusted Wilcoxon p < 0.05.",
         ha="center",
         va="bottom",
         fontsize=9,
     )
 
-    fig.tight_layout(rect=[0, 0.25, 1, 1])
+    fig.tight_layout(rect=[0, 0.27, 1, 1])
 
     FIGURE_DIR.mkdir(parents=True, exist_ok=True)
 
     for extension in SAVE_FORMATS:
-        path = (
-            FIGURE_DIR
-            / f"Ceiling_vs_original_bootstrap_matrix.{extension}"
-        )
+        path = FIGURE_DIR / f"{filename}.{extension}"
 
         fig.savefig(
             path,
@@ -360,7 +363,24 @@ def plot_ceiling_comparison(results):
 
 def main():
     results = load_results()
-    plot_ceiling_comparison(results)
+
+    plot_ceiling_comparison(
+        results,
+        ["DP ceiling versus DP"],
+        "DP_minus_DP_ceiling_matrix",
+    )
+
+    plot_ceiling_comparison(
+        results,
+        ["SP ceiling versus SP"],
+        "SP_minus_SP_ceiling_matrix",
+    )
+
+    plot_ceiling_comparison(
+        results,
+        COMPARISONS,
+        "Primary_minus_ceiling_combined_matrix",
+    )
 
 
 if __name__ == "__main__":

@@ -1,0 +1,5 @@
+scope,datasets_included,metric,n_complete_cases,n_excluded_cases,n_models,friedman_statistic,degrees_of_freedom,friedman_p_value,kendalls_w,holm_adjusted_p_value,significant_after_holm,significance
+WORC,WORC,dice,76,0,6,114.3996989085434,5,4.810779137594813e-23,0.30105183923300893,1.443233741278444e-22,True,Significant
+WORC,WORC,precision,73,3,6,6.314319904267927,5,0.27682430386688944,0.017299506587035416,0.27682430386688944,False,Not significant
+WORC,WORC,recall,76,0,6,123.31826741996221,5,6.218134537766282e-25,0.3245217563683216,2.4872538151065127e-24,True,Significant
+WORC,WORC,detectability,76,0,6,46.59090909090809,5,6.88392703565973e-09,0.12260765550238971,1.376785407131946e-08,True,Significant

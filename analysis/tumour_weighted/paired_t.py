@@ -16,9 +16,12 @@ BASE_DIR = Path(
     "hcc-dualphase-segmentation/analysis/tumour_weighted"
 )
 
-OUTPUT_DIR = BASE_DIR / "crlm_sp_vs_dp_results"
+GROUPS = {
+    "CRLM": ["WORC", "TCIA", "CAIRO5"],
+    "HCC": ["HCC"],
+    "Mixed": ["LiTS"],
+}
 
-DATASETS = ["WORC", "TCIA", "CAIRO5"]
 MODELS = ["SP", "DP"]
 METRICS = ["dice", "precision", "recall", "detectability"]
 
@@ -49,15 +52,16 @@ def remove_nifti_extension(value):
     return name
 
 
-def check_files_exist():
+def check_files_exist(datasets):
     missing = []
 
     for model in MODELS:
-        for dataset in DATASETS:
+        for dataset in datasets:
             paths = [
                 BASE_DIR
                 / "summary_files"
                 / f"{model}_{dataset}_summary.json",
+
                 BASE_DIR
                 / "detectability_files"
                 / f"Detect_{model}_{dataset}.csv",
@@ -73,7 +77,7 @@ def check_files_exist():
         )
 
 
-def load_scores():
+def load_scores(datasets):
     """
     Load voxel metrics from JSON and lesion detectability from CSV.
 
@@ -106,7 +110,7 @@ def load_scores():
         scores[key] = value
 
     for model in MODELS:
-        for dataset in DATASETS:
+        for dataset in datasets:
             summary_path = (
                 BASE_DIR
                 / "summary_files"
@@ -160,11 +164,17 @@ def load_scores():
                     )
 
                 dice = values["Dice"]
+
                 precision = (
-                    tp / (tp + fp) if tp + fp > 0 else None
+                    tp / (tp + fp)
+                    if tp + fp > 0
+                    else None
                 )
+
                 recall = (
-                    tp / (tp + fn) if tp + fn > 0 else None
+                    tp / (tp + fn)
+                    if tp + fn > 0
+                    else None
                 )
 
                 add_score(dataset, model, case, "dice", dice)
@@ -208,6 +218,12 @@ def load_scores():
                         abs_tol=1e-8,
                     ):
                         continue
+
+                    if not (row["case"] or "").strip():
+                        raise ValueError(
+                            f"Missing case identifier in "
+                            f"{detection_path}"
+                        )
 
                     raw = (row["detectability"] or "").strip()
 
@@ -288,7 +304,7 @@ def descriptive_statistics(values):
     }
 
 
-def equal_dataset_paired_test(differences_by_dataset):
+def equal_dataset_paired_test(differences_by_dataset, datasets):
     """
     Test the equally weighted average of dataset mean differences.
 
@@ -305,17 +321,24 @@ def equal_dataset_paired_test(differences_by_dataset):
         Approximate two-sided t-test with Satterthwaite
         degrees of freedom and an unadjusted 95% CI.
 
+    With one dataset, this reduces to a standard paired t-test,
+    provided the paired differences have nonzero variance.
+
     Assumes independent cases within and between datasets.
     The trained SP and DP models are treated as fixed.
     """
-    k = len(DATASETS)
+    k = len(datasets)
+
+    if k == 0:
+        raise ValueError("No datasets configured")
+
     weight = 1.0 / k
 
     dataset_means = []
     variance_components = []
     sample_sizes = []
 
-    for dataset in DATASETS:
+    for dataset in datasets:
         differences = np.asarray(
             differences_by_dataset[dataset],
             dtype=float,
@@ -349,6 +372,7 @@ def equal_dataset_paired_test(differences_by_dataset):
         variance_components,
         dtype=float,
     )
+
     sample_sizes = np.asarray(
         sample_sizes,
         dtype=float,
@@ -362,7 +386,7 @@ def equal_dataset_paired_test(differences_by_dataset):
             np.all(
                 np.asarray(differences_by_dataset[dataset]) == 0
             )
-            for dataset in DATASETS
+            for dataset in datasets
         )
 
         return {
@@ -418,14 +442,14 @@ def equal_dataset_paired_test(differences_by_dataset):
 # Create results
 # -------------------------------------------------------------------
 
-def create_results(scores):
+def create_results(scores, tumour_group, datasets):
     statistical_rows = []
     paired_rows = []
     weight_rows = []
     descriptive_rows = []
     dataset_comparison_rows = []
 
-    k = len(DATASETS)
+    k = len(datasets)
 
     for metric in METRICS:
         case_sets = {
@@ -447,7 +471,8 @@ def create_results(scores):
         # of identical filenames from different datasets.
         if case_sets["SP"] != case_sets["DP"]:
             raise ValueError(
-                f"{metric}: SP and DP case lists do not match.\n"
+                f"{tumour_group}/{metric}: "
+                "SP and DP case lists do not match.\n"
                 f"Only SP: "
                 f"{sorted(case_sets['SP'] - case_sets['DP'])}\n"
                 f"Only DP: "
@@ -486,7 +511,7 @@ def create_results(scores):
         dual_by_dataset = {}
         differences_by_dataset = {}
 
-        for dataset in DATASETS:
+        for dataset in datasets:
             indices = np.array([
                 index
                 for index, (stored_dataset, _) in enumerate(
@@ -499,8 +524,8 @@ def create_results(scores):
 
             if dataset_n < 2:
                 raise ValueError(
-                    f"{metric}/{dataset}: fewer than two "
-                    "valid paired cases"
+                    f"{tumour_group}/{metric}/{dataset}: "
+                    "fewer than two valid paired cases"
                 )
 
             single = single_values[indices]
@@ -519,6 +544,7 @@ def create_results(scores):
             )
 
             weight_rows.append({
+                "tumour_type": tumour_group,
                 "dataset": dataset,
                 "metric": metric,
                 "n_paired_cases": dataset_n,
@@ -528,6 +554,7 @@ def create_results(scores):
             })
 
             dataset_comparison_rows.append({
+                "tumour_type": tumour_group,
                 "dataset": dataset,
                 "metric": metric,
                 "iou_threshold": (
@@ -555,7 +582,7 @@ def create_results(scores):
                 ("DP", dual),
             ):
                 descriptive_rows.append({
-                    "tumour_type": "CRLM",
+                    "tumour_type": tumour_group,
                     "scope": "within_dataset",
                     "dataset": dataset,
                     "model": model,
@@ -563,23 +590,24 @@ def create_results(scores):
                     **descriptive_statistics(values),
                 })
 
-        # Mean of the three dataset means.
+        # Equal-dataset-weighted model means.
         single_macro_mean = float(np.mean([
             single_by_dataset[dataset].mean()
-            for dataset in DATASETS
+            for dataset in datasets
         ]))
 
         dual_macro_mean = float(np.mean([
             dual_by_dataset[dataset].mean()
-            for dataset in DATASETS
+            for dataset in datasets
         ]))
 
         test = equal_dataset_paired_test(
-            differences_by_dataset
+            differences_by_dataset,
+            datasets,
         )
 
         statistical_rows.append({
-            "tumour_type": "CRLM",
+            "tumour_type": tumour_group,
             "metric": metric,
             "iou_threshold": (
                 IOU_THRESHOLD
@@ -614,9 +642,7 @@ def create_results(scores):
             "standard_error_mean_difference": (
                 test["standard_error"]
             ),
-            "degrees_of_freedom": (
-                test["degrees_of_freedom"]
-            ),
+            "degrees_of_freedom": test["degrees_of_freedom"],
             "ci_95_lower": test["ci_lower"],
             "ci_95_upper": test["ci_upper"],
             "t_statistic": test["t_statistic"],
@@ -648,6 +674,7 @@ def create_results(scores):
             )
 
             paired_rows.append({
+                "tumour_type": tumour_group,
                 "dataset": dataset,
                 "case_id": case_id,
                 "metric": metric,
@@ -667,7 +694,7 @@ def create_results(scores):
             ("DP", dual_values),
         ):
             descriptive_rows.append({
-                "tumour_type": "CRLM",
+                "tumour_type": tumour_group,
                 "scope": "pooled_cases",
                 "dataset": "ALL",
                 "model": model,
@@ -675,6 +702,8 @@ def create_results(scores):
                 **descriptive_statistics(values),
             })
 
+    # Separate Holm family for this tumour group:
+    # Dice, precision, recall and detectability.
     adjusted_p_values = holm_correction([
         row["paired_t_test_p_value"]
         for row in statistical_rows
@@ -685,6 +714,7 @@ def create_results(scores):
         adjusted_p_values,
     ):
         row["holm_adjusted_p_value"] = float(adjusted_p)
+
         row["significant_after_holm"] = (
             bool(adjusted_p < ALPHA)
             if np.isfinite(adjusted_p)
@@ -719,9 +749,14 @@ def write_csv(path, rows):
         writer.writerows(rows)
 
 
-def main():
-    check_files_exist()
-    scores = load_scores()
+def run_group(tumour_group, datasets):
+    output_dir = (
+        BASE_DIR
+        / f"{tumour_group.lower()}_sp_vs_dp_results"
+    )
+
+    check_files_exist(datasets)
+    scores = load_scores(datasets)
 
     (
         statistical_results,
@@ -729,9 +764,13 @@ def main():
         dataset_weights,
         descriptive_results,
         dataset_comparisons,
-    ) = create_results(scores)
+    ) = create_results(
+        scores,
+        tumour_group,
+        datasets,
+    )
 
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     outputs = {
         "paired_ttest_results.csv": statistical_results,
@@ -742,15 +781,21 @@ def main():
     }
 
     for filename, rows in outputs.items():
-        write_csv(OUTPUT_DIR / filename, rows)
+        write_csv(output_dir / filename, rows)
 
-    print("\nCOMBINED CRLM: SP VERSUS DP")
-    print("Datasets: WORC, TCIA and CAIRO5")
-    print("Weighting: each dataset contributes one third")
+    print(f"\n{tumour_group.upper()}: SP VERSUS DP")
+    print(f"Datasets: {', '.join(datasets)}")
+    print(
+        f"Weighting: each dataset contributes "
+        f"1/{len(datasets)}"
+    )
     print("Difference: DP minus SP")
     print(f"Detectability: CSV rows at IoU {IOU_THRESHOLD}")
     print(f"Test: {TEST_METHOD}")
-    print("Holm correction across four metric tests")
+    print(
+        "Holm correction across four metric tests "
+        "within this group"
+    )
     print(
         "Confidence intervals: unadjusted 95% CIs "
         "for the equal-dataset-weighted mean difference"
@@ -800,7 +845,24 @@ def main():
         )
         print(f"Test status: {row['test_status']}")
 
-    print(f"\nResults saved to:\n{OUTPUT_DIR}")
+    print(f"\nResults saved to:\n{output_dir}")
+
+
+def main():
+    for tumour_group, datasets in GROUPS.items():
+        if not datasets:
+            print(
+                f"\nSkipping {tumour_group}: "
+                "placeholder; no datasets configured."
+            )
+            continue
+
+        if len(datasets) != len(set(datasets)):
+            raise ValueError(
+                f"{tumour_group}: duplicate dataset tokens"
+            )
+
+        run_group(tumour_group, datasets)
 
 
 if __name__ == "__main__":

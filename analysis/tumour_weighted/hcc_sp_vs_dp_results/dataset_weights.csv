@@ -1,0 +1,5 @@
+tumour_type,dataset,metric,n_paired_cases,n_excluded_pairs,weight,case_weight
+HCC,HCC,dice,82,0,1.0,0.012195121951219513
+HCC,HCC,precision,82,0,1.0,0.012195121951219513
+HCC,HCC,recall,82,0,1.0,0.012195121951219513
+HCC,HCC,detectability,82,0,1.0,0.012195121951219513

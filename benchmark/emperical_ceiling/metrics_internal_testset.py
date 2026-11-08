@@ -21,29 +21,29 @@ DETECT_DIR = BASE_DIR / "detectability" / "ceiling"
 
 DICE_FILES = {
     "SP": DICE_DIR / "SP_on_ceiling_testset.json",
-    "SP ceiling": DICE_DIR / "SPCeiling_on_ceiling_testset.json",
+    "Expanded SP": DICE_DIR / "ceiling_SP_on_ceiling_testset.json",
     "DP": DICE_DIR / "DP_on_ceiling_testset.json",
-    "DP ceiling": DICE_DIR / "DPCeiling_on_ceiling_testset.json",
+    "Expanded DP": DICE_DIR / "ceiling_DP_on_ceiling_testset.json",
 }
 
 DETECT_FILES = {
     "SP": DETECT_DIR / "Detect_SP_on_ceiling_testset.csv",
-    "SP ceiling": (
+    "Expanded SP": (
         DETECT_DIR / "Detect_SPceiling_on_ceiling_testset.csv"
     ),
     "DP": DETECT_DIR / "Detect_DP_on_ceiling_testset.csv",
-    "DP ceiling": (
+    "Expanded DP": (
         DETECT_DIR / "Detect_DPceiling_on_ceiling_testset.csv"
     ),
 }
 
-MODEL_ORDER = ["SP", "SP ceiling", "DP", "DP ceiling"]
+MODEL_ORDER = ["SP", "Expanded SP", "DP", "Expanded DP"]
 
 MODEL_PALETTE = {
     "SP": "#033943",
-    "SP ceiling": "#5E9E98",
+    "Expanded SP": "#5E9E98",
     "DP": "#f0781a",
-    "DP ceiling": "#E8A524",
+    "Expanded DP": "#E8A524",
 }
 
 METRICS = {
@@ -266,7 +266,21 @@ def load_combined_results():
 # Plot all four metrics in one figure
 # -------------------------------------------------------------------
 
-def plot_combined_metrics(df):
+def plot_combined_metrics(
+    df,
+    model_order=None,
+    title=None,
+    filename=None,
+):
+    if model_order is None:
+        model_order = MODEL_ORDER
+
+    if title is None:
+        title = "Expanded test set: Primary versus Expanded models"
+
+    if filename is None:
+        filename = "SP_DP_ceiling_all_metrics"
+
     fig, axes = plt.subplots(
         1,
         4,
@@ -277,15 +291,17 @@ def plot_combined_metrics(df):
     rng = np.random.default_rng(42)
 
     for ax, (metric, label) in zip(axes, METRICS.items()):
-        subset = df.dropna(subset=[metric])
+        subset = df.loc[
+            df["model"].isin(model_order)
+        ].dropna(subset=[metric])
 
         sns.boxplot(
             data=subset,
             x="model",
             y=metric,
-            order=MODEL_ORDER,
+            order=model_order,
             hue="model",
-            hue_order=MODEL_ORDER,
+            hue_order=model_order,
             palette=MODEL_PALETTE,
             dodge=False,
             width=0.55,
@@ -297,7 +313,7 @@ def plot_combined_metrics(df):
         if legend is not None:
             legend.remove()
 
-        for position, model in enumerate(MODEL_ORDER):
+        for position, model in enumerate(model_order):
             values = subset.loc[
                 subset["model"] == model,
                 metric,
@@ -323,15 +339,18 @@ def plot_combined_metrics(df):
         ax.set_ylim(-0.03, 1.03)
         ax.grid(axis="x", visible=False)
 
-        ax.set_xticks(range(len(MODEL_ORDER)))
+        ax.set_xticks(range(len(model_order)))
         ax.set_xticklabels(
-            ["SP", "SP\nceiling", "DP", "DP\nceiling"]
+            [
+                model.replace(" ", "\n")
+                for model in model_order
+            ]
         )
 
     axes[0].set_ylabel("Per-case score")
 
     fig.suptitle(
-        "Ceiling test set: Primary versus Empirical Ceiling models",
+        title,
         fontsize=16,
     )
 
@@ -348,7 +367,7 @@ def plot_combined_metrics(df):
 
     PLOT_DIR.mkdir(parents=True, exist_ok=True)
 
-    path = PLOT_DIR / "SP_DP_ceiling_all_metrics.png"
+    path = PLOT_DIR / f"{filename}.png"
 
     fig.savefig(
         path,
@@ -620,7 +639,7 @@ def plot_metrics_by_dataset(df):
     axes[0].set_ylabel("Per-case score")
 
     fig.suptitle(
-        "Ceiling test set: Primary versus Empirical Ceiling models by source dataset",
+        "Expanded test set: Primary versus Expanded models by source dataset",
         fontsize=16,
     )
 
@@ -673,6 +692,22 @@ def main():
     # Overall results and existing four-panel figure
     print_metric_table(df)
     plot_combined_metrics(df)
+
+    # SP versus SP expanded
+    plot_combined_metrics(
+        df,
+        model_order=["SP", "Expanded SP"],
+        title="Expanded test set: SP versus Expanded SP",
+        filename="SP_vs_SP_expanded_all_metrics",
+    )
+
+    # DP versus DP expanded
+    plot_combined_metrics(
+        df,
+        model_order=["DP", "Expanded DP"],
+        title="Expanded test set: DP versus Expanded DP",
+        filename="DP_vs_DP_expanded_all_metrics",
+    )
 
     # Per-dataset results for all four metrics
     print_dataset_metric_tables(df)

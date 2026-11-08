@@ -366,10 +366,22 @@ def add_shared_footer(fig, has_unavailable):
         columnspacing=1.5,
     )
 
+    # note = (
+    #     "Voxel level: Dice, Precision, Sensitivity. Lesions level: Detectability (IoU ≥ 0.20).\n"
+    #     "Values: mean paired differences (row model − column model).\n"
+    #     "* Significant after Holm correction, and Friedman test."
+    # )
+
     note = (
-        "Voxel level: Dice, Precision, Sensitivity. Lesions level: Detectability (IoU ≥ 0.20).\n"
-        "Values: mean paired differences (row model − column model).\n"
-        "* Significant after Holm correction, and Friedman test."
+        "Voxel level: Dice, Precision, Sensitivity. "
+        "Lesion level: Detectability (IoU ≥ 0.20).\n"
+        "Values: mean paired differences "
+        "(row model − column model).\n"
+        "* Holm-adjusted Wilcoxon p < 0.05 "
+        "(15 pairs per dataset × metric), with significant "
+        "Holm-adjusted Friedman test.\n"
+        "SP–DP: valid SP–DP pairs; other pairs: "
+        "cases valid across all six models."
     )
 
 

@@ -1,24 +1,24 @@
 {
     "foreground_mean": {
-        "Dice": 0.6798086075737372,
-        "FN": 5183.459119496855,
-        "FP": 4379.201257861635,
-        "IoU": 0.5559651585673484,
-        "TN": 23518885.893081762,
-        "TP": 24942.540880503144,
-        "n_pred": 29321.74213836478,
-        "n_ref": 30126.0
+        "Dice": 0.6813760395414564,
+        "FN": 5141.573604060914,
+        "FP": 4392.0,
+        "IoU": 0.5573124726594645,
+        "TN": 23438448.18781726,
+        "TP": 23886.34010152284,
+        "n_pred": 28278.34010152284,
+        "n_ref": 29027.913705583756
     },
     "mean": {
         "1": {
-            "Dice": 0.6798086075737372,
-            "FN": 5183.459119496855,
-            "FP": 4379.201257861635,
-            "IoU": 0.5559651585673484,
-            "TN": 23518885.893081762,
-            "TP": 24942.540880503144,
-            "n_pred": 29321.74213836478,
-            "n_ref": 30126.0
+            "Dice": 0.6813760395414564,
+            "FN": 5141.573604060914,
+            "FP": 4392.0,
+            "IoU": 0.5573124726594645,
+            "TN": 23438448.18781726,
+            "TP": 23886.34010152284,
+            "n_pred": 28278.34010152284,
+            "n_ref": 29027.913705583756
         }
     },
     "metric_per_case": [
@@ -1017,13 +1017,13 @@
         {
             "metrics": {
                 "1": {
-                    "Dice": 0.7749314240550467,
-                    "FN": 3378,
-                    "FP": 1463,
-                    "IoU": 0.632561669829222,
-                    "TN": 34327689,
-                    "TP": 8334,
-                    "n_pred": 9797,
+                    "Dice": 0.7744095220383114,
+                    "FN": 3384,
+                    "FP": 1468,
+                    "IoU": 0.631866464339909,
+                    "TN": 34327684,
+                    "TP": 8328,
+                    "n_pred": 9796,
                     "n_ref": 11712
                 }
             },
@@ -1289,13 +1289,13 @@
         {
             "metrics": {
                 "1": {
-                    "Dice": 0.425577839733789,
-                    "FN": 2799,
-                    "FP": 3588,
-                    "IoU": 0.2703073232034731,
-                    "TN": 44817871,
-                    "TP": 2366,
-                    "n_pred": 5954,
+                    "Dice": 0.4281730682738149,
+                    "FN": 2785,
+                    "FP": 3572,
+                    "IoU": 0.27240471557742935,
+                    "TN": 44817887,
+                    "TP": 2380,
+                    "n_pred": 5952,
                     "n_ref": 5165
                 }
             },
@@ -2565,6 +2565,614 @@
             },
             "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1160.nii.gz",
             "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1160.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8087043998517499,
+                    "FN": 171,
+                    "FP": 3442,
+                    "IoU": 0.6788444444444445,
+                    "TN": 7066638,
+                    "TP": 7637,
+                    "n_pred": 11079,
+                    "n_ref": 7808
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1161.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1161.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9136463083533226,
+                    "FN": 2932,
+                    "FP": 3620,
+                    "IoU": 0.8410210370514158,
+                    "TN": 35086083,
+                    "TP": 34661,
+                    "n_pred": 38281,
+                    "n_ref": 37593
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1162.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1162.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.4943011397720456,
+                    "FN": 308,
+                    "FP": 535,
+                    "IoU": 0.3282868525896414,
+                    "TN": 8911641,
+                    "TP": 412,
+                    "n_pred": 947,
+                    "n_ref": 720
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1163.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1163.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8035027248590991,
+                    "FN": 19529,
+                    "FP": 1564,
+                    "IoU": 0.6715458042012489,
+                    "TN": 41092389,
+                    "TP": 43126,
+                    "n_pred": 44690,
+                    "n_ref": 62655
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1164.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1164.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7044403330249769,
+                    "FN": 41,
+                    "FP": 1237,
+                    "IoU": 0.5437343805783649,
+                    "TN": 7861519,
+                    "TP": 1523,
+                    "n_pred": 2760,
+                    "n_ref": 1564
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1165.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1165.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.42525497814473046,
+                    "FN": 11810,
+                    "FP": 24,
+                    "IoU": 0.27004687885516904,
+                    "TN": 45858988,
+                    "TP": 4378,
+                    "n_pred": 4402,
+                    "n_ref": 16188
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1166.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1166.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8567100113622017,
+                    "FN": 433,
+                    "FP": 702,
+                    "IoU": 0.7493374558303887,
+                    "TN": 35122768,
+                    "TP": 3393,
+                    "n_pred": 4095,
+                    "n_ref": 3826
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1167.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1167.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8507912716118238,
+                    "FN": 44244,
+                    "FP": 7122,
+                    "IoU": 0.7403278887422843,
+                    "TN": 42007373,
+                    "TP": 146445,
+                    "n_pred": 153567,
+                    "n_ref": 190689
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1168.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1168.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7446734194900454,
+                    "FN": 66,
+                    "FP": 665,
+                    "IoU": 0.5932109070673345,
+                    "TN": 12581115,
+                    "TP": 1066,
+                    "n_pred": 1731,
+                    "n_ref": 1132
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1169.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1169.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7148876404494382,
+                    "FN": 325,
+                    "FP": 81,
+                    "IoU": 0.5562841530054645,
+                    "TN": 38796397,
+                    "TP": 509,
+                    "n_pred": 590,
+                    "n_ref": 834
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1170.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1170.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8659590392597128,
+                    "FN": 2972,
+                    "FP": 968,
+                    "IoU": 0.7636047279054419,
+                    "TN": 8896229,
+                    "TP": 12727,
+                    "n_pred": 13695,
+                    "n_ref": 15699
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1171.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1171.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 361,
+                    "FP": 295,
+                    "IoU": 0.0,
+                    "TN": 14417264,
+                    "TP": 0,
+                    "n_pred": 295,
+                    "n_ref": 361
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1172.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1172.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5361284567350579,
+                    "FN": 506,
+                    "FP": 534,
+                    "IoU": 0.3662400975015235,
+                    "TN": 9173399,
+                    "TP": 601,
+                    "n_pred": 1135,
+                    "n_ref": 1107
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1173.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1173.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 200,
+                    "FP": 115,
+                    "IoU": 0.0,
+                    "TN": 9699013,
+                    "TP": 0,
+                    "n_pred": 115,
+                    "n_ref": 200
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1174.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1174.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6726165179203853,
+                    "FN": 945,
+                    "FP": 1366,
+                    "IoU": 0.5067235859124867,
+                    "TN": 36171187,
+                    "TP": 2374,
+                    "n_pred": 3740,
+                    "n_ref": 3319
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1175.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1175.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8324108520097995,
+                    "FN": 104,
+                    "FP": 1743,
+                    "IoU": 0.712931302455704,
+                    "TN": 13625054,
+                    "TP": 4587,
+                    "n_pred": 6330,
+                    "n_ref": 4691
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1176.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1176.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7750741839762612,
+                    "FN": 455,
+                    "FP": 303,
+                    "IoU": 0.6327519379844961,
+                    "TN": 37746672,
+                    "TP": 1306,
+                    "n_pred": 1609,
+                    "n_ref": 1761
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1177.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1177.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8557869249394673,
+                    "FN": 1646,
+                    "FP": 2821,
+                    "IoU": 0.7479261892669714,
+                    "TN": 25410247,
+                    "TP": 13254,
+                    "n_pred": 16075,
+                    "n_ref": 14900
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1178.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1178.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7839416787337095,
+                    "FN": 938,
+                    "FP": 3389,
+                    "IoU": 0.6446579617311324,
+                    "TN": 12832879,
+                    "TP": 7850,
+                    "n_pred": 11239,
+                    "n_ref": 8788
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1179.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1179.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.910246568612399,
+                    "FN": 1909,
+                    "FP": 3937,
+                    "IoU": 0.8352775429698507,
+                    "TN": 12547422,
+                    "TP": 29644,
+                    "n_pred": 33581,
+                    "n_ref": 31553
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1180.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1180.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8947201279683843,
+                    "FN": 2958,
+                    "FP": 5993,
+                    "IoU": 0.8094964457497978,
+                    "TN": 33507446,
+                    "TP": 38035,
+                    "n_pred": 44028,
+                    "n_ref": 40993
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1181.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1181.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9041209341674644,
+                    "FN": 3710,
+                    "FP": 17823,
+                    "IoU": 0.8250188933763479,
+                    "TN": 22683469,
+                    "TP": 101526,
+                    "n_pred": 119349,
+                    "n_ref": 105236
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1182.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1182.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6079471947194719,
+                    "FN": 14502,
+                    "FP": 15196,
+                    "IoU": 0.4367271071997572,
+                    "TN": 43987468,
+                    "TP": 23026,
+                    "n_pred": 38222,
+                    "n_ref": 37528
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1183.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1183.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.1367837338262477,
+                    "FN": 306,
+                    "FP": 628,
+                    "IoU": 0.07341269841269842,
+                    "TN": 12319760,
+                    "TP": 74,
+                    "n_pred": 702,
+                    "n_ref": 380
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1184.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1184.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5683247570040023,
+                    "FN": 630,
+                    "FP": 125,
+                    "IoU": 0.39696485623003197,
+                    "TN": 13105948,
+                    "TP": 497,
+                    "n_pred": 622,
+                    "n_ref": 1127
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1185.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1185.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.5081564245810056,
+                    "FN": 8932,
+                    "FP": 37289,
+                    "IoU": 0.3406231276213301,
+                    "TN": 40300078,
+                    "TP": 23877,
+                    "n_pred": 61166,
+                    "n_ref": 32809
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1186.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1186.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7817585661148471,
+                    "FN": 47768,
+                    "FP": 17594,
+                    "IoU": 0.6417107023044708,
+                    "TN": 34158436,
+                    "TP": 117066,
+                    "n_pred": 134660,
+                    "n_ref": 164834
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1187.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1187.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7851922617625985,
+                    "FN": 1538,
+                    "FP": 2959,
+                    "IoU": 0.6463510537905002,
+                    "TN": 40357460,
+                    "TP": 8219,
+                    "n_pred": 11178,
+                    "n_ref": 9757
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1188.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1188.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8307864070895262,
+                    "FN": 1623,
+                    "FP": 802,
+                    "IoU": 0.7105514442587729,
+                    "TN": 14409542,
+                    "TP": 5953,
+                    "n_pred": 6755,
+                    "n_ref": 7576
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1189.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1189.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7903831705484599,
+                    "FN": 5676,
+                    "FP": 5205,
+                    "IoU": 0.653416149068323,
+                    "TN": 12027229,
+                    "TP": 20514,
+                    "n_pred": 25719,
+                    "n_ref": 26190
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1190.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1190.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7914503816793893,
+                    "FN": 271,
+                    "FP": 1095,
+                    "IoU": 0.6548762001010612,
+                    "TN": 13103242,
+                    "TP": 2592,
+                    "n_pred": 3687,
+                    "n_ref": 2863
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1191.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1191.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7749607945635129,
+                    "FN": 1850,
+                    "FP": 1594,
+                    "IoU": 0.632600810753147,
+                    "TN": 8117090,
+                    "TP": 5930,
+                    "n_pred": 7524,
+                    "n_ref": 7780
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1192.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1192.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6976595062520039,
+                    "FN": 368,
+                    "FP": 575,
+                    "IoU": 0.535696701132447,
+                    "TN": 12318737,
+                    "TP": 1088,
+                    "n_pred": 1663,
+                    "n_ref": 1456
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1193.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1193.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8537287954763683,
+                    "FN": 273,
+                    "FP": 9324,
+                    "IoU": 0.7447877885331348,
+                    "TN": 8613148,
+                    "TP": 28007,
+                    "n_pred": 37331,
+                    "n_ref": 28280
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1194.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1194.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.34073604060913704,
+                    "FN": 172,
+                    "FP": 1906,
+                    "IoU": 0.20535372848948374,
+                    "TN": 10221001,
+                    "TP": 537,
+                    "n_pred": 2443,
+                    "n_ref": 709
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1195.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1195.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.786107352277853,
+                    "FN": 2163,
+                    "FP": 208,
+                    "IoU": 0.6475921521997622,
+                    "TN": 44295608,
+                    "TP": 4357,
+                    "n_pred": 4565,
+                    "n_ref": 6520
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1196.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1196.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.811793965877923,
+                    "FN": 3812,
+                    "FP": 12382,
+                    "IoU": 0.6832097654492458,
+                    "TN": 23279697,
+                    "TP": 34925,
+                    "n_pred": 47307,
+                    "n_ref": 38737
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1197.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1197.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7257509952949692,
+                    "FN": 2281,
+                    "FP": 3781,
+                    "IoU": 0.5695519420578001,
+                    "TN": 36161789,
+                    "TP": 8021,
+                    "n_pred": 11802,
+                    "n_ref": 10302
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/TCIA_CRLM/SP/TCIA_CRLM_1198.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/Full_TCIA_CRLM/labelsTs/TCIA_CRLM_1198.nii.gz"
         }
     ]
 }

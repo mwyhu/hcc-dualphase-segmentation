@@ -1,0 +1,32 @@
+EVAL pooled validation
+
+srun \
+--partition=genoa \
+--cpus-per-task=16 \
+--mem=128G \
+--time=01:00:00 \
+--pty bash
+
+cd /projects/prjs2180/code/hcc-dualphase-segmentation
+
+source setup_env.sh
+
+
+#######
+DUAL PHASE
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/DP/pooled/labelsTs \
+  /projects/prjs2180/evaluation/predictions/pooled_validation/DP \
+  -djfile /projects/prjs2180/evaluation/predictions/pooled_validation/DP/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/pooled_validation/DP/plans.json
+
+
+#######
+SINGLE PHASE
+#######
+nnUNetv2_evaluate_folder \
+  /projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/pooled/labelsTs \
+  /projects/prjs2180/evaluation/predictions/pooled_validation/SP \
+  -djfile /projects/prjs2180/evaluation/predictions/pooled_validation/SP/dataset.json \
+  -pfile /projects/prjs2180/evaluation/predictions/pooled_validation/SP/plans.json

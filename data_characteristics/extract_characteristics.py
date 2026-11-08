@@ -198,6 +198,8 @@ def analyse(args):
             "total_tumour_volume_ml": np.nan,
             "mean_lesion_volume_ml": np.nan,
             "median_lesion_volume_ml": np.nan,
+            "ART_tumour_median_hu": np.nan,
+            "PV_tumour_median_hu": np.nan,
             "has_ART": False,
             "has_PV": False,
             "ART_zero_filled": False,
@@ -208,7 +210,6 @@ def analyse(args):
         tumour = None
         components = None
         case_lesions = []
-
 
         # Segmentation measurements
         seg_path = seg_files.get(case_id)
@@ -267,6 +268,8 @@ def analyse(args):
                         "volume_ml": float(volume),
                         "ART_mean_hu": np.nan,
                         "PV_mean_hu": np.nan,
+                        "ART_median_hu": np.nan,
+                        "PV_median_hu": np.nan,
                     }
                     for index, volume in enumerate(lesion_volumes)
                 ]
@@ -280,7 +283,6 @@ def analyse(args):
                     seg_path,
                     f"Segmentation analysis failed: {error}",
                 )
-
 
         # Phase availability, image geometry, and tumour HU
         for phase, phase_files in [
@@ -306,6 +308,7 @@ def analyse(args):
                 "spacing_z_mm": np.nan,
                 "tumour_mean_hu": np.nan,
                 "tumour_sd_hu": np.nan,
+                "tumour_median_hu": np.nan,
             }
 
             try:
@@ -362,9 +365,15 @@ def analyse(args):
                             volume["tumour_sd_hu"] = float(
                                 tumour_hu.std(dtype=np.float64)
                             )
+                            volume["tumour_median_hu"] = float(
+                                np.median(tumour_hu)
+                            )
 
                             case[f"{phase}_tumour_mean_hu"] = (
                                 volume["tumour_mean_hu"]
+                            )
+                            case[f"{phase}_tumour_median_hu"] = (
+                                volume["tumour_median_hu"]
                             )
 
                             lesion_means = ndimage.mean(
@@ -375,11 +384,24 @@ def analyse(args):
                                 ),
                             )
 
-                            for lesion, mean_hu in zip(
-                                case_lesions, lesion_means
+                            lesion_medians = ndimage.median(
+                                ct,
+                                labels=components,
+                                index=np.arange(
+                                    1, len(case_lesions) + 1
+                                ),
+                            )
+
+                            for lesion, mean_hu, median_hu in zip(
+                                case_lesions,
+                                lesion_means,
+                                lesion_medians,
                             ):
                                 lesion[f"{phase}_mean_hu"] = float(
                                     mean_hu
+                                )
+                                lesion[f"{phase}_median_hu"] = float(
+                                    median_hu
                                 )
 
             except Exception as error:
@@ -414,6 +436,7 @@ def analyse(args):
             "read_ok", "zero_filled", "geometry_matches_seg",
             "n_slices", "spacing_x_mm", "spacing_y_mm",
             "spacing_z_mm", "tumour_mean_hu", "tumour_sd_hu",
+            "tumour_median_hu",
         ],
     )
 
@@ -422,6 +445,7 @@ def analyse(args):
         columns=[
             "dataset", "case_id", "lesion_id",
             "volume_ml", "ART_mean_hu", "PV_mean_hu",
+            "ART_median_hu", "PV_median_hu",
         ],
     )
 
@@ -582,6 +606,7 @@ def summarise(dataset, cases, volumes, lesions):
             ("spacing_y_mm", "mm"),
             ("spacing_z_mm", "mm"),
             ("tumour_mean_hu", "HU"),
+            ("tumour_median_hu", "HU"),
         ]:
             add_stats(
                 f"{phase}_{column}",
@@ -590,7 +615,6 @@ def summarise(dataset, cases, volumes, lesions):
             )
 
     return pd.DataFrame(rows)
-
 
 
 def main():

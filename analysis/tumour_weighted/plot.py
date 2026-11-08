@@ -17,12 +17,13 @@ BASE_DIR = Path(
     "hcc-dualphase-segmentation/analysis/tumour_weighted"
 )
 
-RESULTS_DIR = BASE_DIR / "crlm_sp_vs_dp_results"
-RESULTS_FILE = RESULTS_DIR / "paired_ttest_results.csv"
-FIGURE_DIR = RESULTS_DIR / "comparison_matrices"
+GROUPS = {
+    "CRLM": BASE_DIR / "crlm_sp_vs_dp_results",
+    "HCC": BASE_DIR / "hcc_sp_vs_dp_results",
+    "Mixed": BASE_DIR / "mixed_sp_vs_dp_results",
+}
 
 METRICS = ["dice", "precision", "recall", "detectability"]
-
 
 METRIC_LABELS = {
     "dice": "Dice",
@@ -56,14 +57,8 @@ sns.set_theme(style="white", font_scale=1.05)
 # Load and validate results
 # -------------------------------------------------------------------
 
-def load_results():
-    if not RESULTS_FILE.is_file():
-        raise FileNotFoundError(
-            f"Results file not found: {RESULTS_FILE}\n"
-            "Run the combined CRLM paired t-test script first."
-        )
-
-    results = pd.read_csv(RESULTS_FILE)
+def load_results(results_file, group):
+    results = pd.read_csv(results_file)
 
     required = {
         "metric",
@@ -76,21 +71,36 @@ def load_results():
 
     if missing:
         raise ValueError(
-            f"Missing columns: {sorted(missing)}"
+            f"{group}: missing columns: {sorted(missing)}"
         )
 
-    results = results[
+    # Check the group label when present.
+    if "tumour_type" in results.columns:
+        observed_groups = set(
+            results["tumour_type"].dropna().astype(str)
+        )
+
+        if observed_groups != {group}:
+            raise ValueError(
+                f"{results_file}: expected tumour_type "
+                f"{group!r}, found {sorted(observed_groups)}"
+            )
+
+    results = results.loc[
         results["metric"].isin(METRICS)
     ].copy()
 
     if results["metric"].duplicated().any():
-        raise ValueError("Duplicate metric results found.")
+        raise ValueError(
+            f"{group}: duplicate metric results found."
+        )
 
     missing_metrics = set(METRICS) - set(results["metric"])
 
     if missing_metrics:
         raise ValueError(
-            f"Missing metrics: {sorted(missing_metrics)}"
+            f"{group}: missing metrics: "
+            f"{sorted(missing_metrics)}"
         )
 
     numeric_columns = [
@@ -117,7 +127,27 @@ def load_results():
     )
 
     if invalid_p.any():
-        raise ValueError("Invalid Holm-adjusted p-values.")
+        raise ValueError(
+            f"{group}: invalid Holm-adjusted p-values."
+        )
+
+    differences = results[
+        "mean_difference_dual_minus_single"
+    ]
+
+    invalid_difference = (
+        differences.notna()
+        & (
+            ~np.isfinite(differences)
+            | (differences < -1)
+            | (differences > 1)
+        )
+    )
+
+    if invalid_difference.any():
+        raise ValueError(
+            f"{group}: invalid mean differences."
+        )
 
     counts = results["n_paired_cases"]
 
@@ -126,9 +156,11 @@ def load_results():
         | (counts < 0)
         | (counts != np.floor(counts))
     ).any():
-        raise ValueError("Invalid paired case counts.")
+        raise ValueError(
+            f"{group}: invalid paired case counts."
+        )
 
-    return results.set_index("metric")
+    return results.set_index("metric").loc[METRICS]
 
 
 # -------------------------------------------------------------------
@@ -170,18 +202,44 @@ def prepare_matrix(results):
             codes[0, column] = 0
 
         marker = "*" if significant else ""
-        annotations[0, column] = f"{difference:+.4f}{marker}"
+        annotations[0, column] = (
+            f"{difference:+.4f}{marker}"
+        )
 
     return codes, annotations, unavailable
+
+
+# -------------------------------------------------------------------
+# Read detectability threshold for the figure note
+# -------------------------------------------------------------------
+
+def detectability_note(results):
+    if "iou_threshold" not in results.columns:
+        return "Lesion level: Detectability."
+
+    value = pd.to_numeric(
+        results.loc["detectability", "iou_threshold"],
+        errors="coerce",
+    )
+
+    if not np.isfinite(value):
+        return "Lesion level: Detectability."
+
+    return (
+        f"Lesion level: Detectability (IoU ≥ {value:.2f})."
+    )
+
 
 # -------------------------------------------------------------------
 # Draw and save
 # -------------------------------------------------------------------
 
-def plot_crlm_comparison(results):
+def plot_group_comparison(results, group, results_dir):
     codes, annotations, unavailable = prepare_matrix(results)
 
-    fig, ax = plt.subplots(figsize=(10, 3.8))
+    figure_dir = results_dir / "comparison_matrices"
+
+    fig, ax = plt.subplots(figsize=(10, 4.2))
     ax.set_facecolor(COLOURS["unavailable"])
 
     sns.heatmap(
@@ -193,7 +251,10 @@ def plot_crlm_comparison(results):
         cbar=False,
         linewidths=2,
         linecolor="white",
-        xticklabels=[METRIC_LABELS[m] for m in METRICS],
+        xticklabels=[
+            METRIC_LABELS[metric]
+            for metric in METRICS
+        ],
         yticklabels=["DP − SP"],
         ax=ax,
     )
@@ -211,7 +272,7 @@ def plot_crlm_comparison(results):
         )
 
     ax.set_title(
-        "CRLM: Single-Phase versus Dual-Phase",
+        f"{group}: Single-Phase versus Dual-Phase",
         fontsize=16,
         weight="bold",
         pad=16,
@@ -226,6 +287,7 @@ def plot_crlm_comparison(results):
         rotation=0,
         fontsize=11,
     )
+
     ax.set_yticklabels(
         ax.get_yticklabels(),
         rotation=0,
@@ -259,7 +321,7 @@ def plot_crlm_comparison(results):
     fig.legend(
         handles=legend,
         loc="lower center",
-        bbox_to_anchor=(0.5, 0.15),
+        bbox_to_anchor=(0.5, 0.18),
         ncol=len(legend),
         frameon=False,
         fontsize=10,
@@ -269,20 +331,25 @@ def plot_crlm_comparison(results):
         0.5,
         0.025,
         "Voxel level: Dice, Precision, Sensitivity. "
-        "Lesion level: Detectability (IoU ≥ 0.20).\n"
-        "Values: mean paired differences (named model − comparison model).\n"
-        "* Holm-adjusted Wilcoxon p < 0.05.",
+        f"{detectability_note(results)}\n"
+        "Values: equal-dataset-weighted mean paired "
+        "differences (DP − SP).\n"
+        f"* Holm-adjusted p < {ALPHA:.2f}; "
+        "t-test with Satterthwaite degrees of freedom.\n"
+        "Holm correction across four metrics within this group.",
         ha="center",
         va="bottom",
         fontsize=9,
     )
 
-    fig.tight_layout(rect=[0, 0.27, 1, 1])
+    fig.tight_layout(rect=[0, 0.31, 1, 1])
 
-    FIGURE_DIR.mkdir(parents=True, exist_ok=True)
+    figure_dir.mkdir(parents=True, exist_ok=True)
 
-    for extension in ["png", "svg", "pdf"]:
-        path = FIGURE_DIR / f"CRLM_DP_vs_SP_matrix.{extension}"
+    filename = f"{group}_DP_vs_SP_matrix"
+
+    for extension in ("png", "svg", "pdf"):
+        path = figure_dir / f"{filename}.{extension}"
 
         fig.savefig(
             path,
@@ -299,9 +366,41 @@ def plot_crlm_comparison(results):
     plt.close(fig)
 
 
+# -------------------------------------------------------------------
+# Main
+# -------------------------------------------------------------------
+
 def main():
-    results = load_results()
-    plot_crlm_comparison(results)
+    plotted_groups = []
+
+    for group, results_dir in GROUPS.items():
+        results_file = (
+            results_dir / "paired_ttest_results.csv"
+        )
+
+        if not results_file.is_file():
+            print(
+                f"\nSkipping {group}: no results file found.\n"
+                f"Expected: {results_file}\n"
+                "The group may still be a placeholder."
+            )
+            continue
+
+        results = load_results(results_file, group)
+
+        plot_group_comparison(
+            results,
+            group,
+            results_dir,
+        )
+
+        plotted_groups.append(group)
+
+    if not plotted_groups:
+        print(
+            "\nNo figures created. Run the grouped "
+            "SP-versus-DP statistical analysis first."
+        )
 
 
 if __name__ == "__main__":

@@ -1,0 +1,5 @@
+tumour_type,dataset,metric,n_paired_cases,n_excluded_pairs,weight,case_weight
+Mixed,LiTS,dice,126,5,1.0,0.007936507936507936
+Mixed,LiTS,precision,123,8,1.0,0.008130081300813009
+Mixed,LiTS,recall,118,13,1.0,0.00847457627118644
+Mixed,LiTS,detectability,118,13,1.0,0.00847457627118644

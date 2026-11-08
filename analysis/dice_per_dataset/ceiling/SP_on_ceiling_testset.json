@@ -1,24 +1,24 @@
 {
     "foreground_mean": {
-        "Dice": 0.7274896520133273,
-        "FN": 12457.607508532423,
-        "FP": 8643.784982935154,
-        "IoU": 0.6110761507529229,
-        "TN": 36352775.49829352,
-        "TP": 65928.48805460751,
-        "n_pred": 74572.27303754266,
-        "n_ref": 78386.09556313993
+        "Dice": 0.729049404289281,
+        "FN": 12446.285714285714,
+        "FP": 8552.774086378737,
+        "IoU": 0.6127843633166649,
+        "TN": 35998042.87707641,
+        "TP": 65384.48172757475,
+        "n_pred": 73937.25581395348,
+        "n_ref": 77830.76744186046
     },
     "mean": {
         "1": {
-            "Dice": 0.7274896520133273,
-            "FN": 12457.607508532423,
-            "FP": 8643.784982935154,
-            "IoU": 0.6110761507529229,
-            "TN": 36352775.49829352,
-            "TP": 65928.48805460751,
-            "n_pred": 74572.27303754266,
-            "n_ref": 78386.09556313993
+            "Dice": 0.729049404289281,
+            "FN": 12446.285714285714,
+            "FP": 8552.774086378737,
+            "IoU": 0.6127843633166649,
+            "TN": 35998042.87707641,
+            "TP": 65384.48172757475,
+            "n_pred": 73937.25581395348,
+            "n_ref": 77830.76744186046
         }
     },
     "metric_per_case": [
@@ -3561,13 +3561,13 @@
         {
             "metrics": {
                 "1": {
-                    "Dice": 0.7749314240550467,
-                    "FN": 3378,
-                    "FP": 1463,
-                    "IoU": 0.632561669829222,
-                    "TN": 34327689,
-                    "TP": 8334,
-                    "n_pred": 9797,
+                    "Dice": 0.7744095220383114,
+                    "FN": 3384,
+                    "FP": 1468,
+                    "IoU": 0.631866464339909,
+                    "TN": 34327684,
+                    "TP": 8328,
+                    "n_pred": 9796,
                     "n_ref": 11712
                 }
             },
@@ -3705,22 +3705,6 @@
         {
             "metrics": {
                 "1": {
-                    "Dice": 0.8436402745705881,
-                    "FN": 3621,
-                    "FP": 1322,
-                    "IoU": 0.7295655979866507,
-                    "TN": 34322586,
-                    "TP": 13335,
-                    "n_pred": 14657,
-                    "n_ref": 16956
-                }
-            },
-            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1138.nii.gz",
-            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1138.nii.gz"
-        },
-        {
-            "metrics": {
-                "1": {
                     "Dice": 0.7202952029520295,
                     "FN": 14,
                     "FP": 744,
@@ -3737,34 +3721,34 @@
         {
             "metrics": {
                 "1": {
-                    "Dice": 0.7421518126154145,
-                    "FN": 2487,
-                    "FP": 166,
-                    "IoU": 0.5900169989182507,
-                    "TN": 36169401,
-                    "TP": 3818,
-                    "n_pred": 3984,
-                    "n_ref": 6305
+                    "Dice": 0.8089667786805054,
+                    "FN": 3884,
+                    "FP": 9589,
+                    "IoU": 0.6792142857142857,
+                    "TN": 37706736,
+                    "TP": 28527,
+                    "n_pred": 38116,
+                    "n_ref": 32411
                 }
             },
-            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1147.nii.gz",
-            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1147.nii.gz"
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1145.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1145.nii.gz"
         },
         {
             "metrics": {
                 "1": {
-                    "Dice": 0.8282244071717756,
-                    "FN": 294,
-                    "FP": 597,
-                    "IoU": 0.7068114511352419,
-                    "TN": 27784225,
-                    "TP": 2148,
-                    "n_pred": 2745,
-                    "n_ref": 2442
+                    "Dice": 0.9298273304081568,
+                    "FN": 2057,
+                    "FP": 2389,
+                    "IoU": 0.8688572945548935,
+                    "TN": 31947666,
+                    "TP": 29456,
+                    "n_pred": 31845,
+                    "n_ref": 31513
                 }
             },
-            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1151.nii.gz",
-            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1151.nii.gz"
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1152.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1152.nii.gz"
         },
         {
             "metrics": {
@@ -3785,34 +3769,178 @@
         {
             "metrics": {
                 "1": {
-                    "Dice": 0.7118084227910817,
-                    "FN": 200,
-                    "FP": 149,
-                    "IoU": 0.5525641025641026,
-                    "TN": 39845108,
-                    "TP": 431,
-                    "n_pred": 580,
-                    "n_ref": 631
+                    "Dice": 0.7549933422103862,
+                    "FN": 511,
+                    "FP": 593,
+                    "IoU": 0.6064171122994653,
+                    "TN": 11793675,
+                    "TP": 1701,
+                    "n_pred": 2294,
+                    "n_ref": 2212
                 }
             },
-            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1154.nii.gz",
-            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1154.nii.gz"
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1156.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1156.nii.gz"
         },
         {
             "metrics": {
                 "1": {
-                    "Dice": 0.3608856402192852,
-                    "FN": 7359,
-                    "FP": 7680,
-                    "IoU": 0.2201711174487944,
-                    "TN": 8893611,
-                    "TP": 4246,
-                    "n_pred": 11926,
-                    "n_ref": 11605
+                    "Dice": 0.7044403330249769,
+                    "FN": 41,
+                    "FP": 1237,
+                    "IoU": 0.5437343805783649,
+                    "TN": 7861519,
+                    "TP": 1523,
+                    "n_pred": 2760,
+                    "n_ref": 1564
                 }
             },
-            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1159.nii.gz",
-            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1159.nii.gz"
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1165.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1165.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8567100113622017,
+                    "FN": 433,
+                    "FP": 702,
+                    "IoU": 0.7493374558303887,
+                    "TN": 35122768,
+                    "TP": 3393,
+                    "n_pred": 4095,
+                    "n_ref": 3826
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1167.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1167.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8507912716118238,
+                    "FN": 44244,
+                    "FP": 7122,
+                    "IoU": 0.7403278887422843,
+                    "TN": 42007373,
+                    "TP": 146445,
+                    "n_pred": 153567,
+                    "n_ref": 190689
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1168.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1168.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6726165179203853,
+                    "FN": 945,
+                    "FP": 1366,
+                    "IoU": 0.5067235859124867,
+                    "TN": 36171187,
+                    "TP": 2374,
+                    "n_pred": 3740,
+                    "n_ref": 3319
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1175.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1175.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.910246568612399,
+                    "FN": 1909,
+                    "FP": 3937,
+                    "IoU": 0.8352775429698507,
+                    "TN": 12547422,
+                    "TP": 29644,
+                    "n_pred": 33581,
+                    "n_ref": 31553
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1180.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1180.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.1367837338262477,
+                    "FN": 306,
+                    "FP": 628,
+                    "IoU": 0.07341269841269842,
+                    "TN": 12319760,
+                    "TP": 74,
+                    "n_pred": 702,
+                    "n_ref": 380
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1184.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1184.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7817585661148471,
+                    "FN": 47768,
+                    "FP": 17594,
+                    "IoU": 0.6417107023044708,
+                    "TN": 34158436,
+                    "TP": 117066,
+                    "n_pred": 134660,
+                    "n_ref": 164834
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1187.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1187.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7903831705484599,
+                    "FN": 5676,
+                    "FP": 5205,
+                    "IoU": 0.653416149068323,
+                    "TN": 12027229,
+                    "TP": 20514,
+                    "n_pred": 25719,
+                    "n_ref": 26190
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1190.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1190.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7914503816793893,
+                    "FN": 271,
+                    "FP": 1095,
+                    "IoU": 0.6548762001010612,
+                    "TN": 13103242,
+                    "TP": 2592,
+                    "n_pred": 3687,
+                    "n_ref": 2863
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1191.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1191.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.786107352277853,
+                    "FN": 2163,
+                    "FP": 208,
+                    "IoU": 0.6475921521997622,
+                    "TN": 44295608,
+                    "TP": 4357,
+                    "n_pred": 4565,
+                    "n_ref": 6520
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/ceiling_SP/SP_on_ceiling_testset/TCIA_CRLM_1196.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/Dataset004_ceiling_SP/labelsTs/TCIA_CRLM_1196.nii.gz"
         },
         {
             "metrics": {

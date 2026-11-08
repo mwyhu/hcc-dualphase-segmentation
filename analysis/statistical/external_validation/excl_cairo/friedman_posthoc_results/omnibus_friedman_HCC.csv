@@ -1,0 +1,5 @@
+scope,datasets_included,metric,n_complete_cases,n_excluded_cases,n_models,friedman_statistic,degrees_of_freedom,friedman_p_value,kendalls_w,holm_adjusted_p_value,significant_after_holm,significance
+HCC,HCC,dice,82,0,6,245.35360678925036,5,5.456925503127696e-51,0.5984234311932936,1.637077650938309e-50,True,Significant
+HCC,HCC,precision,80,2,6,73.73836793128129,5,1.705383922063306e-14,0.18434591982820323,1.705383922063306e-14,True,Significant
+HCC,HCC,recall,82,0,6,315.2086280056578,5,5.372282713986407e-66,0.7688015317211165,2.1489130855945627e-65,True,Significant
+HCC,HCC,detectability,82,0,6,167.9943043124493,5,1.954308590137215e-34,0.4097422056401202,3.90861718027443e-34,True,Significant

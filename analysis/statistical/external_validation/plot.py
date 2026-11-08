@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import matplotlib.pyplot as plt
-from matplotlib.colors import ListedColormap
+from matplotlib.colors import ListedColormap, BoundaryNorm
 from matplotlib.patches import Patch
 import numpy as np
 import pandas as pd
@@ -39,14 +39,13 @@ METRIC_LABELS = {
     "detectability": "Detectability",
 }
 
-
 BASELINES = ["TSLL", "TSLT", "AtlasNet", "COALA"]
 
-# Cell colours indicate significance and direction.
 COLOURS = {
     "reduction": "#E6A09B",
     "not_significant": "#EEEEEE",
     "improvement": "#9DCEAE",
+    "unavailable": "#FFFFFF",
 }
 
 CMAP = ListedColormap([
@@ -54,6 +53,11 @@ CMAP = ListedColormap([
     COLOURS["not_significant"],
     COLOURS["improvement"],
 ])
+
+NORM = BoundaryNorm(
+    [-1.5, -0.5, 0.5, 1.5],
+    CMAP.N,
+)
 
 SHOW_FIGURES = True
 
@@ -64,21 +68,13 @@ sns.set_theme(style="white", font_scale=1.05)
 # Load and validate statistical results
 # -------------------------------------------------------------------
 
-def load_results(dataset):
-    path = RESULTS_DIR / f"posthoc_wilcoxon_{dataset}.csv"
-
-    if not path.is_file():
-        raise FileNotFoundError(
-            f"Results file not found: {path}"
-        )
-
-    results = pd.read_csv(path)
-
+def validate_results(results, path):
     required = {
         "model_a",
         "model_b",
         "metric",
         "mean_difference_a_minus_b",
+        "holm_adjusted_p_value",
         "significant_after_holm",
     }
 
@@ -89,14 +85,138 @@ def load_results(dataset):
             f"Missing columns in {path}: {sorted(missing)}"
         )
 
-    keys = ["model_a", "model_b", "metric"]
+    # Detect duplicate pairs, including pairs stored in reverse.
+    pairs = results.apply(
+        lambda row: tuple(sorted([
+            str(row["model_a"]),
+            str(row["model_b"]),
+        ])),
+        axis=1,
+    )
 
-    if results.duplicated(keys).any():
+    keys = pd.DataFrame({
+        "pair": pairs,
+        "metric": results["metric"],
+    })
+
+    if keys.duplicated().any():
         raise ValueError(
             f"Duplicate comparisons found in {path}"
         )
 
+    for column in [
+        "mean_difference_a_minus_b",
+        "holm_adjusted_p_value",
+    ]:
+        results[column] = pd.to_numeric(
+            results[column],
+            errors="raise",
+        )
+
+    differences = results["mean_difference_a_minus_b"]
+
+    invalid_difference = (
+        differences.notna()
+        & (
+            ~np.isfinite(differences)
+            | (differences < -1)
+            | (differences > 1)
+        )
+    )
+
+    if invalid_difference.any():
+        raise ValueError(
+            f"Invalid mean differences in {path}"
+        )
+
+    p_values = results["holm_adjusted_p_value"]
+
+    invalid_p = (
+        p_values.notna()
+        & (
+            ~np.isfinite(p_values)
+            | (p_values < 0)
+            | (p_values > 1)
+        )
+    )
+
+    if invalid_p.any():
+        raise ValueError(
+            f"Invalid adjusted p-values in {path}"
+        )
+
     return results
+
+
+def load_results(dataset):
+    """Load the full benchmark results."""
+    path = RESULTS_DIR / f"posthoc_wilcoxon_{dataset}.csv"
+
+    if not path.is_file():
+        raise FileNotFoundError(
+            f"Benchmark results file not found: {path}"
+        )
+
+    results = pd.read_csv(path)
+
+    return validate_results(results, path)
+
+
+def load_sp_dp_results(dataset):
+    """
+    Load dedicated SP–DP results.
+
+    These use valid SP–DP pairs and Holm correction across
+    four metrics within this dataset.
+    """
+    path = RESULTS_DIR / f"SP_DP_wilcoxon_{dataset}.csv"
+
+    if not path.is_file():
+        raise FileNotFoundError(
+            f"SP–DP results file not found: {path}\n"
+            "Run the updated standalone statistical script first."
+        )
+
+    results = pd.read_csv(path)
+
+    required = {
+        "metric",
+        "mean_difference_dual_minus_single",
+        "holm_adjusted_p_value",
+        "significant_after_holm",
+    }
+
+    missing = required.difference(results.columns)
+
+    if missing:
+        raise ValueError(
+            f"Missing columns in {path}: {sorted(missing)}"
+        )
+
+    if results["metric"].duplicated().any():
+        raise ValueError(
+            f"Duplicate metric results in {path}"
+        )
+
+    missing_metrics = set(METRICS) - set(results["metric"])
+
+    if missing_metrics:
+        raise ValueError(
+            f"Missing metrics in {path}: "
+            f"{sorted(missing_metrics)}"
+        )
+
+    # Match the structure expected by get_cell().
+    results = results.rename(columns={
+        "mean_difference_dual_minus_single": (
+            "mean_difference_a_minus_b"
+        ),
+    })
+
+    results["model_a"] = "DP"
+    results["model_b"] = "SP"
+
+    return validate_results(results, path)
 
 
 def parse_significance(value):
@@ -126,7 +246,7 @@ def parse_significance(value):
 
 def get_cell(results, model_a, model_b, metric):
     # Find the pair in either direction.
-    selected = results[
+    selected = results.loc[
         (results["metric"] == metric)
         & (
             (
@@ -152,14 +272,31 @@ def get_cell(results, model_a, model_b, metric):
     # Reverse the sign when the CSV stores the opposite direction.
     direction = 1 if row["model_a"] == model_a else -1
 
-    # Keep differences on the original metric scale.
     difference = (
         direction
         * float(row["mean_difference_a_minus_b"])
     )
 
     if not np.isfinite(difference):
-        return 0, "NA"
+        return np.nan, "NA"
+
+    test_available = np.isfinite(
+        float(row["holm_adjusted_p_value"])
+    )
+
+    if "friedman_holm_adjusted_p_value" in row.index:
+        test_available = (
+            test_available
+            and np.isfinite(
+                float(row["friedman_holm_adjusted_p_value"])
+            )
+        )
+
+    if not test_available:
+        return (
+            np.nan,
+            f"{difference:+.4f}\nTest unavailable",
+        )
 
     significant = parse_significance(
         row["significant_after_holm"]
@@ -167,8 +304,10 @@ def get_cell(results, model_a, model_b, metric):
 
     if significant and difference > 0:
         colour_code = 1
+
     elif significant and difference < 0:
         colour_code = -1
+
     else:
         colour_code = 0
 
@@ -184,25 +323,43 @@ def get_cell(results, model_a, model_b, metric):
 # Draw and save a heatmap
 # -------------------------------------------------------------------
 
-def draw_heatmap(codes, annotations, title, filename, figsize):
+def draw_heatmap(
+    codes,
+    annotations,
+    title,
+    filename,
+    figsize,
+    statistical_note,
+):
     fig, ax = plt.subplots(figsize=figsize)
 
+    unavailable = codes.isna()
+    ax.set_facecolor(COLOURS["unavailable"])
+
     sns.heatmap(
-        codes,
-        annot=annotations,
-        fmt="",
+        codes.fillna(0),
+        mask=unavailable,
+        annot=False,
         cmap=CMAP,
-        vmin=-1.5,
-        vmax=1.5,
+        norm=NORM,
         cbar=False,
         linewidths=2,
         linecolor="white",
-        annot_kws={
-            "fontsize": 13,
-            "color": "#222222",
-        },
         ax=ax,
     )
+
+    # Manual annotations also display masked unavailable results.
+    for row in range(len(codes.index)):
+        for column in range(len(codes.columns)):
+            ax.text(
+                column + 0.5,
+                row + 0.5,
+                annotations.iloc[row, column],
+                ha="center",
+                va="center",
+                fontsize=13,
+                color="#222222",
+            )
 
     ax.set_title(
         title,
@@ -243,11 +400,20 @@ def draw_heatmap(codes, annotations, title, filename, figsize):
         ),
     ]
 
+    if unavailable.to_numpy().any():
+        legend.append(
+            Patch(
+                facecolor=COLOURS["unavailable"],
+                edgecolor="#999999",
+                label="Test unavailable",
+            )
+        )
+
     fig.legend(
         handles=legend,
         loc="lower center",
-        bbox_to_anchor=(0.5, 0.15),
-        ncol=3,
+        bbox_to_anchor=(0.5, 0.21),
+        ncol=len(legend),
         frameon=False,
         fontsize=10,
     )
@@ -257,33 +423,29 @@ def draw_heatmap(codes, annotations, title, filename, figsize):
         0.025,
         "Voxel level: Dice, Precision, Sensitivity. "
         "Lesion level: Detectability (IoU ≥ 0.20).\n"
-        "Values: mean paired differences (named model − comparison model).\n"
-        "* Holm-adjusted Wilcoxon p < 0.05.",
+        "Values: mean paired differences "
+        "(named model − comparison model).\n"
+        + statistical_note,
         ha="center",
         va="bottom",
         fontsize=9,
     )
 
-    fig.tight_layout(rect=[0, 0.27, 1, 1])
+    fig.tight_layout(rect=[0, 0.34, 1, 1])
 
-    png_path = FIGURE_DIR / f"{filename}.png"
-    svg_path = FIGURE_DIR / f"{filename}.svg"
+    FIGURE_DIR.mkdir(parents=True, exist_ok=True)
 
-    fig.savefig(
-        png_path,
-        dpi=300,
-        bbox_inches="tight",
-        facecolor="white",
-    )
+    for extension in ("png", "svg", "pdf"):
+        path = FIGURE_DIR / f"{filename}.{extension}"
 
-    fig.savefig(
-        svg_path,
-        bbox_inches="tight",
-        facecolor="white",
-    )
+        fig.savefig(
+            path,
+            dpi=300,
+            bbox_inches="tight",
+            facecolor="white",
+        )
 
-    print(f"Saved: {png_path}")
-    print(f"Saved: {svg_path}")
+        print(f"Saved: {path}")
 
     if SHOW_FIGURES:
         plt.show()
@@ -292,14 +454,17 @@ def draw_heatmap(codes, annotations, title, filename, figsize):
 
 
 # -------------------------------------------------------------------
-# DP versus SP
+# Dedicated DP versus SP
 # -------------------------------------------------------------------
 
 def plot_dp_vs_sp(results, dataset):
-    columns = [METRIC_LABELS[m] for m in METRICS]
+    columns = [
+        METRIC_LABELS[metric]
+        for metric in METRICS
+    ]
 
     codes = pd.DataFrame(
-        0,
+        0.0,
         index=["DP − SP"],
         columns=columns,
     )
@@ -323,23 +488,58 @@ def plot_dp_vs_sp(results, dataset):
         codes.loc["DP − SP", column] = code
         annotations.loc["DP − SP", column] = annotation
 
-    draw_heatmap(
-        codes=codes,
-        annotations=annotations,
-        title=f"{DATASET_LABELS.get(dataset, dataset)}: Single-Phase versus Dual-Phase",        filename=f"{dataset}_DP_vs_SP_matrix",
-        figsize=(10, 3.8),
-    )
+    versions = [
+        (
+            DATASET_LABELS.get(dataset, dataset),
+            f"{dataset}_DP_vs_SP_matrix",
+        )
+    ]
+
+
+    # Additional plots
+    group_labels = {
+        "HCC": "HCC",
+        "LiTS": "Mixed",
+    }
+
+    if dataset in group_labels:
+        group = group_labels[dataset]
+
+        versions.append((
+            group,
+            f"{dataset}_DP_vs_SP_matrix_group_{group}",
+        ))
+
+    for label, filename in versions:
+        draw_heatmap(
+            codes=codes,
+            annotations=annotations,
+            title=(
+                f"{label}: "
+                "Single-Phase versus Dual-Phase"
+            ),
+            filename=filename,
+            figsize=(10, 4.3),
+            statistical_note=(
+                "* Holm-adjusted Wilcoxon p < 0.05; "
+                "correction across four metrics within this dataset.\n"
+                "Cases: valid SP–DP pairs for each metric."
+            ),
+        )
 
 
 # -------------------------------------------------------------------
-# SP or DP versus benchmarks
+# SP or DP versus benchmark models
 # -------------------------------------------------------------------
 
 def plot_model_vs_benchmarks(results, dataset, model):
-    rows = [METRIC_LABELS[m] for m in METRICS]
+    rows = [
+        METRIC_LABELS[metric]
+        for metric in METRICS
+    ]
 
     codes = pd.DataFrame(
-        0,
+        0.0,
         index=rows,
         columns=BASELINES,
     )
@@ -367,9 +567,21 @@ def plot_model_vs_benchmarks(results, dataset, model):
     draw_heatmap(
         codes=codes,
         annotations=annotations,
-        title=f"{DATASET_LABELS.get(dataset, dataset)}: {model} versus Benchmark Models",        filename=f"{dataset}_{model}_vs_benchmarks_matrix",
-        figsize=(9, 5.5),
+        title=(
+            f"{DATASET_LABELS.get(dataset, dataset)}: "
+            f"{model} versus Benchmark Models"
+        ),
+        filename=f"{dataset}_{model}_vs_benchmarks_matrix",
+        figsize=(10, 6.3),
+        statistical_note=(
+            "* Holm-adjusted Wilcoxon p < 0.05 "
+            "(15 pairs per dataset × metric),\n"
+            "with significant Holm-adjusted Friedman test "
+            "(four metrics per dataset).\n"
+            "Cases: valid across all six models for each metric."
+        ),
     )
+
 
 
 def main():
@@ -378,13 +590,23 @@ def main():
     for dataset in DATASETS:
         print(f"\nCreating matrices for {dataset}")
 
-        results = load_results(dataset)
+        # Dedicated SP–DP comparison:
+        # valid SP–DP pairs; Holm across four metrics.
+        sp_dp_results = load_sp_dp_results(dataset)
 
-        plot_dp_vs_sp(results, dataset)
+        plot_dp_vs_sp(
+            sp_dp_results,
+            dataset,
+        )
+
+        # Full benchmark:
+        # Holm across 15 pairs per dataset x metric,
+        # with the Friedman significance gate.
+        benchmark_results = load_results(dataset)
 
         for model in ["SP", "DP"]:
             plot_model_vs_benchmarks(
-                results,
+                benchmark_results,
                 dataset,
                 model,
             )

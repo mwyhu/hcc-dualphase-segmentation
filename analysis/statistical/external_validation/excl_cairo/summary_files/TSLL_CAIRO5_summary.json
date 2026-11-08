@@ -1,0 +1,378 @@
+{
+    "foreground_mean": {
+        "Dice": 0.8142278357427363,
+        "FN": 33097.045454545456,
+        "FP": 13977.0,
+        "IoU": 0.7121682413231091,
+        "TN": 159353638.1818182,
+        "TP": 161574.31818181818,
+        "n_pred": 175551.31818181818,
+        "n_ref": 194671.36363636365
+    },
+    "mean": {
+        "1": {
+            "Dice": 0.8142278357427363,
+            "FN": 33097.045454545456,
+            "FP": 13977.0,
+            "IoU": 0.7121682413231091,
+            "TN": 159353638.1818182,
+            "TP": 161574.31818181818,
+            "n_pred": 175551.31818181818,
+            "n_ref": 194671.36363636365
+        }
+    },
+    "metric_per_case": [
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9007575530598275,
+                    "FN": 66639,
+                    "FP": 19483,
+                    "IoU": 0.8194348349330549,
+                    "TN": 156547298,
+                    "TP": 390836,
+                    "n_pred": 410319,
+                    "n_ref": 457475
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR240_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR240_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8823460130180097,
+                    "FN": 39818,
+                    "FP": 28110,
+                    "IoU": 0.7894625915491211,
+                    "TN": 158798767,
+                    "TP": 254713,
+                    "n_pred": 282823,
+                    "n_ref": 294531
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR240_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR240_1.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8816548230150466,
+                    "FN": 14648,
+                    "FP": 4787,
+                    "IoU": 0.788356619368609,
+                    "TN": 218536267,
+                    "TP": 72394,
+                    "n_pred": 77181,
+                    "n_ref": 87042
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR274_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR274_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8041860766045549,
+                    "FN": 8314,
+                    "FP": 3792,
+                    "IoU": 0.6725010144731502,
+                    "TN": 207318939,
+                    "TP": 24859,
+                    "n_pred": 28651,
+                    "n_ref": 33173
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR274_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR274_1.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8964528944959832,
+                    "FN": 82508,
+                    "FP": 19086,
+                    "IoU": 0.8123376791302003,
+                    "TN": 202358090,
+                    "TP": 439772,
+                    "n_pred": 458858,
+                    "n_ref": 522280
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR312_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR312_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7820625852969239,
+                    "FN": 12354,
+                    "FP": 5691,
+                    "IoU": 0.6421205029550593,
+                    "TN": 203897610,
+                    "TP": 32377,
+                    "n_pred": 38068,
+                    "n_ref": 44731
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR312_2.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR312_2.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8555794026574045,
+                    "FN": 16431,
+                    "FP": 1199,
+                    "IoU": 0.7476092309454275,
+                    "TN": 159837988,
+                    "TP": 52222,
+                    "n_pred": 53421,
+                    "n_ref": 68653
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR408_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR408_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8309684155572957,
+                    "FN": 15695,
+                    "FP": 494,
+                    "IoU": 0.7108177628523454,
+                    "TN": 159851858,
+                    "TP": 39793,
+                    "n_pred": 40287,
+                    "n_ref": 55488
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR408_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR408_1.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8890894148035088,
+                    "FN": 21884,
+                    "FP": 11179,
+                    "IoU": 0.8003249106193835,
+                    "TN": 183859504,
+                    "TP": 132521,
+                    "n_pred": 143700,
+                    "n_ref": 154405
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR508_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR508_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8663014655678877,
+                    "FN": 37574,
+                    "FP": 4527,
+                    "IoU": 0.7641374133043507,
+                    "TN": 177555134,
+                    "TP": 136397,
+                    "n_pred": 140924,
+                    "n_ref": 173971
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR508_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR508_1.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8395241819056786,
+                    "FN": 40268,
+                    "FP": 2416,
+                    "IoU": 0.7234310002980548,
+                    "TN": 171549986,
+                    "TP": 111650,
+                    "n_pred": 114066,
+                    "n_ref": 151918
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR508_2.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR508_2.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8173290233657128,
+                    "FN": 213734,
+                    "FP": 8920,
+                    "IoU": 0.691087411049618,
+                    "TN": 186712193,
+                    "TP": 498113,
+                    "n_pred": 507033,
+                    "n_ref": 711847
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR527_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR527_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9156997208190681,
+                    "FN": 17736,
+                    "FP": 6813,
+                    "IoU": 0.8445075025810905,
+                    "TN": 199333705,
+                    "TP": 133330,
+                    "n_pred": 140143,
+                    "n_ref": 151066
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR527_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR527_1.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8713669064748202,
+                    "FN": 2294,
+                    "FP": 835,
+                    "IoU": 0.7720550739418663,
+                    "TN": 27773537,
+                    "TP": 10598,
+                    "n_pred": 11433,
+                    "n_ref": 12892
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR541_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR541_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7955196665798385,
+                    "FN": 1691,
+                    "FP": 1449,
+                    "IoU": 0.6604671280276817,
+                    "TN": 30661600,
+                    "TP": 6108,
+                    "n_pred": 7557,
+                    "n_ref": 7799
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR541_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR541_1.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8677061823700666,
+                    "FN": 8486,
+                    "FP": 9645,
+                    "IoU": 0.7663259914165302,
+                    "TN": 218812649,
+                    "TP": 59460,
+                    "n_pred": 69105,
+                    "n_ref": 67946
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR543_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR543_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 24035,
+                    "FP": 24984,
+                    "IoU": 0.0,
+                    "TN": 190791813,
+                    "TP": 0,
+                    "n_pred": 24984,
+                    "n_ref": 24035
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR543_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR543_1.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9169605875959219,
+                    "FN": 52719,
+                    "FP": 102598,
+                    "IoU": 0.8466548650898101,
+                    "TN": 178293637,
+                    "TP": 857542,
+                    "n_pred": 960140,
+                    "n_ref": 910261
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR551_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR551_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8902009112690993,
+                    "FN": 20744,
+                    "FP": 23982,
+                    "IoU": 0.8021279890282479,
+                    "TN": 179342605,
+                    "TP": 181309,
+                    "n_pred": 205291,
+                    "n_ref": 202053
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR551_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR551_1.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8221263280734039,
+                    "FN": 18335,
+                    "FP": 9406,
+                    "IoU": 0.6979749591725639,
+                    "TN": 179476790,
+                    "TP": 64109,
+                    "n_pred": 73515,
+                    "n_ref": 82444
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR551_2.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR551_2.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7813002594993537,
+                    "FN": 8777,
+                    "FP": 13388,
+                    "IoU": 0.6410933173567369,
+                    "TN": 57609923,
+                    "TP": 39592,
+                    "n_pred": 52980,
+                    "n_ref": 48369
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR555_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR555_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8058799743107918,
+                    "FN": 3451,
+                    "FP": 4710,
+                    "IoU": 0.6748735110154974,
+                    "TN": 56860147,
+                    "TP": 16940,
+                    "n_pred": 21650,
+                    "n_ref": 20391
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/TotalSegmentator_liver_lesions/CAESAR555_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR555_1.nii.gz"
+        }
+    ]
+}

@@ -26,6 +26,8 @@ PLOT_DIR = Path(
     "benchmark/full_benchmark/plots"
 )
 
+TABLE_DIR = PLOT_DIR / "tables_per_metric"
+
 DATASETS = ["HCC", "LiTS", "TCIA", "WORC", "CAIRO5"]
 MODELS = ["TSLL", "TSLT", "COALA", "AtlasNet", "SP", "DP"]
 
@@ -62,7 +64,11 @@ MODEL_PALETTE = {
     "DP": "#f0781a",
 }
 
+CRLM_DATASETS = ["TCIA", "WORC", "CAIRO5"]
+
 REPORT_THRESHOLD = 0.20
+TUMOUR_LABEL = "1"
+SHOW_FIGURES = True
 
 sns.set_theme(style="whitegrid")
 
@@ -72,7 +78,7 @@ pd.set_option("display.width", 220)
 
 
 # -------------------------------------------------------------------
-# Case IDs
+# Case IDs and validation
 # -------------------------------------------------------------------
 
 def case_id(value):
@@ -84,6 +90,23 @@ def case_id(value):
             return name[:-len(suffix)]
 
     return name
+
+
+def validate_scores(df, metrics, source):
+    for metric in metrics:
+        df[metric] = pd.to_numeric(
+            df[metric],
+            errors="raise",
+        )
+
+        values = df[metric].dropna()
+
+        if not values.between(0, 1).all():
+            raise ValueError(
+                f"{source}: {metric} outside [0, 1]"
+            )
+
+    return df
 
 
 # -------------------------------------------------------------------
@@ -98,28 +121,57 @@ def load_voxel_results():
             path = VOXEL_DIR / f"{model}_{dataset}_summary.json"
 
             if not path.is_file():
-                raise FileNotFoundError(f"Missing summary: {path}")
+                raise FileNotFoundError(
+                    f"Missing summary: {path}"
+                )
 
-            with path.open() as file:
+            with path.open(encoding="utf-8") as file:
                 results = json.load(file)
 
             cases = results.get("metric_per_case")
 
             if not cases:
-                raise ValueError(f"No per-case results in {path}")
+                raise ValueError(
+                    f"No per-case results in {path}"
+                )
 
             for result in cases:
-                metrics = result["metrics"]["1"]
+                metrics = result["metrics"][TUMOUR_LABEL]
+
+                filename = (
+                    result.get("reference_file")
+                    or result.get("prediction_file")
+                )
+
+                if not filename:
+                    raise ValueError(
+                        f"Missing case filename in {path}"
+                    )
 
                 tp = float(metrics["TP"])
                 fp = float(metrics["FP"])
                 fn = float(metrics["FN"])
 
+                counts = np.array([tp, fp, fn])
+
+                if (
+                    not np.isfinite(counts).all()
+                    or (counts < 0).any()
+                ):
+                    raise ValueError(
+                        f"Invalid TP/FP/FN for "
+                        f"{filename} in {path}"
+                    )
+
                 rows.append({
                     "dataset": dataset,
                     "model": model,
-                    "case": case_id(result["prediction_file"]),
-                    "dice": float(metrics["Dice"]),
+                    "case": case_id(filename),
+                    "dice": (
+                        float(metrics["Dice"])
+                        if metrics["Dice"] is not None
+                        else np.nan
+                    ),
                     "precision": (
                         tp / (tp + fp)
                         if tp + fp > 0
@@ -140,10 +192,16 @@ def load_voxel_results():
     if duplicates.any():
         raise ValueError(
             "Duplicate voxel results:\n"
-            + df.loc[duplicates, keys].head(20).to_string(index=False)
+            + df.loc[
+                duplicates, keys
+            ].head(20).to_string(index=False)
         )
 
-    return df
+    return validate_scores(
+        df,
+        ["dice", "precision", "recall"],
+        "Voxel summaries",
+    )
 
 
 # -------------------------------------------------------------------
@@ -168,12 +226,18 @@ def load_detectability_results():
 
             df = pd.read_csv(path)
 
-            required = {"case", "detectability", "iou_threshold"}
+            required = {
+                "case",
+                "detectability",
+                "iou_threshold",
+            }
+
             missing = required - set(df.columns)
 
             if missing:
                 raise ValueError(
-                    f"{path.name}: missing columns {sorted(missing)}"
+                    f"{path.name}: missing columns "
+                    f"{sorted(missing)}"
                 )
 
             thresholds = pd.to_numeric(
@@ -204,17 +268,11 @@ def load_detectability_results():
 
             selected["case"] = selected["case"].map(case_id)
 
-            selected["detectability"] = pd.to_numeric(
-                selected["detectability"],
-                errors="raise",
+            selected = validate_scores(
+                selected,
+                ["detectability"],
+                path.name,
             )
-
-            values = selected["detectability"].dropna()
-
-            if not values.between(0, 1).all():
-                raise ValueError(
-                    f"{path.name}: detectability outside [0, 1]"
-                )
 
             selected["dataset"] = dataset
             selected["model"] = model
@@ -289,7 +347,22 @@ def check_case_sets(df):
 # Summary tables
 # -------------------------------------------------------------------
 
+def format_number(value):
+    return (
+        f"{value:.4f}"
+        if pd.notna(value)
+        else "NA"
+    )
+
+
 def create_summary(df):
+    """
+    Create descriptive summaries using each model's available
+    valid cases separately for each metric.
+
+    Save the existing combined tables and additional tables
+    organised per metric across all datasets.
+    """
     rows = []
 
     for dataset in DATASETS:
@@ -311,7 +384,7 @@ def create_summary(df):
                     "Metric": label,
                     "N": len(values),
                     "Mean": values.mean(),
-                    "SD": values.std(),
+                    "SD": values.std(ddof=1),
                     "Median": values.median(),
                     "Q1": q1,
                     "Q3": q3,
@@ -326,33 +399,31 @@ def create_summary(df):
 
     formatted["Mean ± SD"] = summary.apply(
         lambda row: (
-            f"{row['Mean']:.4f} ± {row['SD']:.4f}"
+            f"{format_number(row['Mean'])} ± "
+            f"{format_number(row['SD'])}"
+            if row["N"] > 0
+            else "NA"
         ),
         axis=1,
     )
 
     formatted["Median [Q1, Q3]"] = summary.apply(
         lambda row: (
-            f"{row['Median']:.4f} "
-            f"[{row['Q1']:.4f}, {row['Q3']:.4f}]"
+            f"{format_number(row['Median'])} "
+            f"[{format_number(row['Q1'])}, "
+            f"{format_number(row['Q3'])}]"
+            if row["N"] > 0
+            else "NA"
         ),
         axis=1,
     )
 
-    formatted["IQR"] = summary["IQR"].map(
-        lambda value: f"{value:.4f}"
-    )
+    formatted["IQR"] = summary["IQR"].map(format_number)
 
-    for dataset in DATASETS:
-        label = DATASET_LABELS[dataset]
+    PLOT_DIR.mkdir(parents=True, exist_ok=True)
+    TABLE_DIR.mkdir(parents=True, exist_ok=True)
 
-        print(f"\n--- {label} ---")
-        print(
-            formatted.loc[
-                formatted["Dataset"] == label
-            ].to_string(index=False)
-        )
-
+    # Existing summaries containing all datasets and metrics.
     summary.to_csv(
         PLOT_DIR / "per_dataset_metric_summary.csv",
         index=False,
@@ -362,6 +433,64 @@ def create_summary(df):
         PLOT_DIR / "per_dataset_metric_summary_formatted.csv",
         index=False,
     )
+
+    print(
+        "\nDescriptive summaries use each model's available "
+        "valid cases separately for each metric."
+    )
+
+    # Existing per-dataset console tables.
+    for dataset in DATASETS:
+        label = DATASET_LABELS[dataset]
+
+        print(f"\n--- {label} ---")
+
+        print(
+            formatted.loc[
+                formatted["Dataset"] == label
+            ].to_string(index=False)
+        )
+
+    # Additional per-metric tables across all datasets.
+    for metric, label in METRICS.items():
+        numeric_table = summary.loc[
+            summary["Metric"] == label
+        ].copy()
+
+        formatted_table = formatted.loc[
+            formatted["Metric"] == label
+        ].copy()
+
+        numeric_path = (
+            TABLE_DIR / f"{metric}_summary.csv"
+        )
+
+        formatted_path = (
+            TABLE_DIR / f"{metric}_summary_formatted.csv"
+        )
+
+        numeric_table.to_csv(
+            numeric_path,
+            index=False,
+        )
+
+        formatted_table.to_csv(
+            formatted_path,
+            index=False,
+        )
+
+        print(f"\n--- {label}: all datasets ---")
+
+        print(
+            formatted_table.drop(
+                columns="Metric"
+            ).to_string(index=False)
+        )
+
+        print(f"Saved: {numeric_path}")
+        print(f"Saved: {formatted_path}")
+
+    return summary, formatted
 
 
 # -------------------------------------------------------------------
@@ -398,6 +527,7 @@ def plot_dataset(df, dataset):
         )
 
         legend = ax.get_legend()
+
         if legend is not None:
             legend.remove()
 
@@ -423,6 +553,7 @@ def plot_dataset(df, dataset):
             )
 
         ax.set_xticks(range(len(MODELS)))
+
         ax.set_xticklabels(
             MODELS,
             rotation=30,
@@ -446,7 +577,8 @@ def plot_dataset(df, dataset):
         0.5,
         0.015,
         "Voxel level: Dice, Precision, Sensitivity. "
-        f"Lesion level: Detectability (IoU ≥ {REPORT_THRESHOLD:.2f}). "
+        f"Lesion level: Detectability "
+        f"(IoU ≥ {REPORT_THRESHOLD:.2f}). "
         "Undefined scores excluded per metric.",
         ha="center",
         fontsize=10,
@@ -470,16 +602,15 @@ def plot_dataset(df, dataset):
 
         print(f"Saved: {path}")
 
-    plt.show()
+    if SHOW_FIGURES:
+        plt.show()
+
     plt.close(fig)
 
 
 # -------------------------------------------------------------------
 # Combined CRLM: equal weight per dataset
 # -------------------------------------------------------------------
-
-CRLM_DATASETS = ["TCIA", "WORC", "CAIRO5"]
-
 
 def weighted_quantile(values, weights, probabilities):
     """Quantiles of the weighted empirical distribution."""
@@ -497,11 +628,15 @@ def weighted_quantile(values, weights, probabilities):
         side="left",
     )
 
-    return values[np.clip(indices, 0, len(values) - 1)]
+    return values[
+        np.clip(indices, 0, len(values) - 1)
+    ]
 
 
 def plot_combined_crlm(df):
-    crlm_df = df.loc[df["dataset"].isin(CRLM_DATASETS)]
+    crlm_df = df.loc[
+        df["dataset"].isin(CRLM_DATASETS)
+    ]
 
     fig, axes = plt.subplots(
         1,
@@ -534,16 +669,19 @@ def plot_combined_crlm(df):
 
                 if len(values) == 0:
                     raise ValueError(
-                        f"No valid scores for {dataset}/{model}/{metric}"
+                        f"No valid scores for "
+                        f"{dataset}/{model}/{metric}"
                     )
 
                 parts.append(values)
 
-                # Each dataset contributes one third of the total weight.
+                # Each dataset contributes one third of the weight.
                 weight_parts.append(
                     np.full(
                         len(values),
-                        1 / (len(CRLM_DATASETS) * len(values)),
+                        1 / (
+                            len(CRLM_DATASETS) * len(values)
+                        ),
                     )
                 )
 
@@ -565,10 +703,14 @@ def plot_combined_crlm(df):
                 "med": float(median),
                 "q3": float(q3),
                 "whislo": float(
-                    values[values >= q1 - 1.5 * iqr].min()
+                    values[
+                        values >= q1 - 1.5 * iqr
+                    ].min()
                 ),
                 "whishi": float(
-                    values[values <= q3 + 1.5 * iqr].max()
+                    values[
+                        values <= q3 + 1.5 * iqr
+                    ].max()
                 ),
                 "fliers": [],
             })
@@ -584,10 +726,10 @@ def plot_combined_crlm(df):
                 "Metric": label,
                 "N": len(values),
                 "Equal_dataset_mean": macro_mean,
-                "Weighted_median": median,
-                "Weighted_Q1": q1,
-                "Weighted_Q3": q3,
-                "Weighted_IQR": iqr,
+                "Weighted_median": float(median),
+                "Weighted_Q1": float(q1),
+                "Weighted_Q3": float(q3),
+                "Weighted_IQR": float(iqr),
             })
 
         positions = np.arange(len(MODELS))
@@ -604,11 +746,17 @@ def plot_combined_crlm(df):
             },
         )
 
-        for box, model in zip(artists["boxes"], MODELS):
+        for box, model in zip(
+            artists["boxes"],
+            MODELS,
+        ):
             box.set_facecolor(MODEL_PALETTE[model])
             box.set_alpha(0.8)
 
-        for position, values in zip(positions, model_values):
+        for position, values in zip(
+            positions,
+            model_values,
+        ):
             ax.scatter(
                 position + rng.uniform(
                     -0.2,
@@ -636,6 +784,7 @@ def plot_combined_crlm(df):
         )
 
         ax.set_xticks(positions)
+
         ax.set_xticklabels(
             MODELS,
             rotation=30,
@@ -668,8 +817,10 @@ def plot_combined_crlm(df):
     fig.text(
         0.5,
         0.015,
-        "Metrics give WORC-CRLM, TCIA-CRLM and CAIRO5 equal weight. "
-        "Voxel level: Dice, Precision, Sensitivty. Lesion level: "
+        "Box summaries and means give WORC-CRLM, "
+        "TCIA-CRLM and CAIRO5 equal weight. "
+        "Voxel level: Dice, Precision, Sensitivity. "
+        "Lesion level: "
         f"Detectability (IoU ≥ {REPORT_THRESHOLD:.2f}).",
         ha="center",
         fontsize=10,
@@ -679,7 +830,9 @@ def plot_combined_crlm(df):
 
     PLOT_DIR.mkdir(parents=True, exist_ok=True)
 
-    filename = "CRLM_dice_precision_sensitivity_detectability"
+    filename = (
+        "CRLM_dice_precision_sensitivity_detectability"
+    )
 
     for extension in ("png", "pdf"):
         path = PLOT_DIR / f"{filename}.{extension}"
@@ -700,10 +853,34 @@ def plot_combined_crlm(df):
         index=False,
     )
 
-    print("\n--- Combined CRLM: equal dataset weighting ---")
-    print(summary.round(4).to_string(index=False))
+    # Additional per-metric CRLM tables, kept separate because
+    # their summaries use equal dataset weighting.
+    TABLE_DIR.mkdir(parents=True, exist_ok=True)
 
-    plt.show()
+    for metric, label in METRICS.items():
+        table = summary.loc[
+            summary["Metric"] == label
+        ].copy()
+
+        path = (
+            TABLE_DIR
+            / f"CRLM_equal_dataset_{metric}_summary.csv"
+        )
+
+        table.to_csv(path, index=False)
+        print(f"Saved: {path}")
+
+    print(
+        "\n--- Combined CRLM: equal dataset weighting ---"
+    )
+
+    print(
+        summary.round(4).to_string(index=False)
+    )
+
+    if SHOW_FIGURES:
+        plt.show()
+
     plt.close(fig)
 
 
@@ -729,6 +906,9 @@ def main():
         plot_dataset(df, dataset)
 
     plot_combined_crlm(df)
+
+    print(f"\nFigures and existing tables:\n{PLOT_DIR}")
+    print(f"\nAdditional per-metric tables:\n{TABLE_DIR}")
 
 
 if __name__ == "__main__":

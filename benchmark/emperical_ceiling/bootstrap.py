@@ -40,7 +40,7 @@ FILES = {
     "SP ceiling": {
         "summary": (
             BASE_DIR
-            / "dice_per_dataset/ceiling/SPCeiling_on_ceiling_testset.json"
+            / "dice_per_dataset/ceiling/ceiling_SP_on_ceiling_testset.json"
         ),
         "detectability": (
             BASE_DIR
@@ -58,7 +58,7 @@ FILES = {
     "DP ceiling": {
         "summary": (
             BASE_DIR
-            / "dice_per_dataset/ceiling/DPCeiling_on_ceiling_testset.json"
+            / "dice_per_dataset/ceiling/ceiling_DP_on_ceiling_testset.json"
         ),
         "detectability": (
             BASE_DIR
@@ -70,6 +70,7 @@ FILES = {
 COMPARISONS = [
     ("SP ceiling versus SP", "SP", "SP ceiling"),
     ("DP ceiling versus DP", "DP", "DP ceiling"),
+    ("DP ceiling versus SP ceiling", "SP ceiling", "DP ceiling"),
 ]
 
 
@@ -569,7 +570,7 @@ def create_paired_ttest_results(paired):
             }
         )
 
-    # Apply Holm correction in main() across both comparisons.
+    # Apply Holm correction in main() within each comparison.
     return pd.DataFrame(rows)
 
 
@@ -690,21 +691,22 @@ def main():
         ignore_index=True,
     )
 
-    # Separate correction across eight paired t-tests:
-    # two comparisons × four metrics.
-    statistical_results["holm_adjusted_p_value"] = holm_correction(
-        statistical_results["paired_t_test_p_value"].to_numpy()
+    # Holm correction across four metrics within each comparison.
+    # Apply separately to t-test and bootstrap p-values.
+    statistical_results["holm_adjusted_p_value"] = (
+        statistical_results.groupby("comparison", sort=False)[
+            "paired_t_test_p_value"
+        ].transform(lambda values: holm_correction(values.to_numpy()))
     )
 
     statistical_results["significant_after_holm"] = (
         statistical_results["holm_adjusted_p_value"] < 0.05
     )
 
-    # Separate correction across eight bootstrap tests.
     statistical_results["bootstrap_holm_adjusted_p_value"] = (
-        holm_correction(
-            statistical_results["bootstrap_p_value"].to_numpy()
-        )
+        statistical_results.groupby("comparison", sort=False)[
+            "bootstrap_p_value"
+        ].transform(lambda values: holm_correction(values.to_numpy()))
     )
 
     statistical_results["bootstrap_significant_after_holm"] = (
@@ -779,7 +781,7 @@ def main():
     print(f"Detectability: lesion matching at IoU >= {IOU_THRESHOLD}")
     print("Difference: ceiling minus original")
     print("Means use the same valid paired cases for each comparison")
-    print("Holm correction across eight tests: two comparisons × four metrics")
+    print("Holm correction across four metrics within each comparison")
     print("Confidence intervals: unadjusted 95% parametric CIs")
 
     print(
@@ -794,7 +796,7 @@ def main():
     print("Statistic: mean paired difference, ceiling minus original")
     print("Resampling unit: independent case, preserving model pairing")
     print("Test: approximate two-sided null-centred bootstrap")
-    print("Holm correction across eight bootstrap metric tests")
+    print("Holm correction across four bootstrap metrics within each comparison")
     print("Confidence intervals: unadjusted 95% percentile bootstrap CIs")
 
     print(

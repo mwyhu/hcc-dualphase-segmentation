@@ -20,13 +20,13 @@ DICE_DIR = BASE_DIR / "dice"
 DETECT_DIR = BASE_DIR / "detect_files"
 
 DICE_FILES = {
-    "SP": DICE_DIR / ".json",
-    "DP": DICE_DIR / ".json",
+    "SP": DICE_DIR / "SP_pooled_summary.json",
+    "DP": DICE_DIR / "DP_pooled_summary.json",
 }
 
 DETECT_FILES = {
-    "SP": DETECT_DIR / ".csv",
-    "DP": DETECT_DIR / ".csv",
+    "SP": DETECT_DIR / "Detect_SP_pooled.csv",
+    "DP": DETECT_DIR / "Detect_DP_pooled.csv",
 }
 
 MODEL_ORDER = ["SP", "DP"]

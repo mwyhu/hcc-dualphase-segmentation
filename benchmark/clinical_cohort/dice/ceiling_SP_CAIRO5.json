@@ -1,0 +1,378 @@
+{
+    "foreground_mean": {
+        "Dice": 0.8251789068767206,
+        "FN": 29050.727272727272,
+        "FP": 14496.681818181818,
+        "IoU": 0.7289784410433817,
+        "TN": 159353118.5,
+        "TP": 165620.63636363635,
+        "n_pred": 180117.31818181818,
+        "n_ref": 194671.36363636365
+    },
+    "mean": {
+        "1": {
+            "Dice": 0.8251789068767206,
+            "FN": 29050.727272727272,
+            "FP": 14496.681818181818,
+            "IoU": 0.7289784410433817,
+            "TN": 159353118.5,
+            "TP": 165620.63636363635,
+            "n_pred": 180117.31818181818,
+            "n_ref": 194671.36363636365
+        }
+    },
+    "metric_per_case": [
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.909896841114398,
+                    "FN": 57296,
+                    "FP": 21960,
+                    "IoU": 0.8346887482140436,
+                    "TN": 156544821,
+                    "TP": 400179,
+                    "n_pred": 422139,
+                    "n_ref": 457475
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR240_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR240_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8922252305871586,
+                    "FN": 35187,
+                    "FP": 27467,
+                    "IoU": 0.8054211516841719,
+                    "TN": 158799410,
+                    "TP": 259344,
+                    "n_pred": 286811,
+                    "n_ref": 294531
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR240_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR240_1.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8918942934830901,
+                    "FN": 11763,
+                    "FP": 6486,
+                    "IoU": 0.8048819604824223,
+                    "TN": 218534568,
+                    "TP": 75279,
+                    "n_pred": 81765,
+                    "n_ref": 87042
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR274_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR274_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7658206153595037,
+                    "FN": 9714,
+                    "FP": 4633,
+                    "IoU": 0.6205099719621224,
+                    "TN": 207318098,
+                    "TP": 23459,
+                    "n_pred": 28092,
+                    "n_ref": 33173
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR274_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR274_1.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9094917496226703,
+                    "FN": 66425,
+                    "FP": 24304,
+                    "IoU": 0.8340072157253048,
+                    "TN": 202352872,
+                    "TP": 455855,
+                    "n_pred": 480159,
+                    "n_ref": 522280
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR312_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR312_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.7832840326723393,
+                    "FN": 12558,
+                    "FP": 5245,
+                    "IoU": 0.6437690091243797,
+                    "TN": 203898056,
+                    "TP": 32173,
+                    "n_pred": 37418,
+                    "n_ref": 44731
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR312_2.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR312_2.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8691459282813638,
+                    "FN": 14397,
+                    "FP": 1940,
+                    "IoU": 0.7685747878684855,
+                    "TN": 159837247,
+                    "TP": 54256,
+                    "n_pred": 56196,
+                    "n_ref": 68653
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR408_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR408_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8361848000500135,
+                    "FN": 15362,
+                    "FP": 360,
+                    "IoU": 0.7184858902735998,
+                    "TN": 159851992,
+                    "TP": 40126,
+                    "n_pred": 40486,
+                    "n_ref": 55488
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR408_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR408_1.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8980692977087048,
+                    "FN": 19418,
+                    "FP": 11224,
+                    "IoU": 0.8149961661303274,
+                    "TN": 183859459,
+                    "TP": 134987,
+                    "n_pred": 146211,
+                    "n_ref": 154405
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR508_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR508_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8715250211182176,
+                    "FN": 36752,
+                    "FP": 3704,
+                    "IoU": 0.772303362881666,
+                    "TN": 177555957,
+                    "TP": 137219,
+                    "n_pred": 140923,
+                    "n_ref": 173971
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR508_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR508_1.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8628808915071328,
+                    "FN": 34300,
+                    "FP": 3081,
+                    "IoU": 0.7588307021335622,
+                    "TN": 171549321,
+                    "TP": 117618,
+                    "n_pred": 120699,
+                    "n_ref": 151918
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR508_2.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR508_2.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8472249101604064,
+                    "FN": 184333,
+                    "FP": 5914,
+                    "IoU": 0.7349438044140041,
+                    "TN": 186715199,
+                    "TP": 527514,
+                    "n_pred": 533428,
+                    "n_ref": 711847
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR527_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR527_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9299350858112222,
+                    "FN": 15116,
+                    "FP": 5370,
+                    "IoU": 0.8690454882507863,
+                    "TN": 199335148,
+                    "TP": 135950,
+                    "n_pred": 141320,
+                    "n_ref": 151066
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR527_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR527_1.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8496075122881667,
+                    "FN": 1311,
+                    "FP": 2789,
+                    "IoU": 0.7385370830941904,
+                    "TN": 27771583,
+                    "TP": 11581,
+                    "n_pred": 14370,
+                    "n_ref": 12892
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR541_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR541_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8753959873284055,
+                    "FN": 1167,
+                    "FP": 721,
+                    "IoU": 0.7784037558685446,
+                    "TN": 30662328,
+                    "TP": 6632,
+                    "n_pred": 7353,
+                    "n_ref": 7799
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR541_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR541_1.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8734378680065376,
+                    "FN": 6756,
+                    "FP": 10977,
+                    "IoU": 0.7753126465035541,
+                    "TN": 218811317,
+                    "TP": 61190,
+                    "n_pred": 72167,
+                    "n_ref": 67946
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR543_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR543_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 24035,
+                    "FP": 23975,
+                    "IoU": 0.0,
+                    "TN": 190792822,
+                    "TP": 0,
+                    "n_pred": 23975,
+                    "n_ref": 24035
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR543_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR543_1.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9166963758981738,
+                    "FN": 46304,
+                    "FP": 110718,
+                    "IoU": 0.8462044762918728,
+                    "TN": 178285517,
+                    "TP": 863957,
+                    "n_pred": 974675,
+                    "n_ref": 910261
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR551_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR551_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.896893003961339,
+                    "FN": 22169,
+                    "FP": 19190,
+                    "IoU": 0.8130607522045895,
+                    "TN": 179347397,
+                    "TP": 179884,
+                    "n_pred": 199074,
+                    "n_ref": 202053
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR551_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR551_1.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8208331489337489,
+                    "FN": 17528,
+                    "FP": 10811,
+                    "IoU": 0.6961128089646668,
+                    "TN": 179475385,
+                    "TP": 64916,
+                    "n_pred": 75727,
+                    "n_ref": 82444
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR551_2.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR551_2.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8334868527258397,
+                    "FN": 4483,
+                    "FP": 13052,
+                    "IoU": 0.714511323488709,
+                    "TN": 57610259,
+                    "TP": 43886,
+                    "n_pred": 56938,
+                    "n_ref": 48369
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR555_0.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR555_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8200065046694234,
+                    "FN": 2742,
+                    "FP": 5006,
+                    "IoU": 0.694924597393393,
+                    "TN": 56859851,
+                    "TP": 17649,
+                    "n_pred": 22655,
+                    "n_ref": 20391
+                }
+            },
+            "prediction_file": "/projects/prjs2180/evaluation/predictions/CAIRO5/ceiling_SP/CAESAR555_1.nii.gz",
+            "reference_file": "/projects/prjs2180/data/nnUNet_raw/0_External_Validation/SP/CAIRO5/labelsTs/CAESAR555_1.nii.gz"
+        }
+    ]
+}
