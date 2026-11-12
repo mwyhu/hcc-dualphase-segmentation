@@ -20,8 +20,8 @@ DEFAULT_RESULTS = Path(
     "friedman_pairwise_valid_pairs_results"
 )
 
-MODELS = ["COALA", "AtlasNet", "TSLT", "TSLL", "DP", "SP"]
-DISPLAY_MODELS = ["COALA", "AN", "TSLT", "TSLL", "DP", "SP"]
+MODELS = ["COALA", "AtlasNet", "TSLT", "TSLL", "SP", "DP"]
+DISPLAY_MODELS = ["COALA", "AN", "TSLT", "TSLL", "SP", "DP"]
 
 DATASETS = ["HCC", "LiTS", "TCIA", "WORC"]
 

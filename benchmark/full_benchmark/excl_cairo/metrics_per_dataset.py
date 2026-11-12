@@ -883,6 +883,306 @@ def plot_combined_crlm(df):
     plt.close(fig)
 
 
+def plot_sp_vs_dp(df, dataset):
+    models = ["SP", "DP"]
+
+    dataset_df = df.loc[
+        (df["dataset"] == dataset)
+        & df["model"].isin(models)
+    ]
+
+    fig, axes = plt.subplots(
+        1,
+        4,
+        figsize=(12, 5.5),
+        sharey=True,
+    )
+
+    rng = np.random.default_rng(42)
+
+    for ax, (metric, label) in zip(axes, METRICS.items()):
+        plot_df = dataset_df.dropna(subset=[metric])
+
+        sns.boxplot(
+            data=plot_df,
+            x="model",
+            y=metric,
+            order=models,
+            hue="model",
+            hue_order=models,
+            palette=MODEL_PALETTE,
+            dodge=False,
+            width=0.6,
+            showfliers=False,
+            ax=ax,
+        )
+
+        legend = ax.get_legend()
+
+        if legend is not None:
+            legend.remove()
+
+        for position, model in enumerate(models):
+            values = plot_df.loc[
+                plot_df["model"] == model,
+                metric,
+            ].to_numpy(dtype=float)
+
+            ax.scatter(
+                position + rng.uniform(
+                    -0.2,
+                    0.2,
+                    size=len(values),
+                ),
+                values,
+                color="black",
+                alpha=0.25,
+                s=8,
+                linewidths=0,
+                zorder=3,
+            )
+
+        ax.set_xticks(range(len(models)))
+        ax.set_xticklabels(models)
+        ax.set_title(label, fontsize=14)
+        ax.set_xlabel("")
+        ax.set_ylabel("")
+        ax.set_ylim(-0.03, 1.03)
+        ax.grid(axis="x", visible=False)
+
+    axes[0].set_ylabel("Score")
+
+    fig.suptitle(
+        f"{DATASET_LABELS[dataset]}: Single-Phase versus Dual-Phase",
+        fontsize=16,
+    )
+
+    fig.text(
+        0.5,
+        0.015,
+        "Voxel level: Dice, Precision, Sensitivity. "
+        f"Lesion level: Detectability "
+        f"(IoU ≥ {REPORT_THRESHOLD:.2f}). "
+        "Undefined scores excluded per metric.",
+        ha="center",
+        fontsize=10,
+    )
+
+    fig.tight_layout(rect=[0, 0.10, 1, 0.94])
+
+    PLOT_DIR.mkdir(parents=True, exist_ok=True)
+
+    filename = (
+        f"{dataset}_SP_vs_DP"
+        "_dice_precision_sensitivity_detectability"
+    )
+
+    for extension in ("png", "pdf"):
+        path = PLOT_DIR / f"{filename}.{extension}"
+
+        fig.savefig(
+            path,
+            dpi=300,
+            bbox_inches="tight",
+            facecolor="white",
+        )
+
+        print(f"Saved: {path}")
+
+    if SHOW_FIGURES:
+        plt.show()
+
+    plt.close(fig)
+
+def plot_combined_crlm_sp_vs_dp(df):
+    models = ["SP", "DP"]
+
+    crlm_df = df.loc[
+        df["dataset"].isin(CRLM_DATASETS)
+        & df["model"].isin(models)
+    ]
+
+    fig, axes = plt.subplots(
+        1,
+        4,
+        figsize=(12, 5.8),
+        sharey=True,
+    )
+
+    rng = np.random.default_rng(42)
+    positions = np.arange(len(models))
+
+    for ax, (metric, label) in zip(axes, METRICS.items()):
+        boxes = []
+        macro_means = []
+        model_values = []
+
+        for model in models:
+            parts = []
+            weight_parts = []
+            dataset_means = []
+
+            for dataset in CRLM_DATASETS:
+                values = crlm_df.loc[
+                    (crlm_df["dataset"] == dataset)
+                    & (crlm_df["model"] == model),
+                    metric,
+                ].to_numpy(dtype=float)
+
+                values = values[np.isfinite(values)]
+
+                if len(values) == 0:
+                    raise ValueError(
+                        f"No valid scores for "
+                        f"{dataset}/{model}/{metric}"
+                    )
+
+                parts.append(values)
+
+                # Each dataset contributes equal total weight.
+                weight_parts.append(
+                    np.full(
+                        len(values),
+                        1 / (len(CRLM_DATASETS) * len(values)),
+                    )
+                )
+
+                dataset_means.append(values.mean())
+
+            values = np.concatenate(parts)
+            weights = np.concatenate(weight_parts)
+
+            q1, median, q3 = weighted_quantile(
+                values,
+                weights,
+                [0.25, 0.50, 0.75],
+            )
+
+            iqr = q3 - q1
+
+            boxes.append({
+                "q1": float(q1),
+                "med": float(median),
+                "q3": float(q3),
+                "whislo": float(
+                    values[values >= q1 - 1.5 * iqr].min()
+                ),
+                "whishi": float(
+                    values[values <= q3 + 1.5 * iqr].max()
+                ),
+                "fliers": [],
+            })
+
+            macro_means.append(float(np.mean(dataset_means)))
+            model_values.append(values)
+
+        artists = ax.bxp(
+            boxes,
+            positions=positions,
+            widths=0.6,
+            patch_artist=True,
+            showfliers=False,
+            medianprops={
+                "color": "#222222",
+                "linewidth": 1.5,
+            },
+        )
+
+        for box, model in zip(artists["boxes"], models):
+            box.set_facecolor(MODEL_PALETTE[model])
+            box.set_alpha(0.8)
+
+        for position, values in zip(positions, model_values):
+            ax.scatter(
+                position + rng.uniform(
+                    -0.2,
+                    0.2,
+                    size=len(values),
+                ),
+                values,
+                color="black",
+                alpha=0.20,
+                s=8,
+                linewidths=0,
+                zorder=3,
+            )
+
+        ax.scatter(
+            positions,
+            macro_means,
+            marker="D",
+            color="black",
+            edgecolors="white",
+            linewidths=0.8,
+            s=55,
+            zorder=5,
+            label="Equal-dataset mean",
+        )
+
+        ax.set_xticks(positions)
+        ax.set_xticklabels(models)
+        ax.set_title(label, fontsize=14)
+        ax.set_xlabel("")
+        ax.set_ylabel("")
+        ax.set_ylim(-0.03, 1.03)
+        ax.grid(axis="x", visible=False)
+
+    axes[0].set_ylabel("Score")
+
+    fig.suptitle(
+        "CRLM: Single-Phase versus Dual-Phase",
+        fontsize=16,
+    )
+
+    handles, labels = axes[0].get_legend_handles_labels()
+
+    fig.legend(
+        handles,
+        labels,
+        loc="lower center",
+        bbox_to_anchor=(0.5, 0.12),
+        frameon=False,
+    )
+
+    fig.text(
+        0.5,
+        0.015,
+        "Box summaries and means give TCIA-CRLM and "
+        "WORC-CRLM equal weight.\n"
+        "Voxel level: Dice, Precision, Sensitivity. "
+        f"Lesion level: Detectability "
+        f"(IoU ≥ {REPORT_THRESHOLD:.2f}).",
+        ha="center",
+        fontsize=10,
+    )
+
+    fig.tight_layout(rect=[0, 0.22, 1, 0.94])
+
+    PLOT_DIR.mkdir(parents=True, exist_ok=True)
+
+    filename = (
+        "CRLM_SP_vs_DP"
+        "_dice_precision_sensitivity_detectability"
+    )
+
+    for extension in ("png", "pdf"):
+        path = PLOT_DIR / f"{filename}.{extension}"
+
+        fig.savefig(
+            path,
+            dpi=300,
+            bbox_inches="tight",
+            facecolor="white",
+        )
+
+        print(f"Saved: {path}")
+
+    if SHOW_FIGURES:
+        plt.show()
+
+    plt.close(fig)
+
+
 # -------------------------------------------------------------------
 # Main
 # -------------------------------------------------------------------
@@ -903,8 +1203,10 @@ def main():
 
     for dataset in DATASETS:
         plot_dataset(df, dataset)
+        plot_sp_vs_dp(df, dataset)
 
     plot_combined_crlm(df)
+    plot_combined_crlm_sp_vs_dp(df)
 
     print(f"\nFigures and existing tables:\n{PLOT_DIR}")
     print(f"\nAdditional per-metric tables:\n{TABLE_DIR}")

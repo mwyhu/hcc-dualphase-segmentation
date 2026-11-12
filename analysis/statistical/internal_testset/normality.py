@@ -26,12 +26,12 @@ TUMOUR_LABEL = "1"
 
 FILES = {
     "SinglePhase": {
-        "summary": BASE_DIR / "SP_on_SP_testset.json",
-        "detectability": BASE_DIR / "Detect_SP_on_SP_testset.csv",
+        "summary": BASE_DIR / "SP_summary.json",
+        "detectability": BASE_DIR / "Detect_SP_internal.csv",
     },
     "DualPhase": {
-        "summary": BASE_DIR / "DP_on_DP_testset.json",
-        "detectability": BASE_DIR / "Detect_DP_on_DP_testset.csv",
+        "summary": BASE_DIR / "DP_summary.json",
+        "detectability": BASE_DIR / "Detect_DP_internal.csv",
     },
 }
 
@@ -384,12 +384,12 @@ def main():
 
     FILES = {
         "SinglePhase": {
-            "summary": args.base_dir / "SP_on_SP_testset.json",
-            "detectability": args.base_dir / "Detect_SP_on_SP_testset.csv",
+            "summary": BASE_DIR / "SP_summary.json",
+            "detectability": BASE_DIR / "Detect_SP_internal.csv",
         },
         "DualPhase": {
-            "summary": args.base_dir / "DP_on_DP_testset.json",
-            "detectability": args.base_dir / "Detect_DP_on_DP_testset.csv",
+            "summary": BASE_DIR / "DP_summary.json",
+            "detectability": BASE_DIR / "Detect_DP_internal.csv",
         },
     }
 

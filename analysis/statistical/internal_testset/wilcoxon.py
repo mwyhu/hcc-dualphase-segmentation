@@ -577,12 +577,23 @@ def main():
         "Confidence intervals: unadjusted 95% t-based CIs "
         "for mean paired differences"
     )
-    print(
-        statistical_results[display_columns]
-        .round(4)
-        .to_string(index=False)
-    )
+    p_columns = ["wilcoxon_p_value", "holm_adjusted_p_value"]
 
+    formatters = {
+        column: "{:.4f}".format
+        for column in statistical_results[display_columns]
+        .select_dtypes(include="floating")
+        .columns
+        if column not in p_columns
+    }
+    formatters.update({column: str for column in p_columns})
+
+    print(
+        statistical_results[display_columns].to_string(
+            index=False,
+            formatters=formatters,
+        )
+    )
     print("\nOVERALL DESCRIPTIVE RESULTS")
     print(overall_summary.round(4).to_string(index=False))
 

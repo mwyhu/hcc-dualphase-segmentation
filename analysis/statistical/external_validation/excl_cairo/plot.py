@@ -286,7 +286,7 @@ def get_cell(results, model_a, model_b, metric):
     if not test_available:
         return (
             np.nan,
-            f"{difference:+.4f}\nTest unavailable",
+            f"{difference:+.3f}\nTest unavailable",
         )
 
     significant = parse_significance(
@@ -302,7 +302,7 @@ def get_cell(results, model_a, model_b, metric):
     else:
         colour_code = 0
 
-    annotation = f"{difference:+.4f}"
+    annotation = f"{difference:+.3f}"
 
     if significant:
         annotation += "*"
@@ -524,6 +524,10 @@ def plot_dp_vs_sp(results, dataset):
 # -------------------------------------------------------------------
 
 def plot_model_vs_benchmarks(results, dataset, model):
+    comparison_models = BASELINES + [
+        "DP" if model == "SP" else "SP"
+    ]
+
     rows = [
         METRIC_LABELS[metric]
         for metric in METRICS
@@ -532,7 +536,7 @@ def plot_model_vs_benchmarks(results, dataset, model):
     codes = pd.DataFrame(
         0.0,
         index=rows,
-        columns=BASELINES,
+        columns=comparison_models,
     )
 
     annotations = pd.DataFrame(
@@ -544,7 +548,7 @@ def plot_model_vs_benchmarks(results, dataset, model):
     for metric in METRICS:
         row_label = METRIC_LABELS[metric]
 
-        for baseline in BASELINES:
+        for baseline in comparison_models:
             code, annotation = get_cell(
                 results,
                 model_a=model,
@@ -560,7 +564,7 @@ def plot_model_vs_benchmarks(results, dataset, model):
         annotations=annotations,
         title=(
             f"{DATASET_LABELS.get(dataset, dataset)}: "
-            f"{model} versus Benchmark Models"
+            f"{model} versus other models"
         ),
         filename=f"{dataset}_{model}_vs_benchmarks_matrix",
         figsize=(10, 6.3),

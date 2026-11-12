@@ -1,0 +1,4 @@
+IoU threshold,"SP detectability, mean ± SD","DP detectability, mean ± SD",DP − SP (percentage points)
+0.15,0.774 ± 0.314,0.766 ± 0.321,-0.79
+0.20,0.770 ± 0.316,0.760 ± 0.327,-0.98
+0.50,0.628 ± 0.392,0.636 ± 0.390,+0.88

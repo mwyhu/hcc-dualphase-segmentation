@@ -556,8 +556,8 @@ def plot_dataset(df, dataset):
 
         ax.set_xticklabels(
             MODELS,
-            rotation=30,
-            ha="right",
+            rotation=0,
+            ha="center",
         )
 
         ax.set_title(label, fontsize=14)
@@ -787,7 +787,7 @@ def plot_combined_crlm(df):
 
         ax.set_xticklabels(
             MODELS,
-            rotation=30,
+            rotation=0,
             ha="right",
         )
 

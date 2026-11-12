@@ -1,0 +1,1 @@
+sacct -X -j 27734414  --format=JobID,State,Elapsed

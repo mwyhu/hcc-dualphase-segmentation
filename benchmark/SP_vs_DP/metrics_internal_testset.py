@@ -562,8 +562,8 @@ def plot_metrics_by_dataset(df):
         ax.set_xticks(range(len(dataset_order)))
         ax.set_xticklabels(
             dataset_order,
-            rotation=30,
-            ha="right",
+            rotation=0,
+            ha="center",
         )
 
         if ax is axes[0]:

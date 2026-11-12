@@ -4,6 +4,7 @@ import warnings
 
 import numpy as np
 import pandas as pd
+import seaborn as sns
 
 import matplotlib
 matplotlib.use("Agg")
@@ -254,16 +255,7 @@ def numeric_values(dataframe, column, positive=False):
     return values
 
 
-def numeric_panel(
-    ax,
-    dataframe,
-    order,
-    column,
-    ylabel,
-    title,
-    grouped=False,
-    log=False,
-):
+def numeric_panel(ax, dataframe, order, column, ylabel, title, grouped=False, log=False):
     rng = np.random.default_rng(42)
     sample_sizes = []
 
@@ -541,6 +533,87 @@ def phase_panel(ax, cases, order, percent=False):
     return sample_sizes
 
 
+def distribution_panel(ax, dataframe, order, column, xlabel, title, unit_label, dataset_colors, log=False, show_legend=True):
+    has_values = False
+
+    for dataset in order:
+        subset = dataframe[
+            dataframe["dataset"].eq(dataset)
+        ]
+
+        values = numeric_values(
+            subset,
+            column,
+            positive=log,
+        )
+
+        if len(values) == 0:
+            continue
+
+        has_values = True
+
+        color = dataset_colors[dataset]
+        label = DATASET_LABELS.get(dataset, dataset)
+
+        if len(np.unique(values)) < 2:
+            ax.axvline(
+                values[0],
+                color=color,
+                linewidth=1.8,
+                label=label,
+            )
+            continue
+
+        sns.kdeplot(
+            x=values,
+            ax=ax,
+            color=color,
+            label=label,
+            fill=True,
+            alpha=0.15,
+            linewidth=1.8,
+            bw_adjust=1.0,
+            cut=0,
+            log_scale=log,
+            common_norm=False,
+            legend=False,
+        )
+
+    if log and has_values:
+        ax.set_xscale("log")
+
+    if not has_values:
+        ax.text(
+            0.5,
+            0.5,
+            "No available measurements",
+            transform=ax.transAxes,
+            ha="center",
+        )
+
+    ax.set_title(title, loc="left")
+    ax.set_xlabel(xlabel)
+
+    ax.set_ylabel(
+        "Density per log₁₀(mL)"
+        if log
+        else "Probability density"
+    )
+
+    ax.set_ylim(bottom=0)
+    ax.grid(axis="y", alpha=0.18)
+    ax.set_axisbelow(True)
+
+    if show_legend and has_values:
+        ax.legend(
+            frameon=False,
+            fontsize=8,
+            loc="upper center",
+            bbox_to_anchor=(0.5, -0.18),
+            ncol=min(len(order), 5),
+        )
+
+
 # -------------------------------------------------------------------
 # Main
 # -------------------------------------------------------------------
@@ -674,7 +747,7 @@ def main():
 
     plt.close(figure)
 
-    # Separate characteristics_figures.
+    # Separate characteristics figures.
     for name, draw_panel in panels:
         figure, ax = plt.subplots(
             figsize=(max(9, len(order) * 1.2), 6),
@@ -682,6 +755,12 @@ def main():
         )
 
         draw_panel(ax)
+
+        # Remove panel letters from individual figures.
+        ax.set_title(
+            ax.get_title(loc="left").split(". ", 1)[-1],
+            loc="left",
+        )
 
         save_figure(
             figure,
@@ -707,6 +786,126 @@ def main():
             "Nonpositive lesion volumes were excluded "
             "from the logarithmic plot."
         )
+
+    colour_map = plt.get_cmap(
+        "tab10" if len(order) <= 10 else "tab20"
+    )
+
+    dataset_colors = {
+        dataset: colour_map(index % colour_map.N)
+        for index, dataset in enumerate(order)
+    }
+
+    distribution_specs = [
+        (
+            "distribution_lesions_per_patient",
+            data["labelled_cases"],
+            "n_lesions",
+            "Number of lesions per patient",
+            "A. Lesions per patient",
+            "Patients",
+            False,
+        ),
+        (
+            "distribution_lesion_volume",
+            data["lesions"],
+            "volume_ml",
+            "Lesion volume (mL; log scale)",
+            "B. Individual lesion volume",
+            "Lesions",
+            True,
+        ),
+        (
+            "distribution_slices",
+            data["usable_volumes"][
+                data["usable_volumes"]["phase"].isin(["ART", "PV"])
+            ],
+            "n_slices",
+            "Number of slices per CT volume",
+            "C. Slices per CT volume, ART and PV combined",
+            "CT volumes",
+            False,
+        ),
+    ]
+
+    # Combined distribution figure with one shared legend
+    figure, axes = plt.subplots(
+        1,
+        3,
+        figsize=(19, 6),
+        layout="constrained",
+    )
+
+    for ax, specification in zip(axes, distribution_specs):
+        (
+            name,
+            dataframe,
+            column,
+            xlabel,
+            title,
+            unit_label,
+            log,
+        ) = specification
+
+        distribution_panel(ax, dataframe, order, column, xlabel, title, unit_label, dataset_colors, log=log, show_legend=False)
+
+    figure.suptitle(
+        "Dataset distributions",
+        fontsize=17,
+    )
+
+    figure.legend(
+        handles=[
+            Patch(
+                facecolor=dataset_colors[dataset],
+                edgecolor=dataset_colors[dataset],
+                alpha=0.35,
+                label=DATASET_LABELS.get(dataset, dataset),
+            )
+            for dataset in order
+        ],
+        loc="outside lower center",
+        ncol=min(len(order), 5),
+        frameon=False,
+        fontsize=9,
+    )
+
+    save_figure(
+        figure,
+        output,
+        "distributions_overview",
+        args.dpi,
+    )
+
+    plt.close(figure)
+
+    # Separate distribution figures without panel 
+    for specification in distribution_specs:
+        (
+            name,
+            dataframe,
+            column,
+            xlabel,
+            title,
+            unit_label,
+            log,
+        ) = specification
+
+        figure, ax = plt.subplots(
+            figsize=(10, 6),
+            layout="constrained",
+        )
+
+        distribution_panel(ax, dataframe, order, column, xlabel, title.split(". ", 1)[-1], unit_label, dataset_colors, log=log)
+
+        save_figure(
+            figure,
+            output,
+            name,
+            args.dpi,
+        )
+
+        plt.close(figure)
 
     print("Finished.")
 

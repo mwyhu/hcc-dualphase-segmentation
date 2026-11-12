@@ -1,3 +1,4 @@
+IoU
 import argparse
 from pathlib import Path
 
@@ -10,13 +11,12 @@ import nibabel as nib
 
 
 def calculate_tumour_detectability(prediction, ground_truth, thresholds=(0.0, 0.15, 0.25)):
-
     prediction = prediction > 0
     ground_truth = ground_truth > 0
 
     pred_labels, n_pred = label(prediction)
     gt_labels, n_gt = label(ground_truth)
-    
+
     iou_matrix = np.zeros((n_gt, n_pred), dtype=float)
 
     for gt_id in range(1, n_gt + 1):
@@ -37,7 +37,7 @@ def calculate_tumour_detectability(prediction, ground_truth, thresholds=(0.0, 0.
 
             if union > 0:
                 iou_matrix[gt_id - 1, pred_id - 1] = (
-                    intersection / union
+                        intersection / union
                 )
 
     results = {}
@@ -128,7 +128,6 @@ def load_mask(path):
 
 
 def main():
-
     parser = argparse.ArgumentParser(
         description="Calculate tumour detectability."
     )
@@ -186,7 +185,6 @@ def main():
         )
 
         for threshold, result in results.items():
-
             rows.append({
                 "case": gt_path.name,
                 "iou_threshold": threshold,

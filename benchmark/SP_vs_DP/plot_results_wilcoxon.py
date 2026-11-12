@@ -137,6 +137,20 @@ def load_results():
 # -------------------------------------------------------------------
 # Prepare matrix
 # -------------------------------------------------------------------
+def format_difference(value):
+    if value == 0:
+        return "0.000"
+
+    if abs(value) < 0.0005:
+        coefficient, exponent = f"{value:+.3e}".split("e")
+
+        return (
+            rf"${coefficient}"
+            rf" \cdot 10^{{{int(exponent)}}}$"
+        )
+
+    return f"{value:+.3f}"
+
 
 def prepare_matrix(results):
     codes = np.zeros((1, len(METRICS)), dtype=float)
@@ -156,10 +170,12 @@ def prepare_matrix(results):
             annotations[0, column] = "NA"
             continue
 
+        formatted = format_difference(difference)
+
         if not np.isfinite(adjusted_p):
             unavailable[0, column] = True
             annotations[0, column] = (
-                f"{difference:+.4f}\nTest unavailable"
+                f"{formatted}\nTest unavailable"
             )
             continue
 
@@ -169,11 +185,9 @@ def prepare_matrix(results):
             codes[0, column] = 1
         elif significant and difference < 0:
             codes[0, column] = -1
-        else:
-            codes[0, column] = 0
 
         marker = "*" if significant else ""
-        annotations[0, column] = f"{difference:+.4f}{marker}"
+        annotations[0, column] = f"{formatted}{marker}"
 
     return codes, annotations, unavailable
 

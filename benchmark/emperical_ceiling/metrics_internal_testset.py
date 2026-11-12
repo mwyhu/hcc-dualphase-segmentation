@@ -20,29 +20,29 @@ DICE_DIR = BASE_DIR / "dice_per_dataset" / "ceiling"
 DETECT_DIR = BASE_DIR / "detectability" / "ceiling"
 
 DICE_FILES = {
-    "SP": DICE_DIR / "SP_on_ceiling_testset.json",
+    "Primary SP": DICE_DIR / "SP_on_ceiling_testset.json",
     "Expanded SP": DICE_DIR / "ceiling_SP_on_ceiling_testset.json",
-    "DP": DICE_DIR / "DP_on_ceiling_testset.json",
+    "Primary DP": DICE_DIR / "DP_on_ceiling_testset.json",
     "Expanded DP": DICE_DIR / "ceiling_DP_on_ceiling_testset.json",
 }
 
 DETECT_FILES = {
-    "SP": DETECT_DIR / "Detect_SP_on_ceiling_testset.csv",
+    "Primary SP": DETECT_DIR / "Detect_SP_on_ceiling_testset.csv",
     "Expanded SP": (
         DETECT_DIR / "Detect_SPceiling_on_ceiling_testset.csv"
     ),
-    "DP": DETECT_DIR / "Detect_DP_on_ceiling_testset.csv",
+    "Primary DP": DETECT_DIR / "Detect_DP_on_ceiling_testset.csv",
     "Expanded DP": (
         DETECT_DIR / "Detect_DPceiling_on_ceiling_testset.csv"
     ),
 }
 
-MODEL_ORDER = ["SP", "Expanded SP", "DP", "Expanded DP"]
+MODEL_ORDER = ["Primary SP", "Expanded SP", "Primary DP", "Expanded DP"]
 
 MODEL_PALETTE = {
-    "SP": "#033943",
+    "Primary SP": "#033943",
     "Expanded SP": "#5E9E98",
-    "DP": "#f0781a",
+    "Primary DP": "#f0781a",
     "Expanded DP": "#E8A524",
 }
 
@@ -276,7 +276,7 @@ def plot_combined_metrics(
         model_order = MODEL_ORDER
 
     if title is None:
-        title = "Expanded test set: Primary versus Expanded models"
+        title = "Expanded internal test set: Primary versus Expanded models"
 
     if filename is None:
         filename = "SP_DP_ceiling_all_metrics"
@@ -639,7 +639,7 @@ def plot_metrics_by_dataset(df):
     axes[0].set_ylabel("Per-case score")
 
     fig.suptitle(
-        "Expanded test set: Primary versus Expanded models by source dataset",
+        "Expanded internal test set: Primary versus Expanded models by source dataset",
         fontsize=16,
     )
 
@@ -696,16 +696,16 @@ def main():
     # SP versus SP expanded
     plot_combined_metrics(
         df,
-        model_order=["SP", "Expanded SP"],
-        title="Expanded test set: SP versus Expanded SP",
+        model_order=["Primary SP", "Expanded SP"],
+        title="Expanded internal test set: Primary versus Expanded model",
         filename="SP_vs_SP_expanded_all_metrics",
     )
 
     # DP versus DP expanded
     plot_combined_metrics(
         df,
-        model_order=["DP", "Expanded DP"],
-        title="Expanded test set: DP versus Expanded DP",
+        model_order=["Primary DP", "Expanded DP"],
+        title="Expanded internal test set: Primary versus Expanded model",
         filename="DP_vs_DP_expanded_all_metrics",
     )
 
